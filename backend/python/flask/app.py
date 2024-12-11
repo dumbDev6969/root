@@ -12,6 +12,14 @@ import requests
 import xml.etree.ElementTree as ET
 
 def get_recent_remote_jobs():
+    """
+    Fetches recent remote job postings from the specified RSS feed.
+
+    Returns:
+        A list of dictionaries, each containing the 'title', 'link', and
+        'description' of a job posting if the request is successful, 
+        otherwise returns None.
+    """
     url = "https://jobicy.com/feed/newjobs"
     response = requests.get(url)
 
