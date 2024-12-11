@@ -2,6 +2,7 @@ from flask import Flask, jsonify,render_template
 import feedparser
 import requests
 
+
 app = Flask(__name__)
 
 # Remotive's RSS feed URL
@@ -12,6 +13,14 @@ import requests
 import xml.etree.ElementTree as ET
 
 def get_recent_remote_jobs():
+    """
+    Fetches recent remote job postings from the specified RSS feed.
+
+    Returns:
+        A list of dictionaries, each containing the 'title', 'link', and
+        'description' of a job posting if the request is successful, 
+        otherwise returns None.
+    """
     url = "https://jobicy.com/feed/newjobs"
     response = requests.get(url)
 
@@ -93,5 +102,6 @@ def get_jobs():
         # Handle any exceptions that occur during the request
         return jsonify({'error': str(e)}), 500
 
+    
 if __name__ == '__main__':
     app.run(debug=True)
