@@ -1,19 +1,16 @@
-from fastapi import FastAPI, Query
+from fastapi import FastAPI, Query,Request
 import requests
 import feedparser
 
-<<<<<<< HEAD
 
 from utils.enoder import decode_string,encode_string
-from utils.email_sender import send_email
+from utils.email_sender import my_send_email
 
 import smtplib
 server=smtplib.SMTP(host="smtp.gmail.com",port=587)
 
 
 
-=======
->>>>>>> f34c7e8a538167fb1ee6f78cd7a942a3a77fa6c7
 app = FastAPI()
 
 class ResponseHandler:
@@ -94,50 +91,57 @@ async def get_remote_jobs_rss(
     rss_feed = feedparser.parse(rss_url)
     
     return {"entries": [entry for entry in rss_feed.entries]}
+from fastapi import FastAPI, Query, Request, HTTPException
+from pydantic import BaseModel, EmailStr, validator
+import requests
+import feedparser
+from utils.enoder import decode_string, encode_string
+from utils.email_sender import my_send_email
+import smtplib
 
-<<<<<<< HEAD
-@app.post("/send_emial")
-async def send_email(
-    subject: str = '',
-    body: str = '', 
-    recipients: list = []
-    
-):
+server = smtplib.SMTP(host="smtp.gmail.com", port=587)
 
+app = FastAPI()
+class HandleEmailRequest(BaseModel):
+    subject: str
+    body: str
+    recipients: list[EmailStr]
+
+    @validator('recipients')
+    def validate_recipients(cls, v):
+        if not v:
+            raise ValueError('Recipients list cannot be empty')
+        return v
+@app.post("/sendemial")
+async def send_email(request: HandleEmailRequest):
     """
     Sends an email with the specified subject and body to the given list of recipients.
 
     Args:
-        subject (str): The subject of the email. Defaults to an empty string.
-        body (str): The body content of the email. Defaults to an empty string.
-        recipients (list): A list of recipient email addresses. Defaults to an empty list.
+        subject (str): The subject of the email.
+        body (str): The body content of the email.
+        recipients (list): A list of recipient email addresses.
+        sender (str): The sender's email address.
 
     Returns:
-        json status
+        dict: JSON status message.
     """
 
-    # subject = "daily update"
-    # body = "This is your daily update"
-    # sender = "jem_022190@binalatongan.edu.ph"  
-    # recipients = ["jemcarlo46@gmail.com"", "recipient2@gmail.com"]
-
     try:
-        sender=decode_string("kfn`1332:1Acjobmbupohbo/fev/qi")
+        sender_email = decode_string("kfn`1332:1Acjobmbupohbo/fev/qi")
         password = decode_string("t{ey!jcfi!uq{k!xnxq")
+        # print(sender_email, password, request.recipients, request.subject, request.body)
         
-        send_email(subject, body, sender, recipients, password)
-
+        my_send_email(
+            subject=request.subject,
+            body=request.body,
+            sender=sender_email,
+            recipients=request.recipients,
+            password=password
+        )
         return {"message": "Email sent successfully"}
-    except:
-        return {"error": "Failed to send email"}
-   
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="127.0.0.1", port=8000)
-    
-=======
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
->>>>>>> f34c7e8a538167fb1ee6f78cd7a942a3a77fa6c7
