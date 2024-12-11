@@ -1,0 +1,82 @@
+:root {
+    /* Base Colors */
+    --color-white: #FFFFFF;
+    --color-light-bg: #F8F9FA;
+    --color-medium-bg: #E9ECEF;
+    --color-dark-bg: #DEE2E6;
+  
+    /* Text Colors */
+    --color-primary-text: #212529;
+    --color-secondary-text: #495057;
+    --color-muted-text: #6C757D;
+    --color-placeholder-text: #ADB5BD;
+  
+    /* Button Colors */
+    --color-button-bg: #343A40;
+    --color-button-hover: #495057;
+    --color-button-disabled: #CED4DA;
+    --color-button-text: #FFFFFF;
+  
+    /* Borders */
+    --color-border-dark: #343A40;
+    --color-border-light: #E9ECEF;
+  
+    /* Links */
+    --color-link: #495057;
+    --color-link-hover: #212529;
+  
+    /* Cards */
+    --color-card-bg: #F1F3F5;
+  
+    /* Transitions */
+    --transition-smooth: all 0.3s ease-in-out;
+  }
+
+  .scroll-hidden {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.scroll-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.btn-signup,
+.btn-login{
+    width: 100px;
+}
+.btn-lg{
+    width: 300px;
+    background-color: var(--color-button-bg);
+    color: var(--color-white);
+}
+.btn-signup,
+.btn-signin,
+.btn-recruite,
+.btn-grad{
+    background-color: var(--color-button-bg);
+    color: var(--color-white);
+}
+.btn-login:hover,
+ .btn-signup:hover, 
+ .btn-lg:hover,
+ .btn-recruite:hover,
+ .btn-grad:hover{
+    background-color: var( --color-button-hover);
+    color: var(--color-white);
+}
+
+.box-start,
+.box-end{
+    height: 250px;
+    width: 250px;
+}
+.box-mid{
+    height: 300px;
+    width: 300px;
+} 
+
+
+
+  
