@@ -1,16 +1,55 @@
-from fastapi import FastAPI, Query, Request, HTTPException
+from fastapi import FastAPI, Query, HTTPException, Request
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, EmailStr, validator
+from typing import Optional, List
 import requests
 import feedparser
-from utils.enoder import decode_string, encode_string
-from utils.email_sender import my_send_email
 from utils.crud import CRUD
-import smtplib
+from utils.enoder import decode_string
+from utils.email_sender import my_send_email
+from pydantic import BaseModel, EmailStr, field_validator
 
-server = smtplib.SMTP(host="smtp.gmail.com", port=587)
+crud = CRUD(host='localhost', user='root', password='', database='jobsearch')
 app = FastAPI()
-crud = CRUD('jobsearch.db')
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+class Srecruter(BaseModel):
+    company_name: str
+    phone_number: str
+    state: str
+    city_or_province: Optional[str]
+    municipality: Optional[str]
+    zip_code: str
+    street_number: Optional[str]
+    email: str
+    password: str
+    created_at: Optional[str]
+    updated_at: Optional[str]
+
+class DataModel(BaseModel):
+    first_name: str
+    last_name: str
+    phone_number: str
+    state: str
+    city_or_province: Optional[str]
+    municipality: Optional[str]
+    zip_code: str
+    street: Optional[str]
+    email: str
+    password: str
+    created_at: Optional[str]
+    updated_at: Optional[str]
+
+class SignupRecruter(BaseModel):
+    table: str
+    data: Srecruter
 
 class CreateRequest(BaseModel):
     table: str
@@ -19,20 +58,19 @@ class CreateRequest(BaseModel):
 class UpdateRequest(BaseModel):
     table: str
     id: int
-    data: dict
+    data: DataModel
 
-    
 class HandleEmailRequest(BaseModel):
     subject: str
     body: str
-    recipients: list[EmailStr]
+    recipients: List[EmailStr]
 
-    @validator('recipients')
+    @field_validator('recipients')
     def validate_recipients(cls, v):
         if not v:
             raise ValueError('Recipients list cannot be empty')
         return v
-
+    
 class ResponseHandler:
     def __init__(self, count: int = 50, geo: str = 'all', industry: str = 'all', tag: str = 'all'):
         self.count = count
@@ -94,21 +132,36 @@ async def send_email(request: HandleEmailRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-
-    
-@app.post("/api/create")
-async def create_record(request: CreateRequest):
+@app.post("/api/signup/jobseeker")
+async def jobseeker(request: Request):
     try:
-        crud.create(request.table, **request.data)
-        return {"message": f"Record created in {request.table} table."}
+        body = await request.json()
+        table = body['table']
+        data_to_insert = body['data']
+       
+        crud.create(table, **data_to_insert)
+        return {"message": f"Record created in {table} table."}
+    except Exception as e:
+        print(str(e))
+        raise HTTPException(status_code=500, detail=str(e))
+    
+@app.post("/api/signup/recruter")
+async def recruter(request: Request):
+    try:
+        body = await request.json()
+        table = body['table']
+        data_to_insert = body['data']
+        print(data_to_insert)
+      
+        crud.create(table, **data_to_insert)
+        return {"message": f"Record created in {table} table."}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-
-
 
 @app.put("/api/update")
 async def update_record(request: UpdateRequest):
     try:
+        print(request.data)
         crud.update(request.table, request.id, **request.data)
         return {"message": f"Record updated in {request.table} table."}
     except Exception as e:
@@ -116,4 +169,4 @@ async def update_record(request: UpdateRequest):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    uvicorn.run(app, host="127.0.0.1", port=11352)

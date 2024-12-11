@@ -10,7 +10,11 @@
 
     <link rel="stylesheet" href="../assets/general.css">
     <link rel="stylesheet" href="../assets/links.css">
+    <script src="../assets/js/geo.js"></script>
+   
 </head>
+
+
 
 <body>
     <?php include '../includes/navigationV1.php' ?>
@@ -43,9 +47,9 @@
                 <div class="form-floating">
                     <select name="state" class="form-control" id="state-input" required>
                         <option value="" disabled selected>Select Region</option>
-                        <option value="Luzon">Luzon</option>
-                        <option value="Visayas">Visayas</option>
-                        <option value="Mindanao">Mindanao</option>
+<!--                        <option value="Luzon">Luzon</option>-->
+<!--                        <option value="Visayas">Visayas</option>-->
+<!--                        <option value="Mindanao">Mindanao</option>-->
                     </select>
                     <label for="state-input">Region</label>
                 </div>
@@ -54,13 +58,16 @@
             <!-- City/Province -->
             <div class="col-md-6">
                 <div class="form-floating">
-                    <input type="text" name="city-or-province" class="form-control" id="city-province-input" placeholder="City or Province">
+                    <select  name="city-or-province" class="form-control" id="city-province-input" placeholder="City or Province" disabled>
+                        <option value="" >Select City/Province</option>
+                    </select>
                     <label for="city-province-input">City or Province</label>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-floating">
-                    <input type="text" name="municipality" class="form-control" id="municipality-input" placeholder="Municipality">
+                    <select type="text" name="municipality" class="form-control" id="municipality-input" placeholder="Municipality" disabled>
+                    </select>
                     <label for="municipality-input">Municipality</label>
                 </div>
             </div>
@@ -89,14 +96,14 @@
             <!-- Password -->
             <div class="col-md-12">
                 <div class="form-floating">
-                    <input type="password" name="password" class="form-control" id="password-input" placeholder="Create Password" required>
+                    <input type="password" name="password" class="form-control" id="password-input" placeholder="Create Password" min="8" max="16" required>
                     <label for="password-input">Create Password</label>
                 </div>
             </div>
             <!-- Confirm Password -->
             <div class="col-md-12">
                 <div class="form-floating">
-                    <input type="password" name="confirm-password" class="form-control" id="confirm-password-input" placeholder="Confirm Password" required>
+                    <input type="password" name="confirm-password" class="form-control" id="confirm-password-input" placeholder="Confirm Password" min="8" max="16" required>
                     <label for="confirm-password-input">Confirm Password</label>
                 </div>
             </div>
@@ -116,6 +123,7 @@
         </form>
     </div>
     <script src='../includes/scroll-animation.js'></script>
+    <script src="../assets/js/jobseeker.js"></script>
 </body>
 
 </html>

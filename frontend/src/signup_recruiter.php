@@ -10,11 +10,13 @@
 
     <link rel="stylesheet" href="../assets/general.css">
     <link rel="stylesheet" href="../assets/links.css">
+    <script src="../assets/js/geo.js"></script>
+
 </head>
 
 <body>
-    <?php include '../includes/navigationV1.php' ?>
-    <div class="container  p-5 scroll-hidden">
+    <?php include '../includes/navigationV1.php'; ?>
+    <div class="container p-5 scroll-hidden">
         <h4>Welcome recruiters!</h4>
         <form class="row g-3 mt-3">
 
@@ -36,21 +38,24 @@
                 <div class="form-floating">
                     <select name="state" class="form-control" id="state-input" required>
                         <option value="" disabled selected>Select Region</option>
-                        <option value="Luzon">Luzon</option>
-                        <option value="Visayas">Visayas</option>
-                        <option value="Mindanao">Mindanao</option>
+<!--                        <option value="Luzon">Luzon</option>-->
+<!--                        <option value="Visayas">Visayas</option>-->
+<!--                        <option value="Mindanao">Mindanao</option>-->
                     </select>
                     <label for="state-input">Region</label>
                 </div>
             </div>
+            <input type="hidden" name="municipality" id="municipality-input">
 
+            <!-- City/Province -->
             <div class="col-md-6">
                 <div class="form-floating">
-                    <input type="text" name="city_or_province" class="form-control" id="city-or-province-input" placeholder="City or Province" maxlength="30">
-                    <label for="city-or-province-input" class="form-label">City or Province</label>
+                    <select  name="city-or-province" class="form-control" id="city-province-input" placeholder="City or Province" disabled>
+                        <option value="" >Select City/Province</option>
+                    </select>
+                    <label for="city-province-input">City or Province</label>
                 </div>
             </div>
-
             <div class="col-md-6">
                 <div class="form-floating">
                     <input type="text" name="zip_code" class="form-control" id="zip-code-input" placeholder="ZIP Code" maxlength="10">
@@ -93,6 +98,7 @@
 
     </div>
     <script src='../includes/scroll-animation.js'></script>
+    <script src="../assets/js/recruter.js"></script>
 </body>
 
 </html>
