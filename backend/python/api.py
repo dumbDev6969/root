@@ -102,6 +102,7 @@ import smtplib
 server = smtplib.SMTP(host="smtp.gmail.com", port=587)
 
 app = FastAPI()
+
 class HandleEmailRequest(BaseModel):
     subject: str
     body: str
@@ -112,6 +113,8 @@ class HandleEmailRequest(BaseModel):
         if not v:
             raise ValueError('Recipients list cannot be empty')
         return v
+    
+
 @app.post("/sendemial")
 async def send_email(request: HandleEmailRequest):
     """
