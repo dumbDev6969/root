@@ -2,6 +2,7 @@ from fastapi import FastAPI, Query
 import requests
 import feedparser
 
+<<<<<<< HEAD
 
 from utils.enoder import decode_string,encode_string
 from utils.email_sender import send_email
@@ -11,6 +12,8 @@ server=smtplib.SMTP(host="smtp.gmail.com",port=587)
 
 
 
+=======
+>>>>>>> f34c7e8a538167fb1ee6f78cd7a942a3a77fa6c7
 app = FastAPI()
 
 class ResponseHandler:
@@ -92,6 +95,7 @@ async def get_remote_jobs_rss(
     
     return {"entries": [entry for entry in rss_feed.entries]}
 
+<<<<<<< HEAD
 @app.post("/send_emial")
 async def send_email(
     subject: str = '',
@@ -131,3 +135,9 @@ if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="127.0.0.1", port=8000)
     
+=======
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
+>>>>>>> f34c7e8a538167fb1ee6f78cd7a942a3a77fa6c7
