@@ -1,0 +1,175 @@
+{
+  "total_endpoints": 3,
+  "endpoint_details": {
+    "barangays": {
+      "total_records": 42046,
+      "first_record_sample": [
+        {
+          "code": "012801001",
+          "name": "Adams (Pob.)",
+          "oldName": "",
+          "subMunicipalityCode": false,
+          "cityCode": false,
+          "municipalityCode": "012801000",
+          "districtCode": false,
+          "provinceCode": "012800000",
+          "regionCode": "010000000",
+          "islandGroupCode": "luzon",
+          "psgc10DigitCode": "0102801001"
+        },
+        {
+          "code": "012802001",
+          "name": "Bani",
+          "oldName": "",
+          "subMunicipalityCode": false,
+          "cityCode": false,
+          "municipalityCode": "012802000",
+          "districtCode": false,
+          "provinceCode": "012800000",
+          "regionCode": "010000000",
+          "islandGroupCode": "luzon",
+          "psgc10DigitCode": "0102802001"
+        },
+        {
+          "code": "012802002",
+          "name": "Buyon",
+          "oldName": "",
+          "subMunicipalityCode": false,
+          "cityCode": false,
+          "municipalityCode": "012802000",
+          "districtCode": false,
+          "provinceCode": "012800000",
+          "regionCode": "010000000",
+          "islandGroupCode": "luzon",
+          "psgc10DigitCode": "0102802002"
+        },
+        {
+          "code": "012802003",
+          "name": "Cabaruan",
+          "oldName": "",
+          "subMunicipalityCode": false,
+          "cityCode": false,
+          "municipalityCode": "012802000",
+          "districtCode": false,
+          "provinceCode": "012800000",
+          "regionCode": "010000000",
+          "islandGroupCode": "luzon",
+          "psgc10DigitCode": "0102802003"
+        },
+        {
+          "code": "012802004",
+          "name": "Cabulalaan",
+          "oldName": "",
+          "subMunicipalityCode": false,
+          "cityCode": false,
+          "municipalityCode": "012802000",
+          "districtCode": false,
+          "provinceCode": "012800000",
+          "regionCode": "010000000",
+          "islandGroupCode": "luzon",
+          "psgc10DigitCode": "0102802004"
+        }
+      ]
+    },
+    "provinces": {
+      "total_records": 81,
+      "first_record_sample": [
+        {
+          "code": "012800000",
+          "name": "Ilocos Norte",
+          "regionCode": "010000000",
+          "islandGroupCode": "luzon",
+          "psgc10DigitCode": "0102800000"
+        },
+        {
+          "code": "012900000",
+          "name": "Ilocos Sur",
+          "regionCode": "010000000",
+          "islandGroupCode": "luzon",
+          "psgc10DigitCode": "0102900000"
+        },
+        {
+          "code": "013300000",
+          "name": "La Union",
+          "regionCode": "010000000",
+          "islandGroupCode": "luzon",
+          "psgc10DigitCode": "0103300000"
+        },
+        {
+          "code": "015500000",
+          "name": "Pangasinan",
+          "regionCode": "010000000",
+          "islandGroupCode": "luzon",
+          "psgc10DigitCode": "0105500000"
+        },
+        {
+          "code": "020900000",
+          "name": "Batanes",
+          "regionCode": "020000000",
+          "islandGroupCode": "luzon",
+          "psgc10DigitCode": "0200900000"
+        }
+      ]
+    },
+    "municipalities": {
+      "total_records": 1488,
+      "first_record_sample": [
+        {
+          "code": "012801000",
+          "name": "Adams",
+          "oldName": "",
+          "isCapital": false,
+          "provinceCode": "012800000",
+          "districtCode": false,
+          "regionCode": "010000000",
+          "islandGroupCode": "luzon",
+          "psgc10DigitCode": "0102801000"
+        },
+        {
+          "code": "012802000",
+          "name": "Bacarra",
+          "oldName": "",
+          "isCapital": false,
+          "provinceCode": "012800000",
+          "districtCode": false,
+          "regionCode": "010000000",
+          "islandGroupCode": "luzon",
+          "psgc10DigitCode": "0102802000"
+        },
+        {
+          "code": "012803000",
+          "name": "Badoc",
+          "oldName": "",
+          "isCapital": false,
+          "provinceCode": "012800000",
+          "districtCode": false,
+          "regionCode": "010000000",
+          "islandGroupCode": "luzon",
+          "psgc10DigitCode": "0102803000"
+        },
+        {
+          "code": "012804000",
+          "name": "Bangui",
+          "oldName": "",
+          "isCapital": false,
+          "provinceCode": "012800000",
+          "districtCode": false,
+          "regionCode": "010000000",
+          "islandGroupCode": "luzon",
+          "psgc10DigitCode": "0102804000"
+        },
+        {
+          "code": "012806000",
+          "name": "Burgos",
+          "oldName": "",
+          "isCapital": false,
+          "provinceCode": "012800000",
+          "districtCode": false,
+          "regionCode": "010000000",
+          "islandGroupCode": "luzon",
+          "psgc10DigitCode": "0102806000"
+        }
+      ]
+    }
+  }
+}

@@ -1,6 +1,15 @@
-from fastapi import FastAPI, Query
+from fastapi import FastAPI, Query,Request
 import requests
 import feedparser
+
+
+from utils.enoder import decode_string,encode_string
+from utils.email_sender import my_send_email
+
+import smtplib
+server=smtplib.SMTP(host="smtp.gmail.com",port=587)
+
+
 
 app = FastAPI()
 
@@ -82,8 +91,57 @@ async def get_remote_jobs_rss(
     rss_feed = feedparser.parse(rss_url)
     
     return {"entries": [entry for entry in rss_feed.entries]}
+from fastapi import FastAPI, Query, Request, HTTPException
+from pydantic import BaseModel, EmailStr, validator
+import requests
+import feedparser
+from utils.enoder import decode_string, encode_string
+from utils.email_sender import my_send_email
+import smtplib
 
+server = smtplib.SMTP(host="smtp.gmail.com", port=587)
 
+app = FastAPI()
+class HandleEmailRequest(BaseModel):
+    subject: str
+    body: str
+    recipients: list[EmailStr]
+
+    @validator('recipients')
+    def validate_recipients(cls, v):
+        if not v:
+            raise ValueError('Recipients list cannot be empty')
+        return v
+@app.post("/sendemial")
+async def send_email(request: HandleEmailRequest):
+    """
+    Sends an email with the specified subject and body to the given list of recipients.
+
+    Args:
+        subject (str): The subject of the email.
+        body (str): The body content of the email.
+        recipients (list): A list of recipient email addresses.
+        sender (str): The sender's email address.
+
+    Returns:
+        dict: JSON status message.
+    """
+
+    try:
+        sender_email = decode_string("kfn`1332:1Acjobmbupohbo/fev/qi")
+        password = decode_string("t{ey!jcfi!uq{k!xnxq")
+        # print(sender_email, password, request.recipients, request.subject, request.body)
+        
+        my_send_email(
+            subject=request.subject,
+            body=request.body,
+            sender=sender_email,
+            recipients=request.recipients,
+            password=password
+        )
+        return {"message": "Email sent successfully"}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="127.0.0.1", port=8000)

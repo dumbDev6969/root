@@ -2,6 +2,7 @@ from flask import Flask, jsonify,render_template
 import feedparser
 import requests
 
+
 app = Flask(__name__)
 
 # Remotive's RSS feed URL
@@ -101,5 +102,6 @@ def get_jobs():
         # Handle any exceptions that occur during the request
         return jsonify({'error': str(e)}), 500
 
+    
 if __name__ == '__main__':
     app.run(debug=True)
