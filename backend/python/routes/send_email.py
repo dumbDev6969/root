@@ -5,20 +5,7 @@ from utils.email_sender import my_send_email
 from typing import Optional, List
 from pydantic import BaseModel, EmailStr, field_validator
 
-class ResponseHandler:
-    def __init__(self, count: int = 50, geo: str = 'all', industry: str = 'all', tag: str = 'all'):
-        self.count = count
-        self.geo = geo
-        self.industry = industry
-        self.tag = tag
-    
-    def to_params(self):
-        return {
-            'count': self.count,
-            'geo': self.geo,
-            'industry': self.industry,
-            'tag': self.tag
-        }
+
 class HandleEmailRequest(BaseModel):
     subject: str
     body: str
