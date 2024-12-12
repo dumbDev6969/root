@@ -1,3 +1,217 @@
+
+
+# from fastapi import FastAPI, HTTPException
+# from pydantic import BaseModel
+# from typing import Optional
+
+# from utils.database_operations import (
+#     create_employer, read_employer, update_employer, delete_employer,
+#     create_job, read_job, update_job, delete_job,
+#     create_qualification, read_qualification, update_qualification, delete_qualification,
+#     create_saved_job, read_saved_job, update_saved_job, delete_saved_job,
+#     create_submitted_resume, read_submitted_resume, update_submitted_resume, delete_submitted_resume,
+#     create_user_interest, read_user_interest, update_user_interest, delete_user_interest,
+#     create_user, read_user, update_user, delete_user
+# )
+
+# app = FastAPI()
+
+# # Models for each table interaction
+# class EmployerModel(BaseModel):
+#     company_name: str
+#     phone_number: str
+#     state: str
+#     zip_code: str
+#     password: str
+#     email: Optional[str]
+#     city_or_province: Optional[str]
+#     street: Optional[str]
+
+# class JobModel(BaseModel):
+#     employer_id: int
+#     job_title: str
+#     job_type: str
+#     location: str
+#     salary_range: str
+#     job_description: str
+#     requirements: str
+
+# class QualificationModel(BaseModel):
+#     user_id: int
+#     degree: str
+#     school_graduated: str
+#     certifications: Optional[str]
+#     specialized_training: Optional[str]
+
+# class SavedJobModel(BaseModel):
+#     user_id: int
+#     job_id: int
+
+# class SubmittedResumeModel(BaseModel):
+#     resume_file_name: str
+#     resume_path: str
+#     user_id: int
+#     job_id: int
+
+# class UserInterestModel(BaseModel):
+#     job_interest: str
+#     job_type: str
+#     preferred_location: str
+#     expected_salary_range: str
+#     user_id: int
+
+# class UserModel(BaseModel):
+#     first_name: str
+#     last_name: str
+#     phone_number: str
+#     state: str
+#     municipality: str
+#     zip_code: str
+#     email: str
+#     password: str
+#     city_or_province: Optional[str]
+#     street: Optional[str]
+
+# # Route implementations
+# @app.post("/api/employer")
+# async def add_employer(employer: EmployerModel):
+#     response = create_employer(**employer.dict())
+#     return response
+
+# @app.get("/api/employer/{employer_id}")
+# async def get_employer(employer_id: int):
+#     response = read_employer(employer_id)
+#     return response
+
+# @app.put("/api/employer/{employer_id}")
+# async def modify_employer(employer_id: int, employer: EmployerModel):
+#     response = update_employer(employer_id, **employer.dict())
+#     return response
+
+# @app.delete("/api/employer/{employer_id}")
+# async def remove_employer(employer_id: int):
+#     response = delete_employer(employer_id)
+#     return response
+
+# @app.post("/api/job")
+# async def add_job(job: JobModel):
+#     response = create_job(**job.dict())
+#     return response
+
+# @app.get("/api/job/{job_id}")
+# async def get_job(job_id: int):
+#     response = read_job(job_id)
+#     return response
+
+# @app.put("/api/job/{job_id}")
+# async def modify_job(job_id: int, job: JobModel):
+#     response = update_job(job_id, **job.dict())
+#     return response
+
+# @app.delete("/api/job/{job_id}")
+# async def remove_job(job_id: int):
+#     response = delete_job(job_id)
+#     return response
+
+# @app.post("/api/qualification")
+# async def add_qualification(qualification: QualificationModel):
+#     response = create_qualification(**qualification.dict())
+#     return response
+
+# @app.get("/api/qualification/{qualification_id}")
+# async def get_qualification(qualification_id: int):
+#     response = read_qualification(qualification_id)
+#     return response
+
+# @app.put("/api/qualification/{qualification_id}")
+# async def modify_qualification(qualification_id: int, qualification: QualificationModel):
+#     response = update_qualification(qualification_id, **qualification.dict())
+#     return response
+
+# @app.delete("/api/qualification/{qualification_id}")
+# async def remove_qualification(qualification_id: int):
+#     response = delete_qualification(qualification_id)
+#     return response
+
+# @app.post("/api/saved_job")
+# async def add_saved_job(saved_job: SavedJobModel):
+#     response = create_saved_job(**saved_job.dict())
+#     return response
+
+# @app.get("/api/saved_job/{saved_job_id}")
+# async def get_saved_job(saved_job_id: int):
+#     response = read_saved_job(saved_job_id)
+#     return response
+
+# @app.put("/api/saved_job/{saved_job_id}")
+# async def modify_saved_job(saved_job_id: int, saved_job: SavedJobModel):
+#     response = update_saved_job(saved_job_id, **saved_job.dict())
+#     return response
+
+# @app.delete("/api/saved_job/{saved_job_id}")
+# async def remove_saved_job(saved_job_id: int):
+#     response = delete_saved_job(saved_job_id)
+#     return response
+
+# @app.post("/api/submitted_resume")
+# async def add_submitted_resume(submitted_resume: SubmittedResumeModel):
+#     response = create_submitted_resume(**submitted_resume.dict())
+#     return response
+
+# @app.get("/api/submitted_resume/{submitted_resume_id}")
+# async def get_submitted_resume(submitted_resume_id: int):
+#     response = read_submitted_resume(submitted_resume_id)
+#     return response
+
+# @app.put("/api/submitted_resume/{submitted_resume_id}")
+# async def modify_submitted_resume(submitted_resume_id: int, submitted_resume: SubmittedResumeModel):
+#     response = update_submitted_resume(submitted_resume_id, **submitted_resume.dict())
+#     return response
+
+# @app.delete("/api/submitted_resume/{submitted_resume_id}")
+# async def remove_submitted_resume(submitted_resume_id: int):
+#     response = delete_submitted_resume(submitted_resume_id)
+#     return response
+
+# @app.post("/api/user_interest")
+# async def add_user_interest(user_interest: UserInterestModel):
+#     response = create_user_interest(**user_interest.dict())
+#     return response
+
+# @app.get("/api/user_interest/{interest_id}")
+# async def get_user_interest(interest_id: int):
+#     response = read_user_interest(interest_id)
+#     return response
+
+# @app.put("/api/user_interest/{interest_id}")
+# async def modify_user_interest(interest_id: int, user_interest: UserInterestModel):
+#     response = update_user_interest(interest_id, **user_interest.dict())
+#     return response
+
+# @app.delete("/api/user_interest/{interest_id}")
+# async def remove_user_interest(interest_id: int):
+#     response = delete_user_interest(interest_id)
+#     return response
+
+# @app.post("/api/user")
+# async def add_user(user: UserModel):
+#     response = create_user(**user.dict())
+#     return response
+
+# @app.get("/api/user/{user_id}")
+# async def get_user(user_id: int):
+#     response = read_user(user_id)
+#     return response
+
+# @app.put("/api/user/{user_id}")
+# async def modify_user(user_id: int, user: UserModel):
+#     response = update_user(user_id, **user.dict())
+#     return response
+
+# @app.delete("/api/user/{user_id}")
+# async def remove_user(user_id: int):
+#     response = delete_user(user_id)
+#     return response
 import mysql.connector
 from mysql.connector import Error
 import json
@@ -6,9 +220,9 @@ from datetime import datetime
 # Database Configuration
 DB_CONFIG = {
     'host': 'localhost',
-    'user': 'your_username',    # Replace with your MySQL username
-    'password': 'your_password',# Replace with your MySQL password
-    'database': 'your_database' # Replace with your MySQL database name
+    'user': 'root',         # MySQL username
+    'password': '',         # MySQL password
+    'database': 'jobsearch' # MySQL database name
 }
 
 def get_connection():
