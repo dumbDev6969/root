@@ -81,7 +81,7 @@
     </div>
 
     <script src="../includes/scroll-animation.js"></script>
-    
+    <?php include '../includes/footer.php'?>
 </body>
 
 </html>
