@@ -5,7 +5,7 @@ $current_page = basename(htmlspecialchars($_SERVER['PHP_SELF'])); //! Get the cu
          .navbar {
             position: sticky;
             top: 0;
-            z-index: 999;
+            z-index: 99999;
         }
     </style>
     <nav class="navbar navbar-expand-lg bg-light p-3">
