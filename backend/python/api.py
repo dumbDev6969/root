@@ -8,7 +8,7 @@ from utils.crud import CRUD
 from utils.enoder import decode_string
 from utils.email_sender import my_send_email
 from pydantic import BaseModel, EmailStr, field_validator
-from routes import geo,signup,send_email,jobs,update
+from routes import geo,signup,send_email,jobs,update,query_and_delete
 
 crud = CRUD(host='localhost', user='root', password='', database='jobsearch')
 app = FastAPI()
@@ -51,6 +51,7 @@ geo.run(app)
 signup.run(app,crud)
 send_email.run(app)
 update.run(app,crud)
+query_and_delete.run(app,crud)
 
 if __name__ == "__main__":
     import uvicorn
