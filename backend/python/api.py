@@ -4,7 +4,7 @@ from pydantic import BaseModel, EmailStr, validator, Field
 from typing import Optional
 from utils.crud import CRUD
 from routes import geo, signup, send_email, jobs, update, query_and_delete
-
+from routes.crud_routes import router as crud_router
 crud = CRUD(
     host='localhost',
     user='root',
@@ -59,6 +59,12 @@ modules_to_run = [
 
 for module, args in modules_to_run:
     module.run(*args)
+
+
+app.include_router(crud_router)
+
+
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(
