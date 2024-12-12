@@ -44,6 +44,24 @@ pip install .
 uvicorn api:app --host 127.0.0.1 --port 11352 --reload
 ```
 
+- To run the tests, use the following command:
+
+  ```bash
+pytest
+```
+
+- To run the linter, use the following command:
+
+  ```bash
+flake8
+```
+
+- To run the formatter, use the following command:
+
+  ```bash
+black .
+```
+
 - Additional scripts for data extraction and processing can be found in the `geo` and `providers` directories.
 
 ## Database Setup
