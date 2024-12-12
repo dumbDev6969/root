@@ -2,13 +2,33 @@
 
 ## Description
 
-This project is a Python-based backend application that includes a Flask web server and various utilities for data processing and management. It is designed to handle job search functionalities and geographical data processing.
+This project is a Python-based backend application that includes a FastAPI web server and various utilities for data processing and management. It is designed to handle job search functionalities and geographical data processing.
 
 ## Installation
 
 1. Clone the repository to your local machine.
 2. Navigate to the `backend/python` directory.
-3. Install the required dependencies using pip:
+3. Create a virtual environment:
+
+   ```bash
+   python -m venv venv
+   ```
+
+4. Activate the virtual environment:
+
+   - On Windows:
+
+     ```bash
+     .\venv\Scripts\activate
+     ```
+
+   - On macOS and Linux:
+
+     ```bash
+     source venv/bin/activate
+     ```
+
+5. Install the required dependencies using pip:
 
    ```bash
    pip install -r requirements.txt
@@ -16,17 +36,28 @@ This project is a Python-based backend application that includes a Flask web ser
 
 ## Usage
 
-- To start the Flask application, navigate to the `flask` directory and run:
+- To start the FastAPI application, run:
 
   ```bash
-  python app.py
+  uvicorn api:app --host 127.0.0.1 --port 11352 --reload
   ```
 
 - Additional scripts for data extraction and processing can be found in the `geo` and `providers` directories.
 
 ## Database Setup
 
-- Import the SQL files located in the `backend` (import.sql) directory into your XAMPP MySQL database to set up the necessary tables and data.
+- Import the SQL files located in the `backend` (import.sql) directory into your MySQL database to set up the necessary tables and data.
+
+## Code Examples
+
+- Example of creating a new employer record:
+
+  ```python
+  from utils.crud import CRUD
+
+  crud = CRUD(host='localhost', user='root', password='', database='jobsearch')
+  crud.create('employers', company_name='Tech Corp', phone_number='1234567890', state='CA', zip_code='90001', email='contact@techcorp.com', password='securepassword', created_at='2023-10-01', updated_at='2023-10-01')
+  ```
 
 ## Contributing
 
