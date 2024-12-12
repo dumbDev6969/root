@@ -17,13 +17,14 @@ if ($stmt->execute()) {
 
     while ($stmt->fetch()) {
         $store_data .= '
-                <div class="card mt-5 border-0" style="width: 24rem;">
+                <div class="card mt-5 border-0" style="width: 250px">
                     <div class="card-body">
                         <h5 class="card-title">' . htmlspecialchars($job) . '</h5>
                         <h6 class="card-subtitle mb-2 text-body-secondary">' . htmlspecialchars($job_type) . '</h6>
                         <p class="">' . htmlspecialchars($salary) . '</p>
                     </div>
-                </div>';
+                </div>
+                ';
             
     }
     //echo $store_data;
