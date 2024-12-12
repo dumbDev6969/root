@@ -15,10 +15,7 @@ $current_page = basename(htmlspecialchars($_SERVER['PHP_SELF'])); //! Get the cu
                             <a class="nav-link <?= ($current_page == 'index.php') ? 'active' : '' ?>" href="./index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <?= ($current_page == 'link.php') ? 'active' : '' ?>" href="./link.php">About us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                            <a class="nav-link <?= ($current_page == 'about.php') ? 'active' : '' ?>" href="./about.php">About us</a>
                         </li>
                     </ul>
                 </div>
