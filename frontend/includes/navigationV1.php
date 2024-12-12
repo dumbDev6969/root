@@ -1,8 +1,14 @@
 <?php
 $current_page = basename(htmlspecialchars($_SERVER['PHP_SELF'])); //! Get the current page
 ?>
-
-    <nav class="navbar navbar-expand-lg">
+    <style>
+         .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+    </style>
+    <nav class="navbar navbar-expand-lg bg-light p-3">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Logo</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,6 +22,9 @@ $current_page = basename(htmlspecialchars($_SERVER['PHP_SELF'])); //! Get the cu
                         </li>
                         <li class="nav-item">
                             <a class="nav-link <?= ($current_page == 'about.php') ? 'active' : '' ?>" href="./about.php">About us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link <?= ($current_page == 'contact.php') ? 'active' : '' ?>" href="./contact.php">Contact us</a>
                         </li>
                     </ul>
                 </div>
