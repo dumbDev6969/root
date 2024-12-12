@@ -8,7 +8,8 @@ from utils.crud import CRUD
 from utils.enoder import decode_string
 from utils.email_sender import my_send_email
 from pydantic import BaseModel, EmailStr, field_validator
-from routes import geo
+from routes import geo,signup,send_email
+
 crud = CRUD(host='localhost', user='root', password='', database='jobsearch')
 app = FastAPI()
 
@@ -70,21 +71,6 @@ class HandleEmailRequest(BaseModel):
         if not v:
             raise ValueError('Recipients list cannot be empty')
         return v
-    
-class ResponseHandler:
-    def __init__(self, count: int = 50, geo: str = 'all', industry: str = 'all', tag: str = 'all'):
-        self.count = count
-        self.geo = geo
-        self.industry = industry
-        self.tag = tag
-    
-    def to_params(self):
-        return {
-            'count': self.count,
-            'geo': self.geo,
-            'industry': self.industry,
-            'tag': self.tag
-        }
 
 @app.get("/api/remote-jobs")
 async def get_remote_jobs(
@@ -115,48 +101,6 @@ async def get_remote_jobs_rss(
     
     return {"entries": [entry for entry in rss_feed.entries]}
 
-@app.post("/sendemial")
-async def send_email(request: HandleEmailRequest):
-    try:
-        sender_email = decode_string("kfn`1332:1Acjobmbupohbo/fev/qi")
-        password = decode_string("t{ey!jcfi!uq{k!xnxq")
-        
-        my_send_email(
-            subject=request.subject,
-            body=request.body,
-            sender=sender_email,
-            recipients=request.recipients,
-            password=password
-        )
-        return {"message": "Email sent successfully"}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
-@app.post("/api/signup/jobseeker")
-async def jobseeker(request: Request):
-    try:
-        body = await request.json()
-        table = body['table']
-        data_to_insert = body['data']
-       
-        crud.create(table, **data_to_insert)
-        return {"message": f"Record created in {table} table."}
-    except Exception as e:
-        print(str(e))
-        raise HTTPException(status_code=500, detail=str(e))
-    
-@app.post("/api/signup/recruter")
-async def recruter(request: Request):
-    try:
-        body = await request.json()
-        table = body['table']
-        data_to_insert = body['data']
-        print(data_to_insert)
-      
-        crud.create(table, **data_to_insert)
-        return {"message": f"Record created in {table} table."}
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
 
 @app.put("/api/update")
 async def update_record(request: UpdateRequest):
@@ -168,6 +112,8 @@ async def update_record(request: UpdateRequest):
         raise HTTPException(status_code=500, detail=str(e))
 
 geo.run(app)
+signup.run(app,crud)
+send_email.run(app)
 
 if __name__ == "__main__":
     import uvicorn

@@ -10,7 +10,7 @@ for roots,dirs,files in os.walk(f):
 __all__=[]    
 for i in  files1:
     if i!='__init__.py':
-        name=i[:-3]
+        name=i[:-3] 
         __all__.append(name)
         
    
