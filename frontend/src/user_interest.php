@@ -55,9 +55,6 @@
                 </div>
             </div>
 
-
-          
-
             <div class="col-12">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="terms-check" required>
