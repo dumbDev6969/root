@@ -11,7 +11,7 @@
         }
     </style>
 
-    <footer>
+    <footer class="scroll-hidden">
         <div class="row d-flex  align-items-center bg-dark">
             <div class="col-md-3">
                 <div class="container text-secondary">
@@ -47,7 +47,6 @@
                         </li>
                     </ul>
                 </div>
-          
             </div>
         </div>
     </footer>
