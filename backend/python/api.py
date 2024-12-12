@@ -8,7 +8,7 @@ from utils.crud import CRUD
 from utils.enoder import decode_string
 from utils.email_sender import my_send_email
 from pydantic import BaseModel, EmailStr, field_validator
-
+from routes import geo
 crud = CRUD(host='localhost', user='root', password='', database='jobsearch')
 app = FastAPI()
 
@@ -167,6 +167,13 @@ async def update_record(request: UpdateRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+geo.run(app)
+
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="127.0.0.1", port=11352)
+    uvicorn.run(
+        "api:app",  # Use "module_name:app_variable"
+        host="127.0.0.1", 
+        port=11352, 
+        reload=True
+    )

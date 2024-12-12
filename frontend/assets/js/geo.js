@@ -1,6 +1,6 @@
 
 let selected_region = null;
-fetch('https://psgc.gitlab.io/api/regions/')
+fetch('http://127.0.0.1:11352/api/regions/')
 .then(response => {
 if (!response.ok) {
 throw new Error('Network response was not ok ' + response.statusText);
@@ -23,9 +23,9 @@ selectElement.addEventListener('change', function() {
 const selectedValue = selectElement.value; // Get the selected value
 selected_region = selectedValue;
 document.getElementById("city-province-input").disabled = false;
-//     https://psgc.gitlab.io/api/regions/{selectedValue}/provinces/
+//     http://127.0.0.1:11352/api/regions/{selectedValue}/provinces/
 // Fetch provinces based on the selected region
-fetch(`https://psgc.gitlab.io/api/regions/${selected_region}/provinces/`)
+fetch(`http://127.0.0.1:11352/api/regions/${selected_region}/provinces/`)
 .then(response => {
 if (!response.ok) {
 throw new Error('Network response was not ok ' + response.statusText);
@@ -49,16 +49,16 @@ provinces.forEach(province => {
 const option = document.createElement('option');
 option.value = province.code; // Set the value attribute
 option.textContent = province.name; // Set the display text
-cityProvinceSelect.appendChild(option); // Append the option to the select element https://psgc.gitlab.io/api/provinces/015500000/municipalities/
+cityProvinceSelect.appendChild(option); // Append the option to the select element http://127.0.0.1:11352/api/provinces/015500000/municipalities/
 
 
 cityProvinceSelect.addEventListener('change', function() {
 const selectedValue = cityProvinceSelect.value; // Get the selected value
 selected_region = selectedValue;
 document.getElementById("municipality-input").disabled = false;
-//     https://psgc.gitlab.io/api/regions/{selectedValue}/provinces/
+//     http://127.0.0.1:11352/api/regions/{selectedValue}/provinces/
 // Fetch provinces based on the selected region
-fetch(`https://psgc.gitlab.io/api/provinces/${selected_region}/municipalities/`)
+fetch(`http://127.0.0.1:11352/api/provinces/${selected_region}/municipalities/`)
 .then(response => {
 if (!response.ok) {
 throw new Error('Network response was not ok ' + response.statusText);
@@ -83,7 +83,7 @@ console.log(municipality.code,municipality.name);
 const option = document.createElement('option');
 option.value = municipality.code; // Set the value attribute
 option.textContent = municipality.name; // Set the display text
-municipalitiesSelect.appendChild(option); // Append the option to the select element https://psgc.gitlab.io/api/provinces/015500000/municipalities/
+municipalitiesSelect.appendChild(option); // Append the option to the select element http://127.0.0.1:11352/api/provinces/015500000/municipalities/
 
 });
 })
