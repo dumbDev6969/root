@@ -1,12 +1,8 @@
 from fastapi import FastAPI, Query, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, EmailStr, validator, Field
-from typing import Optional, List
-import requests
-import feedparser
+from typing import Optional
 from utils.crud import CRUD
-from utils.enoder import decode_string
-from utils.email_sender import my_send_email
 from routes import geo, signup, send_email, jobs, update, query_and_delete
 
 crud = CRUD(
@@ -52,18 +48,21 @@ class CreateRequest(BaseModel):
     table: str
     data: dict
 
-jobs.run(app)
-geo.run(app)
+modules_to_run = [
+    (jobs, [app]),
+    (geo, [app]),
+    (signup, [app, crud]),
+    (send_email, [app]),
+    (update, [app, crud]),
+    (query_and_delete, [app, crud]),
+]
 
-signup.run(app, crud)
-send_email.run(app)
-update.run(app, crud)
-query_and_delete.run(app, crud)
-
+for module, args in modules_to_run:
+    module.run(*args)
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(
-        "api:app",  # Use "module_name:app_variable"
+        "api:app",
         host="127.0.0.1",
         port=11352,
         reload=True
