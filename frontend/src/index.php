@@ -15,6 +15,7 @@ include '../includes/latest_trends.php';
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link href="../assets/general.css" rel="stylesheet" />
     <link href="../assets/links.css" rel="stylesheet" />
     <style>
@@ -23,9 +24,9 @@ include '../includes/latest_trends.php';
 </head>
 
 <body>
-    <?php include '../includes/navigationV1.php' ?>
-    <div class="container-fluid vh-100 d-flex flex-column align-items-center scroll-hidden">
-        <div class="container mt-5 d-flex flex-column align-items-center">
+<?php include '../includes/navigationV1.php' ?>
+    <div class="container-fluid  vh-100 d-flex flex-column align-items-center scroll-hidden">
+        <div class="container mt-3 d-flex flex-column align-items-center">
             <h2 class="text-center">
                 Empowering tech graduates to connect with top employers.
             </h2>
@@ -33,69 +34,48 @@ include '../includes/latest_trends.php';
                 Explore thousands of job opportunities and take the next step in your tech career.
             </p>
             <a class="text-light mt-5" href="role_selection.php">
-                <button class="btn btn-lg btn-color">
+                <button class="btn btn-lg ">
                     Get started today—it's free!
                 </button>
             </a>
         </div>
-        <div class="container d-flex justify-content-evenly mt-5 p-3 align-items-center scroll-hidden">
-            <div class="card text-bg-light mb-3 box-start">
-                <div class="card-header">
-                    <h5 class="card-title">
-                        <i class="fas fa-file-alt">
-                        </i>
-                        Personalized Job Matches
-                    </h5>
-                </div>
-                <div class="card-body">
-                    <p class="card-text">
-                        Get job recommendations tailored to your skills and preferences. Save time and find the right opportunities for you.
-                    </p>
-                </div>
+
+        <div class="row d-flex justify-content-evenly mt-5 p-5 align-items-center flex-wrap scroll-hidden ">
+            <div class="col-md-4 d-flex align-items-center justify-content-center flex-column ">
+                <i class="fas fa-file-alt" style="font-size: 64px"></i>
+                <h3>Personalized Job Matches</h1>
+                <p class="text-center">Get job recommendations tailored to your skills and preferences. .</p>
             </div>
-            <div class="card text-bg-light mb-3 box-mid">
-                <div class="card-header">
-                    <h5 class="card-title">
-                        <i class="fas fa-search">
-                        </i>
-                        Hassle-free Finding jobs
-                    </h5>
-                </div>
-                <div class="card-body">
-                    <p class="card-text">
-                        Apply to jobs with just one click. Upload your resume, fill out your profile, and let the platform do the rest.
-                    </p>
-                </div>
+            <div class="col-md-4 d-flex align-items-center justify-content-center flex-column ">
+                <i class="fas fa-search" style="font-size: 64px"></i>
+                <h3>Hassle-free Job Search</h1>
+                <p class="text-center">Apply to jobs with just one click. Upload your resume, fill out your profile, and let the platform do the rest.</p>
             </div>
-            <div class="card text-bg-light mb-3 box-end">
-                <div class="card-header">
-                    <h5 class="card-title">
-                        <i class="fas fa-chart-line">
-                        </i>
-                        Powerful Employer Insights
-                    </h5>
-                </div>
-                <div class="card-body">
-                    <p class="card-text">
-                        Gain valuable insights on job postings and applicant performance. Track applications, view analytics, and hire top tech talent faster.
-                    </p>
-                </div>
+            <div class="col-md-4 d-flex align-items-center justify-content-center flex-column">
+                <i class="fas fa-file-alt" style="font-size: 64px"></i>
+                <h3>Employer Insights</h1>
+                <p class="text-center">Gain valuable insights on job postings and applicant performance. .</p>
             </div>
+
         </div>
+
     </div>
-    <div class="container-fluid vh-100 d-flex flex-column align-items-center scroll-hidden">
+    <div class="container mt-5 p-5 vh-100 d-flex flex-column align-items-center scroll-hidden">
         <h1>Latest trends!</h1>
         <marquee behavior="scroll" direction="left" style="height: 400px;">
-            <div class="container d-flex align-items-center justify-content-evenly">
-            
-                <?php echo $store_data;?>
-            
-        </div>
+            <div class="row d-flex align-items-center justify-content-evenly">
+                <?php echo $store_data; ?>
+            </div>
         </marquee>
-    <div class="container-fluid vh-100 d-flex align-items-center justify-content-center scroll-hidden">
-        <h1>
-            And me!
-        </h1>
+        
+
+    </div>
+    <div class="container-fluid vh-100 d-flex align-items-center justify-content-center scroll-hidden" style="padding: 40px; background-color: #f3f4f6; border-radius: 10px; text-align: center;">
+        <div>
+            <h1>And me!</h1>
+            <p style="font-size: 1.2rem; color: #555;">Discover exclusive career resources and advice tailored to help you stand out in the tech industry.</p>
+            <button class="btn btn-lg btn-primary" style="margin-top: 20px;">Learn More</button>
+        </div>
     </div>
     <?php include '../includes/footer.php'?>
     <script src="../includes/scroll-animation.js"></script>
