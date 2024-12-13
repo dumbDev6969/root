@@ -1,7 +1,6 @@
-from fastapi import APIRouter, HTTPException, Depends
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, EmailStr
 from typing import Optional
-from utils.security import validate_input
 
 router = APIRouter()
 
@@ -25,7 +24,7 @@ class UpdateRequest(BaseModel):
     data: DataModel
 
 @router.put("/api/update")
-async def update_record(request: UpdateRequest, crud, _: None = Depends(validate_input)):
+async def update_record(request: UpdateRequest, crud):
     try:
         crud.update(request.table, request.id, **request.data.dict())
         return {"message": f"Record updated in {request.table} table."}

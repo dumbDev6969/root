@@ -1,8 +1,8 @@
-from fastapi import APIRouter, HTTPException, Depends
+
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from typing import Optional, Any, Dict
 import json
-from utils.security import validate_input
 
 # Import all CRUD functions from database_operations.py
 from utils.databse_operations import (
@@ -85,7 +85,7 @@ class DeleteRequest(BaseModel):
     id: int
 
 @router.post("/api/create")
-async def create_record(request: CreateRequest, _: None = Depends(validate_input)):
+async def create_record(request: CreateRequest):
     table = request.table.lower()
     data = request.data
 
@@ -107,7 +107,7 @@ async def create_record(request: CreateRequest, _: None = Depends(validate_input
         raise HTTPException(status_code=500, detail=str(e))
 
 @router.get("/api/read")
-async def read_record(table: str, id: int, _: None = Depends(validate_input)):
+async def read_record(table: str, id: int):
     table = table.lower()
 
     if table not in CRUD_MAP:
@@ -126,7 +126,7 @@ async def read_record(table: str, id: int, _: None = Depends(validate_input)):
         raise HTTPException(status_code=500, detail=str(e))
 
 @router.put("/api/update")
-async def update_record(request: UpdateRequest, _: None = Depends(validate_input)):
+async def update_record(request: UpdateRequest):
     table = request.table.lower()
     record_id = request.id
     data = request.data
@@ -147,7 +147,7 @@ async def update_record(request: UpdateRequest, _: None = Depends(validate_input
         raise HTTPException(status_code=500, detail=str(e))
 
 @router.delete("/api/delete")
-async def delete_record(request: DeleteRequest, _: None = Depends(validate_input)):
+async def delete_record(request: DeleteRequest):
     table = request.table.lower()
     record_id = request.id
 
@@ -163,3 +163,6 @@ async def delete_record(request: DeleteRequest, _: None = Depends(validate_input
             raise HTTPException(status_code=404, detail=response['message'])
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+    
+
+# c:\Users\jemca\OneDrive\Desktop\jobfinder\root\backend\python\routes\crud_routes.py
