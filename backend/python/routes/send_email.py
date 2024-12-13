@@ -4,7 +4,13 @@ from utils.enoder import decode_string
 from utils.email_sender import my_send_email
 from typing import Optional, List
 from pydantic import BaseModel, EmailStr, field_validator
+import os
+from dotenv import load_dotenv
 
+load_dotenv()  # loads the environment variables from the .env file
+
+sender_email = os.getenv('SENDER_EMAIL')
+sender_password = os.getenv('SENDER_PASSWORD')
 
 class HandleEmailRequest(BaseModel):
     subject: str
@@ -18,20 +24,16 @@ class HandleEmailRequest(BaseModel):
         return v
 
 def run(app):
-    @app.post("/sendemial")
+    @app.post("/sendemail")
     async def send_email(request: HandleEmailRequest):
         try:
-            sender_email = "joblits.co@gmail.com"
-            password = "xvuh racq cbue fskh"
-            
             my_send_email(
                 subject=request.subject,
                 body=request.body,
                 sender=sender_email,
                 recipients=request.recipients,
-                password=password
+                password=sender_password
             )
             return {"message": "Email sent successfully"}
         except Exception as e:
             raise HTTPException(status_code=500, detail=str(e))
-
