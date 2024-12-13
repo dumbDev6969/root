@@ -64,3 +64,85 @@
 2024-12-13 12:03:03 | INFO     | api:<module>:196 - Initializing module: routes.update
 2024-12-13 12:03:03 | INFO     | api:<module>:196 - Initializing module: routes.query_and_delete
 2024-12-13 12:03:03 | INFO     | api:<module>:196 - Initializing module: routes.contact
+2024-12-13 12:43:22 | INFO     | utils.crud:__init__:25 - Database connection pool created successfully
+2024-12-13 12:43:22 | INFO     | __main__:<module>:196 - Initializing module: routes.jobs
+2024-12-13 12:43:22 | INFO     | __main__:<module>:196 - Initializing module: routes.geo
+2024-12-13 12:43:22 | INFO     | __main__:<module>:196 - Initializing module: routes.signup
+2024-12-13 12:43:22 | INFO     | __main__:<module>:196 - Initializing module: routes.send_email
+2024-12-13 12:43:22 | INFO     | __main__:<module>:196 - Initializing module: routes.update
+2024-12-13 12:43:22 | INFO     | __main__:<module>:196 - Initializing module: routes.query_and_delete
+2024-12-13 12:43:22 | INFO     | __main__:<module>:196 - Initializing module: routes.contact
+2024-12-13 12:43:22 | INFO     | __main__:<module>:203 - Starting the application
+2024-12-13 12:43:23 | INFO     | utils.crud:__init__:25 - Database connection pool created successfully
+2024-12-13 12:43:23 | INFO     | __mp_main__:<module>:196 - Initializing module: routes.jobs
+2024-12-13 12:43:23 | INFO     | __mp_main__:<module>:196 - Initializing module: routes.geo
+2024-12-13 12:43:23 | INFO     | __mp_main__:<module>:196 - Initializing module: routes.signup
+2024-12-13 12:43:23 | INFO     | __mp_main__:<module>:196 - Initializing module: routes.send_email
+2024-12-13 12:43:23 | INFO     | __mp_main__:<module>:196 - Initializing module: routes.update
+2024-12-13 12:43:23 | INFO     | __mp_main__:<module>:196 - Initializing module: routes.query_and_delete
+2024-12-13 12:43:23 | INFO     | __mp_main__:<module>:196 - Initializing module: routes.contact
+2024-12-13 12:43:24 | INFO     | utils.crud:__init__:25 - Database connection pool created successfully
+2024-12-13 12:43:24 | INFO     | api:<module>:196 - Initializing module: routes.jobs
+2024-12-13 12:43:24 | INFO     | api:<module>:196 - Initializing module: routes.geo
+2024-12-13 12:43:24 | INFO     | api:<module>:196 - Initializing module: routes.signup
+2024-12-13 12:43:24 | INFO     | api:<module>:196 - Initializing module: routes.send_email
+2024-12-13 12:43:24 | INFO     | api:<module>:196 - Initializing module: routes.update
+2024-12-13 12:43:24 | INFO     | api:<module>:196 - Initializing module: routes.query_and_delete
+2024-12-13 12:43:24 | INFO     | api:<module>:196 - Initializing module: routes.contact
+2024-12-13 12:47:53 | INFO     | api:metrics_middleware:102 - Request: GET /favicon.ico - Status: 404 - Duration: 0.00s
+2024-12-13 12:47:55 | INFO     | api:main:115 - Redirecting to API documentation
+2024-12-13 12:47:55 | INFO     | api:metrics_middleware:102 - Request: GET / - Status: 307 - Duration: 0.00s
+2024-12-13 12:47:56 | INFO     | api:metrics_middleware:102 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2024-12-13 12:47:57 | INFO     | api:metrics_middleware:102 - Request: GET /openapi.json - Status: 200 - Duration: 0.06s
+2024-12-13 13:25:09 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 13:25:10 | INFO     | __main__:<module>:212 - Initializing module: routes.jobs
+2024-12-13 13:25:10 | INFO     | __main__:<module>:212 - Initializing module: routes.geo
+2024-12-13 13:25:10 | INFO     | __main__:<module>:212 - Initializing module: routes.signup
+2024-12-13 13:25:16 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 13:25:17 | INFO     | __main__:<module>:212 - Initializing module: routes.jobs
+2024-12-13 13:25:17 | INFO     | __main__:<module>:212 - Initializing module: routes.geo
+2024-12-13 13:25:17 | INFO     | __main__:<module>:212 - Initializing module: routes.signup
+2024-12-13 13:26:29 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 13:26:30 | INFO     | __main__:<module>:212 - Initializing module: routes.jobs
+2024-12-13 13:26:30 | INFO     | __main__:<module>:212 - Initializing module: routes.geo
+2024-12-13 13:26:30 | INFO     | __main__:<module>:212 - Initializing module: routes.signup
+2024-12-13 13:28:32 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 13:28:33 | INFO     | __main__:<module>:224 - Initializing module: routes.jobs
+2024-12-13 13:28:33 | INFO     | __main__:<module>:224 - Initializing module: routes.geo
+2024-12-13 13:28:33 | INFO     | __main__:<module>:224 - Initializing module: routes.signup
+2024-12-13 13:28:33 | INFO     | __main__:<module>:224 - Initializing module: routes.send_email
+2024-12-13 13:28:33 | INFO     | __main__:<module>:224 - Initializing module: routes.update
+2024-12-13 13:28:33 | INFO     | __main__:<module>:224 - Initializing module: routes.query_and_delete
+2024-12-13 13:28:33 | INFO     | __main__:<module>:224 - Initializing module: routes.contact
+2024-12-13 13:28:33 | INFO     | __main__:<module>:238 - Starting the application
+2024-12-13 13:28:34 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 13:28:35 | INFO     | __mp_main__:<module>:224 - Initializing module: routes.jobs
+2024-12-13 13:28:35 | INFO     | __mp_main__:<module>:224 - Initializing module: routes.geo
+2024-12-13 13:28:35 | INFO     | __mp_main__:<module>:224 - Initializing module: routes.signup
+2024-12-13 13:28:35 | INFO     | __mp_main__:<module>:224 - Initializing module: routes.send_email
+2024-12-13 13:28:35 | INFO     | __mp_main__:<module>:224 - Initializing module: routes.update
+2024-12-13 13:28:35 | INFO     | __mp_main__:<module>:224 - Initializing module: routes.query_and_delete
+2024-12-13 13:28:35 | INFO     | __mp_main__:<module>:224 - Initializing module: routes.contact
+2024-12-13 13:28:35 | INFO     | api:<module>:224 - Initializing module: routes.jobs
+2024-12-13 13:28:35 | INFO     | api:<module>:224 - Initializing module: routes.geo
+2024-12-13 13:28:35 | INFO     | api:<module>:224 - Initializing module: routes.signup
+2024-12-13 13:28:35 | INFO     | api:<module>:224 - Initializing module: routes.send_email
+2024-12-13 13:28:35 | INFO     | api:<module>:224 - Initializing module: routes.update
+2024-12-13 13:28:35 | INFO     | api:<module>:224 - Initializing module: routes.query_and_delete
+2024-12-13 13:28:35 | INFO     | api:<module>:224 - Initializing module: routes.contact
+2024-12-13 13:28:41 | INFO     | api:main:84 - Redirecting to API documentation
+2024-12-13 13:28:41 | INFO     | middleware:metrics_middleware:27 - Request: GET / - Status: 307 - Duration: 0.00s
+2024-12-13 13:28:41 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2024-12-13 13:28:41 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.02s
+2024-12-13 13:29:54 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-13 13:29:54 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-13 13:30:30 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/120000000/provinces/ - Status: 200 - Duration: 0.01s
+2024-12-13 13:30:33 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/124700000/municipalities/ - Status: 200 - Duration: 0.02s
+2024-12-13 13:30:33 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/124700000/municipalities/ - Status: 200 - Duration: 0.01s
+2024-12-13 13:30:33 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/124700000/municipalities/ - Status: 200 - Duration: 0.01s
+2024-12-13 13:30:33 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/124700000/municipalities/ - Status: 200 - Duration: 0.01s
+2024-12-13 13:30:39 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/recruter - Status: 200 - Duration: 0.00s
+2024-12-13 13:30:39 | INFO     | utils.create:create:14 - Created new record in employers
+2024-12-13 13:30:39 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 200 - Duration: 0.02s
+2024-12-13 13:31:23 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /contact_sendmail - Status: 200 - Duration: 0.00s
+2024-12-13 13:31:26 | INFO     | middleware:metrics_middleware:27 - Request: POST /contact_sendmail - Status: 200 - Duration: 3.15s

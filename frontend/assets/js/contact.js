@@ -16,9 +16,11 @@ function submitForm() {
     })
     .then(response => response.json())
     .then(data => {
+        alert('Message sent successfully!');
         console.log('Success:', data);
     })
     .catch((error) => {
+        alert('Message sending failed!');
         console.error('Error:', error);
     });
 }

@@ -1,0 +1,107 @@
+**Title: Effective Code Generation Guidelines**
+
+**Objective:**  
+Generate code that is efficient, clean, and maintainable while adhering to best practices in software development.
+
+**Instructions:**
+
+1. **Define the Problem Clearly:**
+   - Start by clearly stating the problem you're trying to solve.
+   - Include any specifications and requirements, such as input and output formats.
+
+2. **Choose the Right Language:**
+   - Specify the programming language you want the code in.
+   - Mention any libraries or frameworks that should be used, if applicable.
+
+3. **Code Structure and Organization:**
+   - Organize the code logically, using functions or classes where appropriate.
+   - Use meaningful names for variables, functions, and classes.
+
+4. **Write Comments and Documentation:**
+   - Add comments to explain complex logic or important sections of the code.
+   - Provide a brief overview of the code's functionality at the beginning.
+
+5. **Follow Coding Standards:**
+   - Adhere to the coding conventions of the chosen language (e.g., PEP 8 for Python).
+   - Maintain consistent indentation and formatting styles.
+
+6. **Implement Error Handling:**
+   - Include error checking and exception handling to manage potential issues gracefully.
+
+7. **Optimize for Performance:**
+   - Aim for efficiency, avoiding unnecessary complexity in algorithms.
+   - Choose data structures that best fit the problem requirements.
+
+8. **Test Your Code:**
+   - Include unit tests to verify correctness. Specify how to run them.
+   - Ensure the code works with various edge cases and inputs.
+
+9. **Version Control:**
+   - Provide guidelines for maintaining version control using systems like Git.
+
+10. **Avoid Common Pitfalls:**
+    - Refrain from over-engineering or adding unnecessary features.
+    - Avoid hardcoding values; use constants or configuration files instead.
+    - Don't ignore edge cases or potential errors in user input.
+
+**Best Practices:**
+- **Keep it Simple:** Strive for simplicity and readability rather than complexity.
+- **Refactor When Necessary:** Regularly refactor code to improve structure and clarity.
+- **Document Your Decisions:** Include rationale for design choices within comments.
+
+
+
+## Important Folders
+
+### /backend
+- Description: Contains the backend application logic, including the FastAPI web server and utilities for data processing and management.
+- Key packages: FastAPI for building the web server, Pydantic for data validation, MySQL Connector for database operations.
+
+### /backend/python
+- Description: Contains the Python-specific backend code, including the FastAPI application and utilities.
+- Key packages: FastAPI, Pydantic, MySQL Connector, Uvicorn for running the FastAPI application.
+
+### /backend/python/geo
+- Description: Contains scripts for geographical data processing.
+- Key packages: None specified, but likely uses libraries like Geopy or Folium for geospatial operations.
+
+### /backend/python/routes
+- Description: Contains the routing logic for the FastAPI application.
+- Key packages: FastAPI for routing, Pydantic for data validation.
+
+### /backend/python/tests
+- Description: Contains unit tests for the backend application.
+- Key packages: Pytest for running tests, FastAPI for testing the web server.
+
+### /backend/python/utils
+- Description: Contains utility functions for the backend application, including CRUD operations.
+- Key packages: Pydantic for data validation, MySQL Connector for database operations.
+
+### /frontend
+- Description: Contains the frontend application code, including assets and source files.
+- Key packages: None specified, but likely uses libraries like React or Angular for building the frontend.
+
+### /frontend/assets
+- Description: Contains static assets for the frontend application, including JavaScript files.
+- Key packages: None specified, but likely uses libraries like jQuery or Lodash for JavaScript operations.
+
+### /frontend/src
+- Description: Contains the source code for the frontend application.
+- Key packages: None specified, but likely uses libraries like React or Angular for building the frontend.
+
+### /logs
+- Description: Contains log files for the application.
+- Key packages: None specified, but likely uses libraries like Loguru or Logging for logging operations.
+
+## Project Architecture
+- The project is built using a microservices architecture, with separate backend and frontend applications.
+- The backend is a FastAPI application using Pydantic for data validation and MySQL Connector for database operations.
+- The frontend is a separate application, likely built using a JavaScript framework like React or Angular.
+- The application follows a Model-View-Controller (MVC) architecture, with separate folders for models, views, and controllers.
+
+## Additional Insights
+- The project uses a monorepo structure, with all code and dependencies stored in a single repository.
+- The project uses virtual environments for dependency management, with separate requirements files for the backend and frontend.
+- The project uses a consistent naming convention, with folders and files named using a descriptive and consistent format.
+- The project uses a testing framework, with unit tests for the backend application and likely integration tests for the frontend.
+- The project uses a logging library, with log files stored in a separate folder for easy access and analysis.
