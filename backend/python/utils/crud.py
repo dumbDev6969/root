@@ -12,7 +12,7 @@ class CRUD:
                 password=password,
                 database=database
             )
-            self.cursor = self.connection.cursor()
+            self.cursor = self.connection.cursor(dictionary=True)
         except mysql.connector.Error as e:
             print(f"Connection error: {e}")
 
@@ -76,6 +76,10 @@ class CRUD:
         """Delete a record from the specified table."""
         sql = f'DELETE FROM {table} WHERE id = %s'
         self.execute_query(sql, (id,))
+
+    def get_all_jobs(self) -> Optional[List[Dict[str, Any]]]:
+        """Retrieve all jobs from the jobs table."""
+        return self.execute_query('SELECT * FROM jobs')
 
     def close(self) -> None:
         """Close the database connection."""

@@ -30,9 +30,9 @@
   
     /* Transitions */
     --transition-smooth: all 0.3s ease-in-out;
-  }
+}
 
-  .scroll-hidden {
+.scroll-hidden {
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 1s ease-out, transform 1s ease-out;
@@ -42,43 +42,66 @@
     opacity: 1;
     transform: translateY(0);
 }
+
 .btn-signup,
-.btn-login{
+.btn-login {
     width: 100px;
 }
-.btn-lg{
+
+.btn-lg {
     width: 300px;
     background-color: var(--color-button-bg);
     color: var(--color-white);
 }
+
 .btn-signup,
 .btn-signin,
 .btn-recruite,
-.btn-grad{
+.btn-grad {
     background-color: var(--color-button-bg);
     color: var(--color-white);
 }
+
 .btn-login:hover,
- .btn-signup:hover, 
- .btn-lg:hover,
- .btn-recruite:hover,
- .btn-grad:hover{
-    background-color: var( --color-button-hover);
+.btn-signup:hover, 
+.btn-lg:hover,
+.btn-recruite:hover,
+.btn-grad:hover {
+    background-color: var(--color-button-hover);
     color: var(--color-white);
 }
 
 .box-start,
-.box-end{
+.box-end {
     height: 250px;
     width: 250px;
 }
-.box-mid{
+
+.box-mid {
     height: 300px;
     width: 300px;
-} 
-.team-navigation{
+}
+
+.team-navigation {
     background-color: #E9ECEF;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .btn-lg {
+        width: 100%;
+    }
+    .box-start,
+    .box-end,
+    .box-mid {
+        width: 100%;
+        height: auto;
+    }
+}
 
-  
+@media (max-width: 480px) {
+    .btn-signup,
+    .btn-login {
+        width: 100%;
+    }
+}

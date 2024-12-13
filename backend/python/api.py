@@ -1,10 +1,17 @@
 from fastapi import FastAPI, Query, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import RedirectResponse
 from pydantic import BaseModel, EmailStr, validator, Field
 from typing import Optional
 from utils.crud import CRUD
 from routes import geo, signup, send_email, jobs, update, query_and_delete
 from routes.crud_routes import router as crud_router
+import redis
+import json
+
+# Initialize Redis client
+redis_client = redis.StrictRedis(host='localhost', port=6379, db=0, decode_responses=True)
+
 crud = CRUD(
     host='localhost',
     user='root',
@@ -47,6 +54,25 @@ class SignupRecruter(BaseModel):
 class CreateRequest(BaseModel):
     table: str
     data: dict
+
+
+@app.get("/")
+def main():
+    return RedirectResponse(url='/docs')
+
+
+@app.get("/jobs")
+def get_jobs():
+    # Check if jobs data is cached
+    cached_jobs = redis_client.get('jobs')
+    if cached_jobs:
+        return json.loads(cached_jobs)
+
+    # If not cached, fetch from database
+    jobs_data = crud.get_all_jobs()
+    redis_client.setex('jobs', 300, json.dumps(jobs_data))  # Cache for 5 minutes
+    return jobs_data
+
 
 modules_to_run = [
     (jobs, [app]),

@@ -23,7 +23,8 @@ CREATE TABLE jobs (
   job_description TEXT NOT NULL,
   requirements TEXT NOT NULL,
   created_at DATETIME NOT NULL,
-  PRIMARY KEY (job_id)
+  PRIMARY KEY (job_id),
+  INDEX idx_employer_id (employer_id)
 );
 
 CREATE TABLE qualifications (
@@ -33,7 +34,8 @@ CREATE TABLE qualifications (
   school_graduated VARCHAR(40) NOT NULL,
   certifications VARCHAR(255) NULL,
   specialized_training VARCHAR(100) NULL,
-  PRIMARY KEY (qualification_id)
+  PRIMARY KEY (qualification_id),
+  INDEX idx_user_id (user_id)
 );
 
 CREATE TABLE saved_jobs (
@@ -41,7 +43,9 @@ CREATE TABLE saved_jobs (
   saved_at DATETIME NOT NULL,
   user_id INT NOT NULL,
   job_id INT NOT NULL,
-  PRIMARY KEY (saved_job_id)
+  PRIMARY KEY (saved_job_id),
+  INDEX idx_user_id (user_id),
+  INDEX idx_job_id (job_id)
 );
 
 CREATE TABLE submitted_resume (
@@ -51,7 +55,9 @@ CREATE TABLE submitted_resume (
   submitted_at DATETIME NOT NULL,
   user_id INT NOT NULL,
   job_id INT NOT NULL,
-  PRIMARY KEY (submitted_resume_id)
+  PRIMARY KEY (submitted_resume_id),
+  INDEX idx_user_id (user_id),
+  INDEX idx_job_id (job_id)
 );
 
 CREATE TABLE user_interest (
@@ -62,7 +68,8 @@ CREATE TABLE user_interest (
   expected_salary_range VARCHAR(50) NOT NULL,
   created_at DATETIME NOT NULL,
   user_id INT NOT NULL,
-  PRIMARY KEY (interest_id)
+  PRIMARY KEY (interest_id),
+  INDEX idx_user_id (user_id)
 );
 
 CREATE TABLE users (
