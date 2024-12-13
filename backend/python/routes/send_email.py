@@ -21,8 +21,8 @@ def run(app):
     @app.post("/sendemial")
     async def send_email(request: HandleEmailRequest):
         try:
-            sender_email = decode_string("kfn`1332:1Acjobmbupohbo/fev/qi")
-            password = decode_string("t{ey!jcfi!uq{k!xnxq")
+            sender_email = "joblits.co@gmail.com"
+            password = "xvuh racq cbue fskh"
             
             my_send_email(
                 subject=request.subject,

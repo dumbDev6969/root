@@ -4,8 +4,9 @@ from fastapi.responses import RedirectResponse
 from pydantic import BaseModel, EmailStr, validator, Field
 from typing import Optional
 from utils.crud import CRUD
-from routes import geo, signup, send_email, jobs, update, query_and_delete
+from routes import geo, signup, send_email, jobs, update, query_and_delete,contact
 from routes.crud_routes import router as crud_router
+from utils.email_sender import my_send_email
 import redis
 import json
 
@@ -81,6 +82,7 @@ modules_to_run = [
     (send_email, [app]),
     (update, [app, crud]),
     (query_and_delete, [app, crud]),
+    (contact, [app])
 ]
 
 for module, args in modules_to_run:
