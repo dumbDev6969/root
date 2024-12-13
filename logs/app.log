@@ -265,3 +265,17 @@
 2024-12-13 16:32:18 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
 2024-12-13 16:32:23 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 200 - Duration: 0.01s
 2024-12-13 16:33:05 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 200 - Duration: 0.01s
+2024-12-13 16:33:06 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 16:33:13 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 200 - Duration: 0.01s
+2024-12-13 16:33:18 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 200 - Duration: 0.00s
+2024-12-13 16:33:34 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 200 - Duration: 0.01s
+2024-12-13 16:34:11 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 200 - Duration: 0.01s
+2024-12-13 16:34:14 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 200 - Duration: 0.00s
+2024-12-13 16:34:30 | INFO     | middleware:metrics_middleware:27 - Request: GET /api - Status: 404 - Duration: 0.00s
+2024-12-13 16:34:41 | INFO     | routes.root:main:16 - Redirecting to API documentation
+2024-12-13 16:34:41 | INFO     | middleware:metrics_middleware:27 - Request: GET / - Status: 307 - Duration: 0.00s
+2024-12-13 16:34:41 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2024-12-13 16:34:41 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.01s
+2024-12-13 16:36:10 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 200 - Duration: 0.03s
+2024-12-13 16:36:12 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 200 - Duration: 0.01s
+2024-12-13 16:37:00 | INFO     | middleware:metrics_middleware:27 - Request: DELETE /api/delete - Status: 200 - Duration: 0.01s
