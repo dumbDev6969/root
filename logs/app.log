@@ -280,3 +280,13 @@
 2024-12-13 16:36:12 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 200 - Duration: 0.01s
 2024-12-13 16:37:00 | INFO     | middleware:metrics_middleware:27 - Request: DELETE /api/delete - Status: 200 - Duration: 0.01s
 2024-12-13 17:05:13 | ERROR    | utils.database:__init__:27 - Error creating connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+2024-12-13 17:06:15 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 17:06:16 | INFO     | __main__:<module>:46 - Starting the application
+2024-12-13 17:06:17 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 17:06:22 | INFO     | routes.root:main:17 - Redirecting to API documentation
+2024-12-13 17:06:22 | INFO     | middleware:metrics_middleware:27 - Request: GET / - Status: 307 - Duration: 0.00s
+2024-12-13 17:06:22 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2024-12-13 17:06:22 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.02s
+2024-12-13 17:07:12 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 400 - Duration: 0.00s
+2024-12-13 17:07:14 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 400 - Duration: 0.00s
+2024-12-13 17:08:15 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 400 - Duration: 0.00s
