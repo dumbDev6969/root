@@ -1,10 +1,8 @@
-from fastapi import FastAPI, Query, HTTPException, Request
-from pydantic import BaseModel, EmailStr, validator
-from utils.enoder import decode_string
-from utils.email_sender import my_send_email
-from typing import Optional, List
-from pydantic import BaseModel, EmailStr, field_validator
+from fastapi import APIRouter, HTTPException
+from pydantic import BaseModel, EmailStr
+from typing import Optional
 
+router = APIRouter()
 
 class DataModel(BaseModel):
     first_name: str
@@ -25,13 +23,10 @@ class UpdateRequest(BaseModel):
     id: int
     data: DataModel
 
-
-def run(app,crud):
-    @app.put("/api/update")
-    async def update_record(request: UpdateRequest):
-        try:
-            print(request.data)
-            crud.update(request.table, request.id, **request.data)
-            return {"message": f"Record updated in {request.table} table."}
-        except Exception as e:
-            raise HTTPException(status_code=500, detail=str(e))
+@router.put("/api/update")
+async def update_record(request: UpdateRequest, crud):
+    try:
+        crud.update(request.table, request.id, **request.data.dict())
+        return {"message": f"Record updated in {request.table} table."}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))

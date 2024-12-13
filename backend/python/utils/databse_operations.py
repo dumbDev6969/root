@@ -282,7 +282,7 @@ def read_employer(employer_id):
         cursor.execute(query, (employer_id,))
         result = cursor.fetchone()
         if result:
-            return {'success': True, 'message': json.dumps(result)}
+            return {'success': True, 'message':result}
         else:
             return {'success': False, 'message': 'Employer not found.'}
     except Error as e:
@@ -396,7 +396,7 @@ def read_job(job_id):
         cursor.execute(query, (job_id,))
         result = cursor.fetchone()
         if result:
-            return {'success': True, 'message': json.dumps(result)}
+            return {'success': True, 'message':result}
         else:
             return {'success': False, 'message': 'Job not found.'}
     except Error as e:
@@ -508,7 +508,7 @@ def read_qualification(qualification_id):
         cursor.execute(query, (qualification_id,))
         result = cursor.fetchone()
         if result:
-            return {'success': True, 'message': json.dumps(result)}
+            return {'success': True, 'message':result}
         else:
             return {'success': False, 'message': 'Qualification not found.'}
     except Error as e:
@@ -619,7 +619,7 @@ def read_saved_job(saved_job_id):
         cursor.execute(query, (saved_job_id,))
         result = cursor.fetchone()
         if result:
-            return {'success': True, 'message': json.dumps(result)}
+            return {'success': True, 'message':result}
         else:
             return {'success': False, 'message': 'Saved job not found.'}
     except Error as e:
@@ -730,7 +730,7 @@ def read_submitted_resume(submitted_resume_id):
         cursor.execute(query, (submitted_resume_id,))
         result = cursor.fetchone()
         if result:
-            return {'success': True, 'message': json.dumps(result)}
+            return {'success': True, 'message':result}
         else:
             return {'success': False, 'message': 'Submitted resume not found.'}
     except Error as e:
@@ -840,8 +840,9 @@ def read_user_interest(interest_id):
         query = "SELECT * FROM user_interest WHERE interest_id = %s"
         cursor.execute(query, (interest_id,))
         result = cursor.fetchone()
+        
         if result:
-            return {'success': True, 'message': json.dumps(result)}
+            return {'success': True, 'message':result}
         else:
             return {'success': False, 'message': 'User interest not found.'}
     except Error as e:
@@ -954,7 +955,7 @@ def read_user(user_id):
         cursor.execute(query, (user_id,))
         result = cursor.fetchone()
         if result:
-            return {'success': True, 'message': json.dumps(result)}
+            return {'success': True, 'message':result}
         else:
             return {'success': False, 'message': 'User not found.'}
     except Error as e:

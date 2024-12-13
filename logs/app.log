@@ -146,3 +146,122 @@
 2024-12-13 13:30:39 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 200 - Duration: 0.02s
 2024-12-13 13:31:23 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /contact_sendmail - Status: 200 - Duration: 0.00s
 2024-12-13 13:31:26 | INFO     | middleware:metrics_middleware:27 - Request: POST /contact_sendmail - Status: 200 - Duration: 3.15s
+2024-12-13 15:58:11 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 15:58:12 | INFO     | __main__:<module>:224 - Initializing module: routes.jobs
+2024-12-13 15:58:12 | INFO     | __main__:<module>:224 - Initializing module: routes.geo
+2024-12-13 15:58:12 | INFO     | __main__:<module>:224 - Initializing module: routes.signup
+2024-12-13 15:58:12 | INFO     | __main__:<module>:224 - Initializing module: routes.send_email
+2024-12-13 15:58:12 | INFO     | __main__:<module>:224 - Initializing module: routes.update
+2024-12-13 15:58:12 | INFO     | __main__:<module>:224 - Initializing module: routes.query_and_delete
+2024-12-13 15:58:12 | INFO     | __main__:<module>:224 - Initializing module: routes.contact
+2024-12-13 15:58:12 | INFO     | __main__:<module>:238 - Starting the application
+2024-12-13 15:58:13 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 15:58:14 | INFO     | __mp_main__:<module>:224 - Initializing module: routes.jobs
+2024-12-13 15:58:14 | INFO     | __mp_main__:<module>:224 - Initializing module: routes.geo
+2024-12-13 15:58:14 | INFO     | __mp_main__:<module>:224 - Initializing module: routes.signup
+2024-12-13 15:58:14 | INFO     | __mp_main__:<module>:224 - Initializing module: routes.send_email
+2024-12-13 15:58:14 | INFO     | __mp_main__:<module>:224 - Initializing module: routes.update
+2024-12-13 15:58:14 | INFO     | __mp_main__:<module>:224 - Initializing module: routes.query_and_delete
+2024-12-13 15:58:14 | INFO     | __mp_main__:<module>:224 - Initializing module: routes.contact
+2024-12-13 15:58:14 | INFO     | api:<module>:224 - Initializing module: routes.jobs
+2024-12-13 15:58:14 | INFO     | api:<module>:224 - Initializing module: routes.geo
+2024-12-13 15:58:14 | INFO     | api:<module>:224 - Initializing module: routes.signup
+2024-12-13 15:58:14 | INFO     | api:<module>:224 - Initializing module: routes.send_email
+2024-12-13 15:58:14 | INFO     | api:<module>:224 - Initializing module: routes.update
+2024-12-13 15:58:14 | INFO     | api:<module>:224 - Initializing module: routes.query_and_delete
+2024-12-13 15:58:14 | INFO     | api:<module>:224 - Initializing module: routes.contact
+2024-12-13 15:58:24 | INFO     | api:main:84 - Redirecting to API documentation
+2024-12-13 15:58:24 | INFO     | middleware:metrics_middleware:27 - Request: GET / - Status: 307 - Duration: 0.00s
+2024-12-13 15:58:24 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2024-12-13 15:58:24 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.02s
+2024-12-13 15:58:54 | INFO     | middleware:metrics_middleware:27 - Request: POST /sendemail - Status: 200 - Duration: 2.28s
+2024-12-13 16:10:45 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 16:11:31 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 16:11:31 | INFO     | __main__:<module>:45 - Starting the application
+2024-12-13 16:11:32 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 16:11:34 | INFO     | routes.root:main:16 - Redirecting to API documentation
+2024-12-13 16:11:34 | INFO     | middleware:metrics_middleware:27 - Request: GET / - Status: 307 - Duration: 0.00s
+2024-12-13 16:11:34 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2024-12-13 16:11:34 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.01s
+2024-12-13 16:12:04 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/execute-query - Status: 422 - Duration: 0.01s
+2024-12-13 16:12:06 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/execute-query - Status: 422 - Duration: 0.00s
+2024-12-13 16:12:15 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/execute-query - Status: 422 - Duration: 0.00s
+2024-12-13 16:13:17 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/read - Status: 404 - Duration: 0.00s
+2024-12-13 16:13:23 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/read - Status: 404 - Duration: 0.00s
+2024-12-13 16:13:49 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/read - Status: 404 - Duration: 0.00s
+2024-12-13 16:14:39 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2024-12-13 16:14:40 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 16:14:40 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.01s
+2024-12-13 16:15:04 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/read - Status: 500 - Duration: 0.00s
+2024-12-13 16:15:16 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/read - Status: 500 - Duration: 0.00s
+2024-12-13 16:16:31 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 16:16:32 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 16:17:06 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 16:17:07 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2024-12-13 16:17:07 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2024-12-13 16:17:07 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.01s
+2024-12-13 16:17:10 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2024-12-13 16:17:10 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.00s
+2024-12-13 16:17:23 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2024-12-13 16:17:23 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.00s
+2024-12-13 16:21:32 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 16:21:32 | INFO     | __main__:<module>:46 - Starting the application
+2024-12-13 16:21:33 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 16:21:37 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2024-12-13 16:21:37 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.02s
+2024-12-13 16:21:55 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/read - Status: 500 - Duration: 0.01s
+2024-12-13 16:23:34 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2024-12-13 16:23:36 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 16:23:37 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.01s
+2024-12-13 16:23:50 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/read - Status: 500 - Duration: 0.00s
+2024-12-13 16:24:48 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 16:24:48 | INFO     | __main__:<module>:46 - Starting the application
+2024-12-13 16:24:49 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 16:24:52 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2024-12-13 16:24:52 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.01s
+2024-12-13 16:25:09 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/read - Status: 500 - Duration: 0.01s
+2024-12-13 16:25:11 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/read - Status: 500 - Duration: 0.01s
+2024-12-13 16:26:18 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 16:26:20 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 16:26:21 | INFO     | __main__:<module>:46 - Starting the application
+2024-12-13 16:26:21 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 16:26:23 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2024-12-13 16:26:23 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.01s
+2024-12-13 16:26:41 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/read - Status: 500 - Duration: 0.01s
+2024-12-13 16:26:54 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/read - Status: 500 - Duration: 0.01s
+2024-12-13 16:26:54 | INFO     | middleware:metrics_middleware:27 - Request: GET /favicon.ico - Status: 404 - Duration: 0.00s
+2024-12-13 16:27:09 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 16:27:10 | INFO     | __main__:<module>:46 - Starting the application
+2024-12-13 16:27:10 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 16:27:12 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/read - Status: 500 - Duration: 0.00s
+2024-12-13 16:28:16 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 16:28:19 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 16:28:19 | INFO     | __main__:<module>:46 - Starting the application
+2024-12-13 16:28:20 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 16:28:22 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/read - Status: 500 - Duration: 0.01s
+2024-12-13 16:28:23 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/read - Status: 500 - Duration: 0.00s
+2024-12-13 16:29:08 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/read - Status: 500 - Duration: 0.01s
+2024-12-13 16:29:09 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 16:29:17 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/read - Status: 500 - Duration: 0.01s
+2024-12-13 16:29:32 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/read - Status: 500 - Duration: 0.01s
+2024-12-13 16:29:33 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 16:29:34 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/read - Status: 500 - Duration: 0.01s
+2024-12-13 16:29:43 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 16:29:43 | INFO     | __main__:<module>:46 - Starting the application
+2024-12-13 16:29:44 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 16:29:46 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/read - Status: 500 - Duration: 0.01s
+2024-12-13 16:29:59 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 16:29:59 | INFO     | __main__:<module>:46 - Starting the application
+2024-12-13 16:30:00 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 16:30:00 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/read - Status: 404 - Duration: 0.00s
+2024-12-13 16:30:07 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 500 - Duration: 0.01s
+2024-12-13 16:31:46 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 16:31:47 | INFO     | __main__:<module>:46 - Starting the application
+2024-12-13 16:31:48 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 16:31:48 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 500 - Duration: 0.01s
+2024-12-13 16:31:52 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 500 - Duration: 0.01s
+2024-12-13 16:31:52 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 500 - Duration: 0.01s
+2024-12-13 16:31:52 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 500 - Duration: 0.01s
+2024-12-13 16:32:18 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-13 16:32:23 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 200 - Duration: 0.01s
+2024-12-13 16:33:05 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 200 - Duration: 0.01s

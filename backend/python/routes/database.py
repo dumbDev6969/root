@@ -2,6 +2,27 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from typing import Optional, Any, Dict
 import json
+from fastapi.responses import JSONResponse
+from datetime import datetime
+
+class CustomJSONEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, datetime):
+            return obj.isoformat()
+        return super().default(obj)
+
+
+def serialize_data(data):
+    if isinstance(data, dict):
+        return {k: serialize_data(v) for k, v in data.items()}
+    elif isinstance(data, list):
+        return [serialize_data(item) for item in data]
+    elif isinstance(data, datetime):
+        return data.isoformat()
+    else:
+        return data
+
+
 
 # Corrected import statement for CRUD functions
 from utils.databse_operations import (
@@ -105,24 +126,29 @@ async def create_record(request: CreateRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-@router.get("/api/read")
+
+@router.get("/api/reads")
 async def read_record(table: str, id: int):
     table = table.lower()
-
+    
     if table not in CRUD_MAP:
         raise HTTPException(status_code=400, detail=f"Invalid table name: {table}")
 
     try:
         read_func = CRUD_MAP[table]['read']
         response = read_func(id)
+        return response
         if response['success']:
-            # Parse the JSON string back to a dictionary
+            # Using `serialize_data` before converting to JSON string
             data = json.loads(response['message'])
-            return {"data": data}
+            data = serialize_data(data)
+            # Use the encoder as an argument in `JSONResponse`
+            return JSONResponse(content={"data": data}, encoder=CustomJSONEncoder)
         else:
             raise HTTPException(status_code=404, detail=response['message'])
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
 
 @router.put("/api/update")
 async def update_record(request: UpdateRequest):
