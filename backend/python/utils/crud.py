@@ -1,20 +1,40 @@
 import mysql.connector
+from mysql.connector import pooling
 import os
 from typing import Optional, List, Dict, Any
+from utils.logger import get_logger
+
+logger = get_logger(__name__)
+
+class DatabaseError(Exception):
+    """Custom exception for database-related errors."""
+    pass
 
 class CRUD:
-    def __init__(self, host: str, user: str, password: str, database: str) -> None:
-        """Initialize the CRUD class with MySQL connection details."""
+    def __init__(self, host: str, user: str, password: str, database: str, pool_size: int = 5) -> None:
+        """Initialize the CRUD class with MySQL connection pool."""
         try:
-            self.connection = mysql.connector.connect(
+            self.pool = mysql.connector.pooling.MySQLConnectionPool(
+                pool_name="mypool",
+                pool_size=pool_size,
                 host=host,
                 user=user,
                 password=password,
                 database=database
             )
-            self.cursor = self.connection.cursor(dictionary=True)
+            logger.info("Database connection pool created successfully")
         except mysql.connector.Error as e:
-            print(f"Connection error: {e}")
+            logger.error(f"Error creating connection pool: {e}")
+            raise DatabaseError(f"Failed to create database connection pool: {e}")
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.close()
+
+    def get_connection(self):
+        return self.pool.get_connection()
 
     def create_tables(self) -> None:
         """Create tables in the database."""
@@ -41,20 +61,30 @@ class CRUD:
 
     def execute_query(self, sql: str, params: Optional[tuple] = ()) -> Optional[List[Dict[str, Any]]]:
         """Execute a SQL query with optional parameters."""
-        try:
-            self.cursor.execute(sql, params)
-            self.connection.commit()
-            return self.cursor.fetchall()
-        except mysql.connector.Error as e:
-            print(f"An error occurred: {e}")
-            return None
+        with self.get_connection() as connection:
+            try:
+                with connection.cursor(dictionary=True) as cursor:
+                    cursor.execute(sql, params)
+                    if sql.strip().upper().startswith("SELECT"):
+                        return cursor.fetchall()
+                    else:
+                        connection.commit()
+                        return None
+            except mysql.connector.Error as e:
+                logger.error(f"Database error: {e}")
+                raise DatabaseError(f"Failed to execute query: {e}")
 
     def create(self, table: str, **kwargs: Any) -> None:
         """Insert a new record into the specified table."""
         columns = ', '.join(kwargs.keys())
         placeholders = ', '.join('%s' for _ in kwargs)
         sql = f'INSERT INTO {table} ({columns}) VALUES ({placeholders})'
-        self.execute_query(sql, tuple(kwargs.values()))
+        try:
+            self.execute_query(sql, tuple(kwargs.values()))
+            logger.info(f"Created new record in {table}")
+        except DatabaseError as e:
+            logger.error(f"Error creating record in {table}: {e}")
+            raise
 
     def read(self, table: str, **kwargs: Any) -> Optional[List[Dict[str, Any]]]:
         """Read records from the specified table."""
@@ -62,39 +92,67 @@ class CRUD:
         if kwargs:
             conditions = ' AND '.join(f"{key} = %s" for key in kwargs.keys())
             sql += f' WHERE {conditions}'
-            return self.execute_query(sql, tuple(kwargs.values()))
-        else:
-            return self.execute_query(sql)
+        try:
+            return self.execute_query(sql, tuple(kwargs.values()) if kwargs else None)
+        except DatabaseError as e:
+            logger.error(f"Error reading from {table}: {e}")
+            raise
 
     def update(self, table: str, id: int, **kwargs: Any) -> None:
         """Update a record in the specified table."""
         set_clause = ', '.join(f"{key} = %s" for key in kwargs.keys())
         sql = f'UPDATE {table} SET {set_clause} WHERE id = %s'
-        self.execute_query(sql, (*kwargs.values(), id))
+        try:
+            self.execute_query(sql, (*kwargs.values(), id))
+            logger.info(f"Updated record {id} in {table}")
+        except DatabaseError as e:
+            logger.error(f"Error updating record {id} in {table}: {e}")
+            raise
 
     def delete(self, table: str, id: int) -> None:
         """Delete a record from the specified table."""
         sql = f'DELETE FROM {table} WHERE id = %s'
-        self.execute_query(sql, (id,))
+        try:
+            self.execute_query(sql, (id,))
+            logger.info(f"Deleted record {id} from {table}")
+        except DatabaseError as e:
+            logger.error(f"Error deleting record {id} from {table}: {e}")
+            raise
 
     def get_all_jobs(self) -> Optional[List[Dict[str, Any]]]:
         """Retrieve all jobs from the jobs table."""
-        return self.execute_query('SELECT * FROM jobs')
+        try:
+            return self.execute_query('SELECT * FROM jobs')
+        except DatabaseError as e:
+            logger.error(f"Error retrieving all jobs: {e}")
+            raise
 
     def close(self) -> None:
-        """Close the database connection."""
-        self.connection.close()
+        """Close the database connection pool."""
+        self.pool.close()
+        logger.info("Database connection pool closed")
 
 # Example usage
 if __name__ == "__main__":
     # Use environment variables for credentials
-    crud = CRUD(
+    with CRUD(
         host=os.getenv('DB_HOST', 'localhost'),
         user=os.getenv('DB_USER', 'root'),
         password=os.getenv('DB_PASSWORD', ''),
         database=os.getenv('DB_NAME', 'jobsearch')
-    )
-
-    # Example INSERT queries
-    crud.create('employers', company_name='Tech Corp', phone_number='1234567890', state='CA', zip_code='90001', email='contact@techcorp.com', password='securepassword', created_at='2023-10-01', updated_at='2023-10-01')
-    # Add other example queries here
+    ) as crud:
+        # Example INSERT query
+        try:
+            crud.create('employers', 
+                        company_name='Tech Corp', 
+                        phone_number='1234567890', 
+                        state='CA', 
+                        zip_code='90001', 
+                        email='contact@techcorp.com', 
+                        password='securepassword', 
+                        created_at='2023-10-01', 
+                        updated_at='2023-10-01')
+            logger.info("Example query executed successfully")
+        except DatabaseError as e:
+            logger.error(f"Failed to execute example query: {e}")
+        # Add other example queries here

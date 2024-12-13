@@ -1,0 +1,18 @@
+2024-12-13 11:52:22 | INFO     | utils.crud:__init__:25 - Database connection pool created successfully
+2024-12-13 11:52:22 | INFO     | __main__:<module>:191 - Initializing module: routes.jobs
+2024-12-13 11:52:22 | INFO     | __main__:<module>:191 - Initializing module: routes.geo
+2024-12-13 11:52:22 | INFO     | __main__:<module>:191 - Initializing module: routes.signup
+2024-12-13 11:52:22 | INFO     | __main__:<module>:191 - Initializing module: routes.send_email
+2024-12-13 11:52:22 | INFO     | __main__:<module>:191 - Initializing module: routes.update
+2024-12-13 11:52:22 | INFO     | __main__:<module>:191 - Initializing module: routes.query_and_delete
+2024-12-13 11:52:22 | INFO     | __main__:<module>:191 - Initializing module: routes.contact
+2024-12-13 11:52:22 | INFO     | __main__:<module>:198 - Starting the application
+2024-12-13 11:52:24 | INFO     | utils.crud:__init__:25 - Database connection pool created successfully
+2024-12-13 11:52:24 | INFO     | __mp_main__:<module>:191 - Initializing module: routes.jobs
+2024-12-13 11:52:24 | INFO     | __mp_main__:<module>:191 - Initializing module: routes.geo
+2024-12-13 11:52:24 | INFO     | __mp_main__:<module>:191 - Initializing module: routes.signup
+2024-12-13 11:52:24 | INFO     | __mp_main__:<module>:191 - Initializing module: routes.send_email
+2024-12-13 11:52:24 | INFO     | __mp_main__:<module>:191 - Initializing module: routes.update
+2024-12-13 11:52:24 | INFO     | __mp_main__:<module>:191 - Initializing module: routes.query_and_delete
+2024-12-13 11:52:24 | INFO     | __mp_main__:<module>:191 - Initializing module: routes.contact
+2024-12-13 11:52:24 | INFO     | utils.crud:__init__:25 - Database connection pool created successfully

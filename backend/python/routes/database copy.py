@@ -1,9 +1,10 @@
+
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from typing import Optional, Any, Dict
 import json
 
-# Corrected import statement for CRUD functions
+# Import all CRUD functions from database_operations.py
 from utils.databse_operations import (
     create_user, read_user, update_user, delete_user,
     create_employer, read_employer, update_employer, delete_employer,
@@ -162,3 +163,6 @@ async def delete_record(request: DeleteRequest):
             raise HTTPException(status_code=404, detail=response['message'])
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+    
+
+# c:\Users\jemca\OneDrive\Desktop\jobfinder\root\backend\python\routes\crud_routes.py

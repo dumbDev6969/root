@@ -10,6 +10,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../assets/links.css">
+    <script src="../assets/js/contact.js" defer></script>
     <style>
         .social-icons a {
             color: #6C757D;
@@ -95,33 +96,6 @@
                     </div>
                 </form>
                 <button class="btn btn-dark" type="button" onclick="submitForm()" style="height: 60px;">Send Message</button>
-                <script>
-                    function submitForm() {
-                        alert("submitting form");
-                        const form = document.getElementById('contactForm');
-                        const formData = new FormData(form);
-                        const jsonData = {};
-                        formData.forEach((value, key) => {
-                            jsonData[key] = value;
-                        });
-                        console.log('JSON data:', jsonData);
-
-                        fetch('http://127.0.0.1:11352/contact_sendmail', {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/json',
-                                },
-                                body: JSON.stringify(jsonData),
-                            })
-                            .then(response => response.json())
-                            .then(data => {
-                                console.log('Success:', data);
-                            })
-                            .catch((error) => {
-                                console.error('Error:', error);
-                            });
-                    }
-                </script>
             </div>
         </div>
     </div>
