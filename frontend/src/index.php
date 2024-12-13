@@ -24,7 +24,7 @@ include '../includes/latest_trends.php';
 
 <body>
 <?php include '../includes/navigationV1.php' ?>
-    <div class="container-fluid  vh-100 d-flex flex-column align-items-center scroll-hidden" role="main">
+    <div class="container-fluid  mt-5 d-flex flex-column align-items-center scroll-hidden" role="main" 
         <div class="container mt-3 d-flex flex-column align-items-center">
             <h2 class="text-center">
                 Empowering tech graduates to connect with top employers.
@@ -57,7 +57,7 @@ include '../includes/latest_trends.php';
             </div>
         </div>
     </div>
-    <div class="container mt-5 p-5 vh-100 d-flex flex-column align-items-center scroll-hidden" role="complementary">
+    <div class="container mt-5 p-5  d-flex flex-column align-items-center scroll-hidden" role="complementary">
         <h1>Latest trends!</h1>
         <marquee behavior="scroll" direction="left" style="height: 400px;" aria-label="Latest trends">
             <div class="row d-flex align-items-center justify-content-evenly">
