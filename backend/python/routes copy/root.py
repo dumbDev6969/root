@@ -1,13 +1,12 @@
-from fastapi import APIRouter, Request, Depends
+from fastapi import APIRouter, Request
 from fastapi.responses import RedirectResponse
 from utils.logger import get_logger
-from utils.security import validate_input
 
 logger = get_logger(__name__)
 router = APIRouter()
 
 @router.get("/", response_class=RedirectResponse)
-def main(_: None = Depends(validate_input)) -> RedirectResponse:
+def main() -> RedirectResponse:
     """
     Redirect to API documentation.
 

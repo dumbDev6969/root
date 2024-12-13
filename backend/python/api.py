@@ -41,7 +41,7 @@ app.include_router(send_email_router)
 # app.include_router(query_and_delete_router)
 # app.include_router(update_router)
 app.include_router(database_router)
-if __name__ == "__main__":  
+if __name__ == "__main__":
     import uvicorn
     logger.info("Starting the application")
     uvicorn.run(

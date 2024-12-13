@@ -1,16 +1,16 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Depends
 from pydantic import BaseModel
 from typing import Optional, Any, Dict
 import json
 from fastapi.responses import JSONResponse
 from datetime import datetime
+from utils.security import validate_input
 
 class CustomJSONEncoder(json.JSONEncoder):
     def default(self, obj):
         if isinstance(obj, datetime):
             return obj.isoformat()
         return super().default(obj)
-
 
 def serialize_data(data):
     if isinstance(data, dict):
@@ -21,8 +21,6 @@ def serialize_data(data):
         return data.isoformat()
     else:
         return data
-
-
 
 # Corrected import statement for CRUD functions
 from utils.databse_operations import (
@@ -105,7 +103,7 @@ class DeleteRequest(BaseModel):
     id: int
 
 @router.post("/api/create")
-async def create_record(request: CreateRequest):
+async def create_record(request: CreateRequest, _: None = Depends(validate_input)):
     table = request.table.lower()
     data = request.data
 
@@ -126,9 +124,8 @@ async def create_record(request: CreateRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-
 @router.get("/api/reads")
-async def read_record(table: str, id: int):
+async def read_record(table: str, id: int, _: None = Depends(validate_input)):
     table = table.lower()
     
     if table not in CRUD_MAP:
@@ -149,9 +146,8 @@ async def read_record(table: str, id: int):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-
 @router.put("/api/update")
-async def update_record(request: UpdateRequest):
+async def update_record(request: UpdateRequest, _: None = Depends(validate_input)):
     table = request.table.lower()
     record_id = request.id
     data = request.data
@@ -172,7 +168,7 @@ async def update_record(request: UpdateRequest):
         raise HTTPException(status_code=500, detail=str(e))
 
 @router.delete("/api/delete")
-async def delete_record(request: DeleteRequest):
+async def delete_record(request: DeleteRequest, _: None = Depends(validate_input)):
     table = request.table.lower()
     record_id = request.id
 

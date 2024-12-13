@@ -1,10 +1,30 @@
-from fastapi import APIRouter, HTTPException, Depends
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from typing import Optional, Any, Dict
 import json
-from utils.security import validate_input
+from fastapi.responses import JSONResponse
+from datetime import datetime
 
-# Import all CRUD functions from database_operations.py
+class CustomJSONEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, datetime):
+            return obj.isoformat()
+        return super().default(obj)
+
+
+def serialize_data(data):
+    if isinstance(data, dict):
+        return {k: serialize_data(v) for k, v in data.items()}
+    elif isinstance(data, list):
+        return [serialize_data(item) for item in data]
+    elif isinstance(data, datetime):
+        return data.isoformat()
+    else:
+        return data
+
+
+
+# Corrected import statement for CRUD functions
 from utils.databse_operations import (
     create_user, read_user, update_user, delete_user,
     create_employer, read_employer, update_employer, delete_employer,
@@ -85,7 +105,7 @@ class DeleteRequest(BaseModel):
     id: int
 
 @router.post("/api/create")
-async def create_record(request: CreateRequest, _: None = Depends(validate_input)):
+async def create_record(request: CreateRequest):
     table = request.table.lower()
     data = request.data
 
@@ -106,27 +126,32 @@ async def create_record(request: CreateRequest, _: None = Depends(validate_input
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-@router.get("/api/read")
-async def read_record(table: str, id: int, _: None = Depends(validate_input)):
-    table = table.lower()
 
+@router.get("/api/reads")
+async def read_record(table: str, id: int):
+    table = table.lower()
+    
     if table not in CRUD_MAP:
         raise HTTPException(status_code=400, detail=f"Invalid table name: {table}")
 
     try:
         read_func = CRUD_MAP[table]['read']
         response = read_func(id)
+        return response
         if response['success']:
-            # Parse the JSON string back to a dictionary
+            # Using `serialize_data` before converting to JSON string
             data = json.loads(response['message'])
-            return {"data": data}
+            data = serialize_data(data)
+            # Use the encoder as an argument in `JSONResponse`
+            return JSONResponse(content={"data": data}, encoder=CustomJSONEncoder)
         else:
             raise HTTPException(status_code=404, detail=response['message'])
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+
 @router.put("/api/update")
-async def update_record(request: UpdateRequest, _: None = Depends(validate_input)):
+async def update_record(request: UpdateRequest):
     table = request.table.lower()
     record_id = request.id
     data = request.data
@@ -147,7 +172,7 @@ async def update_record(request: UpdateRequest, _: None = Depends(validate_input
         raise HTTPException(status_code=500, detail=str(e))
 
 @router.delete("/api/delete")
-async def delete_record(request: DeleteRequest, _: None = Depends(validate_input)):
+async def delete_record(request: DeleteRequest):
     table = request.table.lower()
     record_id = request.id
 

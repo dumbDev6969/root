@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Request, BackgroundTasks, Depends
+from fastapi import APIRouter, Request, BackgroundTasks
 from typing import List, Dict, Any
 from utils.database import DatabaseError
 from utils.read import get_all_jobs
@@ -8,7 +8,6 @@ import asyncio
 from slowapi import Limiter
 from slowapi.util import get_remote_address
 from utils.logger import get_logger
-from utils.security import validate_input
 
 logger = get_logger(__name__)
 router = APIRouter()
@@ -34,7 +33,7 @@ async def fetch_jobs_from_db():
 
 @router.get("/jobs", response_model=List[Dict[str, Any]])
 @limiter.limit("100/minute")
-async def get_jobs(request: Request, background_tasks: BackgroundTasks, _: None = Depends(validate_input)) -> List[Dict[str, Any]]:
+async def get_jobs(request: Request, background_tasks: BackgroundTasks) -> List[Dict[str, Any]]:
     """
     Retrieve all jobs from the database or cache.
 

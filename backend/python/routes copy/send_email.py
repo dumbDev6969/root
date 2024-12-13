@@ -1,10 +1,9 @@
-from fastapi import APIRouter, HTTPException, Depends
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, EmailStr
 from utils.email_sender import my_send_email
 from typing import List
 import os
 from dotenv import load_dotenv
-from utils.security import validate_input
 
 load_dotenv()  # loads the environment variables from the .env file
 
@@ -19,7 +18,7 @@ class HandleEmailRequest(BaseModel):
     recipients: List[EmailStr]
 
 @router.post("/sendemail")
-async def send_email(request: HandleEmailRequest, _: None = Depends(validate_input)):
+async def send_email(request: HandleEmailRequest):
     try:
         my_send_email(
             subject=request.subject,

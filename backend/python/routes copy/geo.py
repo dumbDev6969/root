@@ -1,7 +1,6 @@
 import os
 import json
-from fastapi import APIRouter, HTTPException, Depends
-from utils.security import validate_input
+from fastapi import APIRouter, HTTPException
 
 router = APIRouter()
 
@@ -11,7 +10,7 @@ provinces_path = os.path.join(base_dir, '..', 'geo', 'province.json')
 municipalities_path = os.path.join(base_dir, '..', 'geo', 'municipality.json')
 
 @router.get("/api/regions/{region_code}/provinces/")
-async def get_provinces_by_region(region_code: str, _: None = Depends(validate_input)):
+async def get_provinces_by_region(region_code: str):
     # Validate region code exists
     with open(regions_path, 'r') as f:
         regions = json.load(f)
@@ -33,13 +32,13 @@ async def get_provinces_by_region(region_code: str, _: None = Depends(validate_i
         return filtered_provinces
 
 @router.get("/api/regions")
-async def home(_: None = Depends(validate_input)):
+async def home():
     with open(regions_path, 'r') as f:
         regions = json.load(f)  # This correctly parses the JSON file
         return regions
 
 @router.get("/api/provinces/{province_code}/municipalities/")
-async def get_municipalities_by_province(province_code: str, _: None = Depends(validate_input)):
+async def get_municipalities_by_province(province_code: str):
     # Validate province code exists
     with open(provinces_path, 'r') as f:
         provinces = json.load(f)

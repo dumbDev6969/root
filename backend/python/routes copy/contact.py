@@ -1,11 +1,12 @@
-from fastapi import APIRouter, HTTPException, Request, Depends
+from fastapi import APIRouter, HTTPException, Request
 from pydantic import BaseModel, EmailStr
 from utils.email_sender import my_send_email  # Ensure correct import
-from utils.security import validate_input
 import os
 from dotenv import load_dotenv
 
 load_dotenv()  # loads the environment variables from the .env file
+
+
 
 router = APIRouter()
 
@@ -16,7 +17,7 @@ class ContactForm(BaseModel):
     message: str
 
 @router.post("/contact_sendmail")
-async def contact_form_submission(form: ContactForm, _: None = Depends(validate_input)):
+async def contact_form_submission(form: ContactForm):
     try:
         sender_email = os.getenv('SENDER_EMAIL')
         password = os.getenv('SENDER_PASSWORD')
