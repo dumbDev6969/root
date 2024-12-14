@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse
+from starlette.middleware.sessions import SessionMiddleware
+from starlette.responses import RedirectResponse
 from utils.logger import get_logger
 from middleware import metrics_middleware
 from routes.root import router as root_router
@@ -28,6 +30,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+app.add_middleware(SessionMiddleware,secret_key="your_secret_key")
 
 # Add metrics middleware
 app.middleware("http")(metrics_middleware)
