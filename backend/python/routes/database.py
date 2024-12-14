@@ -134,7 +134,7 @@ async def read_record(table: str, id: int, _: None = Depends(validate_input)):
     try:
         read_func = CRUD_MAP[table]['read']
         response = read_func(id)
-        return response
+        # return response
         if response['success']:
             # Using `serialize_data` before converting to JSON string
             data = json.loads(response['message'])

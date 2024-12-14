@@ -333,3 +333,342 @@
 2024-12-13 17:31:03 | INFO     | middleware:metrics_middleware:27 - Request: GET / - Status: 307 - Duration: 0.01s
 2024-12-13 17:31:03 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
 2024-12-13 17:31:03 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.00s
+2024-12-14 11:52:04 | ERROR    | utils.database:__init__:27 - Error creating connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+2024-12-14 11:52:33 | ERROR    | utils.database:__init__:27 - Error creating connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+2024-12-14 11:52:49 | ERROR    | utils.database:__init__:27 - Error creating connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+2024-12-14 11:56:00 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 11:56:01 | INFO     | __main__:<module>:49 - Starting the application
+2024-12-14 11:56:02 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 12:01:02 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 12:11:03 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 12:11:29 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 12:17:49 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:17:49 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 422 - Duration: 0.01s
+2024-12-14 12:19:22 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:19:22 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 422 - Duration: 0.01s
+2024-12-14 12:19:24 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 12:19:56 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 12:20:09 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:20:09 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 422 - Duration: 0.00s
+2024-12-14 12:20:19 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:20:19 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 422 - Duration: 0.00s
+2024-12-14 12:24:13 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:24:13 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 422 - Duration: 0.01s
+2024-12-14 12:24:15 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 12:25:19 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:25:19 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 422 - Duration: 0.00s
+2024-12-14 12:25:20 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 12:25:51 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 12:26:08 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:26:09 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 12:26:09 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:26:09 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:26:09 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:28:13 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 12:28:13 | INFO     | __main__:<module>:53 - Starting the application
+2024-12-14 12:28:14 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 12:28:17 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:28:17 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:28:29 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:28:29 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:28:31 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:28:31 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:28:40 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:28:40 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:32:05 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:32:05 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:32:07 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 12:32:07 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:32:07 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 400 - Duration: 0.00s
+2024-12-14 12:32:09 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:32:09 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 400 - Duration: 0.00s
+2024-12-14 12:32:16 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:32:16 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 400 - Duration: 0.00s
+2024-12-14 12:32:18 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:32:18 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 400 - Duration: 0.00s
+2024-12-14 12:32:19 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:32:19 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 400 - Duration: 0.00s
+2024-12-14 12:32:19 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:32:19 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 400 - Duration: 0.01s
+2024-12-14 12:32:19 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:32:19 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 400 - Duration: 0.00s
+2024-12-14 12:32:38 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 12:39:04 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 12:39:04 | INFO     | __main__:<module>:53 - Starting the application
+2024-12-14 12:39:05 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 12:39:16 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:39:17 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 500 - Duration: 0.01s
+2024-12-14 12:39:37 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 12:39:38 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:39:38 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.01s
+2024-12-14 12:40:01 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:40:01 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.01s
+2024-12-14 12:40:02 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 12:40:07 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:40:07 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.01s
+2024-12-14 12:40:42 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:40:42 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 500 - Duration: 0.02s
+2024-12-14 12:40:57 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:40:57 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 500 - Duration: 0.01s
+2024-12-14 12:41:53 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:41:53 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 500 - Duration: 0.01s
+2024-12-14 12:44:33 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:44:33 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 500 - Duration: 0.01s
+2024-12-14 12:44:35 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 12:47:05 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:47:05 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 500 - Duration: 0.01s
+2024-12-14 12:47:06 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 12:47:28 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:47:28 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 500 - Duration: 0.02s
+2024-12-14 12:48:43 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:48:43 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 500 - Duration: 0.01s
+2024-12-14 12:48:45 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 12:50:50 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:50:52 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 12:50:53 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:50:53 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:50:53 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.02s
+2024-12-14 12:50:53 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.01s
+2024-12-14 12:50:53 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.01s
+2024-12-14 12:51:04 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:51:04 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.01s
+2024-12-14 12:51:34 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:51:34 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.01s
+2024-12-14 12:51:58 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:51:58 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 500 - Duration: 0.01s
+2024-12-14 12:52:02 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:52:02 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 500 - Duration: 0.01s
+2024-12-14 12:55:02 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 12:55:12 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 12:55:21 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 12:55:56 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 12:56:30 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 12:57:46 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 12:57:46 | INFO     | __main__:<module>:53 - Starting the application
+2024-12-14 12:57:47 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 12:57:55 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:57:55 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 500 - Duration: 0.02s
+2024-12-14 12:58:53 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:58:53 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 500 - Duration: 0.01s
+2024-12-14 12:58:54 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 12:58:57 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 12:58:57 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 500 - Duration: 0.01s
+2024-12-14 13:01:31 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 13:01:31 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 500 - Duration: 0.01s
+2024-12-14 13:01:32 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 13:01:36 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 13:01:36 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 500 - Duration: 0.01s
+2024-12-14 13:02:16 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 13:02:16 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 500 - Duration: 0.01s
+2024-12-14 13:02:17 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 13:02:20 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 13:02:20 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.01s
+2024-12-14 13:04:49 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 13:04:49 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.02s
+2024-12-14 13:04:51 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 13:05:04 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 13:05:04 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.02s
+2024-12-14 13:05:06 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 13:05:20 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 13:05:20 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 500 - Duration: 0.01s
+2024-12-14 19:19:25 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:19:26 | INFO     | __main__:<module>:53 - Starting the application
+2024-12-14 19:19:27 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:19:30 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 19:19:30 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.01s
+2024-12-14 19:23:54 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 404 - Duration: 0.00s
+2024-12-14 19:23:56 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:24:37 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:24:37 | INFO     | __main__:<module>:53 - Starting the application
+2024-12-14 19:24:38 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:24:45 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 404 - Duration: 0.00s
+2024-12-14 19:25:49 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 404 - Duration: 0.00s
+2024-12-14 19:25:52 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:26:32 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 404 - Duration: 0.00s
+2024-12-14 19:27:41 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 404 - Duration: 0.00s
+2024-12-14 19:27:43 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:27:52 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 404 - Duration: 0.00s
+2024-12-14 19:28:53 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 404 - Duration: 0.00s
+2024-12-14 19:28:55 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:29:23 | INFO     | routes.root:main:26 - Redirecting to API documentation
+2024-12-14 19:29:23 | INFO     | middleware:metrics_middleware:27 - Request: GET / - Status: 307 - Duration: 0.00s
+2024-12-14 19:29:23 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2024-12-14 19:29:23 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.02s
+2024-12-14 19:29:36 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 404 - Duration: 0.00s
+2024-12-14 19:30:51 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2024-12-14 19:30:54 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:30:54 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.01s
+2024-12-14 19:30:54 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.01s
+2024-12-14 19:30:54 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-14 19:31:10 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/010000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-14 19:31:12 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/012900000/municipalities/ - Status: 200 - Duration: 0.03s
+2024-12-14 19:31:12 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/012900000/municipalities/ - Status: 200 - Duration: 0.04s
+2024-12-14 19:31:13 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/012900000/municipalities/ - Status: 200 - Duration: 0.11s
+2024-12-14 19:31:13 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/012900000/municipalities/ - Status: 200 - Duration: 0.11s
+2024-12-14 19:31:24 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-14 19:31:24 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 422 - Duration: 0.02s
+2024-12-14 19:32:07 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-14 19:32:07 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 422 - Duration: 0.00s
+2024-12-14 19:32:09 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:32:15 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-14 19:32:15 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 422 - Duration: 0.00s
+2024-12-14 19:33:05 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-14 19:33:07 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:33:08 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-14 19:33:11 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/010000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-14 19:33:14 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/015500000/municipalities/ - Status: 200 - Duration: 0.01s
+2024-12-14 19:33:14 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/015500000/municipalities/ - Status: 200 - Duration: 0.03s
+2024-12-14 19:33:14 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/015500000/municipalities/ - Status: 200 - Duration: 0.03s
+2024-12-14 19:33:14 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/015500000/municipalities/ - Status: 200 - Duration: 0.05s
+2024-12-14 19:33:29 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-14 19:33:29 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 422 - Duration: 0.00s
+2024-12-14 19:34:38 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:35:09 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:35:41 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:36:12 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:38:39 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-14 19:38:39 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 422 - Duration: 0.00s
+2024-12-14 19:38:41 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:38:56 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:38:56 | INFO     | __main__:<module>:55 - Starting the application
+2024-12-14 19:38:57 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:38:57 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-14 19:38:57 | INFO     | utils.crud:__init__:25 - Database connection pool created successfully
+2024-12-14 19:38:57 | INFO     | utils.crud:create:84 - Created new record in users
+2024-12-14 19:38:57 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 500 - Duration: 0.09s
+2024-12-14 19:40:49 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:40:49 | INFO     | utils.crud:__init__:25 - Database connection pool created successfully
+2024-12-14 19:40:49 | INFO     | __main__:<module>:55 - Starting the application
+2024-12-14 19:40:50 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:40:50 | INFO     | utils.crud:__init__:25 - Database connection pool created successfully
+2024-12-14 19:40:54 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-14 19:40:54 | INFO     | utils.crud:create:84 - Created new record in users
+2024-12-14 19:40:54 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 200 - Duration: 0.01s
+2024-12-14 19:42:35 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-14 19:42:35 | INFO     | utils.crud:create:84 - Created new record in users
+2024-12-14 19:42:35 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 200 - Duration: 0.01s
+2024-12-14 19:42:37 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:42:37 | INFO     | utils.crud:__init__:25 - Database connection pool created successfully
+2024-12-14 19:42:58 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-14 19:42:58 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 500 - Duration: 0.01s
+2024-12-14 19:43:00 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:43:00 | INFO     | utils.crud:__init__:25 - Database connection pool created successfully
+2024-12-14 19:43:13 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:43:13 | INFO     | utils.crud:__init__:25 - Database connection pool created successfully
+2024-12-14 19:43:13 | INFO     | __main__:<module>:55 - Starting the application
+2024-12-14 19:43:15 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:43:15 | INFO     | utils.crud:__init__:25 - Database connection pool created successfully
+2024-12-14 19:43:15 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-14 19:43:15 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-14 19:43:42 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-14 19:43:42 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-14 19:43:43 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:43:43 | INFO     | utils.crud:__init__:25 - Database connection pool created successfully
+2024-12-14 19:43:54 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:43:54 | INFO     | utils.crud:__init__:25 - Database connection pool created successfully
+2024-12-14 19:43:54 | INFO     | __main__:<module>:55 - Starting the application
+2024-12-14 19:43:56 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:43:56 | INFO     | utils.crud:__init__:25 - Database connection pool created successfully
+2024-12-14 19:43:56 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-14 19:43:56 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-14 19:45:30 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-14 19:45:30 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-14 19:45:35 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-14 19:45:35 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-14 19:45:41 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/010000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-14 19:45:45 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/013300000/municipalities/ - Status: 200 - Duration: 0.02s
+2024-12-14 19:45:45 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/013300000/municipalities/ - Status: 200 - Duration: 0.08s
+2024-12-14 19:45:45 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/013300000/municipalities/ - Status: 200 - Duration: 0.07s
+2024-12-14 19:45:45 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/013300000/municipalities/ - Status: 200 - Duration: 0.08s
+2024-12-14 19:45:55 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-14 19:45:55 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 200 - Duration: 0.01s
+2024-12-14 19:47:00 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-14 19:47:00 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-14 19:47:01 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:47:01 | INFO     | utils.crud:__init__:25 - Database connection pool created successfully
+2024-12-14 19:47:20 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:47:20 | INFO     | utils.crud:__init__:25 - Database connection pool created successfully
+2024-12-14 19:47:25 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-14 19:47:25 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 500 - Duration: 0.01s
+2024-12-14 19:48:55 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:48:55 | INFO     | utils.crud:__init__:25 - Database connection pool created successfully
+2024-12-14 19:50:13 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-14 19:50:13 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 500 - Duration: 0.01s
+2024-12-14 19:50:15 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:50:16 | INFO     | utils.crud:__init__:25 - Database connection pool created successfully
+2024-12-14 19:50:36 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-14 19:50:36 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 500 - Duration: 0.01s
+2024-12-14 19:50:37 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:50:37 | INFO     | utils.crud:__init__:25 - Database connection pool created successfully
+2024-12-14 19:50:39 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-14 19:50:39 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 500 - Duration: 0.01s
+2024-12-14 19:50:40 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-14 19:50:40 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 500 - Duration: 0.00s
+2024-12-14 19:50:43 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-14 19:50:43 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 500 - Duration: 0.01s
+2024-12-14 19:51:16 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-14 19:51:16 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 200 - Duration: 0.01s
+2024-12-14 19:53:06 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-14 19:53:06 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-14 19:53:08 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:53:08 | INFO     | utils.crud:__init__:25 - Database connection pool created successfully
+2024-12-14 19:53:13 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/050000000/provinces/ - Status: 200 - Duration: 0.01s
+2024-12-14 19:53:16 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/051700000/municipalities/ - Status: 200 - Duration: 0.04s
+2024-12-14 19:53:16 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/051700000/municipalities/ - Status: 200 - Duration: 0.16s
+2024-12-14 19:53:16 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/051700000/municipalities/ - Status: 200 - Duration: 0.16s
+2024-12-14 19:53:16 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/051700000/municipalities/ - Status: 200 - Duration: 0.17s
+2024-12-14 19:53:16 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/051700000/municipalities/ - Status: 200 - Duration: 0.17s
+2024-12-14 19:53:16 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/051700000/municipalities/ - Status: 200 - Duration: 0.17s
+2024-12-14 19:53:27 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-14 19:53:27 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 200 - Duration: 0.01s
+2024-12-14 19:54:34 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-14 19:54:34 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 200 - Duration: 0.01s
+2024-12-14 19:54:35 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:54:35 | INFO     | utils.crud:__init__:25 - Database connection pool created successfully
+2024-12-14 19:54:36 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-14 19:54:36 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 500 - Duration: 0.02s
+2024-12-14 19:56:55 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 19:56:55 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.01s
+2024-12-14 19:56:57 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 19:56:57 | INFO     | utils.crud:__init__:25 - Database connection pool created successfully
+2024-12-14 19:57:04 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 19:57:04 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.02s
+2024-12-14 20:00:37 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-14 20:00:40 | INFO     | utils.database:__init__:25 - Database connection pool created successfully
+2024-12-14 20:00:40 | INFO     | utils.crud:__init__:25 - Database connection pool created successfully
+2024-12-14 20:00:40 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-14 20:00:42 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 20:00:42 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.01s
+2024-12-14 20:01:44 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 20:01:44 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.02s
+2024-12-14 20:01:54 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-14 20:01:54 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.02s
+2024-12-14 20:12:40 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-14 20:12:40 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-14 20:12:49 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/030000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-14 20:12:51 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/034900000/municipalities/ - Status: 200 - Duration: 0.02s
+2024-12-14 20:12:51 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/034900000/municipalities/ - Status: 200 - Duration: 0.03s
+2024-12-14 20:12:51 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/034900000/municipalities/ - Status: 200 - Duration: 0.04s
+2024-12-14 20:12:51 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/034900000/municipalities/ - Status: 200 - Duration: 0.04s
+2024-12-14 20:12:51 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/034900000/municipalities/ - Status: 200 - Duration: 0.07s
+2024-12-14 20:12:51 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/034900000/municipalities/ - Status: 200 - Duration: 0.08s
+2024-12-14 20:12:51 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/034900000/municipalities/ - Status: 200 - Duration: 0.09s
+2024-12-14 20:15:38 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-14 20:15:38 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-14 20:15:46 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/030000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-14 20:15:49 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/031400000/municipalities/ - Status: 200 - Duration: 0.01s
+2024-12-14 20:15:49 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/031400000/municipalities/ - Status: 200 - Duration: 0.04s
+2024-12-14 20:15:49 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/031400000/municipalities/ - Status: 200 - Duration: 0.04s
+2024-12-14 20:15:49 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/031400000/municipalities/ - Status: 200 - Duration: 0.04s
+2024-12-14 20:15:49 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/031400000/municipalities/ - Status: 200 - Duration: 0.04s
+2024-12-14 20:15:49 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/031400000/municipalities/ - Status: 200 - Duration: 0.05s
+2024-12-14 20:15:49 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/031400000/municipalities/ - Status: 200 - Duration: 0.07s
+2024-12-14 20:18:30 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-14 20:18:30 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-14 20:18:36 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/080000000/provinces/ - Status: 200 - Duration: 0.01s
+2024-12-14 20:18:39 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/084800000/municipalities/ - Status: 200 - Duration: 0.02s
+2024-12-14 20:18:39 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/084800000/municipalities/ - Status: 200 - Duration: 0.13s
+2024-12-14 20:18:39 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/084800000/municipalities/ - Status: 200 - Duration: 0.13s
+2024-12-14 20:18:39 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/084800000/municipalities/ - Status: 200 - Duration: 0.14s
+2024-12-14 20:18:39 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/084800000/municipalities/ - Status: 200 - Duration: 0.14s
+2024-12-14 20:18:39 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/084800000/municipalities/ - Status: 200 - Duration: 0.14s

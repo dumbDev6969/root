@@ -965,6 +965,58 @@ def read_user(user_id):
             cursor.close()
             connection.close()
 
+def read_email_user(email):
+    """
+    Retrieves a user record by user_id.
+    """
+    try:
+        connection = get_connection()
+        if not connection:
+            return {'success': False, 'message': 'Database connection failed.'}
+        
+        cursor = connection.cursor(dictionary=True)
+        query = "SELECT * FROM users WHERE email = %s"
+        cursor.execute(query, (email,))
+        result = cursor.fetchone()
+        cursor.close()
+
+        if result:
+            return {'success': True, 'message':result}
+        else:
+            return {'success': False, 'message': 'User not found.'}
+    except Error as e:
+        return {'success': False, 'message': str(e)}
+    finally:
+        if connection and connection.is_connected():
+            cursor.close()
+            connection.close()
+
+def read_email_emplopyers(email):
+    """
+    Retrieves a user record by user_id.
+    """
+    try:
+        connection = get_connection()
+        if not connection:
+            return {'success': False, 'message': 'Database connection failed.'}
+        
+        cursor = connection.cursor(dictionary=True)
+        query = "SELECT * FROM employers WHERE email = %s"
+        cursor.execute(query, (email,))
+        result = cursor.fetchone()
+        cursor.close()
+
+        if result:
+            return {'success': True, 'message':result}
+        else:
+            return {'success': False, 'message': 'User not found.'}
+    except Error as e:
+        return {'success': False, 'message': str(e)}
+    finally:
+        if connection and connection.is_connected():
+            cursor.close()
+            connection.close()
+
 def update_user(user_id, **kwargs):
     """
     Updates a user record. Accepts keyword arguments for fields to update.

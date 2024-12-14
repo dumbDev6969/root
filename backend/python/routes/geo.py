@@ -36,7 +36,7 @@ async def get_provinces_by_region(region_code: str, _: None = Depends(validate_i
 async def home(_: None = Depends(validate_input)):
     with open(regions_path, 'r') as f:
         regions = json.load(f)  # This correctly parses the JSON file
-        return regions
+    return regions
 
 @router.get("/api/provinces/{province_code}/municipalities/")
 async def get_municipalities_by_province(province_code: str, _: None = Depends(validate_input)):
