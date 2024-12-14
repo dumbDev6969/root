@@ -1,10 +1,37 @@
-
-
 document.querySelector('form').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent default form submission
 
     const password = document.getElementById('password-input').value;
     const confirmPassword = document.getElementById('confirm-password-input').value;
+
+    // Password validation functions
+    function hasUppercase(password) {
+        const uppercaseRegex = /[A-Z]/;
+        return uppercaseRegex.test(password);
+    }
+
+    function hasSpecialCharacter(password) {
+        const specialCharacterRegex = /[!@#$%^&*()_+=[\]{};':"\\|,.<>/?]/;
+        return specialCharacterRegex.test(password);
+    }
+
+    function hasMinLength(password) {
+        return password.length >= 8;
+    }
+
+    // Password validation checks
+    if (!hasMinLength(password)) {
+        console.log("Error: Password must be at least 8 characters long.");
+        return;
+    }
+    if (!hasUppercase(password)) {
+        console.log("Error: Password must contain at least one uppercase letter.");
+        return;
+    }
+    if (!hasSpecialCharacter(password)) {
+        console.log("Error: Password must contain at least one special character.");
+        return;
+    }
 
     if (password !== confirmPassword) {
         alert('Passwords do not match. Please try again.');

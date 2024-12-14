@@ -672,3 +672,5 @@
 2024-12-14 20:18:39 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/084800000/municipalities/ - Status: 200 - Duration: 0.14s
 2024-12-14 20:18:39 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/084800000/municipalities/ - Status: 200 - Duration: 0.14s
 2024-12-14 20:18:39 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/084800000/municipalities/ - Status: 200 - Duration: 0.14s
+2024-12-14 20:22:04 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-14 20:22:04 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 500 - Duration: 0.01s
