@@ -113,7 +113,6 @@ db = Database(
 
 # Execute multiple queries to create tables
 db.execute_multiple_queries("""
--- Employers Table
 CREATE TABLE IF NOT EXISTS employers (
     employer_id INTEGER PRIMARY KEY,
     company_name TEXT NOT NULL,
@@ -128,12 +127,11 @@ CREATE TABLE IF NOT EXISTS employers (
     updated_at TEXT NOT NULL
 );
 
--- Jobs Table
 CREATE TABLE IF NOT EXISTS jobs (
     job_id INTEGER PRIMARY KEY,
     employer_id INTEGER NOT NULL,
     job_title TEXT NOT NULL,
-    job_type ENUM('Full-time', 'Part-time', 'Freelance', 'Internship') NOT NULL,
+    job_type TEXT CHECK(job_type IN ('Full-time', 'Part-time', 'Freelance', 'Internship')) NOT NULL,
     location TEXT NOT NULL,
     salary_range TEXT NOT NULL,
     job_description TEXT NOT NULL,
@@ -142,7 +140,6 @@ CREATE TABLE IF NOT EXISTS jobs (
     FOREIGN KEY (employer_id) REFERENCES employers(employer_id)
 );
 
--- Qualifications Table
 CREATE TABLE IF NOT EXISTS qualifications (
     qualification_id INTEGER PRIMARY KEY,
     user_id INTEGER NOT NULL,
@@ -153,7 +150,6 @@ CREATE TABLE IF NOT EXISTS qualifications (
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
--- Saved Jobs Table
 CREATE TABLE IF NOT EXISTS saved_jobs (
     saved_job_id INTEGER PRIMARY KEY,
     saved_at TEXT NOT NULL,
@@ -163,7 +159,6 @@ CREATE TABLE IF NOT EXISTS saved_jobs (
     FOREIGN KEY (job_id) REFERENCES jobs(job_id)
 );
 
--- Submitted Resumes Table
 CREATE TABLE IF NOT EXISTS submitted_resumes (
     submitted_resume_id INTEGER PRIMARY KEY,
     resume_file_name TEXT NOT NULL,
@@ -175,11 +170,10 @@ CREATE TABLE IF NOT EXISTS submitted_resumes (
     FOREIGN KEY (job_id) REFERENCES jobs(job_id)
 );
 
--- User Interest Table
 CREATE TABLE IF NOT EXISTS user_interest (
     interest_id INTEGER PRIMARY KEY,
     job_interest TEXT NOT NULL,
-    job_type ENUM('Full-time', 'Part-time', 'Freelance', 'Internship') NOT NULL,
+    job_type TEXT CHECK(job_type IN ('Full-time', 'Part-time', 'Freelance', 'Internship')) NOT NULL,
     preferred_location TEXT NOT NULL,
     expected_salary_range TEXT NOT NULL,
     created_at TEXT NOT NULL,
@@ -187,7 +181,6 @@ CREATE TABLE IF NOT EXISTS user_interest (
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
--- Users Table
 CREATE TABLE IF NOT EXISTS users (
     user_id INTEGER PRIMARY KEY,
     first_name TEXT NOT NULL,
@@ -204,3 +197,4 @@ CREATE TABLE IF NOT EXISTS users (
     updated_at TEXT NOT NULL
 );
 """)
+
