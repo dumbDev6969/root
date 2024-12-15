@@ -14,7 +14,7 @@
 <body>
     <?php include '../../../includes/navigation_recruiter.php' ?>
     <div class="container-fluid">
-        <div class="container d-flex align-items-center justify-content-between">
+        <div class="container d-flex align-items-center justify-content-between scroll-hidden">
             <div class="row">
                 <div class="col-md-12">
                     <div class="container d-flex align-items-center ">
@@ -45,7 +45,7 @@
                 </a>
             </div>
         </div>
-        <div class="row mt-3">
+        <div class="row mt-3 scroll-hidden">
             <div class="col-4">
                 <div id="simple-list-example" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
                     <a class="p-1 rounded" href="#simple-list-item-1">
@@ -63,9 +63,18 @@
                         <div class="col-lg-3 col-md-12">
                             <div class="card" style="width: 15rem;">
                                 <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <div class="card-title d-flex align-items-center flex-column">
+                                        <!-- img -->
+                                        <div class="profile border" style="height: 170px; width:170px; border-radius: 50%">
+
+                                        </div>
+                                    </div>
+                                    <h5>Johua Cabuang</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">Job title applied</h6>
+                                    <p class="card-text">
+                                        <span class="text-secondary">Applied at</span> <br>
+                                        dd/mm/yyyy
+                                    </p>
                                     <a href="#" class="card-link">Card link</a>
                                     <a href="#" class="card-link">Another link</a>
                                 </div>
@@ -74,42 +83,18 @@
                         <div class="col-lg-3 col-md-12">
                             <div class="card" style="width: 15rem;">
                                 <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="card-link">Card link</a>
-                                    <a href="#" class="card-link">Another link</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-12">
-                            <div class="card" style="width: 15rem;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="card-link">Card link</a>
-                                    <a href="#" class="card-link">Another link</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-12">
-                            <div class="card" style="width: 15rem;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="card-link">Card link</a>
-                                    <a href="#" class="card-link">Another link</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-12">
-                            <div class="card" style="width: 15rem;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <div class="card-title d-flex align-items-center flex-column">
+                                        <!-- img -->
+                                        <div class="profile border" style="height: 170px; width:170px; border-radius: 50%">
+
+                                        </div>
+                                    </div>
+                                    <h5>Johua Cabuang</h5>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">Job title applied</h6>
+                                    <p class="card-text">
+                                        <span class="text-secondary">Applied at</span> <br>
+                                        dd/mm/yyyy
+                                    </p>
                                     <a href="#" class="card-link">Card link</a>
                                     <a href="#" class="card-link">Another link</a>
                                 </div>
@@ -117,7 +102,42 @@
                         </div>
                     </div>
                     <h4 id="simple-list-item-2">Jobs</h4>
-                    
+                    <div class="row gap-2">
+                        <div class="col-lg-3 col-md-12">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                    <div class="d-flex  justify-content-between align-items-center">
+                                        <div>
+                                            <h4 class="card-title">Jr. Sofware dev</h4>
+                                            
+                                        </div>
+                                        <div class="company-profile border" style="height: 50px; width: 50px; border-radius: 50px">
+                                            img
+                                        </div>
+                                    </div>
+                                    <h6 class="card-subtitle mb-2 text-body-secondary">Company name</h6>
+                                    <p class="text-secondary">Pangasinan SCCP</p>
+                                    <p class="card-text">
+                                        <button type="button" disabled class="btn btn-outline-secondary btn-sm">Part time</button>
+                                        <h6>$100 - $120</h6>
+                                    </p>
+                                    <form action="#">
+                                        <div class="row">
+                                            <div class="col-md-8 p-1">
+                                                <button type="button" class="btn btn-sm btn-dark w-100">More details</button>
+                                            </div>
+                                            <div class="col-md-4 p-1">
+                                                <button type="button" class="btn btn-sm btn-secondary w-100">Save</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-12">
+                            
+                        </div>
+                    </div>
                     
                 </div>
             </div>
