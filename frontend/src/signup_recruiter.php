@@ -36,7 +36,7 @@
 
             <div class="col-md-6">
                 <div class="form-floating">
-                    <select name="state" class="form-control" id="state-input" required>
+                    <select name="state" class="form-control" id="state-input" >
                         <option value="" disabled selected>Select Region</option>
 <!--                        <option value="Luzon">Luzon</option>-->
 <!--                        <option value="Visayas">Visayas</option>-->
@@ -81,7 +81,9 @@
                 <div class="form-floating">
                     <input type="password" name="password" class="form-control" id="password-input" placeholder="Password" maxlength="255">
                     <label for="password-input" class="form-label">Password</label>
+                    
                 </div>
+                <span id="error-message" class="text-danger"></span>
             </div>
 
             <div class="col-md-12">
