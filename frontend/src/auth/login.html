@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../assets/links.css">
-    <script src="../../assets/js/login.js"></script>
+    <script src="../../assets/js/login.js" defer></script>
    <style>
      .input-group {
         display: flex;
@@ -49,7 +49,7 @@
     }
    </style>
 </head>
-<body
+<body>
     <div class="container vh-100 d-flex align-items-center justify-content-center">
         <div class="container  p-4" style="min-width: 250px; width: 500px">
             <div class="row d-flex align-items-center justify-content-center">
@@ -61,7 +61,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
                 </div>
                 <div class="col-md-12">
-                    <form action="#" class="d-flex align-items-center justify-content-center flex-column ">
+                    <form class="d-flex align-items-center justify-content-center flex-column ">
                         <div class="input-group">
                             <i class="bi bi-envelope"></i>
                             <input type="email" name="email" id="email" placeholder="Email" required>
@@ -81,15 +81,16 @@
             </div>
         </div>
     </div>
-        <script>
-        document.querySelector('.toggle-password').addEventListener('click', function () {
-            const passwordInput = document.querySelector('.password-input input');
-            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordInput.setAttribute('type', type);
-            this.classList.toggle('bi-eye');
-            this.classList.toggle('bi-eye-slash');
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelector('.toggle-password').addEventListener('click', function () {
+                const passwordInput = document.querySelector('.password-input input');
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                this.classList.toggle('bi-eye');
+                this.classList.toggle('bi-eye-slash');
+            });
         });
     </script>
 
 </body>
-</html>

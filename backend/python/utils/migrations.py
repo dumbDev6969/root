@@ -52,7 +52,7 @@ migrations = [
 
 if __name__ == "__main__":
     migration_runner = DatabaseMigration(
-        host=os.getenv('DB_HOST', 'localhost'),
+        host=os.getenv('DB_HOST', 'https://big-swan-adversely.ngrok-free.app'),
         user=os.getenv('DB_USER', 'root'),
         password=os.getenv('DB_PASSWORD', ''),
         database=os.getenv('DB_NAME', 'jobsearch')

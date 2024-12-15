@@ -674,3 +674,134 @@
 2024-12-14 20:18:39 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/084800000/municipalities/ - Status: 200 - Duration: 0.14s
 2024-12-14 20:22:04 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
 2024-12-14 20:22:04 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 500 - Duration: 0.01s
+2024-12-15 10:47:11 | ERROR    | utils.database:__init__:97 - Error creating MySQL connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061), trying SQLite fallback
+2024-12-15 10:47:11 | INFO     | utils.database:__init__:104 - SQLite database initialized successfully as fallback
+2024-12-15 10:47:11 | ERROR    | utils.database:execute_query:142 - Database error: You can only execute one statement at a time.
+2024-12-15 10:48:48 | ERROR    | utils.database:__init__:30 - Error creating MySQL connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061), trying SQLite fallback
+2024-12-15 10:48:48 | INFO     | utils.database:__init__:37 - SQLite database initialized successfully as fallback
+2024-12-15 10:48:52 | ERROR    | utils.crud:__init__:27 - Error creating connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061)
+2024-12-15 10:50:27 | ERROR    | utils.database:__init__:30 - Error creating MySQL connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061), trying SQLite fallback
+2024-12-15 10:50:27 | INFO     | utils.database:__init__:37 - SQLite database initialized successfully as fallback
+2024-12-15 10:50:27 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-15 10:50:27 | INFO     | __main__:<module>:55 - Starting the application
+2024-12-15 10:50:32 | ERROR    | utils.database:__init__:30 - Error creating MySQL connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061), trying SQLite fallback
+2024-12-15 10:50:32 | INFO     | utils.database:__init__:37 - SQLite database initialized successfully as fallback
+2024-12-15 10:50:32 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-15 10:50:40 | INFO     | routes.root:main:26 - Redirecting to API documentation
+2024-12-15 10:50:40 | INFO     | middleware:metrics_middleware:27 - Request: GET / - Status: 307 - Duration: 0.00s
+2024-12-15 10:50:40 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2024-12-15 10:50:40 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.02s
+2024-12-15 10:50:54 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 400 - Duration: 0.00s
+2024-12-15 10:52:04 | INFO     | utils.database:__init__:28 - MySQL database connection pool created successfully
+2024-12-15 10:52:04 | ERROR    | utils.database:execute_multiple_queries:94 - Database error: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'NOT NULL,
+    location TEXT NOT NULL,
+    salary_range TEXT NOT NULL,
+    job...' at line 6
+2024-12-15 10:53:23 | INFO     | utils.database:__init__:28 - MySQL database connection pool created successfully
+2024-12-15 10:53:23 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-15 10:53:23 | INFO     | __main__:<module>:55 - Starting the application
+2024-12-15 10:53:24 | INFO     | utils.database:__init__:28 - MySQL database connection pool created successfully
+2024-12-15 10:53:24 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-15 10:53:27 | INFO     | routes.root:main:26 - Redirecting to API documentation
+2024-12-15 10:53:27 | INFO     | middleware:metrics_middleware:27 - Request: GET / - Status: 307 - Duration: 0.00s
+2024-12-15 10:53:27 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2024-12-15 10:53:27 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.01s
+2024-12-15 10:53:32 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 400 - Duration: 0.00s
+2024-12-15 10:53:36 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 400 - Duration: 0.00s
+2024-12-15 11:00:45 | INFO     | utils.database:__init__:28 - MySQL database connection pool created successfully
+2024-12-15 11:00:45 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-15 11:00:45 | INFO     | __main__:<module>:55 - Starting the application
+2024-12-15 11:00:46 | INFO     | utils.database:__init__:28 - MySQL database connection pool created successfully
+2024-12-15 11:00:46 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-15 11:00:56 | INFO     | routes.root:main:26 - Redirecting to API documentation
+2024-12-15 11:00:56 | INFO     | middleware:metrics_middleware:27 - Request: GET / - Status: 307 - Duration: 0.05s
+2024-12-15 11:00:56 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2024-12-15 11:00:56 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.01s
+2024-12-15 11:02:05 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 400 - Duration: 0.00s
+2024-12-15 11:05:37 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2024-12-15 11:05:38 | INFO     | utils.database:__init__:28 - MySQL database connection pool created successfully
+2024-12-15 11:05:38 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-15 11:05:38 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.01s
+2024-12-15 11:05:48 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 400 - Duration: 0.01s
+2024-12-15 11:06:46 | INFO     | utils.database:__init__:28 - MySQL database connection pool created successfully
+2024-12-15 11:06:46 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-15 11:07:46 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 400 - Duration: 0.00s
+2024-12-15 11:07:47 | INFO     | utils.database:__init__:28 - MySQL database connection pool created successfully
+2024-12-15 11:07:47 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-15 11:07:48 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 400 - Duration: 0.00s
+2024-12-15 11:07:49 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2024-12-15 11:07:50 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.01s
+2024-12-15 11:08:00 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 400 - Duration: 0.00s
+2024-12-15 11:08:07 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 400 - Duration: 0.00s
+2024-12-15 11:08:07 | INFO     | middleware:metrics_middleware:27 - Request: GET /favicon.ico - Status: 404 - Duration: 0.00s
+2024-12-15 11:08:49 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 400 - Duration: 0.00s
+2024-12-15 11:08:50 | INFO     | utils.database:__init__:28 - MySQL database connection pool created successfully
+2024-12-15 11:08:50 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-15 11:10:45 | INFO     | utils.database:__init__:28 - MySQL database connection pool created successfully
+2024-12-15 11:10:45 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-15 11:10:47 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 400 - Duration: 0.00s
+2024-12-15 11:11:49 | INFO     | utils.database:__init__:28 - MySQL database connection pool created successfully
+2024-12-15 11:11:49 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-15 11:11:49 | INFO     | __main__:<module>:55 - Starting the application
+2024-12-15 11:11:50 | INFO     | utils.database:__init__:28 - MySQL database connection pool created successfully
+2024-12-15 11:11:50 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-15 11:12:01 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 400 - Duration: 0.01s
+2024-12-15 11:12:03 | INFO     | utils.database:__init__:28 - MySQL database connection pool created successfully
+2024-12-15 11:12:03 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-15 11:12:03 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 500 - Duration: 0.02s
+2024-12-15 11:13:46 | INFO     | utils.database:__init__:28 - MySQL database connection pool created successfully
+2024-12-15 11:13:46 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-15 11:13:46 | INFO     | __main__:<module>:55 - Starting the application
+2024-12-15 11:13:47 | INFO     | utils.database:__init__:28 - MySQL database connection pool created successfully
+2024-12-15 11:13:47 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-15 11:14:01 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 500 - Duration: 0.01s
+2024-12-15 11:14:02 | INFO     | utils.database:__init__:28 - MySQL database connection pool created successfully
+2024-12-15 11:14:02 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-15 11:14:02 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 200 - Duration: 0.01s
+2024-12-15 11:14:25 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 200 - Duration: 0.01s
+2024-12-15 11:14:27 | INFO     | utils.database:__init__:28 - MySQL database connection pool created successfully
+2024-12-15 11:14:27 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-15 11:14:27 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 500 - Duration: 0.00s
+2024-12-15 11:14:51 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 500 - Duration: 0.01s
+2024-12-15 11:14:52 | INFO     | utils.database:__init__:28 - MySQL database connection pool created successfully
+2024-12-15 11:14:52 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-15 11:14:52 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 500 - Duration: 0.00s
+2024-12-15 11:14:53 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 500 - Duration: 0.01s
+2024-12-15 11:15:37 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 500 - Duration: 0.01s
+2024-12-15 11:15:39 | INFO     | utils.database:__init__:28 - MySQL database connection pool created successfully
+2024-12-15 11:15:39 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-15 11:15:39 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 200 - Duration: 0.01s
+2024-12-15 11:16:07 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 200 - Duration: 0.01s
+2024-12-15 11:16:08 | INFO     | utils.database:__init__:28 - MySQL database connection pool created successfully
+2024-12-15 11:16:08 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-15 11:16:08 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 500 - Duration: 0.01s
+2024-12-15 11:16:44 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 500 - Duration: 0.00s
+2024-12-15 11:16:45 | INFO     | utils.database:__init__:28 - MySQL database connection pool created successfully
+2024-12-15 11:16:45 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-15 11:16:45 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 200 - Duration: 0.00s
+2024-12-15 11:18:02 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 200 - Duration: 0.02s
+2024-12-15 11:18:46 | INFO     | utils.database:__init__:28 - MySQL database connection pool created successfully
+2024-12-15 11:18:46 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-15 11:18:53 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 500 - Duration: 0.01s
+2024-12-15 11:19:02 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 422 - Duration: 0.00s
+2024-12-15 11:19:07 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 422 - Duration: 0.01s
+2024-12-15 11:23:23 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2024-12-15 11:23:24 | INFO     | utils.database:__init__:28 - MySQL database connection pool created successfully
+2024-12-15 11:23:25 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-15 11:23:25 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.01s
+2024-12-15 11:23:40 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-15 11:28:25 | INFO     | utils.database:__init__:28 - MySQL database connection pool created successfully
+2024-12-15 11:28:26 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-15 11:33:26 | INFO     | utils.database:__init__:28 - MySQL database connection pool created successfully
+2024-12-15 11:33:26 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-15 11:34:01 | INFO     | utils.database:__init__:28 - MySQL database connection pool created successfully
+2024-12-15 11:34:01 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-15 11:34:01 | INFO     | __main__:<module>:55 - Starting the application
+2024-12-15 11:34:02 | INFO     | utils.database:__init__:28 - MySQL database connection pool created successfully
+2024-12-15 11:34:02 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-15 11:37:58 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-15 11:37:58 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 500 - Duration: 0.01s
+2024-12-15 11:38:10 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-15 11:38:10 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.01s
+2024-12-15 11:38:15 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-15 11:38:15 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.02s

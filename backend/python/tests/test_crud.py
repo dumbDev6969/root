@@ -6,7 +6,7 @@ class TestCRUD(unittest.TestCase):
     @patch('mysql.connector.pooling.MySQLConnectionPool')
     def setUp(self, mock_pool):
         self.mock_pool = mock_pool
-        self.crud = CRUD(host='localhost', user='test', password='test', database='test_db')
+        self.crud = CRUD(host='https://big-swan-adversely.ngrok-free.app', user='test', password='test', database='test_db')
 
     def test_create(self):
         mock_connection = MagicMock()

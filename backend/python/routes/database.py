@@ -30,7 +30,7 @@ from utils.databse_operations import (
     create_qualification, read_qualification, update_qualification, delete_qualification,
     create_saved_job, read_saved_job, update_saved_job, delete_saved_job,
     create_submitted_resume, read_submitted_resume, update_submitted_resume, delete_submitted_resume,
-    create_user_interest, read_user_interest, update_user_interest, delete_user_interest
+    create_user_interest, read_user_interest, update_user_interest, delete_user_interest,get_all_records
 )
 
 router = APIRouter()
@@ -134,13 +134,14 @@ async def read_record(table: str, id: int, _: None = Depends(validate_input)):
     try:
         read_func = CRUD_MAP[table]['read']
         response = read_func(id)
-        # return response
+        
         if response['success']:
             # Using `serialize_data` before converting to JSON string
-            data = json.loads(response['message'])
+            data = response['message']
+            # return data
             data = serialize_data(data)
             # Use the encoder as an argument in `JSONResponse`
-            return JSONResponse(content={"data": data}, encoder=CustomJSONEncoder)
+            return JSONResponse(content={"data": data},  media_type="application/json")
         else:
             raise HTTPException(status_code=404, detail=response['message'])
     except Exception as e:
@@ -180,6 +181,24 @@ async def delete_record(request: DeleteRequest, _: None = Depends(validate_input
         response = delete_func(record_id)
         if response['success']:
             return {"message": response['message']}
+        else:
+            raise HTTPException(status_code=404, detail=response['message'])
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+    
+# Get all records from a table
+@router.get("/api/get-table ")
+async def get_all_records_endpoint(table: str, _: None = Depends(validate_input)):
+    table = table.lower()
+
+    if table not in CRUD_MAP:
+        raise HTTPException(status_code=400, detail=f"Invalid table name: {table}")
+
+    try:
+        response = get_all_records(table)
+        if response['success']:
+            data = serialize_data(response['message'])
+            return JSONResponse(content={"data": data}, media_type="application/json")
         else:
             raise HTTPException(status_code=404, detail=response['message'])
     except Exception as e:

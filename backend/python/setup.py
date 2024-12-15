@@ -75,6 +75,13 @@ setuptools.setup(
         'uvicorn==0.32.1',
         'Werkzeug==3.1.3',
         'cryptography==44.0.0',
+        'redis==5.2.1',
+        'loguru==0.7.0',
+        'prometheus_client==0.17.1',
+        'argon2-cffi==23.1.0',
+        'pytest==7.3.1',
+        'httpx==0.24.1',
+        'black==23.3.0',
     ],
     classifiers=[
         'Development Status :: 5 - Production/Stable',

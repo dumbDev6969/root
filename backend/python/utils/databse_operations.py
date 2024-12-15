@@ -219,7 +219,7 @@ from datetime import datetime
 
 # Database Configuration
 DB_CONFIG = {
-    'host': 'localhost',
+    'host': 'https://big-swan-adversely.ngrok-free.app',
     'user': 'root',         # MySQL username
     'password': '',         # MySQL password
     'database': 'jobsearch' # MySQL database name
@@ -1077,9 +1077,30 @@ def delete_user(user_id):
             cursor.close()
             connection.close()
 
-# ---------------------- Example Usage ----------------------
+# ---------------------- Retrieve All Records ----------------------
 
-if __name__ == "__main__":
+def get_all_records(table_name):
+    """
+    Retrieves all records from the specified table.
+    """
+    try:
+        connection = get_connection()
+        if not connection:
+            return {'success': False, 'message': 'Database connection failed.'}
+
+        cursor = connection.cursor(dictionary=True)
+        query = f"SELECT * FROM {table_name}"
+        cursor.execute(query)
+        results = cursor.fetchall()
+        return {'success': True, 'message': results}
+    except Error as e:
+        return {'success': False, 'message': str(e)}
+    finally:
+        if connection and connection.is_connected():
+            cursor.close()
+            connection.close()
+
+# if __name__ == "__main__":
     # Example operations. Uncomment to use.
 
     # Create a new user
@@ -1108,5 +1129,3 @@ if __name__ == "__main__":
     # Delete a user
     # response = delete_user(user_id=1)
     # print(response)
-
-    pass  # Remove this line when you uncomment and use the example operations

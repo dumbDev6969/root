@@ -26,11 +26,18 @@ async def login(form: LoginRequest, _: None = Depends(validate_input)):
 
         if users["success"]:
             if users['message']['password'] == password:
-                return "welcome user"
+                return {
+                    "message": "welcome user",
+                    "personal_info": users['message']
+                }
         if employers["success"]:
             if employers['message']['password'] == password:
-                    return "welcome employer"
-        return "user not found"
+                return {
+                    "message": "welcome employer",
+                    "personal_info": employers['message']
+                }
+        
+        raise HTTPException(status_code=404, detail="User not found")
        
      
 
