@@ -14,49 +14,67 @@
 
 <body>
     <?php include '../../../includes/navigation_recruiter.php' ?>
-    <div class="container p-3 text-center">
+    <div class="container p-3">
         <div class="row ">
-            <div class="col-lg-3 col-md-6 border d-flex align-items-center justify-content-center">
-                <div class="card border-0" style="width: 18rem;">
+            <div class="col-lg-3 col-md-6 d-flex align-items-center justify-content-center">
+                <div class="card" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="card-link">Edit job</a>
-                        
+                        <div class="d-flex  justify-content-between align-items-center">
+                            <div>
+                                <h4 class="card-title">Jr. Sofware dev</h4>
+
+                            </div>
+                            <div class="company-profile border" style="height: 50px; width: 50px; border-radius: 50px">
+                                img
+                            </div>
+                        </div>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Company name</h6>
+                        <p class="text-secondary">Pangasinan SCCP</p>
+                        <p class="card-text">
+                            <button type="button" disabled class="btn btn-outline-secondary btn-sm">Part time</button>
+                        <h6>$100 - $120</h6>
+                        </p>
+                        <form action="#">
+                            <div class="row">
+                                <div class="col-md-8 p-1">
+                                    <button type="button" class="btn btn-sm btn-dark w-100">Edit</button>
+                                </div>
+                                <div class="col-md-4 p-1">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary w-100">Delete</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 border d-flex align-items-center justify-content-center">
-                <div class="card border-0" style="width: 18rem;">
+            <div class="col-lg-3 col-md-6 d-flex align-items-center justify-content-center">
+                <div class="card" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="card-link">Edit job</a>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 border d-flex align-items-center justify-content-center">
-                <div class="card border-0" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="card-link">Edit job</a>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 border d-flex align-items-center justify-content-center">
-                <div class="card border-0" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="card-link">Edit job</a>
-                        
+                        <div class="d-flex  justify-content-between align-items-center">
+                            <div>
+                                <h4 class="card-title">Jr. Sofware dev</h4>
+
+                            </div>
+                            <div class="company-profile border" style="height: 50px; width: 50px; border-radius: 50px">
+                                img
+                            </div>
+                        </div>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">Company name</h6>
+                        <p class="text-secondary">Pangasinan SCCP</p>
+                        <p class="card-text">
+                            <button type="button" disabled class="btn btn-outline-secondary btn-sm">Part time</button>
+                        <h6>$100 - $120</h6>
+                        </p>
+                        <form action="#">
+                            <div class="row">
+                                <div class="col-md-8 p-1">
+                                    <button type="button" class="btn btn-sm btn-dark w-100">Edit</button>
+                                </div>
+                                <div class="col-md-4 p-1">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary w-100" >Delete</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
