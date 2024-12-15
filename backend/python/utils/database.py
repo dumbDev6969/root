@@ -105,96 +105,96 @@ class Database:
 
 # Initialize the database connection
 db = Database(
-    host=os.getenv('DB_HOST', 'https://big-swan-adversely.ngrok-free.app'),
+    host=os.getenv('DB_HOST', 'localhost'),
     user=os.getenv('DB_USER', 'root'),
     password=os.getenv('DB_PASSWORD', ''),
     database=os.getenv('DB_NAME', 'jobsearch')
 )
 
-# Execute multiple queries to create tables
-db.execute_multiple_queries("""
-CREATE TABLE IF NOT EXISTS employers (
-    employer_id INTEGER PRIMARY KEY,
-    company_name TEXT NOT NULL,
-    phone_number TEXT NOT NULL,
-    state TEXT NOT NULL,
-    city_or_province TEXT,
-    zip_code TEXT NOT NULL,
-    street TEXT,
-    email TEXT,
-    password TEXT NOT NULL,
-    created_at TEXT NOT NULL,
-    updated_at TEXT NOT NULL
-);
+# # Execute multiple queries to create tables
+# db.execute_multiple_queries("""
+# CREATE TABLE IF NOT EXISTS employers (
+#     employer_id INTEGER PRIMARY KEY,
+#     company_name TEXT NOT NULL,
+#     phone_number TEXT NOT NULL,
+#     state TEXT NOT NULL,
+#     city_or_province TEXT,
+#     zip_code TEXT NOT NULL,
+#     street TEXT,
+#     email TEXT,
+#     password TEXT NOT NULL,
+#     created_at TEXT NOT NULL,
+#     updated_at TEXT NOT NULL
+# );
 
-CREATE TABLE IF NOT EXISTS jobs (
-    job_id INTEGER PRIMARY KEY,
-    employer_id INTEGER NOT NULL,
-    job_title TEXT NOT NULL,
-    job_type TEXT CHECK(job_type IN ('Full-time', 'Part-time', 'Freelance', 'Internship')) NOT NULL,
-    location TEXT NOT NULL,
-    salary_range TEXT NOT NULL,
-    job_description TEXT NOT NULL,
-    requirements TEXT NOT NULL,
-    created_at TEXT NOT NULL,
-    FOREIGN KEY (employer_id) REFERENCES employers(employer_id)
-);
+# CREATE TABLE IF NOT EXISTS jobs (
+#     job_id INTEGER PRIMARY KEY,
+#     employer_id INTEGER NOT NULL,
+#     job_title TEXT NOT NULL,
+#     job_type TEXT CHECK(job_type IN ('Full-time', 'Part-time', 'Freelance', 'Internship')) NOT NULL,
+#     location TEXT NOT NULL,
+#     salary_range TEXT NOT NULL,
+#     job_description TEXT NOT NULL,
+#     requirements TEXT NOT NULL,
+#     created_at TEXT NOT NULL,
+#     FOREIGN KEY (employer_id) REFERENCES employers(employer_id)
+# );
 
-CREATE TABLE IF NOT EXISTS qualifications (
-    qualification_id INTEGER PRIMARY KEY,
-    user_id INTEGER NOT NULL,
-    degree TEXT NOT NULL,
-    school_graduated TEXT NOT NULL,
-    certifications TEXT,
-    specialized_training TEXT,
-    FOREIGN KEY (user_id) REFERENCES users(user_id)
-);
+# CREATE TABLE IF NOT EXISTS qualifications (
+#     qualification_id INTEGER PRIMARY KEY,
+#     user_id INTEGER NOT NULL,
+#     degree TEXT NOT NULL,
+#     school_graduated TEXT NOT NULL,
+#     certifications TEXT,
+#     specialized_training TEXT,
+#     FOREIGN KEY (user_id) REFERENCES users(user_id)
+# );
 
-CREATE TABLE IF NOT EXISTS saved_jobs (
-    saved_job_id INTEGER PRIMARY KEY,
-    saved_at TEXT NOT NULL,
-    user_id INTEGER NOT NULL,
-    job_id INTEGER NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users(user_id),
-    FOREIGN KEY (job_id) REFERENCES jobs(job_id)
-);
+# CREATE TABLE IF NOT EXISTS saved_jobs (
+#     saved_job_id INTEGER PRIMARY KEY,
+#     saved_at TEXT NOT NULL,
+#     user_id INTEGER NOT NULL,
+#     job_id INTEGER NOT NULL,
+#     FOREIGN KEY (user_id) REFERENCES users(user_id),
+#     FOREIGN KEY (job_id) REFERENCES jobs(job_id)
+# );
 
-CREATE TABLE IF NOT EXISTS submitted_resumes (
-    submitted_resume_id INTEGER PRIMARY KEY,
-    resume_file_name TEXT NOT NULL,
-    resume_path TEXT NOT NULL,
-    submitted_at TEXT NOT NULL,
-    user_id INTEGER NOT NULL,
-    job_id INTEGER NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users(user_id),
-    FOREIGN KEY (job_id) REFERENCES jobs(job_id)
-);
+# CREATE TABLE IF NOT EXISTS submitted_resumes (
+#     submitted_resume_id INTEGER PRIMARY KEY,
+#     resume_file_name TEXT NOT NULL,
+#     resume_path TEXT NOT NULL,
+#     submitted_at TEXT NOT NULL,
+#     user_id INTEGER NOT NULL,
+#     job_id INTEGER NOT NULL,
+#     FOREIGN KEY (user_id) REFERENCES users(user_id),
+#     FOREIGN KEY (job_id) REFERENCES jobs(job_id)
+# );
 
-CREATE TABLE IF NOT EXISTS user_interest (
-    interest_id INTEGER PRIMARY KEY,
-    job_interest TEXT NOT NULL,
-    job_type TEXT CHECK(job_type IN ('Full-time', 'Part-time', 'Freelance', 'Internship')) NOT NULL,
-    preferred_location TEXT NOT NULL,
-    expected_salary_range TEXT NOT NULL,
-    created_at TEXT NOT NULL,
-    user_id INTEGER NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users(user_id)
-);
+# CREATE TABLE IF NOT EXISTS user_interest (
+#     interest_id INTEGER PRIMARY KEY,
+#     job_interest TEXT NOT NULL,
+#     job_type TEXT CHECK(job_type IN ('Full-time', 'Part-time', 'Freelance', 'Internship')) NOT NULL,
+#     preferred_location TEXT NOT NULL,
+#     expected_salary_range TEXT NOT NULL,
+#     created_at TEXT NOT NULL,
+#     user_id INTEGER NOT NULL,
+#     FOREIGN KEY (user_id) REFERENCES users(user_id)
+# );
 
-CREATE TABLE IF NOT EXISTS users (
-    user_id INTEGER PRIMARY KEY,
-    first_name TEXT NOT NULL,
-    last_name TEXT NOT NULL,
-    phone_number TEXT NOT NULL,
-    state TEXT NOT NULL,
-    city_or_province TEXT,
-    municipality TEXT NOT NULL,
-    zip_code TEXT NOT NULL,
-    street TEXT,
-    email TEXT NOT NULL,
-    password TEXT NOT NULL,
-    created_at TEXT NOT NULL,
-    updated_at TEXT NOT NULL
-);
-""")
+# CREATE TABLE IF NOT EXISTS users (
+#     user_id INTEGER PRIMARY KEY,
+#     first_name TEXT NOT NULL,
+#     last_name TEXT NOT NULL,
+#     phone_number TEXT NOT NULL,
+#     state TEXT NOT NULL,
+#     city_or_province TEXT,
+#     municipality TEXT NOT NULL,
+#     zip_code TEXT NOT NULL,
+#     street TEXT,
+#     email TEXT NOT NULL,
+#     password TEXT NOT NULL,
+#     created_at TEXT NOT NULL,
+#     updated_at TEXT NOT NULL
+# );
+# """)
 

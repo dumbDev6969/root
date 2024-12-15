@@ -11,7 +11,7 @@
 #     country_indeed='USA',
     
 #     # linkedin_fetch_description=True # gets more info such as description, direct job url (slower)
-#     # proxies=["208.195.175.46:65095", "208.195.175.45:65095", "https://big-swan-adversely.ngrok-free.app"],
+#     # proxies=["208.195.175.46:65095", "208.195.175.45:65095", "localhost"],
 # )
 # print(f"Found {len(jobs)} jobs")
 # print(jobs)
@@ -29,7 +29,7 @@ if __name__ == "__main__":
     }
 
     # Send a POST request to the /send_email endpoint
-    response = requests.post("https://big-swan-adversely.ngrok-free.app/sendemial", json=data)
+    response = requests.post("localhost/sendemial", json=data)
 
     # Print the response
     print(response.json())

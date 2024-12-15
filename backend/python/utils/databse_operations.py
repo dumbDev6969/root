@@ -219,7 +219,7 @@ from datetime import datetime
 
 # Database Configuration
 DB_CONFIG = {
-    'host': 'https://big-swan-adversely.ngrok-free.app',
+    'host': 'localhost',
     'user': 'root',         # MySQL username
     'password': '',         # MySQL password
     'database': 'jobsearch' # MySQL database name

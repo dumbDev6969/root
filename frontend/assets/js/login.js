@@ -18,8 +18,20 @@ document.addEventListener('DOMContentLoaded', function() {
       })
     })
     .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.error('Error:', error));
+    .then(data => {
+      if (data.message === 'welcome employer') {
+        // Store received data in local storage or session storage
+        if (data.personal_info) {
+          localStorage.setItem('employerData', JSON.stringify(data.personal_info));
+        } else {
+          console.error('Personal info is missing in the response:', data);
+        }
+        // Redirect to the dashboard
+        window.location.href = '../dashboard/recruiter/dashboard_recruiter.php';
+      } else {
+        console.error('Login failed:', data.message);
+      }
+    }).catch(error => console.error('Error:', error));
   });
 });
 
@@ -73,4 +85,3 @@ document.addEventListener('DOMContentLoaded', function() {
 //       console.error('Error:', error);
 //       alert('An error occurred. Please try again.');
 //   });
-// });

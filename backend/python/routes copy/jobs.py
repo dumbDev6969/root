@@ -11,7 +11,7 @@ from utils.logger import get_logger
 
 logger = get_logger(__name__)
 router = APIRouter()
-redis_client = redis.StrictRedis(host='https://big-swan-adversely.ngrok-free.app', port=6379, db=0, decode_responses=True)
+redis_client = redis.StrictRedis(host='localhost', port=6379, db=0, decode_responses=True)
 limiter = Limiter(key_func=get_remote_address)
 
 async def fetch_jobs_from_db():

@@ -75,7 +75,7 @@ black .
   ```python
 from utils.crud import CRUD
 
-crud = CRUD(host='https://big-swan-adversely.ngrok-free.app', user='root', password='', database='jobsearch')
+crud = CRUD(host='localhost', user='root', password='', database='jobsearch')
 crud.create('employers', company_name='Tech Corp', phone_number='1234567890', state='CA', zip_code='90001', email='contact@techcorp.com', password='securepassword', created_at='2023-10-01', updated_at='2023-10-01')
 ```
 
