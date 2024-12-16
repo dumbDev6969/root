@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
     .then((data) => {
       const employerData = data.data;
      
-
       document.getElementById("company-name-input").value = employerData.company_name;
       document.getElementById("phone-number").value = employerData.phone_number;
       document.getElementById("selected-state-input").innerHTML = employerData.state;
@@ -20,51 +19,95 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById("password-input").value = employerData.password;
       document.getElementById("confirm-password-input").value = employerData.password;
 
-      // Enable and populate the state and city/province dropdowns
-      populateStateDropdown(employerData.state);
-      populateCityProvinceDropdown(employerData.city_or_province);
+      populateStateDropdown(employerData.state, employerData.city_or_province);
     })
     .catch((error) => console.error("Error fetching employer data:", error));
+
+  const form = document.getElementById("edit-profile-form");
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    
+    const updatedData = {
+      company_name: document.getElementById("company-name-input").value,
+      phone_number: document.getElementById("phone-number").value,
+      state: document.getElementById("state-input").value,
+      city_or_province: document.getElementById("city-province-input").value,
+      zip_code: document.getElementById("zip-code-input").value,
+      street: document.getElementById("street-number-input").value,
+      email: document.getElementById("email-input").value,
+      password: document.getElementById("password-input").value,
+    };
+    fetch("http://127.0.0.1:11352/api/update", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        "accept": "application/json",
+      },
+      body: JSON.stringify({
+        table: "employers",
+        id: 4,
+        data: updatedData,
+      }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        alert("Profile updated successfully!");
+        console.log("Update response:", data);
+      })
+      .catch((error) => {
+        console.error("Error updating profile:", error);
+      });
+  });
 });
 
-function populateStateDropdown(selectedState) {
+function populateStateDropdown(selectedState, selectedCityProvince) {
   fetch("http://127.0.0.1:11352/api/regions/")
-    .then((response) => response.json())
+      .then((response) => response.json())
     .then((regions) => {
       const stateInput = document.getElementById("state-input");
-      stateInput.innerHTML = ""; // Clear existing options
+      const currentSelectedValue = selectedState || stateInput.value;
+      stateInput.innerHTML = "";
 
       regions.forEach((region) => {
-        const option = document.createElement("option");
-        option.value = region.name;
+          const option = document.createElement("option");
+        option.value = region.code;
         option.textContent = region.name;
-        if (region.name === selectedState) {
-          option.selected = true;
-        }
+
+        if (region.code === currentSelectedValue) {
+            option.selected = true;
+          populateCityProvinceDropdown(region.code, selectedCityProvince);
+          }
         stateInput.appendChild(option);
-      });
+        });
 
       stateInput.disabled = false;
-    })
+      stateInput.addEventListener("change", function () {
+        populateCityProvinceDropdown(stateInput.value, null);
+      });
+      })
     .catch((error) => console.error("Error fetching regions:", error));
 }
 
-function populateCityProvinceDropdown(selectedCityProvince) {
-  const stateInput = document.getElementById("state-input");
-  stateInput.addEventListener("change", function () {
-    const selectedState = stateInput.value;
-
-    fetch(`http://127.0.0.1:11352/api/regions/${selectedState}/provinces/`)
+function populateCityProvinceDropdown(selectedStateCode, selectedCityProvince) {
+  if (!selectedStateCode) return;
+  
+  fetch(`http://127.0.0.1:11352/api/regions/${encodeURIComponent(selectedStateCode)}/provinces/`)
       .then((response) => response.json())
       .then((provinces) => {
         const cityProvinceInput = document.getElementById("city-province-input");
-        cityProvinceInput.innerHTML = ""; // Clear existing options
+      cityProvinceInput.innerHTML = "";
 
         provinces.forEach((province) => {
           const option = document.createElement("option");
-          option.value = province.name;
-          option.textContent = province.name;
-          if (province.name === selectedCityProvince) {
+        option.value = province.code;
+        option.textContent = province.name;
+
+          if (province.code === selectedCityProvince || province.name === selectedCityProvince) {
             option.selected = true;
           }
           cityProvinceInput.appendChild(option);
@@ -73,8 +116,4 @@ function populateCityProvinceDropdown(selectedCityProvince) {
         cityProvinceInput.disabled = false;
       })
       .catch((error) => console.error("Error fetching provinces:", error));
-  });
-
-  // Trigger the change event to populate the city/province dropdown
-  stateInput.dispatchEvent(new Event("change"));
 }

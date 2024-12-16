@@ -11,8 +11,6 @@ crud = CRUD(db)
 logger = get_logger(__name__)
 router = APIRouter()
 
-
-
 def serialize_data(data):
     if isinstance(data, dict):
         return {k: serialize_data(v) for k, v in data.items()}
@@ -23,9 +21,6 @@ def serialize_data(data):
     else:
         return data
 
-# Corrected import state
-
-
 def records(table):
     try:
         response = get_all_records(table)
@@ -35,56 +30,66 @@ def records(table):
         else:
             return HTTPException(status_code=404, detail=response['message'])
     except Exception as e:
-        return  HTTPException(status_code=500, detail=str(e))
-
+        return HTTPException(status_code=500, detail=str(e))
 
 @router.post("/api/signup/jobseeker")
 async def jobseeker(request: Request):
     try:
         body = await request.json()
-        table = "users"  # Fixed table name as per user's request
+        table = "users"
         data_to_insert = body['data']
 
         users = records("users")
         for i in users:
-            if i["email"] ==  data_to_insert["email"]:
-                  return {"message": f"email alread exixst"} 
-            
-        emplyoers = records("employers")
-        for i in emplyoers:
-            if i["email"] ==  data_to_insert["email"]:
-                  return {"message": f"email alread exixst"} 
+            if i["email"] == data_to_insert["email"]:
+                return {"message": "Email already exists"}
 
-        crud.create(table, data_to_insert)  # Pass data_to_insert as a single argument
+        employers = records("employers")
+        for i in employers:
+            if i["email"] == data_to_insert["email"]:
+                return {"message": "Email already exists"}
+
+        # Attempt to create the record and capture any errors
+        try:
+            crud.create(table, data_to_insert)
+        except Exception as e:
+            logger.error(f"Error during record creation: {e}")
+            raise HTTPException(status_code=500, detail=f"Error creating record: {str(e)}")
+
         return {"message": f"Record created in {table} table."}
     except HTTPException as http_err:
-        # If it is a validation HTTPException, re-raise it
         raise http_err
     except Exception as e:
-        logger.error(f"Error during employer signup: {e}")
-        return str(e)
+        logger.error(f"Error during jobseeker signup: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 @router.post("/api/signup/recruter")
 async def recruter(request: Request, _: None = Depends(validate_input)):
     try:
         body = await request.json()
-        table = "employers"  # Fixed table name as per user's request
+        table = "employers"
         data_to_insert = body['data']
-        r = records(table)
+
         users = records("users")
         for i in users:
-            if i["email"] ==  data_to_insert["email"]:
-                return {"message": f"email alread exixst"} 
-            
-        emplyoers = records("employers")
-        for i in emplyoers:
-                if i["email"] ==  data_to_insert["email"]:
-                    return {"message": f"email alread exixst"} 
-        crud.create(table, data_to_insert)  # Pass data_to_insert as a single argument
+            if i["email"] == data_to_insert["email"]:
+                return {"message": "Email already exists"}
+
+        employers = records("employers")
+        for i in employers:
+            if i["email"] == data_to_insert["email"]:
+                return {"message": "Email already exists"}
+
+        # Attempt to create the record and capture any errors
+        try:
+            crud.create(table, data_to_insert)
+        except Exception as e:
+            logger.error(f"Error during record creation: {e}")
+            raise HTTPException(status_code=500, detail=f"Error creating record: {str(e)}")
+
         return {"message": f"Record created in {table} table."}
     except HTTPException as http_err:
-        # If it is a validation HTTPException, re-raise it
         raise http_err
     except Exception as e:
-        logger.error(f"Error during employer signup: {e}")
-        return str(e)
+        logger.error(f"Error during recruiter signup: {e}")
+        raise HTTPException(status_code=500, detail=str(e))

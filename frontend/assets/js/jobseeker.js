@@ -1,49 +1,54 @@
 document.querySelector("form").addEventListener("submit", function (event) {
   event.preventDefault(); // Prevent default form submission
 
-  const password = document.getElementById("password-input").value;
-  const confirmPassword = document.getElementById(
-    "confirm-password-input"
-  ).value;
+  const password_element = document.getElementById('password-input'); // input element
+  const err_message = document.getElementById('error-message');
+  const password = password_element.value;
+  const confirmPassword = document.getElementById('confirm-password-input').value;
 
-  // Password validation function
+  // Clear previous error message and reset input styles
+  err_message.textContent = ''; 
+  password_element.classList.remove('is-invalid');
+
+  // Password validation functions
   function hasUppercase(password) {
-    const uppercaseRegex = /[A-Z]/;
-    return uppercaseRegex.test(password);
+      const uppercaseRegex = /[A-Z]/;
+      return uppercaseRegex.test(password);
   }
 
-  // Function to check if password has at least 1 special character
   function hasSpecialCharacter(password) {
-    const specialCharacterRegex = /[!@#$%^&*()_+=[\]{};':"\\|,.<>/?]/;
-    return specialCharacterRegex.test(password);
+      const specialCharacterRegex = /[!@#$%^&*()_+=[\]{};':"\\|,.<>/?]/;
+      return specialCharacterRegex.test(password);
   }
 
-  // Function to check if password is at least 8 characters long
   function hasMinLength(password) {
-    return password.length >= 8;
+      return password.length >= 8;
   }
 
+  // Password validation checks
   if (!hasMinLength(password)) {
-    console.log("Error: Password must be at least 8 characters long.");
-    return;
+      // Set error message and style
+      err_message.textContent = 'Password must be at least 8 characters long.';
+      password_element.classList.add('is-invalid');
+      return;
   }
+  
   if (!hasUppercase(password)) {
-    console.log("Error: Password must contain at least one uppercase letter.");
-    return;
+      err_message.textContent = 'Password must contain at least one uppercase letter.';
+      password_element.classList.add('is-invalid');
+      return; 
   }
+
   if (!hasSpecialCharacter(password)) {
-    console.log("Error: Password must contain at least one special character.");
-    return;
+      err_message.textContent = 'Password must contain at least one special character.';
+      password_element.classList.add('is-invalid');
+      return; 
   }
 
   if (password !== confirmPassword) {
-    alert("Passwords do not match. Please try again.");
-    return;
-  }
-
-  if (password !== confirmPassword) {
-    alert("Passwords do not match. Please try again.");
-    return;
+      err_message.textContent = 'Passwords do not match.';
+      document.getElementById('confirm-password-input').classList.add('is-invalid');
+      return; 
   }
 
   const formData = new FormData(event.target);

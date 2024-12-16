@@ -17,7 +17,7 @@
     <?php include '../../../includes/navigation_recruiter.php' ?>
     <div class="container p-5 scroll-hidden">
         <h4>Change profile</h4>
-        <form class="row g-3 mt-3">
+        <form class="row g-3 mt-3" id="edit-profile-form">
             <div class="col-md-12">
                 <div class="form-floating">
                     <input type="text" name="company_name" class="form-control" id="company-name-input" placeholder="Company name" maxlength="30">

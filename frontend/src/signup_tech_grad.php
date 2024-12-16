@@ -20,7 +20,7 @@
     <?php include '../includes/navigationV1.php' ?>
     <div class="container  p-5 scroll-hidden">
     <h4>Welcome job seeker!</h4>
-        <form class="row g-3 mt-3">
+        <form class="row g-3 mt-3" >
             <!-- First Name -->
             <div class="col-md-6">
                 <div class="form-floating">
@@ -99,6 +99,7 @@
                     <input type="password" name="password" class="form-control" id="password-input" placeholder="Create Password" min="8" max="16" required>
                     <label for="password-input">Create Password</label>
                 </div>
+                <span id="error-message" class="text-danger"></span>
             </div>
             <!-- Confirm Password -->
             <div class="col-md-12">
