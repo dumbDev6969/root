@@ -11,6 +11,9 @@
     <link href="../../../assets/links.css" rel="stylesheet" />
     <script src="../../../assets/js/remove-tokens.js"></script>
     <script src="../../../assets/js/dashboard_recruiter.js"></script>
+
+    <link rel="stylesheet" href="../../../assets/scroll-animation.css">
+    <script src='../../../includes/scroll-animation.js'></script>
     <style>
         .col-lg-3 {
             width: 15rem

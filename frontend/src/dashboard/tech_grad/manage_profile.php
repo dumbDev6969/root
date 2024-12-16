@@ -9,6 +9,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link href="../../../assets/links.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../../../assets/scroll-animation.css">
+    <script src='../../../includes/scroll-animation.js'></script>
     <style>
         .col-lg-3 {
             width: 15rem
@@ -19,7 +22,7 @@
 
 <body>
     <?php include '../../../includes/navigation_users.php' ?>
-    <div class="container">
+    <div class="container scroll-hidden">
         <div class="row">
             <!-- First Form -->
             <div class="col-md-6">

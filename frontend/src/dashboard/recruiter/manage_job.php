@@ -11,11 +11,14 @@
     <link href="../../../assets/links.css" rel="stylesheet" />
     <script src="../../../assets/js/remove-tokens.js"></script>
     <script src="../../../assets/js/manage_job.js"></script>
+
+    <link rel="stylesheet" href="../../../assets/scroll-animation.css">
+    <script src='../../../includes/scroll-animation.js'></script>
 </head>
 
 <body>
     <?php include '../../../includes/navigation_recruiter.php' ?>
-    <div class="container p-3">
+    <div class="container p-3 scroll-hidden">
         <div class="row ">
             <div class="col-md-12">
                  <h1>no jobs found</h1>

@@ -9,11 +9,14 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link href="../../../assets/links.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../../../assets/scroll-animation.css">
+    <script src='../../../includes/scroll-animation.js'></script>
 </head>
 
 <body>
     <?php include '../../../includes/navigation_users.php' ?>
-    <div class="container-flui d-flex justify-content-center">
+    <div class="container-flui d-flex justify-content-center scroll-hidden">
             <!-- jobs -->
             <div class="col-md-9 m-5 " style="height: 90vh; overflow: hidden">
                 <div class="row gap-2">

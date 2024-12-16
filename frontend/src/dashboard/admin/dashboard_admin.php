@@ -10,13 +10,16 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link href="../../../assets/links.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../../assets/scroll-animation.css">
+    <script src='../../../includes/scroll-animation.js'></script>
+    
 </head>
 
 <body>
     <?php include '../../../includes/navigation_admin.php' ?>
     <div class="container">
-        <div class="row mt-5">
-            <div class="col-md-12">
+        <div class="row mt-5 ">
+            <div class="col-md-12 scroll-hidden">
                 <div class="row gap-2">
                     <div class="col-md-3 " style="width: 18rem">
                         <div class="card" style="width: 18rem;">
@@ -64,10 +67,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12 scroll-hidden">
                 <!-- main row for tech grad and empoyer -->
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 ">
                         <!-- row fo tech grad -->
                         <div class="row gap-2 mt-3 " style="overflow: auto">
                             <h4>Tech graduates</h4>

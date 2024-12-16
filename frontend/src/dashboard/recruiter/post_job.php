@@ -11,11 +11,14 @@
     <link href="../../../assets/links.css" rel="stylesheet" />
     <script src="../../../assets/js/remove-tokens.js"></script>
     <script src="../../../assets/js/post_job.js"></script>
+
+    <link rel="stylesheet" href="../../../assets/scroll-animation.css">
+    <script src='../../../includes/scroll-animation.js'></script>
 </head>
 
 <body>
     <?php include '../../../includes/navigation_recruiter.php' ?>
-    <div class="container p-5 mt-5">
+    <div class="container p-5 mt-5 scroll-hidden">
         <form id="postJobForm" action="submit_job.php" method="POST">
             <div class="container">
                 <div class="row">
