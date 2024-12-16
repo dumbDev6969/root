@@ -35,7 +35,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         // Redirect to the dashboard
         window.location.href = '../dashboard/recruiter/dashboard_recruiter.php';
-      } else {
+
+      
+      } else if (data.message === 'welcome user') {
+            // Store received data in localStorage
+        if (data.personal_info) {
+          localStorage.setItem('userData', JSON.stringify(data.personal_info));
+        } else {
+          console.error('Personal info is missing in the response:', data);
+        }
+        // Redirect to the dashboard
+        window.location.href = '../dashboard/tech_grad/dashboard_tech_grad.php';
+        
+      }
+      else {
         alert('Login failed: ' + data.message); // Provide user feedback
       }
     }).catch(error => {
