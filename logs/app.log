@@ -1885,3 +1885,4 @@
 2024-12-16 16:19:23 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
 2024-12-16 16:19:23 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.01s
 2024-12-16 16:19:24 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-16 16:20:44 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.02s
