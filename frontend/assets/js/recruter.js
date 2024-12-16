@@ -51,6 +51,8 @@ document.querySelector('form').addEventListener('submit', function(event) {
         return; 
     }
 
+  // ... existing code ...
+
     // Collect form data
     const formData = new FormData(event.target);
     const data = {
@@ -59,7 +61,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
             company_name: formData.get('company_name'),
             phone_number: formData.get('phone_number'),
             state: formData.get('state'),
-            city_or_province: formData.get('city-or-province'),
+            city_or_province: formData.get('city_or_province'),
             zip_code: formData.get('zip_code'),
             street: formData.get('street_number'),
             email: formData.get('email'),
@@ -75,11 +77,12 @@ document.querySelector('form').addEventListener('submit', function(event) {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data)  // Send only the nested data object
     })
     .then(response => response.json())
     .then(data => {
         alert('Success: ' + data.message);
+        console.log(data.message)
     })
     .catch((error) => {
         console.error('Error:', error);

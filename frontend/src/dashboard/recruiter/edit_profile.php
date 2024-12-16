@@ -9,6 +9,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link href="../../../assets/links.css" rel="stylesheet" />
+    <script src="../../../assets/js/remove-tokens.js"></script>
+    <script src="../../../assets/js/edit_profile.js"></script>
 </head>
 
 <body>
@@ -16,8 +18,6 @@
     <div class="container p-5 scroll-hidden">
         <h4>Change profile</h4>
         <form class="row g-3 mt-3">
-
-
             <div class="col-md-12">
                 <div class="form-floating">
                     <input type="text" name="company_name" class="form-control" id="company-name-input" placeholder="Company name" maxlength="30">
@@ -35,21 +35,17 @@
             <div class="col-md-6">
                 <div class="form-floating">
                     <select name="state" class="form-control" id="state-input" required>
-                        <option value="" disabled selected>Select Region</option>
-<!--                        <option value="Luzon">Luzon</option>-->
-<!--                        <option value="Visayas">Visayas</option>-->
-<!--                        <option value="Mindanao">Mindanao</option>-->
+                        <option value="" disabled selected id="selected-state-input">Select Region</option>
                     </select>
                     <label for="state-input">Region</label>
                 </div>
             </div>
             <input type="hidden" name="municipality" id="municipality-input">
 
-            <!-- City/Province -->
             <div class="col-md-6">
                 <div class="form-floating">
-                    <select  name="city-or-province" class="form-control" id="city-province-input" placeholder="City or Province" disabled>
-                        <option value="" >Select City/Province</option>
+                    <select name="city-or-province" class="form-control" id="city-province-input" placeholder="City or Province">
+                        <option value="" disabled selected id="selected-city-province-input">Select City/Province</option>
                     </select>
                     <label for="city-province-input">City or Province</label>
                 </div>
@@ -93,8 +89,6 @@
                 <button type="submit" class="btn btn-dark">Save changes</button>
             </div>
         </form>
-
     </div>
 </body>
-
 </html>

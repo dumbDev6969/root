@@ -9,22 +9,13 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link href="../../../assets/links.css" rel="stylesheet" />
+    <script src="../../../assets/js/remove-tokens.js"></script>
+    <script src="../../../assets/js/dashboard_recruiter.js"></script>
     <style>
         .col-lg-3 {
             width: 15rem
         }
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const employerData = JSON.parse(localStorage.getItem('employerData'));
-            if (employerData) {
-                document.getElementById('company-name').textContent = employerData.company_name || 'Company Name';
-                document.getElementById('industry-description').textContent = 'Tech Industry Job Experts';
-                document.getElementById('career-building').textContent = 'Building Careers in Technology';
-                document.getElementById('date-started').textContent = new Date(employerData.created_at).toLocaleDateString();
-            }
-        });
-    </script>
 </head>
 
 <body>
@@ -61,6 +52,7 @@
                 <a href="./edit_profile.php">
                     <button type="button" class="btn btn-small btn-secondary">Edit profile</button>
                 </a>
+                <button id="logout-button" type="button" class="btn btn-small btn-danger ms-2" onclick="remove()">Logout</button>
             </div>
         </div>
         <div class="row mt-3 scroll-hidden">
@@ -120,7 +112,7 @@
                         </div>
                     </div>
                     <h4 id="simple-list-item-2" class="mt-5 mb-3">Jobs</h4>
-                    <div class="row gap-3">
+                    <div class="row gap-3" id="job-container">
                         <div class="col-lg-3 col-md-12 ">
                             <div class="card" style="width: 15.5rem;">
                                 <div class="card-body">
@@ -193,5 +185,13 @@
         </div>
 
     </div>
+
+    <script>
+
+        function remove(){
+            localStorage.removeItem("employerData")
+            window.location.href = "../../../src/auth/login.php";
+        }
+    </script>
 </body>
 </html>

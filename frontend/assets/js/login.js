@@ -1,5 +1,12 @@
 // login.js
 document.addEventListener('DOMContentLoaded', function() {
+  // Redirect to dashboard if employerData exists in localStorage
+  const employerData = localStorage.getItem('employerData');
+  if (employerData) {
+    window.location.href = '../dashboard/recruiter/dashboard_recruiter.php';
+    return;
+  }
+
   const form = document.querySelector('form');
   form.addEventListener('submit', function(event) {
     event.preventDefault();
@@ -20,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(response => response.json())
     .then(data => {
       if (data.message === 'welcome employer') {
-        // Store received data in local storage or session storage
+        // Store received data in localStorage
         if (data.personal_info) {
           localStorage.setItem('employerData', JSON.stringify(data.personal_info));
         } else {
@@ -29,59 +36,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // Redirect to the dashboard
         window.location.href = '../dashboard/recruiter/dashboard_recruiter.php';
       } else {
-        console.error('Login failed:', data.message);
+        alert('Login failed: ' + data.message); // Provide user feedback
       }
-    }).catch(error => console.error('Error:', error));
+    }).catch(error => {
+      console.error('Error:', error);
+      alert('An error occurred during login. Please try again.');
+    });
   });
 });
-
-
-// jobseeker.js
-
-// Function to check if password has at least 1 uppercase letter
-
-
-
-
-// document.querySelector('form').addEventListener('submit', function(event) {
-//   event.preventDefault(); // Prevent default form submission
-
-//   const password = document.getElementById('password-input').value;
-//   const confirmPassword = document.getElementById('confirm-password-input').value;
- 
-
-//   const formData = new FormData(event.target);
-//   const data = {
-//       table: 'users',
-//       data: {
-//           first_name: formData.get('first-name'),
-//           last_name: formData.get('last-name'),
-//           phone_number: formData.get('phone'),
-//           state: formData.get('state'),
-//           city_or_province: formData.get('city-or-province'),
-//           municipality: formData.get('municipality'),
-//           zip_code: formData.get('zip-code'),
-//           street: formData.get('street-number'),
-//           email: formData.get('email'),
-//           password: formData.get('password'),
-//           created_at: new Date().toISOString().split('T')[0],
-//           updated_at: new Date().toISOString().split('T')[0]
-//       }
-//   };
-//   console.log('Submitting form data:', data);
-
-//   fetch('http://127.0.0.1:11352/api/signup/jobseeker', {
-//       method: 'POST',
-//       headers: {
-//           'Content-Type': 'application/json'
-//       },
-//       body: JSON.stringify(data)
-//   })
-//   .then(response => response.json())
-//   .then(data => {
-//       console.log(data);
-//   })
-//   .catch((error) => {
-//       console.error('Error:', error);
-//       alert('An error occurred. Please try again.');
-//   });

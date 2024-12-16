@@ -254,7 +254,7 @@ def create_employer(company_name, phone_number, state, zip_code, password, email
             INSERT INTO employers (company_name, phone_number, state, zip_code, password, email, city_or_province, street, created_at, updated_at)
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         """
-        current_time = datetime.now()
+        current_time = created_at or datetime.now()
         cursor.execute(query, (
             company_name, phone_number, state, zip_code, password, email,
             city_or_province, street, current_time, current_time
@@ -354,7 +354,7 @@ def delete_employer(employer_id):
 
 # ---------------------- Jobs CRUD Operations ----------------------
 
-def create_job(employer_id, job_title, job_type, location, salary_range, job_description, requirements):
+def create_job(employer_id, job_title, job_type, location, salary_range, job_description, requirements, created_at):
     """
     Creates a new job record.
     """
@@ -371,7 +371,7 @@ def create_job(employer_id, job_title, job_type, location, salary_range, job_des
         current_time = datetime.now()
         cursor.execute(query, (
             employer_id, job_title, job_type, location, salary_range,
-            job_description, requirements, current_time
+            job_description, requirements, created_at
         ))
         connection.commit()
         return {'success': True, 'message': 'Job created successfully.'}
@@ -1128,4 +1128,3 @@ def get_all_records(table_name):
 
     # Delete a user
     # response = delete_user(user_id=1)
-    # print(response)

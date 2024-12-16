@@ -27,7 +27,7 @@ class CRUD:
             return result.lastrowid if result else None
         except Exception as e:
             logger.error(f"Error creating record: {e}")
-            raise DatabaseError(f"Failed to create record: {e}")
+            return DatabaseError(f"Failed to create record: {e}")
 
     def read(self, table: str, conditions: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
         """Read records from the specified table."""
