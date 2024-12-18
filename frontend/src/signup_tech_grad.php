@@ -20,7 +20,16 @@
     <?php include '../includes/navigationV1.php' ?>
     <div class="container  p-5 scroll-hidden">
     <h4>Welcome job seeker!</h4>
-        <form class="row g-3 mt-3" >
+        <form class="row g-3 mt-3">
+        <div class="col-md-12">
+              <div class="form-floating">
+            <input type="hidden" class="form-control" id="hidden-region" name="selected-region">
+            <input type="hidden" class="form-control" id="hidden-province" name="selected-province">
+            <input type="hidden" class="form-control" id="hidden-municipality" name="selected-municipality">
+        </div>
+        </div>
+      
+           
             <!-- First Name -->
             <div class="col-md-6">
                 <div class="form-floating">
@@ -124,6 +133,7 @@
         </form>
     </div>
     <script src='../includes/scroll-animation.js'></script>
+    <script src="../assets/js/geo.js"></script>
     <script src="../assets/js/jobseeker.js"></script>
 </body>
 

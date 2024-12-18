@@ -16,6 +16,7 @@ from routes.update import router as update_router
 from routes.database import router as database_router
 from routes.login import router as login_router
 from routes.geo import router as router_geo
+from routes.chat import chat_router
 
 logger = get_logger(__name__)
 
@@ -23,15 +24,17 @@ app = FastAPI(
     title="JobSearch API",
     description="API for job search and recruitment operations",
     version="1.0.0",
+    websocket_ping_interval=20.0,  # Send ping every 20 seconds
+    websocket_ping_timeout=20.0,   # Wait 20 seconds for pong response
 )
 
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"],  # Allows all origins
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["*"],  # Allows all methods
+    allow_headers=["*"]   # Allows all headers
 )
 app.add_middleware(SessionMiddleware,secret_key="your_secret_key")
 
@@ -46,6 +49,7 @@ app.include_router(signup_router)
 app.include_router(send_email_router)
 app.include_router(login_router)
 app.include_router(router_geo)
+app.include_router(chat_router)
 
 # app.include_router(query_and_delete_router)
 # app.include_router(update_router)

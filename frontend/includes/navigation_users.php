@@ -35,6 +35,11 @@ $current_page = basename(htmlspecialchars($_SERVER['PHP_SELF'])); //! Get the cu
                         <li class="nav-item">
                             <button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Messages</button>
                         </li>
+                        <li>
+                
+            <button id="logout-button" type="button" class="btn btn-small btn-secondary ms-2" onclick="remove()">Logout</button>
+        
+                        </li>
                     </ul>
                 </div>
             </div>

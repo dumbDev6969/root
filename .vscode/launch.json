@@ -1,8 +1,23 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-   ]
-}
+      "version": "0.2.0",
+      "configurations": [
+        {
+      "name": "Launch & Profile Specific PHP File",
+          "type": "php",
+          "request": "launch",
+      "program": "${file}",
+          "runtimeArgs": [
+            "-S",
+            "localhost:8000",
+            "-t",
+            "."
+          ],
+          "port": 9003,
+          "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "localhost:8000",
+        "uriFormat": "http://localhost:8000/${relativeFile}"
+          }
+        }
+      ]
+    }

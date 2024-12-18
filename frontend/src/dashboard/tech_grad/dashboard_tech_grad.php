@@ -16,17 +16,43 @@
             width: 15rem
         }
     </style>
-    <!-- <script>
+    <script>
+        const employerData = localStorage.getItem("userData");
+        const parsedData = JSON.parse(employerData);
         document.addEventListener('DOMContentLoaded', function () {
-            const employerData = JSON.parse(localStorage.getItem('employerData'));
-            if (employerData) {
-                document.getElementById('company-name').textContent = employerData.company_name || 'Company Name';
-                document.getElementById('industry-description').textContent = 'Tech Industry Job Experts';
-                document.getElementById('career-building').textContent = 'Building Careers in Technology';
-                document.getElementById('date-started').textContent = new Date(employerData.created_at).toLocaleDateString();
-            }
+            const userData = {
+                user_id: parsedData.user_id,
+                first_name: parsedData.first_name,
+                last_name: parsedData.last_name,
+                phone_number: parsedData.phone_number,
+                email: parsedData.email,
+                street: parsedData.street,
+                municipality: parsedData.municipality,
+                city_or_province: parsedData.city_or_province,
+                state: parsedData.state,
+                zip_code: parsedData.zip_code,
+                created_at: parsedData.created_at,
+                updated_at: parsedData.updated_at,
+            };
+
+            // Populate user information
+            document.getElementById('company-name').textContent = `${userData.first_name} ${userData.last_name}`;
+            document.getElementById('industry-description').textContent = 'Tech Industry Job Experts';
+            document.getElementById('career-building').textContent = 'Building Careers in Technology';
+            document.getElementById('date-started').textContent = new Date(userData.created_at).toLocaleDateString();
+
+            // Populate additional user details
+            document.querySelector('.bi-envelope-at + span + strong').textContent = userData.email;
+            document.querySelector('.bi-telephone + span + strong').textContent = userData.phone_number;
+            document.querySelector('.bi-geo-alt + span + strong').textContent = userData.state;
         });
-    </script> -->
+        function remove(){
+            localStorage.removeItem("userData");
+            window.location.href = "../../../src/auth/login.php";
+        }
+
+       
+    </script>
 </head>
 
 <body>
@@ -186,4 +212,3 @@
 
 </body>
 
-</html>

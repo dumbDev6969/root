@@ -38,6 +38,7 @@ async def jobseeker(request: Request):
         body = await request.json()
         table = "users"
         data_to_insert = body['data']
+        logger.info(f"Received data for insertion: {data_to_insert}")
 
         users = records("users")
         for i in users:
