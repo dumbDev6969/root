@@ -12,6 +12,11 @@
 
     <link rel="stylesheet" href="../../../assets/scroll-animation.css">
     <script src='../../../includes/scroll-animation.js'></script>
+    <style>
+        a{
+            text-decoration: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -73,6 +78,7 @@
                     </div>
                     <div class="col-md-12 ">
                         <div class="row gap-2">
+                        <a href="./job_single_view.php" style="width: 15.5rem;">
                             <div class="col-md-3 " style="width: 15.5rem;">
                                 <div class="card" style="width: 15.5rem;">
                                     <div class="card-body">
@@ -104,99 +110,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3" style="width: 15.5rem;">
-                                <div class="card" style="width: 15.5rem;">
-                                    <div class="card-body">
-                                        <div class="d-flex  justify-content-between align-items-center">
-                                            <div>
-                                                <h5 class="card-title">Jr. Sofware dev</h5>
-
-                                            </div>
-                                            <div class="company-profile border" style="height: 50px; width: 50px; border-radius: 50px">
-                                                img
-                                            </div>
-                                        </div>
-                                        <h6 class="card-subtitle mb-2 text-body-secondary">Company name</h6>
-                                        <p class="text-secondary">Pangasinan SCCP</p>
-                                        <p class="card-text">
-                                            <button type="button" disabled class="btn btn-outline-secondary btn-sm">Part time</button>
-                                        <h6>$100 - $120</h6>
-                                        </p>
-                                        <form action="#">
-                                            <div class="row">
-                                                <div class="col-md-8 p-1">
-                                                    <button type="button" class="btn btn-sm btn-dark w-100">More details</button>
-                                                </div>
-                                                <div class="col-md-4 p-1">
-                                                    <button type="button" class="btn btn-sm btn-secondary w-100">Save</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 " style="width: 15.5rem;">
-                                <div class="card" style="width: 15.5rem;">
-                                    <div class="card-body">
-                                        <div class="d-flex  justify-content-between align-items-center">
-                                            <div>
-                                                <h5 class="card-title">Jr. Sofware dev</h5>
-
-                                            </div>
-                                            <div class="company-profile border" style="height: 50px; width: 50px; border-radius: 50px">
-                                                img
-                                            </div>
-                                        </div>
-                                        <h6 class="card-subtitle mb-2 text-body-secondary">Company name</h6>
-                                        <p class="text-secondary">Pangasinan SCCP</p>
-                                        <p class="card-text">
-                                            <button type="button" disabled class="btn btn-outline-secondary btn-sm">Part time</button>
-                                        <h6>$100 - $120</h6>
-                                        </p>
-                                        <form action="#">
-                                            <div class="row">
-                                                <div class="col-md-8 p-1">
-                                                    <button type="button" class="btn btn-sm btn-dark w-100">More details</button>
-                                                </div>
-                                                <div class="col-md-4 p-1">
-                                                    <button type="button" class="btn btn-sm btn-secondary w-100">Save</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3" style="width: 15.5rem;">
-                                <div class="card" style="width: 15.5rem;">
-                                    <div class="card-body">
-                                        <div class="d-flex  justify-content-between align-items-center">
-                                            <div>
-                                                <h5 class="card-title">Jr. Sofware dev</h5>
-
-                                            </div>
-                                            <div class="company-profile border" style="height: 50px; width: 50px; border-radius: 50px">
-                                                img
-                                            </div>
-                                        </div>
-                                        <h6 class="card-subtitle mb-2 text-body-secondary">Company name</h6>
-                                        <p class="text-secondary">Pangasinan SCCP</p>
-                                        <p class="card-text">
-                                            <button type="button" disabled class="btn btn-outline-secondary btn-sm">Part time</button>
-                                        <h6>$100 - $120</h6>
-                                        </p>
-                                        <form action="#">
-                                            <div class="row">
-                                                <div class="col-md-8 p-1">
-                                                    <button type="button" class="btn btn-sm btn-dark w-100">More details</button>
-                                                </div>
-                                                <div class="col-md-4 p-1">
-                                                    <button type="button" class="btn btn-sm btn-secondary w-100">Save</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
+                            </a>
+                            
                         </div>
                     </div>
                 </div>
