@@ -12,20 +12,29 @@ class DatabaseError(Exception):
     pass
 
 class Database:
-    def __init__(self, host: str, user: str, password: str, database: str, db_path: str = 'fallback_db.sqlite', pool_size: int = 5) -> None:
+    def __init__(self, host: str, user: str, password: str, database: str, db_path: str = 'fallback_db.sqlite', pool_size: int = 20) -> None:
         """Initialize the Database class with an attempt to connect to MySQL, fallback to SQLite."""
         self.db_type = None
         try:
-            self.pool = mysql.connector.pooling.MySQLConnectionPool(
-                pool_name="mypool",
-                pool_size=pool_size,
-                host=host,
-                user=user,
-                password=password,
-                database=database
-            )
+            dbconfig = {
+                "pool_name": "mypool",
+                "pool_size": pool_size,
+                "host": host,
+                "user": user,
+                "password": password,
+                "database": database,
+                "connect_timeout": 30,
+                "pool_reset_session": True,
+                "autocommit": True,
+                "get_warnings": True,
+                "raise_on_warnings": True,
+                "connection_timeout": 60,
+                "pool_reset_session": True,
+                "consume_results": True
+            }
+            self.pool = mysql.connector.pooling.MySQLConnectionPool(**dbconfig)
             self.db_type = 'mysql'
-            logger.info("MySQL database connection pool created successfully")
+            logger.info(f"MySQL database connection pool created successfully with size {pool_size}")
         except mysql.connector.Error as e:
             logger.error(f"Error creating MySQL connection pool: {e}, trying SQLite fallback")
             try:
@@ -49,53 +58,110 @@ class Database:
     def get_connection(self):
         """Get a new connection depending on the DB type."""
         if self.db_type == 'mysql':
-            return self.pool.get_connection()
+            retries = 3
+            while retries > 0:
+                try:
+                    connection = self.pool.get_connection()
+                    if connection.is_connected():
+                        return connection
+                except mysql.connector.Error as e:
+                    logger.error(f"Error getting connection from pool (retries left: {retries-1}): {e}")
+                    retries -= 1
+                    if retries == 0:
+                        raise DatabaseError(f"Failed to get connection after 3 attempts: {e}")
+            return None
         elif self.db_type == 'sqlite':
             conn = sqlite3.connect(self.db_path)
             conn.row_factory = sqlite3.Row
             return conn
         else:
             raise DatabaseError("No database connection type is set.")
+def execute_query(self, sql: str, params: Optional[tuple] = ()) -> Optional[List[Dict[str, Any]]]:
+    """Execute a SQL query with optional parameters."""
+    conn = None
+    cursor = None
+    retries = 3
+    last_error = None
 
-    def execute_query(self, sql: str, params: Optional[tuple] = ()) -> Optional[List[Dict[str, Any]]]:
-        """Execute a SQL query with optional parameters."""
-        conn = self.get_connection()
-        if self.db_type == 'sqlite':
-            params = tuple(params) if params else ()
+    while retries > 0:
         try:
-            with conn.cursor() if self.db_type == 'mysql' else conn:
-                cursor = conn.execute(sql, params) if self.db_type == 'sqlite' else conn.cursor(dictionary=True)
-                cursor.execute(sql, params)
-                if sql.strip().upper().startswith("SELECT"):
-                    return cursor.fetchall()
-                else:
-                    conn.commit()
-                    return None
-        except (mysql.connector.Error, sqlite3.Error) as e:
-            logger.error(f"Database error: {e}")
-            raise DatabaseError(f"Failed to execute query: {e}")
-        finally:
+            conn = self.get_connection()
+            if not conn:
+                retries -= 1
+                continue
+
             if self.db_type == 'sqlite':
-                conn.close()
+                params = tuple(params) if params else ()
+                cursor = conn.cursor()
+            else:
+                cursor = conn.cursor(dictionary=True)
+
+            cursor.execute(sql, params)
+            if sql.strip().upper().startswith("SELECT"):
+                result = cursor.fetchall()
+            else:
+                conn.commit()
+                result = cursor.lastrowid
+            return result
+
+        except (mysql.connector.Error, sqlite3.Error) as e:
+            last_error = e
+            logger.error(f"Database error (retries left: {retries-1}): {e}")
+            if conn:
+                try:
+                    conn.rollback()
+                except:
+                    pass
+            retries -= 1
+            if retries == 0:
+                raise DatabaseError(f"Failed to execute query after 3 attempts: {e}")
+
+        finally:
+            if cursor:
+                try:
+                    cursor.close()
+                except:
+                    pass
+            if conn:
+                try:
+                    if self.db_type == 'mysql':
+                        conn.close()  # Return connection to pool
+                    else:
+                        conn.close()  # Close SQLite connection
+                except:
+                    pass
+                    conn.close()  # Close SQLite connection
 
     def execute_multiple_queries(self, sql: str) -> None:
         """Execute multiple SQL queries separated by semicolons."""
-        conn = self.get_connection()
+        conn = None
+        cursor = None
         try:
-            with conn.cursor() if self.db_type == 'mysql' else conn:
-                # Split the SQL string into individual statements
-                statements = sql.split(';')
-                for statement in statements:
-                    if statement.strip():  # Skip empty statements
-                        cursor = conn.execute(statement) if self.db_type == 'sqlite' else conn.cursor()
-                        cursor.execute(statement)
-                conn.commit()
+            conn = self.get_connection()
+            cursor = conn.cursor()
+            
+            # Split the SQL string into individual statements
+            statements = sql.split(';')
+            for statement in statements:
+                if statement.strip():  # Skip empty statements
+                    cursor.execute(statement)
+            conn.commit()
         except (mysql.connector.Error, sqlite3.Error) as e:
             logger.error(f"Database error: {e}")
+            if conn:
+                try:
+                    conn.rollback()
+                except:
+                    pass
             raise DatabaseError(f"Failed to execute multiple queries: {e}")
         finally:
-            if self.db_type == 'sqlite':
-                conn.close()
+            if cursor:
+                cursor.close()
+            if conn:
+                if self.db_type == 'mysql':
+                    conn.close()  # Return connection to pool
+                else:
+                    conn.close()  # Close SQLite connection
 
     def close(self) -> None:
         """Close the MySQL database connection pool."""
@@ -108,93 +174,6 @@ db = Database(
     host=os.getenv('DB_HOST', 'localhost'),
     user=os.getenv('DB_USER', 'root'),
     password=os.getenv('DB_PASSWORD', ''),
-    database=os.getenv('DB_NAME', 'jobsearch')
+    database=os.getenv('DB_NAME', 'jobsearch'),
+    pool_size=32
 )
-
-# # Execute multiple queries to create tables
-# db.execute_multiple_queries("""
-# CREATE TABLE IF NOT EXISTS employers (
-#     employer_id INTEGER PRIMARY KEY,
-#     company_name TEXT NOT NULL,
-#     phone_number TEXT NOT NULL,
-#     state TEXT NOT NULL,
-#     city_or_province TEXT,
-#     zip_code TEXT NOT NULL,
-#     street TEXT,
-#     email TEXT,
-#     password TEXT NOT NULL,
-#     created_at TEXT NOT NULL,
-#     updated_at TEXT NOT NULL
-# );
-
-# CREATE TABLE IF NOT EXISTS jobs (
-#     job_id INTEGER PRIMARY KEY,
-#     employer_id INTEGER NOT NULL,
-#     job_title TEXT NOT NULL,
-#     job_type TEXT CHECK(job_type IN ('Full-time', 'Part-time', 'Freelance', 'Internship')) NOT NULL,
-#     location TEXT NOT NULL,
-#     salary_range TEXT NOT NULL,
-#     job_description TEXT NOT NULL,
-#     requirements TEXT NOT NULL,
-#     created_at TEXT NOT NULL,
-#     FOREIGN KEY (employer_id) REFERENCES employers(employer_id)
-# );
-
-# CREATE TABLE IF NOT EXISTS qualifications (
-#     qualification_id INTEGER PRIMARY KEY,
-#     user_id INTEGER NOT NULL,
-#     degree TEXT NOT NULL,
-#     school_graduated TEXT NOT NULL,
-#     certifications TEXT,
-#     specialized_training TEXT,
-#     FOREIGN KEY (user_id) REFERENCES users(user_id)
-# );
-
-# CREATE TABLE IF NOT EXISTS saved_jobs (
-#     saved_job_id INTEGER PRIMARY KEY,
-#     saved_at TEXT NOT NULL,
-#     user_id INTEGER NOT NULL,
-#     job_id INTEGER NOT NULL,
-#     FOREIGN KEY (user_id) REFERENCES users(user_id),
-#     FOREIGN KEY (job_id) REFERENCES jobs(job_id)
-# );
-
-# CREATE TABLE IF NOT EXISTS submitted_resumes (
-#     submitted_resume_id INTEGER PRIMARY KEY,
-#     resume_file_name TEXT NOT NULL,
-#     resume_path TEXT NOT NULL,
-#     submitted_at TEXT NOT NULL,
-#     user_id INTEGER NOT NULL,
-#     job_id INTEGER NOT NULL,
-#     FOREIGN KEY (user_id) REFERENCES users(user_id),
-#     FOREIGN KEY (job_id) REFERENCES jobs(job_id)
-# );
-
-# CREATE TABLE IF NOT EXISTS user_interest (
-#     interest_id INTEGER PRIMARY KEY,
-#     job_interest TEXT NOT NULL,
-#     job_type TEXT CHECK(job_type IN ('Full-time', 'Part-time', 'Freelance', 'Internship')) NOT NULL,
-#     preferred_location TEXT NOT NULL,
-#     expected_salary_range TEXT NOT NULL,
-#     created_at TEXT NOT NULL,
-#     user_id INTEGER NOT NULL,
-#     FOREIGN KEY (user_id) REFERENCES users(user_id)
-# );
-
-# CREATE TABLE IF NOT EXISTS users (
-#     user_id INTEGER PRIMARY KEY,
-#     first_name TEXT NOT NULL,
-#     last_name TEXT NOT NULL,
-#     phone_number TEXT NOT NULL,
-#     state TEXT NOT NULL,
-#     city_or_province TEXT,
-#     municipality TEXT NOT NULL,
-#     zip_code TEXT NOT NULL,
-#     street TEXT,
-#     email TEXT NOT NULL,
-#     password TEXT NOT NULL,
-#     created_at TEXT NOT NULL,
-#     updated_at TEXT NOT NULL
-# );
-# """)
-

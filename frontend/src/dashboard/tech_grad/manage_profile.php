@@ -103,10 +103,26 @@
     
                 const formData = new FormData(form);
                 const data = {};
+                
+                // Check password fields if they exist
+                const password = formData.get('edit-password');
+                const confirmPassword = formData.get('edit-confirm-password');
+                
+                if (password || confirmPassword) {
+                    if (password !== confirmPassword) {
+                        alert('Passwords do not match!');
+                        return;
+                    }
+                    if (password.length < 8 || password.length > 16) {
+                        alert('Password must be between 8 and 16 characters!');
+                        return;
+                    }
+                }
     
                 // Collect only fields with values
                 formData.forEach((value, key) => {
-                    if (value.trim() !== '') {
+                    // Skip confirm password field as it's only for validation
+                    if (key !== 'edit-confirm-password' && value.trim() !== '') {
                         data[key] = value;
                     }
                 });

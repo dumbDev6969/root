@@ -125,7 +125,7 @@ document.querySelector("form").addEventListener("submit", function (event) {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      if (data.message === 'Record created in users table.') {
+      if (data.message === 'User created successfully') {
         window.location.href = "auth/login.php"; // Redirect to login page
       }
     })

@@ -24,10 +24,15 @@ class CRUD:
         
         try:
             result = self.db.execute_query(query, tuple(data.values()))
-            return result.lastrowid if result else None
+            if result is None:
+                raise DatabaseError("Failed to create record: No result returned")
+            return result
+        except DatabaseError as e:
+            logger.error(f"Database error creating record: {e}")
+            raise
         except Exception as e:
             logger.error(f"Error creating record: {e}")
-            return DatabaseError(f"Failed to create record: {e}")
+            raise DatabaseError(f"Failed to create record: {e}")
 
     def read(self, table: str, conditions: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
         """Read records from the specified table."""

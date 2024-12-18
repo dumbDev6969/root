@@ -11,8 +11,6 @@ from routes.metrics import router as metrics_router
 from routes.jobs import router as jobs_router
 from routes.signup import router as signup_router
 from routes.send_email import router as send_email_router
-from routes.query_and_delete import router as query_and_delete_router
-from routes.update import router as update_router
 from routes.database import router as database_router
 from routes.login import router as login_router
 from routes.geo import router as router_geo
@@ -50,10 +48,9 @@ app.include_router(send_email_router)
 app.include_router(login_router)
 app.include_router(router_geo)
 app.include_router(chat_router)
-
-# app.include_router(query_and_delete_router)
-# app.include_router(update_router)
 app.include_router(database_router)
+
+
 if __name__ == "__main__":
     import uvicorn
     logger.info("Starting the application")

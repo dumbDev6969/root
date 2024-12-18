@@ -5,6 +5,9 @@ import json
 from fastapi.responses import JSONResponse
 from datetime import datetime
 from utils.security import validate_input
+from utils.password_manager import PasswordManager
+
+password_manager = PasswordManager()
 
 class CustomJSONEncoder(json.JSONEncoder):
     def default(self, obj):
@@ -157,6 +160,13 @@ async def update_record(request: UpdateRequest, _: None = Depends(validate_input
         raise HTTPException(status_code=400, detail=f"Invalid table name: {table}")
 
     try:
+        # Hash password if it's being updated
+        if table == 'users' and 'password' in data and data['password']:
+            try:
+                data['password'] = password_manager.hash_password(data['password'])
+            except Exception as e:
+                raise HTTPException(status_code=500, detail=f"Error hashing password: {str(e)}")
+
         update_func = CRUD_MAP[table]['update']
         response = update_func(record_id, **data)
         if response['success']:

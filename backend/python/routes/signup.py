@@ -1,15 +1,14 @@
 from fastapi import APIRouter, Request, HTTPException, Depends
 from fastapi.responses import JSONResponse
 from utils.logger import get_logger
-from utils.crud import CRUD
-from utils.database import db
 from utils.security import validate_input
-from utils.databse_operations import get_all_records
+from utils.databse_operations import get_all_records, create_user, create_employer
+from utils.password_manager import PasswordManager
 from datetime import datetime
 
-crud = CRUD(db)
 logger = get_logger(__name__)
 router = APIRouter()
+password_manager = PasswordManager()
 
 def serialize_data(data):
     if isinstance(data, dict):
@@ -33,64 +32,141 @@ def records(table):
         return HTTPException(status_code=500, detail=str(e))
 
 @router.post("/api/signup/jobseeker")
+@router.post("/api/signup/jobseeker")
 async def jobseeker(request: Request):
     try:
+        # Get and validate request data
         body = await request.json()
-        table = "users"
-        data_to_insert = body['data']
-        logger.info(f"Received data for insertion: {data_to_insert}")
-
-        users = records("users")
-        for i in users:
-            if i["email"] == data_to_insert["email"]:
-                return {"message": "Email already exists"}
-
-        employers = records("employers")
-        for i in employers:
-            if i["email"] == data_to_insert["email"]:
-                return {"message": "Email already exists"}
-
-        # Attempt to create the record and capture any errors
+        data = body['data']
+        logger.info(f"Raw data received: {data}")
+        
+        if 'password' not in data:
+            raise HTTPException(status_code=400, detail="Password is required")
+        
+        # Hash the password first to avoid unnecessary database operations if hashing fails
         try:
-            crud.create(table, data_to_insert)
+            hashed_password = password_manager.hash_password(data['password'])
+            logger.info(f"Password hashed successfully")
         except Exception as e:
-            logger.error(f"Error during record creation: {e}")
-            raise HTTPException(status_code=500, detail=f"Error creating record: {str(e)}")
+            logger.error(f"Error hashing password: {e}")
+            raise HTTPException(status_code=500, detail=f"Error hashing password: {str(e)}")
 
-        return {"message": f"Record created in {table} table."}
-    except HTTPException as http_err:
+        # Check for existing users with proper error handling
+        try:
+            users = records("users")
+            if not isinstance(users, list):
+                raise HTTPException(status_code=500, detail="Error fetching user records")
+                
+            for i in users:
+                if i["email"] == data["email"]:
+                    return {"message": "Email already exists"}
+
+            employers = records("employers")
+            if not isinstance(employers, list):
+                raise HTTPException(status_code=500, detail="Error fetching employer records")
+                
+            for i in employers:
+                if i["email"] == data["email"]:
+                    return {"message": "Email already exists"}
+        except Exception as e:
+            logger.error(f"Error checking existing users: {e}")
+            raise HTTPException(status_code=500, detail="Error validating user data")
+
+        # Create user with the hashed password
+        try:
+            result = create_user(
+                first_name=data['first_name'],
+                last_name=data['last_name'],
+                phone_number=data['phone_number'],
+                state=data['state'],
+                municipality=data['municipality'],
+                zip_code=data['zip_code'],
+                email=data['email'],
+                password=hashed_password,  # Use the hashed password
+                city_or_province=data.get('city_or_province'),
+                street=data.get('street')
+            )
+            
+            if not result['success']:
+                logger.error(f"Error creating user: {result['message']}")
+                raise HTTPException(status_code=500, detail=result['message'])
+                
+            logger.info("User created successfully with hashed password")
+            return {"message": "User created successfully"}
+        except Exception as e:
+            logger.error(f"Error during user creation: {e}")
+            raise HTTPException(status_code=500, detail="Failed to create user")
         raise http_err
     except Exception as e:
         logger.error(f"Error during jobseeker signup: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
 @router.post("/api/signup/recruter")
+@router.post("/api/signup/recruter")
 async def recruter(request: Request, _: None = Depends(validate_input)):
     try:
+        # Get and validate request data
         body = await request.json()
-        table = "employers"
-        data_to_insert = body['data']
+        data = body['data']
+        logger.info(f"Raw data received for recruiter: {data}")
+        
+        if 'password' not in data:
+            raise HTTPException(status_code=400, detail="Password is required")
 
-        users = records("users")
-        for i in users:
-            if i["email"] == data_to_insert["email"]:
-                return {"message": "Email already exists"}
-
-        employers = records("employers")
-        for i in employers:
-            if i["email"] == data_to_insert["email"]:
-                return {"message": "Email already exists"}
-
-        # Attempt to create the record and capture any errors
+        # Hash the password first to avoid unnecessary database operations if hashing fails
         try:
-            crud.create(table, data_to_insert)
+            hashed_password = password_manager.hash_password(data['password'])
+            logger.info("Password hashed successfully for recruiter")
         except Exception as e:
-            logger.error(f"Error during record creation: {e}")
-            raise HTTPException(status_code=500, detail=f"Error creating record: {str(e)}")
+            logger.error(f"Error hashing password for recruiter: {e}")
+            raise HTTPException(status_code=500, detail=f"Error hashing password: {str(e)}")
 
-        return {"message": f"Record created in {table} table."}
-    except HTTPException as http_err:
-        raise http_err
+        # Check for existing users with proper error handling
+        try:
+            users = records("users")
+            if not isinstance(users, list):
+                raise HTTPException(status_code=500, detail="Error fetching user records")
+                
+            for i in users:
+                if i["email"] == data["email"]:
+                    return {"message": "Email already exists"}
+
+            employers = records("employers")
+            if not isinstance(employers, list):
+                raise HTTPException(status_code=500, detail="Error fetching employer records")
+                
+            for i in employers:
+                if i["email"] == data["email"]:
+                    return {"message": "Email already exists"}
+        except Exception as e:
+            logger.error(f"Error checking existing users: {e}")
+            raise HTTPException(status_code=500, detail="Error validating user data")
+
+        # Create employer with hashed password
+        try:
+            result = create_employer(
+                company_name=data['company_name'],
+                phone_number=data['phone_number'],
+                state=data['state'],
+                zip_code=data['zip_code'],
+                password=hashed_password,  # Use the hashed password
+                email=data.get('email'),
+                city_or_province=data.get('city_or_province'),
+                street=data.get('street')
+            )
+            
+            if not result['success']:
+                logger.error(f"Error creating employer: {result['message']}")
+                raise HTTPException(status_code=500, detail=result['message'])
+                
+            logger.info("Employer created successfully with hashed password")
+            return {"message": "Employer created successfully"}
+        except Exception as e:
+            logger.error(f"Error during employer creation: {e}")
+            raise HTTPException(status_code=500, detail="Failed to create employer")
+            return {"message": "Employer created successfully"}
+        except HTTPException as http_err:
+            raise http_err
     except Exception as e:
         logger.error(f"Error during recruiter signup: {e}")
         raise HTTPException(status_code=500, detail=str(e))
