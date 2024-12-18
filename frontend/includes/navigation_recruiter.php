@@ -26,7 +26,11 @@ $current_page = basename(htmlspecialchars($_SERVER['PHP_SELF'])); //! Get the cu
                         <li class="nav-item">
                             <a class="nav-link <?= ($current_page == 'post_job.php') ? 'active' : '' ?>" href="./post_job.php">Post a Job</a>
                         </li>
+                        <li class="nav-item">
+                            <button class="btn text-secondary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Messages</button>
+                        </li>
                     </ul>
+                    
                 </div>
             </div>
         </div>

@@ -1,33 +1,33 @@
 <?php
 require_once '../../../includes/connection.php';
 
-// response
+
+function fetch_data($conn, $query) {
+    $result = '';
+    $stmt = $conn->prepare($query);
+    if ($stmt && $stmt->execute()) {
+        $stmt->bind_result($result);
+        $stmt->fetch();
+        $stmt->close();
+        return $result;
+    }// Default value if query fails
+}
+
+//  response data
 $data = [
     'tech_grad' => 0,
-    'employers' => 0
+    'employers' => 0,
+    'jobs' => 0
 ];
 
 $conn = $db->get_conn();
 
+// Use the reusable function
+$data['tech_grad'] = fetch_data($conn, 'SELECT COUNT(user_id) FROM users');
+$data['employers'] = fetch_data($conn, 'SELECT COUNT(employer_id) FROM employers');
+$data['jobs'] = fetch_data($conn, 'SELECT COUNT(job_id) FROM jobs');
 
-$stmt = $conn->prepare('SELECT COUNT(user_id) FROM users');
-if ($stmt && $stmt->execute()) {
-    $stmt->bind_result($tech_count);
-    $stmt->fetch();
-    $data['tech_grad'] = $tech_count;
-}
-$stmt->close();
-
-
-$stmt = $conn->prepare('SELECT COUNT(employer_id) FROM employers');
-if ($stmt && $stmt->execute()) {
-    $stmt->bind_result($emp_count);
-    $stmt->fetch();
-    $data['employers'] = $emp_count;
-}
-$stmt->close();
-
-
+// Return the JSON response
 header('Content-Type: application/json');
 echo json_encode($data, JSON_PRETTY_PRINT);
 exit;

@@ -23,6 +23,50 @@
 
 <body>
     <?php include '../../../includes/navigation_recruiter.php' ?>
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Messages</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body border bg-light d-flex flex-column">
+            <div class="flex-grow-1 overflow-auto mb-3">
+                <ul class="list-group" id="contactList">
+                    <li class="list-group-item d-flex align-items-center" onclick="showConversation('John Doe')">
+                        <img alt="Profile picture of John Doe" class="rounded-circle me-3" height="50" src="https://storage.googleapis.com/a1aa/image/DcnuRmt96H7mGpxRQDCrNnBXYJqej7JpIBjcZXwd3UgHf97TA.jpg" width="50" />
+                        <div>
+                            <h6 class="mb-0">John Doe</h6>
+                            <small class="text-muted">Online</small>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center" onclick="showConversation('Jane Smith')">
+                        <img alt="Profile picture of Jane Smith" class="rounded-circle me-3" height="50" src="https://storage.googleapis.com/a1aa/image/d21jL7y7Q74gA1LctixDVnjbM14lvfJEGhtlHjUqeSJUe73nA.jpg" width="50" />
+                        <div>
+                            <h6 class="mb-0">Jane Smith</h6>
+                            <small class="text-muted">Offline</small>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+<div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="conversationCanvas" aria-labelledby="conversationCanvasLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="conversationCanvasLabel">Conversation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body border bg-light d-flex flex-column">
+            <div class="flex-grow-1 overflow-auto mb-3" id="conversationBody">
+                <!-- Conversation messages will be dynamically inserted here -->
+            </div>
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Type a message...">
+                <button class="btn btn-primary" type="button"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+    
     <div class="container-fluid">
         <div class="container d-flex align-items-center justify-content-between scroll-hidden">
             <div class="row">
@@ -55,7 +99,7 @@
                 <a href="./edit_profile.php">
                     <button type="button" class="btn btn-small btn-secondary">Edit profile</button>
                 </a>
-                <button id="logout-button" type="button" class="btn btn-small btn-danger ms-2" onclick="remove()">Logout</button>
+                <button id="logout-button" type="button" class="btn btn-small btn-secondary ms-2" onclick="remove()">Logout</button>
             </div>
         </div>
         <div class="row mt-3 scroll-hidden">

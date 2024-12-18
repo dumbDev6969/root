@@ -6,8 +6,11 @@ $current_page = basename(htmlspecialchars($_SERVER['PHP_SELF'])); //! Get the cu
          .navbar {
             position: sticky;
             top: 0;
-            z-index: 99999;
+            z-index: 99;
         }
+       .offcanvas{
+        z-index: 999;
+       }
     </style>
     <nav class="navbar navbar-expand-lg bg-light p-3">
         <div class="container-fluid">
@@ -16,24 +19,23 @@ $current_page = basename(htmlspecialchars($_SERVER['PHP_SELF'])); //! Get the cu
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class="mx-auto">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                            <a class="nav-link <?= ($current_page == 'dashboard_tech_grad.php') ? 'active' : '' ?>" href="./dashboard_tech_grad.php">Home</a>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link <?= ($current_page == 'dashboard_recruiter.php') ? 'active' : '' ?>" href="./dashboard_recruiter.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <?= ($current_page == 'job_search.php') ? 'active' : '' ?>" href="./job_search.php">Search jobs</a>
+                            <a class="nav-link <?= ($current_page == 'manage_job.php') ? 'active' : '' ?>" href="./manage_job.php">Manage Job</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <?= ($current_page == 'manage_profile.php') ? 'active' : '' ?>" href="./manage_profile.php">Manage profile</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link <?= ($current_page == 'saved_jobs.php') ? 'active' : '' ?>" href="./saved_jobs.php">Saved jobs</a>
+                            <a class="nav-link <?= ($current_page == 'post_job.php') ? 'active' : '' ?>" href="./post_job.php">Post a Job</a>
                         </li>
                         <li class="nav-item">
                             <button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Messages</button>
                         </li>
                     </ul>
+                    
                 </div>
             </div>
         </div>
     </nav>
+                    

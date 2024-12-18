@@ -138,15 +138,16 @@
                 // Data from the server
                 const techGradCount = data.tech_grad || 0; // Replace with the correct data field
                 const employerCount = data.employers || 0; // Replace with the correct data field
+                const jobCount = data.jobs || 0;
 
                 // Initialize the chart with dynamic data
                 new Chart(ctx, {
                     type: 'bar',
                     data: {
-                        labels: ['Tech Grads', 'Employers'], // Dynamic labels
+                        labels: ['Tech Grads', 'Employers', 'Jobs'], // Dynamic labels
                         datasets: [{
                             label: '# of Registrations',
-                            data: [techGradCount, employerCount], // Dynamic data
+                            data: [techGradCount, employerCount, jobCount], // Dynamic data
                             borderWidth: 1
                         }]
                     },

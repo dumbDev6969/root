@@ -8,7 +8,6 @@
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <link href="../../../assets/links.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="../../../assets/scroll-animation.css">
     <script src='../../../includes/scroll-animation.js'></script>
@@ -32,6 +31,50 @@
 
 <body>
     <?php include '../../../includes/navigation_users.php' ?>
+
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Messages</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body border bg-light d-flex flex-column">
+            <div class="flex-grow-1 overflow-auto mb-3">
+                <ul class="list-group" id="contactList">
+                    <li class="list-group-item d-flex align-items-center" onclick="showConversation('John Doe')">
+                        <img alt="Profile picture of John Doe" class="rounded-circle me-3" height="50" src="https://storage.googleapis.com/a1aa/image/DcnuRmt96H7mGpxRQDCrNnBXYJqej7JpIBjcZXwd3UgHf97TA.jpg" width="50" />
+                        <div>
+                            <h6 class="mb-0">John Doe</h6>
+                            <small class="text-muted">Online</small>
+                        </div>
+                    </li>
+                    <li class="list-group-item d-flex align-items-center" onclick="showConversation('Jane Smith')">
+                        <img alt="Profile picture of Jane Smith" class="rounded-circle me-3" height="50" src="https://storage.googleapis.com/a1aa/image/d21jL7y7Q74gA1LctixDVnjbM14lvfJEGhtlHjUqeSJUe73nA.jpg" width="50" />
+                        <div>
+                            <h6 class="mb-0">Jane Smith</h6>
+                            <small class="text-muted">Offline</small>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+<div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="conversationCanvas" aria-labelledby="conversationCanvasLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="conversationCanvasLabel">Conversation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body border bg-light d-flex flex-column">
+            <div class="flex-grow-1 overflow-auto mb-3" id="conversationBody">
+                <!-- Conversation messages will be dynamically inserted here -->
+            </div>
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Type a message...">
+                <button class="btn btn-primary" type="button"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
     <div class="container-fluid">
         <div class="container d-flex align-items-center justify-content-between scroll-hidden">
             <div class="row">
