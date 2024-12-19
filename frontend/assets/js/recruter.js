@@ -2,13 +2,15 @@ document.querySelector('form').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent default form submission
 
     const password_element = document.getElementById('password-input'); // input element
+    const email_element = document.getElementById('email-input'); // email input element
     const err_message = document.getElementById('error-message');
     const password = password_element.value;
     const confirmPassword = document.getElementById('confirm-password-input').value;
 
     // Clear previous error message and reset input styles
-    err_message.textContent = ''; 
+    err_message.textContent = '';
     password_element.classList.remove('is-invalid');
+    email_element.classList.remove('is-invalid');
 
     // Password validation functions
     function hasUppercase(password) {
@@ -81,8 +83,13 @@ document.querySelector('form').addEventListener('submit', function(event) {
     })
     .then(response => response.json())
     .then(data => {
-        alert('Success: ' + data.message);
-        console.log(data.message)
+        if (data.message === 'Email already exists') {
+            err_message.textContent = 'Email already exists';
+            email_element.classList.add('is-invalid');
+        } else {
+            alert('Success: ' + data.message);
+            console.log(data.message);
+        }
     })
     .catch((error) => {
         console.error('Error:', error);

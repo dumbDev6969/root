@@ -89,6 +89,7 @@ setuptools.setup(
         'Werkzeug==3.1.3',
         'win32-setctime==1.2.0',
         'wrapt==1.17.0',
+        'httpx==0.28.1',
         'pytest==8.3.4',
     ],
     classifiers=[

@@ -72,3 +72,219 @@
 2024-12-19 12:53:18 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
 2024-12-19 12:53:18 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.01s
 2024-12-19 13:05:10 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 13:18:30 | ERROR    | utils.database:__init__:39 - Error creating MySQL connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061), trying SQLite fallback
+2024-12-19 13:18:30 | INFO     | utils.database:__init__:46 - SQLite database initialized successfully as fallback
+2024-12-19 13:18:34 | INFO     | __main__:<module>:56 - Starting the application
+2024-12-19 13:18:39 | ERROR    | utils.database:__init__:39 - Error creating MySQL connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061), trying SQLite fallback
+2024-12-19 13:18:39 | INFO     | utils.database:__init__:46 - SQLite database initialized successfully as fallback
+2024-12-19 13:18:58 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-19 13:18:58 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-19 13:18:58 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.01s
+2024-12-19 13:18:58 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-19 13:19:01 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/090000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-19 13:19:01 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/090000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-19 13:19:03 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/097300000/municipalities/ - Status: 200 - Duration: 0.01s
+2024-12-19 13:19:03 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/097300000/municipalities/ - Status: 200 - Duration: 0.01s
+2024-12-19 13:19:23 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-19 13:19:23 | INFO     | routes.signup:jobseeker:41 - Raw data received: {'first_name': 'Jemcarlo', 'last_name': 'Austria', 'phone_number': '09207766194', 'state': 'Zamboanga Peninsula', 'city_or_province': 'Zamboanga Del Sur', 'municipality': 'Margosatubig', 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-19', 'updated_at': '2024-12-19'}
+2024-12-19 13:19:24 | INFO     | routes.signup:jobseeker:49 - Password hashed successfully
+2024-12-19 13:19:28 | ERROR    | routes.signup:jobseeker:72 - Error checking existing users: 500: Error fetching user records
+2024-12-19 13:19:28 | ERROR    | routes.signup:jobseeker:101 - Error during jobseeker signup: 500: Error validating user data
+2024-12-19 13:19:28 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 500 - Duration: 4.18s
+2024-12-19 13:27:38 | ERROR    | utils.database:__init__:39 - Error creating MySQL connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061), trying SQLite fallback
+2024-12-19 13:27:38 | INFO     | utils.database:__init__:46 - SQLite database initialized successfully as fallback
+2024-12-19 13:27:42 | INFO     | __main__:<module>:56 - Starting the application
+2024-12-19 13:27:47 | ERROR    | utils.database:__init__:39 - Error creating MySQL connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061), trying SQLite fallback
+2024-12-19 13:27:47 | INFO     | utils.database:__init__:46 - SQLite database initialized successfully as fallback
+2024-12-19 13:27:52 | INFO     | routes.signup:jobseeker:41 - Raw data received: {'first_name': 'Jemcarlo', 'last_name': 'Austria', 'phone_number': '09207766194', 'state': 'Zamboanga Peninsula', 'city_or_province': 'Zamboanga Del Sur', 'municipality': 'Margosatubig', 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-19', 'updated_at': '2024-12-19'}
+2024-12-19 13:27:52 | INFO     | routes.signup:jobseeker:49 - Password hashed successfully
+2024-12-19 13:27:56 | ERROR    | routes.signup:jobseeker:72 - Error checking existing users: 500: Error fetching user records
+2024-12-19 13:27:56 | ERROR    | routes.signup:jobseeker:101 - Error during jobseeker signup: 500: Error validating user data
+2024-12-19 13:27:56 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 500 - Duration: 4.16s
+2024-12-19 14:07:50 | INFO     | __main__:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 14:07:50 | ERROR    | __main__:import_sql_file:175 - Failed to import SQL file ../../127_0_0_1.sql into MySQL: [Errno 2] No such file or directory: '../../127_0_0_1.sql'
+2024-12-19 14:07:55 | INFO     | __main__:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 14:07:56 | ERROR    | __main__:import_sql_file:175 - Failed to import SQL file ../../127_0_0_1.sql into MySQL: [Errno 2] No such file or directory: '../../127_0_0_1.sql'
+2024-12-19 14:08:44 | INFO     | __main__:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 14:08:44 | ERROR    | __main__:import_sql_file:175 - Failed to import SQL file ./127_0_0_1.sql into MySQL: [Errno 2] No such file or directory: './127_0_0_1.sql'
+2024-12-19 14:09:04 | INFO     | __main__:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 14:09:04 | ERROR    | __main__:import_sql_file:175 - Failed to import SQL file 127_0_0_1.sql into MySQL: [Errno 2] No such file or directory: '127_0_0_1.sql'
+2024-12-19 14:09:23 | INFO     | __main__:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 14:09:23 | ERROR    | __main__:import_sql_file:175 - Failed to import SQL file 127_0_0_1.sql into MySQL: [Errno 2] No such file or directory: '127_0_0_1.sql'
+2024-12-19 14:10:19 | INFO     | __main__:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 14:10:19 | ERROR    | __main__:import_sql_file:175 - Failed to import SQL file 127_0_0_1.sql into MySQL: [Errno 2] No such file or directory: '127_0_0_1.sql'
+2024-12-19 14:10:27 | INFO     | __main__:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 14:10:27 | ERROR    | __main__:execute_multiple_queries:150 - Database error: 1007: Can't create database 'jobsearch'; database exists
+2024-12-19 14:10:27 | ERROR    | __main__:import_sql_file:175 - Failed to import SQL file 127_0_0_1.sql into MySQL: Failed to execute multiple queries: 1007: Can't create database 'jobsearch'; database exists
+2024-12-19 14:11:11 | ERROR    | __main__:__init__:39 - Error creating MySQL connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061), trying SQLite fallback
+2024-12-19 14:11:11 | INFO     | __main__:__init__:46 - SQLite database initialized successfully as fallback
+2024-12-19 14:11:11 | ERROR    | __main__:import_sql_file:179 - SQL file not found: 127_0_0_1.sql
+2024-12-19 14:11:15 | ERROR    | __main__:__init__:39 - Error creating MySQL connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061), trying SQLite fallback
+2024-12-19 14:11:15 | INFO     | __main__:__init__:46 - SQLite database initialized successfully as fallback
+2024-12-19 14:11:15 | ERROR    | __main__:import_sql_file:179 - SQL file not found: 127_0_0_1.sql
+2024-12-19 14:11:27 | ERROR    | __main__:__init__:39 - Error creating MySQL connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061), trying SQLite fallback
+2024-12-19 14:11:27 | INFO     | __main__:__init__:46 - SQLite database initialized successfully as fallback
+2024-12-19 14:11:27 | ERROR    | __main__:import_sql_file:179 - SQL file not found: 127_0_0_1.sql
+2024-12-19 14:11:42 | ERROR    | __main__:__init__:39 - Error creating MySQL connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061), trying SQLite fallback
+2024-12-19 14:11:42 | INFO     | __main__:__init__:46 - SQLite database initialized successfully as fallback
+2024-12-19 14:11:42 | ERROR    | __main__:import_sql_file:179 - SQL file not found: 127_0_0_1.sql
+2024-12-19 14:13:10 | ERROR    | __main__:__init__:39 - Error creating MySQL connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061), trying SQLite fallback
+2024-12-19 14:13:10 | INFO     | __main__:__init__:46 - SQLite database initialized successfully as fallback
+2024-12-19 14:13:10 | ERROR    | __main__:import_sql_file:178 - SQL file not found: 127_0_0_1.sql
+2024-12-19 14:13:27 | ERROR    | __main__:__init__:39 - Error creating MySQL connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061), trying SQLite fallback
+2024-12-19 14:13:27 | INFO     | __main__:__init__:46 - SQLite database initialized successfully as fallback
+2024-12-19 14:13:27 | ERROR    | __main__:import_sql_file:178 - SQL file not found: 127_0_0_1.sql
+2024-12-19 14:14:16 | ERROR    | __main__:__init__:39 - Error creating MySQL connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061), trying SQLite fallback
+2024-12-19 14:14:16 | INFO     | __main__:__init__:46 - SQLite database initialized successfully as fallback
+2024-12-19 14:14:16 | ERROR    | __main__:import_sql_file:179 - SQL file not found: C:\Users\jemca\OneDrive\Desktop\root\127_0_0_1.sql
+2024-12-19 14:14:56 | ERROR    | __main__:__init__:39 - Error creating MySQL connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061), trying SQLite fallback
+2024-12-19 14:14:56 | INFO     | __main__:__init__:46 - SQLite database initialized successfully as fallback
+2024-12-19 14:14:56 | ERROR    | __main__:execute_multiple_queries:150 - Database error: near "SET": syntax error
+2024-12-19 14:14:56 | ERROR    | __main__:import_sql_file:188 - Failed to import SQL file C:\Users\jemca\OneDrive\Desktop\root\127_0_0_1.sql into SQLite: Failed to execute multiple queries: near "SET": syntax error
+2024-12-19 14:16:03 | ERROR    | __main__:__init__:39 - Error creating MySQL connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061), trying SQLite fallback
+2024-12-19 14:16:03 | INFO     | __main__:__init__:46 - SQLite database initialized successfully as fallback
+2024-12-19 14:16:03 | ERROR    | __main__:execute_multiple_queries:150 - Database error: near "SET": syntax error
+2024-12-19 14:16:03 | ERROR    | __main__:import_sql_file:188 - Failed to import SQL file C:\Users\jemca\OneDrive\Desktop\root\127_0_0_1.sql into SQLite: Failed to execute multiple queries: near "SET": syntax error
+2024-12-19 14:18:08 | ERROR    | __main__:__init__:39 - Error creating MySQL connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061), trying SQLite fallback
+2024-12-19 14:18:08 | INFO     | __main__:__init__:46 - SQLite database initialized successfully as fallback
+2024-12-19 14:18:08 | ERROR    | __main__:execute_multiple_queries:150 - Database error: near "START": syntax error
+2024-12-19 14:18:08 | ERROR    | __main__:import_sql_file:188 - Failed to import SQL file C:\Users\jemca\OneDrive\Desktop\root\127_0_0_1.sql into SQLite: Failed to execute multiple queries: near "START": syntax error
+2024-12-19 14:18:33 | ERROR    | __main__:__init__:39 - Error creating MySQL connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061), trying SQLite fallback
+2024-12-19 14:18:33 | INFO     | __main__:__init__:46 - SQLite database initialized successfully as fallback
+2024-12-19 14:18:33 | ERROR    | __main__:execute_multiple_queries:150 - Database error: near "START": syntax error
+2024-12-19 14:18:33 | ERROR    | __main__:import_sql_file:188 - Failed to import SQL file C:\Users\jemca\OneDrive\Desktop\root\127_0_0_1.sql into SQLite: Failed to execute multiple queries: near "START": syntax error
+2024-12-19 14:19:01 | ERROR    | __main__:__init__:39 - Error creating MySQL connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061), trying SQLite fallback
+2024-12-19 14:19:01 | INFO     | __main__:__init__:46 - SQLite database initialized successfully as fallback
+2024-12-19 14:19:01 | ERROR    | __main__:execute_multiple_queries:150 - Database error: near "DATABASE": syntax error
+2024-12-19 14:19:01 | ERROR    | __main__:import_sql_file:188 - Failed to import SQL file C:\Users\jemca\OneDrive\Desktop\root\127_0_0_1.sql into SQLite: Failed to execute multiple queries: near "DATABASE": syntax error
+2024-12-19 14:19:39 | ERROR    | __main__:__init__:39 - Error creating MySQL connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061), trying SQLite fallback
+2024-12-19 14:19:39 | INFO     | __main__:__init__:46 - SQLite database initialized successfully as fallback
+2024-12-19 14:19:39 | ERROR    | __main__:execute_multiple_queries:150 - Database error: table `employers` already exists
+2024-12-19 14:19:39 | ERROR    | __main__:import_sql_file:188 - Failed to import SQL file C:\Users\jemca\OneDrive\Desktop\root\127_0_0_1.sql into SQLite: Failed to execute multiple queries: table `employers` already exists
+2024-12-19 14:21:25 | ERROR    | __main__:__init__:39 - Error creating MySQL connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061), trying SQLite fallback
+2024-12-19 14:21:25 | INFO     | __main__:__init__:46 - SQLite database initialized successfully as fallback
+2024-12-19 14:21:25 | ERROR    | __main__:execute_multiple_queries:150 - Database error: near "=": syntax error
+2024-12-19 14:21:25 | ERROR    | __main__:import_sql_file:188 - Failed to import SQL file C:\Users\jemca\OneDrive\Desktop\root\127_0_0_1.sql into SQLite: Failed to execute multiple queries: near "=": syntax error
+2024-12-19 14:22:56 | ERROR    | __main__:__init__:39 - Error creating MySQL connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061), trying SQLite fallback
+2024-12-19 14:22:56 | INFO     | __main__:__init__:46 - SQLite database initialized successfully as fallback
+2024-12-19 14:22:56 | ERROR    | __main__:execute_multiple_queries:150 - Database error: near "=": syntax error
+2024-12-19 14:22:56 | ERROR    | __main__:import_sql_file:188 - Failed to import SQL file C:\Users\jemca\OneDrive\Desktop\root\127_0_0_1.sql into SQLite: Failed to execute multiple queries: near "=": syntax error
+2024-12-19 14:23:44 | ERROR    | __main__:__init__:39 - Error creating MySQL connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061), trying SQLite fallback
+2024-12-19 14:23:44 | INFO     | __main__:__init__:46 - SQLite database initialized successfully as fallback
+2024-12-19 14:23:44 | ERROR    | __main__:execute_multiple_queries:158 - Database error: near "=": syntax error
+2024-12-19 14:23:44 | ERROR    | __main__:import_sql_file:196 - Failed to import SQL file C:\Users\jemca\OneDrive\Desktop\root\127_0_0_1.sql into SQLite: Failed to execute multiple queries: near "=": syntax error
+2024-12-19 14:24:10 | ERROR    | __main__:__init__:39 - Error creating MySQL connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061), trying SQLite fallback
+2024-12-19 14:24:10 | INFO     | __main__:__init__:46 - SQLite database initialized successfully as fallback
+2024-12-19 14:24:10 | ERROR    | __main__:execute_multiple_queries:161 - Database error: near "=": syntax error
+2024-12-19 14:24:10 | ERROR    | __main__:import_sql_file:206 - Failed to import SQL file C:\Users\jemca\OneDrive\Desktop\root\127_0_0_1.sql into SQLite: Failed to execute multiple queries: near "=": syntax error
+2024-12-19 14:29:27 | ERROR    | utils.database:__init__:39 - Error creating MySQL connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061), trying SQLite fallback
+2024-12-19 14:29:27 | INFO     | utils.database:__init__:46 - SQLite database initialized successfully as fallback
+2024-12-19 14:29:31 | INFO     | __main__:<module>:56 - Starting the application
+2024-12-19 14:29:36 | ERROR    | utils.database:__init__:39 - Error creating MySQL connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061), trying SQLite fallback
+2024-12-19 14:29:36 | INFO     | utils.database:__init__:46 - SQLite database initialized successfully as fallback
+2024-12-19 14:29:52 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-19 14:29:52 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-19 14:29:52 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.01s
+2024-12-19 14:29:52 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-19 14:29:56 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/010000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-19 14:29:56 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/010000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-19 14:29:57 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/012900000/municipalities/ - Status: 200 - Duration: 0.01s
+2024-12-19 14:29:57 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/012900000/municipalities/ - Status: 200 - Duration: 0.01s
+2024-12-19 14:30:12 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-19 14:30:12 | INFO     | routes.signup:jobseeker:41 - Raw data received: {'first_name': 'Jemcarlo', 'last_name': 'Austria', 'phone_number': '09207766194', 'state': 'Ilocos Region', 'city_or_province': 'Ilocos Sur', 'municipality': 'Bantay', 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-19', 'updated_at': '2024-12-19'}
+2024-12-19 14:30:12 | INFO     | routes.signup:jobseeker:49 - Password hashed successfully
+2024-12-19 14:30:16 | ERROR    | routes.signup:jobseeker:72 - Error checking existing users: 500: Error fetching user records
+2024-12-19 14:30:16 | ERROR    | routes.signup:jobseeker:101 - Error during jobseeker signup: 500: Error validating user data
+2024-12-19 14:30:16 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 500 - Duration: 4.16s
+2024-12-19 14:34:02 | ERROR    | utils.database:__init__:39 - Error creating MySQL connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061), trying SQLite fallback
+2024-12-19 14:34:02 | INFO     | utils.database:__init__:46 - SQLite database initialized successfully as fallback
+2024-12-19 14:34:06 | INFO     | __main__:<module>:56 - Starting the application
+2024-12-19 14:34:11 | ERROR    | utils.database:__init__:39 - Error creating MySQL connection pool: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (10061), trying SQLite fallback
+2024-12-19 14:34:11 | INFO     | utils.database:__init__:46 - SQLite database initialized successfully as fallback
+2024-12-19 14:34:25 | INFO     | routes.signup:jobseeker:41 - Raw data received: {'first_name': 'Jemcarlo', 'last_name': 'Austria', 'phone_number': '09207766194', 'state': 'Ilocos Region', 'city_or_province': 'Ilocos Sur', 'municipality': 'Bantay', 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-19', 'updated_at': '2024-12-19'}
+2024-12-19 14:34:25 | INFO     | routes.signup:jobseeker:49 - Password hashed successfully
+2024-12-19 14:34:25 | ERROR    | routes.signup:jobseeker:72 - Error checking existing users: 500: Error fetching user records
+2024-12-19 14:34:25 | ERROR    | routes.signup:jobseeker:101 - Error during jobseeker signup: 500: Error validating user data
+2024-12-19 14:34:25 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 500 - Duration: 0.19s
+2024-12-19 14:34:33 | INFO     | routes.signup:jobseeker:41 - Raw data received: {'first_name': 'Jemcarlo', 'last_name': 'Austria', 'phone_number': '09207766194', 'state': 'Ilocos Region', 'city_or_province': 'Ilocos Sur', 'municipality': 'Bantay', 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-19', 'updated_at': '2024-12-19'}
+2024-12-19 14:34:33 | INFO     | routes.signup:jobseeker:49 - Password hashed successfully
+2024-12-19 14:34:33 | ERROR    | routes.signup:jobseeker:72 - Error checking existing users: 500: Error fetching user records
+2024-12-19 14:34:33 | ERROR    | routes.signup:jobseeker:101 - Error during jobseeker signup: 500: Error validating user data
+2024-12-19 14:34:33 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 500 - Duration: 0.09s
+2024-12-19 14:34:41 | INFO     | routes.signup:jobseeker:41 - Raw data received: {'first_name': 'Jemcarlo', 'last_name': 'Austria', 'phone_number': '09207766194', 'state': 'Ilocos Region', 'city_or_province': 'Ilocos Sur', 'municipality': 'Bantay', 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-19', 'updated_at': '2024-12-19'}
+2024-12-19 14:34:42 | INFO     | routes.signup:jobseeker:49 - Password hashed successfully
+2024-12-19 14:34:42 | ERROR    | routes.signup:jobseeker:72 - Error checking existing users: 500: Error fetching user records
+2024-12-19 14:34:42 | ERROR    | routes.signup:jobseeker:101 - Error during jobseeker signup: 500: Error validating user data
+2024-12-19 14:34:42 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 500 - Duration: 0.09s
+2024-12-19 14:34:56 | INFO     | routes.signup:jobseeker:41 - Raw data received: {'first_name': 'Jemcarlo', 'last_name': 'Austria', 'phone_number': '09207766194', 'state': 'Ilocos Region', 'city_or_province': 'Ilocos Sur', 'municipality': 'Bantay', 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-19', 'updated_at': '2024-12-19'}
+2024-12-19 14:34:56 | INFO     | routes.signup:jobseeker:49 - Password hashed successfully
+2024-12-19 14:34:56 | ERROR    | routes.signup:jobseeker:72 - Error checking existing users: 500: Error fetching user records
+2024-12-19 14:34:56 | ERROR    | routes.signup:jobseeker:101 - Error during jobseeker signup: 500: Error validating user data
+2024-12-19 14:34:56 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 500 - Duration: 0.08s
+2024-12-19 14:35:33 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 14:35:33 | INFO     | __main__:<module>:56 - Starting the application
+2024-12-19 14:35:34 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 14:35:46 | INFO     | routes.signup:jobseeker:41 - Raw data received: {'first_name': 'Jemcarlo', 'last_name': 'Austria', 'phone_number': '09207766194', 'state': 'Ilocos Region', 'city_or_province': 'Ilocos Sur', 'municipality': 'Bantay', 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-19', 'updated_at': '2024-12-19'}
+2024-12-19 14:35:46 | INFO     | routes.signup:jobseeker:49 - Password hashed successfully
+2024-12-19 14:35:46 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 200 - Duration: 0.11s
+2024-12-19 14:36:01 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-19 14:36:01 | INFO     | routes.signup:jobseeker:41 - Raw data received: {'first_name': 'Jemcarlo', 'last_name': 'Austria', 'phone_number': '09207766194', 'state': 'Ilocos Region', 'city_or_province': 'Ilocos Sur', 'municipality': 'Bantay', 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-19', 'updated_at': '2024-12-19'}
+2024-12-19 14:36:01 | INFO     | routes.signup:jobseeker:49 - Password hashed successfully
+2024-12-19 14:36:01 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 200 - Duration: 0.10s
+2024-12-19 14:38:49 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-19 14:38:49 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.01s
+2024-12-19 14:38:49 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.01s
+2024-12-19 14:38:49 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.01s
+2024-12-19 14:38:53 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/170000000/provinces/ - Status: 200 - Duration: 0.06s
+2024-12-19 14:38:53 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/170000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-19 14:38:55 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/175200000/municipalities/ - Status: 200 - Duration: 0.05s
+2024-12-19 14:38:55 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/175200000/municipalities/ - Status: 200 - Duration: 0.01s
+2024-12-19 14:39:06 | INFO     | routes.signup:jobseeker:41 - Raw data received: {'first_name': 'Jemcarlo', 'last_name': 'Austria', 'phone_number': '09207766194', 'state': 'MIMAROPA Region', 'city_or_province': 'Oriental Mindoro', 'municipality': 'Bongabong', 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-19', 'updated_at': '2024-12-19'}
+2024-12-19 14:39:07 | INFO     | routes.signup:jobseeker:49 - Password hashed successfully
+2024-12-19 14:39:07 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 200 - Duration: 0.09s
+2024-12-19 14:39:11 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-19 14:39:11 | INFO     | routes.signup:jobseeker:41 - Raw data received: {'first_name': 'Jemcarlo', 'last_name': 'Austria', 'phone_number': '09207766194', 'state': 'MIMAROPA Region', 'city_or_province': 'Oriental Mindoro', 'municipality': 'Bongabong', 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-19', 'updated_at': '2024-12-19'}
+2024-12-19 14:39:11 | INFO     | routes.signup:jobseeker:49 - Password hashed successfully
+2024-12-19 14:39:11 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 200 - Duration: 0.10s
+2024-12-19 14:40:03 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-19 14:40:03 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-19 14:40:04 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.01s
+2024-12-19 14:40:04 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.01s
+2024-12-19 14:40:16 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-19 14:40:16 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-19 14:40:16 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.01s
+2024-12-19 14:40:16 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.01s
+2024-12-19 14:40:21 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/080000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-19 14:40:21 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/080000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-19 14:40:23 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/084800000/municipalities/ - Status: 200 - Duration: 0.01s
+2024-12-19 14:40:23 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/084800000/municipalities/ - Status: 200 - Duration: 0.01s
+2024-12-19 14:40:36 | INFO     | routes.signup:jobseeker:41 - Raw data received: {'first_name': 'Jemcarlo', 'last_name': 'Austria', 'phone_number': '09207766194', 'state': 'Eastern Visayas', 'city_or_province': 'Northern Samar', 'municipality': 'Lapinig', 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-19', 'updated_at': '2024-12-19'}
+2024-12-19 14:40:36 | INFO     | routes.signup:jobseeker:49 - Password hashed successfully
+2024-12-19 14:40:36 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 200 - Duration: 0.09s
+2024-12-19 14:41:18 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-19 14:41:18 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-19 14:41:18 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.01s
+2024-12-19 14:41:18 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-19 14:41:33 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-19 14:41:33 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-19 14:41:33 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-19 14:41:34 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.04s
+2024-12-19 14:41:48 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-19 14:41:48 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-19 14:41:48 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-19 14:41:48 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-19 14:42:03 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-19 14:42:03 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-19 14:42:03 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-19 14:42:03 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-19 14:42:08 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-19 14:42:08 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-19 14:42:08 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-19 14:42:08 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-19 14:42:11 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/010000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-19 14:42:11 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/010000000/provinces/ - Status: 200 - Duration: 0.01s
+2024-12-19 14:42:13 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/013300000/municipalities/ - Status: 200 - Duration: 0.01s
+2024-12-19 14:42:13 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/013300000/municipalities/ - Status: 200 - Duration: 0.01s
+2024-12-19 14:42:23 | INFO     | routes.signup:jobseeker:41 - Raw data received: {'first_name': 'Jemcarlo', 'last_name': 'Austria', 'phone_number': '09207766194', 'state': 'Ilocos Region', 'city_or_province': 'La Union', 'municipality': 'Select municipality', 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-19', 'updated_at': '2024-12-19'}
+2024-12-19 14:42:23 | INFO     | routes.signup:jobseeker:49 - Password hashed successfully
+2024-12-19 14:42:23 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 200 - Duration: 0.09s

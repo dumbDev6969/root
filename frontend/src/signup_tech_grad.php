@@ -101,6 +101,7 @@
                     <input type="email" name="email" class="form-control" id="email-input" placeholder="Email" required>
                     <label for="email-input">Email</label>
                 </div>
+                <span id="email-error-message" class="text-danger"></span>
             </div>
             <!-- Password -->
             <div class="col-md-12">

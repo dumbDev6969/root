@@ -16,3 +16,10 @@
 2024-12-19 13:04:48 | INFO     | __main__:<module>:56 - Starting the application
 2024-12-19 13:04:49 | ERROR    | utils.database:__init__:39 - Error creating MySQL connection pool: 1040 (HY000): Too many connections, trying SQLite fallback
 2024-12-19 13:04:49 | INFO     | utils.database:__init__:46 - SQLite database initialized successfully as fallback
+2024-12-19 14:02:40 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 14:05:07 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 14:05:07 | ERROR    | utils.database:import_sql_file:169 - SQL file import is only supported for SQLite fallback.
+2024-12-19 14:05:58 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 14:05:58 | ERROR    | utils.database:import_sql_file:175 - Failed to import SQL file 127_0_0_1.sql into MySQL: [Errno 2] No such file or directory: '127_0_0_1.sql'
+2024-12-19 14:06:01 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 14:06:01 | ERROR    | utils.database:import_sql_file:175 - Failed to import SQL file 127_0_0_1.sql into MySQL: [Errno 2] No such file or directory: '127_0_0_1.sql'

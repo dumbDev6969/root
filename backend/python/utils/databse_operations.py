@@ -24,17 +24,18 @@ try:
 except Error as e:
     print(f"Error creating pool: {e}")
 
+from utils.database import db
+
 def get_connection():
     """
-    Establishes and returns a connection to the MySQL database.
+    Establishes and returns a connection using the Database class, with fallback to SQLite.
     """
     try:
-        connection = mysql.connector.connect(**DB_CONFIG)
-        if connection.is_connected():
-            return connection
-    except Error as e:
-        print(f"Error while connecting to MySQL: {e}")
-    return None
+        connection = db.get_connection()
+        return connection
+    except Exception as e:
+        print(f"Error while getting database connection: {e}")
+        return None
 
 # ---------------------- Employers CRUD Operations ----------------------
 
@@ -53,7 +54,8 @@ def create_employer(company_name, phone_number, state, zip_code, password, email
             INSERT INTO employers (company_name, phone_number, state, zip_code, password, email, city_or_province, street, created_at, updated_at)
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         """
-        current_time = created_at or datetime.now()
+        created_at = datetime.now()
+        current_time = created_at
         cursor.execute(query, (
             company_name, phone_number, state, zip_code, password, email,
             city_or_province, street, current_time, current_time

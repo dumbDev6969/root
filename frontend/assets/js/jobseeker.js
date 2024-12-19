@@ -38,13 +38,17 @@ document.querySelector("form").addEventListener("submit", function (event) {
   event.preventDefault(); // Prevent default form submission
 
   const password_element = document.getElementById('password-input'); // input element
-  const err_message = document.getElementById('error-message');
+  const email_element = document.getElementById('email-input'); // email input element
+  const password_err_message = document.getElementById('error-message');
+  const email_err_message = document.getElementById('email-error-message');
   const password = password_element.value;
   const confirmPassword = document.getElementById('confirm-password-input').value;
 
-  // Clear previous error message and reset input styles
-  err_message.textContent = ''; 
+  // Clear previous error messages and reset input styles
+  password_err_message.textContent = '';
+  email_err_message.textContent = '';
   password_element.classList.remove('is-invalid');
+  email_element.classList.remove('is-invalid');
 
   // Password validation functions
   function hasUppercase(password) {
@@ -64,27 +68,27 @@ document.querySelector("form").addEventListener("submit", function (event) {
   // Password validation checks
   if (!hasMinLength(password)) {
       // Set error message and style
-      err_message.textContent = 'Password must be at least 8 characters long.';
+      password_err_message.textContent = 'Password must be at least 8 characters long.';
       password_element.classList.add('is-invalid');
       return;
   }
   
   if (!hasUppercase(password)) {
-      err_message.textContent = 'Password must contain at least one uppercase letter.';
+      password_err_message.textContent = 'Password must contain at least one uppercase letter.';
       password_element.classList.add('is-invalid');
-      return; 
+      return;
   }
 
   if (!hasSpecialCharacter(password)) {
-      err_message.textContent = 'Password must contain at least one special character.';
+      password_err_message.textContent = 'Password must contain at least one special character.';
       password_element.classList.add('is-invalid');
-      return; 
+      return;
   }
 
   if (password !== confirmPassword) {
-      err_message.textContent = 'Passwords do not match.';
+      password_err_message.textContent = 'Passwords do not match.';
       document.getElementById('confirm-password-input').classList.add('is-invalid');
-      return; 
+      return;
   }
 
   const formData = new FormData(event.target);
@@ -125,7 +129,10 @@ document.querySelector("form").addEventListener("submit", function (event) {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      if (data.message === 'User created successfully') {
+      if (data.message === 'Email already exists') {
+        email_err_message.textContent = 'Email already exists';
+        email_element.classList.add('is-invalid');
+      } else if (data.message === 'User created successfully') {
         window.location.href = "auth/login.php"; // Redirect to login page
       }
     })
