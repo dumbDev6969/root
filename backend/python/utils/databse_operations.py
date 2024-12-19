@@ -1,25 +1,30 @@
-
 import mysql.connector
 from mysql.connector import Error
 import json
 from datetime import datetime
+import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # Database Configuration
 DB_CONFIG = {
-    'host': 'mysql-24a8087-mysql-server-jobs.c.aivencloud.com',
-    'user': 'avnadmin',
-    'password': 'AVNS_RCkju8DXtGBZrSXcWqk',
-    'database': 'jobsearch',
-    'port': 16459,
+    'host': os.getenv('DB_HOST'),
+    'user': os.getenv('DB_USER'),
+    'password': os.getenv('DB_PASSWORD'),
+    'database': os.getenv('DB_NAME'),
+    'port': int(os.getenv('DB_PORT', 3306)),
     'charset': 'utf8mb4',
     'pool_name': 'mypool',
-    'pool_size': 20,
+    'pool_size': int(os.getenv('DB_POOL_SIZE', 20)),
     'connect_timeout': 10,
     'read_timeout': 10,
     'write_timeout': 10,
     'pool_reset_session': True,
     'autocommit': True
 }
+
 
 # Create a connection pool
 try:
