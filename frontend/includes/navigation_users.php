@@ -37,7 +37,7 @@ $current_page = basename(htmlspecialchars($_SERVER['PHP_SELF'])); //! Get the cu
                         </li>
                         <li>
                 
-            <button id="logout-button" type="button" class="btn btn-small btn-secondary ms-2" onclick="remove()">Logout</button>
+            <button id="logout-button" type="button" class="btn btn-small btn-outline-secondary ms-2" onclick="remove()">Logout</button>
         
                         </li>
                     </ul>

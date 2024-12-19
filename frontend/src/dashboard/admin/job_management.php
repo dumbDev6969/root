@@ -56,12 +56,12 @@
                                     <h6>$100 - $120</h6>
                                     </p>
                                     <form action="#">
-                                        <div class="row">
-                                            <div class="col-md-8 p-1">
-                                                <button type="button" class="btn btn-sm btn-dark w-100">More details</button>
+                                        <div class="row g-1">
+                                            <div class="col-md-6 ">
+                                                <button type="button" class="btn btn-sm btn-dark w-100">Delete</button>
                                             </div>
-                                            <div class="col-md-4 p-1">
-                                                <button type="button" class="btn btn-sm btn-secondary w-100">Save</button>
+                                            <div class="col-md-6 ">
+                                                <button type="button" class="btn btn-sm btn-secondary w-100">Deactivate</button>
                                             </div>
                                         </div>
                                     </form>

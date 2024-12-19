@@ -10,7 +10,6 @@ $current_page = basename(htmlspecialchars($_SERVER['PHP_SELF'])); //! Get the cu
     </style>
     <nav class="navbar navbar-expand-lg bg-light p-3">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Logo</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

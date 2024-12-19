@@ -65,7 +65,7 @@
             </div>
 
             <div class="col-12">
-                <button type="submit" class="btn btn-dark">Create Account</button>
+                <button type="submit" class="btn btn-dark">Save</button>
             </div>
         </form>
     </div>

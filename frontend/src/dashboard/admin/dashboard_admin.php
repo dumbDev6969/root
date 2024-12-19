@@ -29,7 +29,7 @@
                                     <i class="bi bi-person-square"></i>
                                 </li>
                                 <li class="list-group-item">
-                                    <h1>69</h1>
+                                    <h1>1</h1>
                                 </li>
                             </ul>
                         </div>
@@ -42,7 +42,7 @@
                                     <i class="bi bi-building-down"></i>
                                 </li>
                                 <li class="list-group-item">
-                                    <h1>69</h1>
+                                    <h1>3</h1>
                                 </li>
                             </ul>
                         </div>
@@ -55,7 +55,7 @@
                                     <i class="bi bi-pc-display"></i>
                                 </li>
                                 <li class="list-group-item">
-                                    <h1>69k</h1>
+                                    <h1>1</h1>
                                 </li>
                             </ul>
                         </div>
