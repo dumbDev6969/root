@@ -11,7 +11,7 @@ function postJob() {
     },
   };
 
-  fetch("http://127.0.0.1:11352/api/create", {
+  fetch("https://root-4ytd.onrender.com/api/create", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

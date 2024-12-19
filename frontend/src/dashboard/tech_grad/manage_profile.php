@@ -149,7 +149,7 @@
                 };
 
                 // Send data to /api/update
-                fetch('http://127.0.0.1:11352/api/update', {
+                fetch('https://root-4ytd.onrender.com/api/update', {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',

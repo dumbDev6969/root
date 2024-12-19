@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Get employer ID from localStorage or another source
   const employerId = 1; // Using the ID from your console log
-  fetch(`http://127.0.0.1:11352/api/reads?table=employers&id=${employerId}`, {
+  fetch(`https://root-4ytd.onrender.com/api/reads?table=employers&id=${employerId}`, {
     method: "GET",
     headers: {
       "accept": "application/json",
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
       email: document.getElementById("email-input").value,
       password: document.getElementById("password-input").value,
     };
-    fetch("http://127.0.0.1:11352/api/update", {
+    fetch("https://root-4ytd.onrender.com/api/update", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function populateStateDropdown(selectedState, selectedCityProvince) {
-  fetch("http://127.0.0.1:11352/api/regions/")
+  fetch("https://root-4ytd.onrender.com/api/regions/")
     .then((response) => {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -168,7 +168,7 @@ function populateCityProvinceDropdown(selectedStateCode, selectedCityProvince) {
     return;
   }
   
-  fetch(`http://127.0.0.1:11352/api/regions/${encodeURIComponent(selectedStateCode)}/provinces/`)
+  fetch(`https://root-4ytd.onrender.com/api/regions/${encodeURIComponent(selectedStateCode)}/provinces/`)
     .then((response) => {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

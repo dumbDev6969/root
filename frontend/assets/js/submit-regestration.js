@@ -28,7 +28,7 @@ document.querySelector('#jobseekerform').addEventListener('submit', function(eve
         }
     };
     // console.log(JSON.stringify(data));
-    fetch('http://127.0.0.1:11352/api/signup/jobseeker', {
+    fetch('https://root-4ytd.onrender.com/api/signup/jobseeker', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -75,7 +75,7 @@ document.querySelector('#recruterfrom').addEventListener('submit', function(even
         }
     };
     // console.log(JSON.stringify(data));
-    fetch('http://127.0.0.1:11352/api/signup/recruter', {
+    fetch('https://root-4ytd.onrender.com/api/signup/recruter', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

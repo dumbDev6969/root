@@ -74,7 +74,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
     };
 
     // Send data to the server
-    fetch('http://127.0.0.1:11352/api/signup/recruter', {
+    fetch('https://root-4ytd.onrender.com/api/signup/recruter', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

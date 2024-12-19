@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   let selected_region = null;
-  fetch("http://127.0.0.1:11352/api/regions/")
+  fetch("https://root-4ytd.onrender.com/api/regions/")
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok " + response.statusText);
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Region selected:", hiddenRegionInput.value); // Debugging log
         selected_region = selectElement.value;
         document.getElementById("city-province-input").disabled = false;
-        fetch(`http://127.0.0.1:11352/api/regions/${selected_region}/provinces/`)
+        fetch(`https://root-4ytd.onrender.com/api/regions/${selected_region}/provinces/`)
           .then((response) => {
             if (!response.ok) {
               throw new Error("Network response was not ok " + response.statusText);
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
               console.log("Province selected:", hiddenProvinceInput.value); // Debugging log
               const selectedProvinceValue = cityProvinceSelect.value;
               document.getElementById("municipality-input").disabled = false;
-              fetch(`http://127.0.0.1:11352/api/provinces/${selectedProvinceValue}/municipalities/`)
+              fetch(`https://root-4ytd.onrender.com/api/provinces/${selectedProvinceValue}/municipalities/`)
                 .then((response) => {
                   if (!response.ok) {
                     throw new Error("Network response was not ok " + response.statusText);
