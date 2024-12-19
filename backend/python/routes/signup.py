@@ -4,6 +4,7 @@ from utils.logger import get_logger
 from utils.security import validate_input
 from utils.databse_operations import get_all_records, create_user, create_employer
 from utils.password_manager import PasswordManager
+from utils.id_generator import generate_user_id
 from datetime import datetime
 
 logger = get_logger(__name__)
@@ -32,7 +33,6 @@ def records(table):
         return HTTPException(status_code=500, detail=str(e))
 
 @router.post("/api/signup/jobseeker")
-@router.post("/api/signup/jobseeker")
 async def jobseeker(request: Request):
     try:
         # Get and validate request data
@@ -43,6 +43,10 @@ async def jobseeker(request: Request):
         if 'password' not in data:
             raise HTTPException(status_code=400, detail="Password is required")
         
+        # Generate unique user ID
+        user_uuid = generate_user_id(prefix="USR")
+        logger.info(f"Generated UUID for jobseeker: {user_uuid}")
+
         # Hash the password first to avoid unnecessary database operations if hashing fails
         try:
             hashed_password = password_manager.hash_password(data['password'])
@@ -52,29 +56,30 @@ async def jobseeker(request: Request):
             raise HTTPException(status_code=500, detail=f"Error hashing password: {str(e)}")
 
         # Check for existing users with proper error handling
-        try:
-            users = records("users")
-            if not isinstance(users, list):
-                raise HTTPException(status_code=500, detail="Error fetching user records")
+        # try:
+        #     users = records("users")
+        #     if not isinstance(users, list):
+        #         raise HTTPException(status_code=500, detail="Error fetching user records")
                 
-            for i in users:
-                if i["email"] == data["email"]:
-                    return {"message": "Email already exists"}
+        #     for i in users:
+        #         if i["email"] == data["email"]:
+        #             return {"message": "Email already exists"}
 
-            employers = records("employers")
-            if not isinstance(employers, list):
-                raise HTTPException(status_code=500, detail="Error fetching employer records")
+        #     employers = records("employers")
+        #     if not isinstance(employers, list):
+        #         raise HTTPException(status_code=500, detail="Error fetching employer records")
                 
-            for i in employers:
-                if i["email"] == data["email"]:
-                    return {"message": "Email already exists"}
-        except Exception as e:
-            logger.error(f"Error checking existing users: {e}")
-            raise HTTPException(status_code=500, detail="Error validating user data")
+        #     for i in employers:
+        #         if i["email"] == data["email"]:
+        #             return {"message": "Email already exists"}
+        # except Exception as e:
+        #     logger.error(f"Error checking existing users: {e}")
+        #     raise HTTPException(status_code=500, detail="Error validating user data")
 
         # Create user with the hashed password
         try:
             result = create_user(
+                user_uuid=user_uuid,  # Add the UUID
                 first_name=data['first_name'],
                 last_name=data['last_name'],
                 phone_number=data['phone_number'],
@@ -91,8 +96,8 @@ async def jobseeker(request: Request):
                 logger.error(f"Error creating user: {result['message']}")
                 raise HTTPException(status_code=500, detail=result['message'])
                 
-            logger.info("User created successfully with hashed password")
-            return {"message": "User created successfully"}
+            logger.info("User created successfully with hashed password and UUID")
+            return {"message": "User created successfully", "user_uuid": user_uuid}
         except Exception as e:
             logger.error(f"Error during user creation: {e}")
             raise HTTPException(status_code=500, detail="Failed to create user")
@@ -101,7 +106,6 @@ async def jobseeker(request: Request):
         logger.error(f"Error during jobseeker signup: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
-@router.post("/api/signup/recruter")
 @router.post("/api/signup/recruter")
 async def recruter(request: Request, _: None = Depends(validate_input)):
     try:
@@ -113,6 +117,10 @@ async def recruter(request: Request, _: None = Depends(validate_input)):
         if 'password' not in data:
             raise HTTPException(status_code=400, detail="Password is required")
 
+        # Generate unique employer ID
+        employer_uuid = generate_user_id(prefix="EMP")
+        logger.info(f"Generated UUID for employer: {employer_uuid}")
+
         # Hash the password first to avoid unnecessary database operations if hashing fails
         try:
             hashed_password = password_manager.hash_password(data['password'])
@@ -122,29 +130,30 @@ async def recruter(request: Request, _: None = Depends(validate_input)):
             raise HTTPException(status_code=500, detail=f"Error hashing password: {str(e)}")
 
         # Check for existing users with proper error handling
-        try:
-            users = records("users")
-            if not isinstance(users, list):
-                raise HTTPException(status_code=500, detail="Error fetching user records")
+        # try:
+        #     users = records("users")
+        #     if not isinstance(users, list):
+        #         raise HTTPException(status_code=500, detail="Error fetching user records")
                 
-            for i in users:
-                if i["email"] == data["email"]:
-                    return {"message": "Email already exists"}
+        #     for i in users:
+        #         if i["email"] == data["email"]:
+        #             return {"message": "Email already exists"}
 
-            employers = records("employers")
-            if not isinstance(employers, list):
-                raise HTTPException(status_code=500, detail="Error fetching employer records")
+        #     employers = records("employers")
+        #     if not isinstance(employers, list):
+        #         raise HTTPException(status_code=500, detail="Error fetching employer records")
                 
-            for i in employers:
-                if i["email"] == data["email"]:
-                    return {"message": "Email already exists"}
-        except Exception as e:
-            logger.error(f"Error checking existing users: {e}")
-            raise HTTPException(status_code=500, detail="Error validating user data")
+        #     for i in employers:
+        #         if i["email"] == data["email"]:
+        #             return {"message": "Email already exists"}
+        # except Exception as e:
+        #     logger.error(f"Error checking existing users: {e}")
+        #     raise HTTPException(status_code=500, detail="Error validating user data")
 
         # Create employer with hashed password
         try:
             result = create_employer(
+                employer_uuid=employer_uuid,  # Add the UUID
                 company_name=data['company_name'],
                 phone_number=data['phone_number'],
                 state=data['state'],
@@ -159,8 +168,8 @@ async def recruter(request: Request, _: None = Depends(validate_input)):
                 logger.error(f"Error creating employer: {result['message']}")
                 raise HTTPException(status_code=500, detail=result['message'])
                 
-            logger.info("Employer created successfully with hashed password")
-            return {"message": "Employer created successfully"}
+            logger.info("Employer created successfully with hashed password and UUID")
+            return {"message": "Employer created successfully", "employer_uuid": employer_uuid}
         except Exception as e:
             logger.error(f"Error during employer creation: {e}")
             raise HTTPException(status_code=500, detail="Failed to create employer")

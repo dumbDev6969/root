@@ -16,22 +16,50 @@ class CRUD:
         self.db = db
         logger.info("CRUD operations initialized with the provided database connection")
 
+    def verify_foreign_key(self, table: str, column: str, value: Any) -> bool:
+        """Verify if a foreign key reference exists."""
+        try:
+            # Extract the referenced table from common foreign key patterns
+            referenced_table = column.replace('_id', 's')  # e.g., employer_id -> employers
+            query = f"SELECT COUNT(*) as count FROM {referenced_table} WHERE {column} = %s"
+            result = self.db.execute_query(query, (value,))
+            return result[0]['count'] > 0 if result else False
+        except Exception as e:
+            logger.error(f"Error verifying foreign key: {e}")
+            return False
+
     def create(self, table: str, data: Dict[str, Any]) -> int:
         """Create a new record in the specified table."""
-        columns = ', '.join(data.keys())
-        placeholders = ', '.join(['%s'] * len(data))
-        query = f"INSERT INTO {table} ({columns}) VALUES ({placeholders})"
-        
         try:
+            # Verify foreign key constraints before insert
+            if table == 'jobs' and 'employer_id' in data:
+                if not self.verify_foreign_key('employers', 'employer_id', data['employer_id']):
+                    raise DatabaseError(f"Invalid employer_id: {data['employer_id']} does not exist")
+
+            columns = ', '.join(data.keys())
+            placeholders = ', '.join(['%s'] * len(data))
+            query = f"INSERT INTO {table} ({columns}) VALUES ({placeholders})"
+            
+            logger.debug(f"Executing query: {query} with values: {tuple(data.values())}")
+            
             result = self.db.execute_query(query, tuple(data.values()))
             if result is None:
                 raise DatabaseError("Failed to create record: No result returned")
             return result
-        except DatabaseError as e:
-            logger.error(f"Database error creating record: {e}")
+        except mysql.connector.Error as e:
+            error_msg = str(e)
+            logger.error(f"MySQL error creating record: {error_msg}")
+            if "foreign key constraint fails" in error_msg.lower():
+                # Extract the constraint details for better error message
+                raise DatabaseError(f"Foreign key constraint failed: Please ensure referenced IDs exist")
+            elif "duplicate entry" in error_msg.lower():
+                raise DatabaseError("A record with these details already exists")
+            else:
+                raise DatabaseError(f"Database error: {error_msg}")
+        except DatabaseError:
             raise
         except Exception as e:
-            logger.error(f"Error creating record: {e}")
+            logger.error(f"Unexpected error creating record: {e}")
             raise DatabaseError(f"Failed to create record: {e}")
 
     def read(self, table: str, conditions: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:

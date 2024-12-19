@@ -1,5 +1,6 @@
 CREATE TABLE employers (
   employer_id INT NOT NULL AUTO_INCREMENT,
+  employer_uuid VARCHAR(50) NOT NULL,
   company_name VARCHAR(30) NOT NULL,
   phone_number VARCHAR(12) NOT NULL,
   state VARCHAR(20) NOT NULL,
@@ -71,9 +72,10 @@ CREATE TABLE user_interest (
   PRIMARY KEY (interest_id),
   INDEX idx_user_id (user_id)
 );
-
 CREATE TABLE users (
   user_id INT NOT NULL AUTO_INCREMENT,
+  user_uuid VARCHAR(50) NOT NULL,
+  first_name VARCHAR(20) NOT NULL,
   first_name VARCHAR(20) NOT NULL,
   last_name VARCHAR(30) NOT NULL,
   phone_number VARCHAR(12) NOT NULL,

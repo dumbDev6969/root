@@ -6,7 +6,10 @@ from fastapi.responses import JSONResponse
 from datetime import datetime
 from utils.security import validate_input
 from utils.password_manager import PasswordManager
+from utils.error_handler import DatabaseException, ValidationException
+from utils.logger import get_logger
 
+logger = get_logger(__name__)
 password_manager = PasswordManager()
 
 class CustomJSONEncoder(json.JSONEncoder):
@@ -108,24 +111,72 @@ class DeleteRequest(BaseModel):
 @router.post("/api/create")
 async def create_record(request: CreateRequest, _: None = Depends(validate_input)):
     table = request.table.lower()
-    data = request.data
+    data = request.data.copy()  # Create a copy to avoid modifying the original
 
     if table not in CRUD_MAP:
-        raise HTTPException(status_code=400, detail=f"Invalid table name: {table}")
+        raise ValidationException(f"Invalid table name: {table}")
 
     try:
+        # Log the incoming request
+        logger.debug(f"Creating {table} record with data: {data}")
+
+        # Convert ISO datetime strings to datetime objects
+        if 'created_at' in data:
+            try:
+                data['created_at'] = datetime.fromisoformat(data['created_at'].replace('Z', '+00:00'))
+            except ValueError as e:
+                raise ValidationException(f"Invalid datetime format: {e}")
+
+        # Validate job_type for jobs table
+        if table == 'jobs':
+            # Validate job_type
+            valid_job_types = ['Full-time', 'Part-time', 'Freelance', 'Internship']
+            if 'job_type' not in data:
+                raise ValidationException("job_type is required for jobs")
+            if data['job_type'] not in valid_job_types:
+                raise ValidationException(f"Invalid job_type. Must be one of: {', '.join(valid_job_types)}")
+            
+            # Validate employer_id
+            if 'employer_id' not in data:
+                raise ValidationException("employer_id is required for jobs")
+            
+            # Log employer_id validation
+            logger.debug(f"Validating employer_id: {data['employer_id']}")
+
         create_func = CRUD_MAP[table]['create']
         
         # Dynamically unpack data based on the table
         response = create_func(**data)
+        
         if response['success']:
+            logger.info(f"Successfully created {table} record")
             return {"message": response['message']}
         else:
-            raise HTTPException(status_code=400, detail=response['message'])
+            error_msg = response['message']
+            logger.error(f"Failed to create {table} record: {error_msg}")
+            
+            # Check for specific error types
+            if "foreign key constraint fails" in str(error_msg).lower():
+                raise ValidationException(f"Invalid {table} reference. Please ensure all referenced IDs exist.")
+            elif "duplicate entry" in str(error_msg).lower():
+                raise ValidationException(f"A record with these details already exists.")
+            else:
+                raise DatabaseException(error_msg)
+                
     except TypeError as te:
-        raise HTTPException(status_code=400, detail=f"Invalid data fields: {te}")
+        error_msg = f"Invalid data fields for {table}: {str(te)}"
+        logger.error(error_msg)
+        raise ValidationException(error_msg)
+    except ValueError as ve:
+        error_msg = f"Invalid value in {table} data: {str(ve)}"
+        logger.error(error_msg)
+        raise ValidationException(error_msg)
+    except (ValidationException, DatabaseException):
+        raise
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        error_msg = f"Unexpected error while creating {table} record: {str(e)}"
+        logger.error(error_msg)
+        raise DatabaseException(error_msg)
 
 @router.get("/api/reads")
 async def read_record(table: str, id: int, _: None = Depends(validate_input)):

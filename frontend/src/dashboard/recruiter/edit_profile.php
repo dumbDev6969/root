@@ -20,6 +20,7 @@
     <?php include '../../../includes/navigation_recruiter.php' ?>
     <div class="container p-5 scroll-hidden">
         <h4>Change profile</h4>
+        <p class="text-muted mb-3">Note: Leave fields blank if you don't want to change them. Only modified fields will be updated.</p>
         <form class="row g-3 mt-3" id="edit-profile-form">
             <div class="col-md-12">
                 <div class="form-floating">
