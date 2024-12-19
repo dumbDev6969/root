@@ -67,5 +67,5 @@ if __name__ == "__main__":
     # is_valid = password_manager.verify_password(hashed_password, provided_password)
     # print(f"Is password valid? {is_valid}")
 
-    a= password_manager.hash_password("Abcd.123")
+    a= password_manager.hash_password("asd")
     print(a)

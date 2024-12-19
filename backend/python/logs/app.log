@@ -1,0 +1,7 @@
+2024-12-18 19:58:54 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-18 19:58:55 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-18 19:58:55 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-18 19:58:55 | ERROR    | utils.crud:create:34 - Error creating record: Database error
+2024-12-18 19:58:55 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-18 19:58:55 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-18 19:58:55 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection

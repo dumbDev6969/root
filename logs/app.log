@@ -38,3 +38,36 @@
 2024-12-18 19:29:30 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 200 - Duration: 0.36s
 2024-12-18 19:53:36 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
 2024-12-18 19:56:13 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-18 19:58:35 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 12:45:37 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 12:45:38 | INFO     | __main__:<module>:56 - Starting the application
+2024-12-19 12:45:40 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 12:45:41 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-19 12:45:41 | ERROR    | routes.login:login:54 - Error verifying employer password: Invalid hash format: 
+2024-12-19 12:45:41 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 500 - Duration: 0.18s
+2024-12-19 12:45:43 | ERROR    | routes.login:login:54 - Error verifying employer password: Invalid hash format: 
+2024-12-19 12:45:43 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 500 - Duration: 0.01s
+2024-12-19 12:45:45 | ERROR    | routes.login:login:54 - Error verifying employer password: Invalid hash format: 
+2024-12-19 12:45:45 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 500 - Duration: 0.01s
+2024-12-19 12:45:48 | ERROR    | routes.login:login:54 - Error verifying employer password: Invalid hash format: 
+2024-12-19 12:45:48 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 500 - Duration: 0.01s
+2024-12-19 12:48:08 | ERROR    | routes.login:login:54 - Error verifying employer password: Invalid hash format: 
+2024-12-19 12:48:08 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 500 - Duration: 0.01s
+2024-12-19 12:48:27 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 12:48:27 | INFO     | __main__:<module>:56 - Starting the application
+2024-12-19 12:48:28 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 12:49:45 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 12:50:05 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.37s
+2024-12-19 12:50:05 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.00s
+2024-12-19 12:50:25 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 200 - Duration: 0.00s
+2024-12-19 12:50:25 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-19 12:50:25 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-19 12:50:25 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/010000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-19 12:50:54 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-19 12:50:54 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.00s
+2024-12-19 12:50:55 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.00s
+2024-12-19 12:52:20 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.00s
+2024-12-19 12:52:30 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-19 12:52:30 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-19 12:53:18 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-19 12:53:18 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.01s
