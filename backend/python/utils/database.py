@@ -1,6 +1,5 @@
 import mysql.connector
 from mysql.connector import pooling
-import sqlite3
 import os
 from typing import Optional, List, Dict, Any
 from utils.logger import get_logger
@@ -19,48 +18,58 @@ class Database:
     def __init__(self, host: str, user: str, password: str, database: str, db_path: str = 'fallback_db.sqlite', pool_size: int = 20) -> None:
         """Initialize the Database class with an attempt to connect to MySQL, fallback to SQLite."""
         self.db_type = None
-        try:
-            dbconfig = {
-                "pool_name": "mypool",
-                "pool_size": int(os.getenv('DB_POOL_SIZE', pool_size)),
-                "host": os.getenv('DB_HOST'),
-                "user": os.getenv('DB_USER'),
-                "password": os.getenv('DB_PASSWORD'),
-                "database": os.getenv('DB_NAME'),
-                "port": int(os.getenv('DB_PORT', 3306)),
-                "charset": "utf8mb4",
-                "connect_timeout": 10,
-                "pool_reset_session": True,
-                "autocommit": True,
-                "get_warnings": True,
-                "raise_on_warnings": True,
-                "consume_results": True
-            }
-            self.pool = mysql.connector.pooling.MySQLConnectionPool(**dbconfig)
-            self.db_type = 'mysql'
-            logger.info(f"MySQL database connection pool created successfully with size {pool_size}")
-        except mysql.connector.Error as e:
-            logger.error(f"Error creating MySQL connection pool: {e}, trying SQLite fallback")
+        self.db_path = db_path
+        max_retries = 3
+        retry_count = 0
+        last_error = None
+
+        while retry_count < max_retries:
             try:
-                # Connection just for validation, not to keep it open
-                conn = sqlite3.connect(db_path)
-                conn.close()
-                self.db_path = db_path
-                self.db_type = 'sqlite'
-                logger.info("SQLite database initialized successfully as fallback")
-            except sqlite3.Error as e:
-                logger.error(f"Error initializing SQLite database: {e}")
-                raise DatabaseError(f"Failed to initialize any database connection: {e}")
+                dbconfig = {
+                    "pool_name": "mypool",
+                    "pool_size": int(os.getenv('DB_POOL_SIZE', pool_size)),
+                    "host": os.getenv('DB_HOST'),
+                    "user": os.getenv('DB_USER'),
+                    "password": os.getenv('DB_PASSWORD'),
+                    "database": os.getenv('DB_NAME'),
+                    "port": int(os.getenv('DB_PORT', 3306)),
+                    "charset": "utf8mb4",
+                    "connect_timeout": 10,
+                    "pool_reset_session": True,
+                    "autocommit": True,
+                    "get_warnings": True,
+                    "raise_on_warnings": True,
+                    "consume_results": True
+                }
+                self.pool = mysql.connector.pooling.MySQLConnectionPool(**dbconfig)
+                self.db_type = 'mysql'
+                logger.info(f"MySQL database connection pool created successfully with size {pool_size}")
+                return
+            except mysql.connector.Error as e:
+                last_error = e
+                retry_count += 1
+                logger.error(f"Error creating MySQL connection pool (attempt {retry_count}/{max_retries}): {e}")
+                if retry_count < max_retries:
+                    logger.info(f"Retrying connection in 5 seconds...")
+                    import time
+                    time.sleep(5)  # Wait 5 seconds before retrying
+
+        # If MySQL connection fails after all retries, try SQLite fallback
+        try:
+            import sqlite3
+            self.db_type = 'sqlite'
+            logger.info(f"Falling back to SQLite database at {db_path}")
+        except Exception as e:
+            raise DatabaseError(f"Failed to establish any database connection. MySQL error: {last_error}, SQLite error: {e}")
 
     def __enter__(self):
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        if self.db_type == 'mysql':
-            self.close()
+        self.close()
 
     def get_connection(self):
-        """Get a new connection depending on the DB type."""
+        """Get a new connection depending on the DB type with retry logic."""
         if self.db_type == 'mysql':
             retries = 3
             while retries > 0:
@@ -71,10 +80,14 @@ class Database:
                 except mysql.connector.Error as e:
                     logger.error(f"Error getting connection from pool (retries left: {retries-1}): {e}")
                     retries -= 1
-                    if retries == 0:
+                    if retries > 0:
+                        import time
+                        time.sleep(2)  # Wait 2 seconds before retrying
+                    else:
                         raise DatabaseError(f"Failed to get connection after 3 attempts: {e}")
             return None
         elif self.db_type == 'sqlite':
+            import sqlite3
             conn = sqlite3.connect(self.db_path)
             conn.row_factory = sqlite3.Row
             # Enable foreign key constraints for SQLite
@@ -82,6 +95,7 @@ class Database:
             return conn
         else:
             raise DatabaseError("No database connection type is set.")
+
     def execute_query(self, sql: str, params: Optional[tuple] = ()) -> Optional[List[Dict[str, Any]]]:
         """Execute a SQL query with optional parameters."""
         conn = None
@@ -96,13 +110,9 @@ class Database:
                     retries -= 1
                     continue
 
-                if self.db_type == 'sqlite':
-                    params = tuple(params) if params else ()
-                    cursor = conn.cursor()
-                else:
-                    cursor = conn.cursor(dictionary=True)
-
+                cursor = conn.cursor(dictionary=True)
                 cursor.execute(sql, params)
+                
                 if sql.strip().upper().startswith("SELECT"):
                     result = cursor.fetchall()
                 else:
@@ -119,7 +129,10 @@ class Database:
                     except:
                         pass
                 retries -= 1
-                if retries == 0:
+                if retries > 0:
+                    import time
+                    time.sleep(2)  # Wait 2 seconds before retrying
+                else:
                     raise DatabaseError(f"Failed to execute query after 3 attempts: {e}")
 
             finally:
@@ -130,10 +143,7 @@ class Database:
                         pass
                 if conn:
                     try:
-                        if self.db_type == 'mysql':
-                            conn.close()  # Return connection to pool
-                        else:
-                            conn.close()  # Close SQLite connection
+                        conn.close()  # Return connection to pool or close SQLite connection
                     except Exception as e:
                         logger.error(f"Error closing connection: {e}")
 
@@ -163,54 +173,19 @@ class Database:
             if cursor:
                 cursor.close()
             if conn:
-                if self.db_type == 'mysql':
-                    conn.close()  # Return connection to pool
-                else:
-                    conn.close()  # Close SQLite connection
+                conn.close()  # Return connection to pool or close SQLite connection
 
-    def import_sql_file(self, file_path: str,sql_content:str) -> None:
+    def import_sql_file(self, file_path: str, sql_content: str) -> None:
         """Import an SQL file into the database."""
-        if self.db_type == 'mysql':
-            try:
-                
-                self.execute_multiple_queries(sql_content)
-                logger.info(f"SQL file {file_path} imported successfully into MySQL database.")
-            except Exception as e:
-                logger.error(f"Failed to import SQL file {file_path} into MySQL: {e}")
-                raise DatabaseError(f"Failed to import SQL file {file_path} into MySQL: {e}")
-        elif self.db_type == 'sqlite':
-            absolute_path = os.path.abspath(file_path)
-            if not os.path.exists(absolute_path):
-                logger.error(f"SQL file not found: {absolute_path}")
-                raise FileNotFoundError(f"SQL file not found: {absolute_path}")
-            file_path = absolute_path
-            try:
-                with open(file_path, 'r', encoding='utf-8') as file:
-                    sql_content = file.read()
-                self.execute_multiple_queries(sql_content)
-                logger.info(f"SQL file {file_path} imported successfully into SQLite database.")
-            except Exception as e:
-                logger.error(f"Failed to import SQL file {file_path} into SQLite: {e}")
-                raise DatabaseError(f"Failed to import SQL file {file_path} into SQLite: {e}")
-        else:
-            logger.error("SQL file import is not supported for the current database type.")
-            raise DatabaseError("SQL file import is not supported for the current database type.")
-        
-        if not os.path.exists(file_path):
-            logger.error(f"SQL file not found: {file_path}")
-            raise FileNotFoundError(f"SQL file not found: {file_path}")
-        
         try:
-            with open(file_path, 'r', encoding='utf-8') as file:
-                sql_content = file.read()
             self.execute_multiple_queries(sql_content)
-            logger.info(f"SQL file {file_path} imported successfully.")
+            logger.info(f"SQL file {file_path} imported successfully into database.")
         except Exception as e:
             logger.error(f"Failed to import SQL file {file_path}: {e}")
             raise DatabaseError(f"Failed to import SQL file {file_path}: {e}")
 
     def close(self) -> None:
-        """Close the MySQL database connection pool."""
+        """Close the database connection pool if using MySQL."""
         if self.db_type == 'mysql':
             self.pool.close()
             logger.info("MySQL Database connection pool closed")
@@ -223,4 +198,3 @@ db = Database(
     database=os.getenv('DB_NAME'),
     pool_size=int(os.getenv('DB_POOL_SIZE', 32))
 )
-
