@@ -71,3 +71,4 @@
 2024-12-19 12:52:30 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
 2024-12-19 12:53:18 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
 2024-12-19 12:53:18 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.01s
+2024-12-19 13:05:10 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32

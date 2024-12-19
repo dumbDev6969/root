@@ -5,3 +5,14 @@
 2024-12-18 19:58:55 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
 2024-12-18 19:58:55 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
 2024-12-18 19:58:55 | INFO     | utils.crud:__init__:17 - CRUD operations initialized with the provided database connection
+2024-12-19 13:02:13 | ERROR    | utils.database:__init__:39 - Error creating MySQL connection pool: 1040 (HY000): Too many connections, trying SQLite fallback
+2024-12-19 13:02:13 | INFO     | utils.database:__init__:46 - SQLite database initialized successfully as fallback
+2024-12-19 13:02:31 | ERROR    | utils.database:__init__:39 - Error creating MySQL connection pool: 1040 (HY000): Too many connections, trying SQLite fallback
+2024-12-19 13:02:31 | INFO     | utils.database:__init__:46 - SQLite database initialized successfully as fallback
+2024-12-19 13:03:13 | ERROR    | utils.database:__init__:39 - Error creating MySQL connection pool: 1040 (HY000): Too many connections, trying SQLite fallback
+2024-12-19 13:03:13 | INFO     | utils.database:__init__:46 - SQLite database initialized successfully as fallback
+2024-12-19 13:04:48 | ERROR    | utils.database:__init__:39 - Error creating MySQL connection pool: 1040 (HY000): Too many connections, trying SQLite fallback
+2024-12-19 13:04:48 | INFO     | utils.database:__init__:46 - SQLite database initialized successfully as fallback
+2024-12-19 13:04:48 | INFO     | __main__:<module>:56 - Starting the application
+2024-12-19 13:04:49 | ERROR    | utils.database:__init__:39 - Error creating MySQL connection pool: 1040 (HY000): Too many connections, trying SQLite fallback
+2024-12-19 13:04:49 | INFO     | utils.database:__init__:46 - SQLite database initialized successfully as fallback
