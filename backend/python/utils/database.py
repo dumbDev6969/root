@@ -4,6 +4,10 @@ import sqlite3
 import os
 from typing import Optional, List, Dict, Any
 from utils.logger import get_logger
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 logger = get_logger(__name__)
 
@@ -12,24 +16,24 @@ class DatabaseError(Exception):
     pass
 
 class Database:
-    def __init__(self, host: str, user: str, password: str, database: str, db_path: str = 'fallback_db.db', pool_size: int = 20) -> None:
+    def __init__(self, host: str, user: str, password: str, database: str, db_path: str = 'fallback_db.sqlite', pool_size: int = 20) -> None:
         """Initialize the Database class with an attempt to connect to MySQL, fallback to SQLite."""
         self.db_type = None
         try:
             dbconfig = {
                 "pool_name": "mypool",
-                "pool_size": pool_size,
-                "host": host,
-                "user": user,
-                "password": password,
-                "database": database,
-                "connect_timeout": 30,
+                "pool_size": int(os.getenv('DB_POOL_SIZE', pool_size)),
+                "host": os.getenv('DB_HOST'),
+                "user": os.getenv('DB_USER'),
+                "password": os.getenv('DB_PASSWORD'),
+                "database": os.getenv('DB_NAME'),
+                "port": int(os.getenv('DB_PORT', 3306)),
+                "charset": "utf8mb4",
+                "connect_timeout": 10,
                 "pool_reset_session": True,
                 "autocommit": True,
                 "get_warnings": True,
                 "raise_on_warnings": True,
-                "connection_timeout": 60,
-                "pool_reset_session": True,
                 "consume_results": True
             }
             self.pool = mysql.connector.pooling.MySQLConnectionPool(**dbconfig)
@@ -73,6 +77,8 @@ class Database:
         elif self.db_type == 'sqlite':
             conn = sqlite3.connect(self.db_path)
             conn.row_factory = sqlite3.Row
+            # Enable foreign key constraints for SQLite
+            conn.execute("PRAGMA foreign_keys = ON")
             return conn
         else:
             raise DatabaseError("No database connection type is set.")
@@ -128,9 +134,8 @@ class Database:
                             conn.close()  # Return connection to pool
                         else:
                             conn.close()  # Close SQLite connection
-                    except:
-                        pass
-                        conn.close()  # Close SQLite connection
+                    except Exception as e:
+                        logger.error(f"Error closing connection: {e}")
 
     def execute_multiple_queries(self, sql: str) -> None:
         """Execute multiple SQL queries separated by semicolons."""
@@ -212,9 +217,10 @@ class Database:
 
 # Initialize the database connection
 db = Database(
-    host=os.getenv('DB_HOST', 'localhost'),
-    user=os.getenv('DB_USER', 'root'),
-    password=os.getenv('DB_PASSWORD', ''),
-    database=os.getenv('DB_NAME', 'jobsearch'),
-    pool_size=32
+    host=os.getenv('DB_HOST'),
+    user=os.getenv('DB_USER'),
+    password=os.getenv('DB_PASSWORD'),
+    database=os.getenv('DB_NAME'),
+    pool_size=int(os.getenv('DB_POOL_SIZE', 32))
 )
+

@@ -1,21 +1,30 @@
-
 import mysql.connector
 from mysql.connector import Error
 import json
 from datetime import datetime
+import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # Database Configuration
 DB_CONFIG = {
-    'host': 'localhost',
-    'user': 'root',         # MySQL username
-    'password': '',         # MySQL password
-    'database': 'jobsearch', # MySQL database name
+    'host': os.getenv('DB_HOST'),
+    'user': os.getenv('DB_USER'),
+    'password': os.getenv('DB_PASSWORD'),
+    'database': os.getenv('DB_NAME'),
+    'port': int(os.getenv('DB_PORT', 3306)),
+    'charset': 'utf8mb4',
     'pool_name': 'mypool',
-    'pool_size': 20,
-    'connect_timeout': 30,
+    'pool_size': int(os.getenv('DB_POOL_SIZE', 20)),
+    'connect_timeout': 10,
+    'read_timeout': 10,
+    'write_timeout': 10,
     'pool_reset_session': True,
     'autocommit': True
 }
+
 
 # Create a connection pool
 try:
@@ -39,8 +48,8 @@ def get_connection():
 
 # ---------------------- Employers CRUD Operations ----------------------
 
-def create_employer(company_name, phone_number, state, zip_code, password, email=None,
-                   city_or_province=None, street=None):
+def create_employer(employer_uuid, company_name, phone_number, state, zip_code, password, email=None,
+                    city_or_province=None, street=None):
     """
     Creates a new employer record.
     """
@@ -51,13 +60,13 @@ def create_employer(company_name, phone_number, state, zip_code, password, email
         
         cursor = connection.cursor()
         query = """
-            INSERT INTO employers (company_name, phone_number, state, zip_code, password, email, city_or_province, street, created_at, updated_at)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            INSERT INTO employers (employer_uuid, company_name, phone_number, state, zip_code, password, email, city_or_province, street, created_at, updated_at)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         """
         created_at = datetime.now()
         current_time = created_at
         cursor.execute(query, (
-            company_name, phone_number, state, zip_code, password, email,
+            employer_uuid, company_name, phone_number, state, zip_code, password, email,
             city_or_province, street, current_time, current_time
         ))
         connection.commit()
@@ -155,7 +164,7 @@ def delete_employer(employer_id):
 
 # ---------------------- Jobs CRUD Operations ----------------------
 
-def create_job(employer_id, job_title, job_type, location, salary_range, job_description, requirements, created_at):
+def create_job(employer_id, job_title, job_type, location, salary_range, job_description, requirements, created_at=None):
     """
     Creates a new job record.
     """
@@ -163,16 +172,28 @@ def create_job(employer_id, job_title, job_type, location, salary_range, job_des
         connection = get_connection()
         if not connection:
             return {'success': False, 'message': 'Database connection failed.'}
+
+        # Verify employer exists
+        cursor = connection.cursor(dictionary=True)
+        verify_query = "SELECT employer_id FROM employers WHERE employer_id = %s"
+        cursor.execute(verify_query, (employer_id,))
+        if not cursor.fetchone():
+            return {'success': False, 'message': f'Employer with ID {employer_id} does not exist.'}
+
+        # Validate job_type
+        valid_job_types = ['Full-time', 'Part-time', 'Freelance', 'Internship']
+        if job_type not in valid_job_types:
+            return {'success': False, 'message': f'Invalid job_type. Must be one of: {", ".join(valid_job_types)}'}
         
         cursor = connection.cursor()
         query = """
             INSERT INTO jobs (employer_id, job_title, job_type, location, salary_range, job_description, requirements, created_at)
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
         """
-        current_time = datetime.now()
+        current_time = created_at if created_at else datetime.now()
         cursor.execute(query, (
             employer_id, job_title, job_type, location, salary_range,
-            job_description, requirements, created_at
+            job_description, requirements, current_time
         ))
         connection.commit()
         return {'success': True, 'message': 'Job created successfully.'}
@@ -713,8 +734,8 @@ def delete_user_interest(interest_id):
 
 # ---------------------- Users CRUD Operations ----------------------
 
-def create_user(first_name, last_name, phone_number, state, municipality, zip_code, email, password,
-               city_or_province=None, street=None):
+def create_user(user_uuid, first_name, last_name, phone_number, state, municipality, zip_code, email, password,
+                city_or_province=None, street=None):
     """
     Creates a new user record.
     """
@@ -725,12 +746,12 @@ def create_user(first_name, last_name, phone_number, state, municipality, zip_co
 
         cursor = connection.cursor()
         query = """
-            INSERT INTO users (first_name, last_name, phone_number, state, municipality, zip_code, email, password, city_or_province, street, created_at, updated_at)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            INSERT INTO users (user_uuid, first_name, last_name, phone_number, state, municipality, zip_code, email, password, city_or_province, street, created_at, updated_at)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         """
         current_time = datetime.now()
         cursor.execute(query, (
-            first_name, last_name, phone_number, state, municipality, zip_code,
+            user_uuid, first_name, last_name, phone_number, state, municipality, zip_code,
             email, password, city_or_province, street, current_time, current_time
         ))
         connection.commit()

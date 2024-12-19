@@ -288,3 +288,153 @@
 2024-12-19 14:42:23 | INFO     | routes.signup:jobseeker:41 - Raw data received: {'first_name': 'Jemcarlo', 'last_name': 'Austria', 'phone_number': '09207766194', 'state': 'Ilocos Region', 'city_or_province': 'La Union', 'municipality': 'Select municipality', 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-19', 'updated_at': '2024-12-19'}
 2024-12-19 14:42:23 | INFO     | routes.signup:jobseeker:49 - Password hashed successfully
 2024-12-19 14:42:23 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 200 - Duration: 0.09s
+2024-12-19 16:19:27 | ERROR    | utils.database:__init__:41 - Error creating MySQL connection pool: Connection configuration not valid: Unsupported argument 'read_timeout', trying SQLite fallback
+2024-12-19 16:19:27 | INFO     | utils.database:__init__:48 - SQLite database initialized successfully as fallback
+2024-12-19 16:19:27 | ERROR    | utils.database:import_sql_file:181 - SQL file not found: C:\Users\jemca\OneDrive\Desktop\root\127_0_0_1.sql
+2024-12-19 16:20:57 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 16:20:57 | INFO     | __main__:<module>:56 - Starting the application
+2024-12-19 16:21:06 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 16:21:30 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-19 16:21:30 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-19 16:21:30 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.01s
+2024-12-19 16:21:30 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.01s
+2024-12-19 16:21:34 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/140000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-19 16:21:34 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/140000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-19 16:21:37 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/141100000/municipalities/ - Status: 200 - Duration: 0.05s
+2024-12-19 16:21:37 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/141100000/municipalities/ - Status: 200 - Duration: 0.01s
+2024-12-19 16:21:49 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-19 16:21:49 | INFO     | routes.signup:jobseeker:41 - Raw data received: {'first_name': 'Jemcarlo', 'last_name': 'Austria', 'phone_number': '09207766194', 'state': 'CAR', 'city_or_province': 'Benguet', 'municipality': 'Mankayan', 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-19', 'updated_at': '2024-12-19'}
+2024-12-19 16:21:50 | INFO     | routes.signup:jobseeker:49 - Password hashed successfully
+2024-12-19 16:21:50 | ERROR    | routes.signup:jobseeker:72 - Error checking existing users: 500: Error fetching user records
+2024-12-19 16:21:50 | ERROR    | routes.signup:jobseeker:101 - Error during jobseeker signup: 500: Error validating user data
+2024-12-19 16:21:50 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 500 - Duration: 0.48s
+2024-12-19 16:38:12 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 16:38:13 | INFO     | __main__:<module>:56 - Starting the application
+2024-12-19 16:38:21 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 16:38:21 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-19 16:38:21 | INFO     | routes.signup:jobseeker:41 - Raw data received: {'first_name': 'Jemcarlo', 'last_name': 'Austria', 'phone_number': '09207766194', 'state': 'CAR', 'city_or_province': 'Benguet', 'municipality': 'Mankayan', 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-19', 'updated_at': '2024-12-19'}
+2024-12-19 16:38:21 | INFO     | routes.signup:jobseeker:48 - Generated UUID for jobseeker: USR_1734597501_276ce1c21c804638957ef52323edf709
+2024-12-19 16:38:22 | INFO     | routes.signup:jobseeker:53 - Password hashed successfully
+2024-12-19 16:38:22 | ERROR    | routes.signup:jobseeker:76 - Error checking existing users: 500: Error fetching user records
+2024-12-19 16:38:22 | ERROR    | routes.signup:jobseeker:106 - Error during jobseeker signup: 500: Error validating user data
+2024-12-19 16:38:22 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 500 - Duration: 0.49s
+2024-12-19 16:40:38 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 16:40:38 | INFO     | __main__:<module>:56 - Starting the application
+2024-12-19 16:40:47 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 16:40:48 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-19 16:40:48 | INFO     | routes.signup:jobseeker:41 - Raw data received: {'first_name': 'Jemcarlo', 'last_name': 'Austria', 'phone_number': '09207766194', 'state': 'CAR', 'city_or_province': 'Benguet', 'municipality': 'Mankayan', 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-19', 'updated_at': '2024-12-19'}
+2024-12-19 16:40:48 | INFO     | routes.signup:jobseeker:48 - Generated UUID for jobseeker: USR_1734597648_bf17ed87ae3c4de08de5091b1f4a4566
+2024-12-19 16:40:48 | INFO     | routes.signup:jobseeker:53 - Password hashed successfully
+2024-12-19 16:40:48 | ERROR    | routes.signup:jobseeker:102 - Error during user creation: create_user() got an unexpected keyword argument 'user_uuid'
+2024-12-19 16:40:48 | ERROR    | routes.signup:jobseeker:106 - Error during jobseeker signup: 500: Failed to create user
+2024-12-19 16:40:48 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 500 - Duration: 0.10s
+2024-12-19 16:42:22 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 16:42:22 | INFO     | __main__:<module>:56 - Starting the application
+2024-12-19 16:42:30 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 16:42:31 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-19 16:42:31 | INFO     | routes.signup:jobseeker:41 - Raw data received: {'first_name': 'Jemcarlo', 'last_name': 'Austria', 'phone_number': '09207766194', 'state': 'CAR', 'city_or_province': 'Benguet', 'municipality': 'Mankayan', 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-19', 'updated_at': '2024-12-19'}
+2024-12-19 16:42:31 | INFO     | routes.signup:jobseeker:48 - Generated UUID for jobseeker: USR_1734597751_a3ff506183394b54a0577ce0f9670535
+2024-12-19 16:42:31 | INFO     | routes.signup:jobseeker:53 - Password hashed successfully
+2024-12-19 16:42:31 | ERROR    | routes.signup:jobseeker:96 - Error creating user: 1146 (42S02): Table 'jobsearch.users' doesn't exist
+2024-12-19 16:42:31 | ERROR    | routes.signup:jobseeker:102 - Error during user creation: 500: 1146 (42S02): Table 'jobsearch.users' doesn't exist
+2024-12-19 16:42:31 | ERROR    | routes.signup:jobseeker:106 - Error during jobseeker signup: 500: Failed to create user
+2024-12-19 16:42:31 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 500 - Duration: 0.42s
+2024-12-19 16:44:34 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 16:44:34 | INFO     | __main__:<module>:56 - Starting the application
+2024-12-19 16:44:42 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 16:44:44 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-19 16:44:44 | INFO     | routes.signup:jobseeker:41 - Raw data received: {'first_name': 'Jemcarlo', 'last_name': 'Austria', 'phone_number': '09207766194', 'state': 'CAR', 'city_or_province': 'Benguet', 'municipality': 'Mankayan', 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-19', 'updated_at': '2024-12-19'}
+2024-12-19 16:44:44 | INFO     | routes.signup:jobseeker:48 - Generated UUID for jobseeker: USR_1734597884_7ed39b845a354872a7392d939fa0a684
+2024-12-19 16:44:44 | INFO     | routes.signup:jobseeker:53 - Password hashed successfully
+2024-12-19 16:44:45 | INFO     | routes.signup:jobseeker:99 - User created successfully with hashed password and UUID
+2024-12-19 16:44:45 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 200 - Duration: 0.53s
+2024-12-19 16:44:46 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.35s
+2024-12-19 16:45:38 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.35s
+2024-12-19 16:45:46 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-19 16:45:47 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.77s
+2024-12-19 16:46:19 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-19 16:46:19 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-19 16:46:33 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/110000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-19 16:46:35 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/112400000/municipalities/ - Status: 200 - Duration: 0.01s
+2024-12-19 16:47:05 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/recruter - Status: 200 - Duration: 0.00s
+2024-12-19 16:47:05 | INFO     | routes.signup:recruter:115 - Raw data received for recruiter: {'company_name': 'cyan tech', 'phone_number': '09207766194', 'state': '110000000', 'city_or_province': None, 'zip_code': '2413', 'street': '007', 'email': 'sample1@gmail.com', 'password': 'Cyantech.123', 'created_at': '2024-12-19', 'updated_at': '2024-12-19'}
+2024-12-19 16:47:05 | INFO     | routes.signup:recruter:122 - Generated UUID for employer: EMP_1734598025_bdf6b33e21f34235a3de95f74055fe2b
+2024-12-19 16:47:05 | INFO     | routes.signup:recruter:127 - Password hashed successfully for recruiter
+2024-12-19 16:47:05 | ERROR    | routes.signup:recruter:174 - Error during employer creation: create_employer() got an unexpected keyword argument 'employer_uuid'
+2024-12-19 16:47:05 | ERROR    | routes.signup:recruter:180 - Error during recruiter signup: 500: Failed to create employer
+2024-12-19 16:47:05 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 500 - Duration: 0.10s
+2024-12-19 16:47:13 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/recruter - Status: 200 - Duration: 0.00s
+2024-12-19 16:47:13 | INFO     | routes.signup:recruter:115 - Raw data received for recruiter: {'company_name': 'cyan tech', 'phone_number': '09207766194', 'state': '110000000', 'city_or_province': None, 'zip_code': '2413', 'street': '007', 'email': 'sample1@gmail.com', 'password': 'Cyantech.123', 'created_at': '2024-12-19', 'updated_at': '2024-12-19'}
+2024-12-19 16:47:13 | INFO     | routes.signup:recruter:122 - Generated UUID for employer: EMP_1734598033_0f77253c74e541b8b70067dfe0ce57c0
+2024-12-19 16:47:14 | INFO     | routes.signup:recruter:127 - Password hashed successfully for recruiter
+2024-12-19 16:47:14 | ERROR    | routes.signup:recruter:174 - Error during employer creation: create_employer() got an unexpected keyword argument 'employer_uuid'
+2024-12-19 16:47:14 | ERROR    | routes.signup:recruter:180 - Error during recruiter signup: 500: Failed to create employer
+2024-12-19 16:47:14 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 500 - Duration: 0.09s
+2024-12-19 16:49:05 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/recruter - Status: 200 - Duration: 0.00s
+2024-12-19 16:49:05 | INFO     | routes.signup:recruter:115 - Raw data received for recruiter: {'company_name': 'cyan tech', 'phone_number': '09207766194', 'state': '110000000', 'city_or_province': None, 'zip_code': '2413', 'street': '007', 'email': 'sample1@gmail.com', 'password': 'Cyantech.123', 'created_at': '2024-12-19', 'updated_at': '2024-12-19'}
+2024-12-19 16:49:05 | INFO     | routes.signup:recruter:122 - Generated UUID for employer: EMP_1734598145_f359f585e91e44888c33fa4908dfdb6b
+2024-12-19 16:49:05 | INFO     | routes.signup:recruter:127 - Password hashed successfully for recruiter
+2024-12-19 16:49:05 | ERROR    | routes.signup:recruter:174 - Error during employer creation: create_employer() got an unexpected keyword argument 'employer_uuid'
+2024-12-19 16:49:05 | ERROR    | routes.signup:recruter:180 - Error during recruiter signup: 500: Failed to create employer
+2024-12-19 16:49:05 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 500 - Duration: 0.08s
+2024-12-19 16:49:13 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 16:49:14 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/recruter - Status: 200 - Duration: 0.00s
+2024-12-19 16:49:14 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/recruter - Status: 200 - Duration: 0.00s
+2024-12-19 16:49:14 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/recruter - Status: 200 - Duration: 0.00s
+2024-12-19 16:49:14 | INFO     | routes.signup:recruter:115 - Raw data received for recruiter: {'company_name': 'cyan tech', 'phone_number': '09207766194', 'state': '110000000', 'city_or_province': None, 'zip_code': '2413', 'street': '007', 'email': 'sample1@gmail.com', 'password': 'Cyantech.123', 'created_at': '2024-12-19', 'updated_at': '2024-12-19'}
+2024-12-19 16:49:14 | INFO     | routes.signup:recruter:122 - Generated UUID for employer: EMP_1734598154_455aeda4ae8147f8be55723bef7c20b8
+2024-12-19 16:49:14 | INFO     | routes.signup:recruter:127 - Password hashed successfully for recruiter
+2024-12-19 16:49:14 | INFO     | routes.signup:recruter:171 - Employer created successfully with hashed password and UUID
+2024-12-19 16:49:14 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 200 - Duration: 0.47s
+2024-12-19 16:49:14 | INFO     | routes.signup:recruter:115 - Raw data received for recruiter: {'company_name': 'cyan tech', 'phone_number': '09207766194', 'state': '110000000', 'city_or_province': None, 'zip_code': '2413', 'street': '007', 'email': 'sample1@gmail.com', 'password': 'Cyantech.123', 'created_at': '2024-12-19', 'updated_at': '2024-12-19'}
+2024-12-19 16:49:14 | INFO     | routes.signup:recruter:122 - Generated UUID for employer: EMP_1734598154_59eb5780ccf142bf8d0513fbe5e06804
+2024-12-19 16:49:14 | INFO     | routes.signup:recruter:127 - Password hashed successfully for recruiter
+2024-12-19 16:49:15 | ERROR    | routes.signup:recruter:168 - Error creating employer: 1062 (23000): Duplicate entry 'sample1@gmail.com' for key 'employers.email'
+2024-12-19 16:49:15 | ERROR    | routes.signup:recruter:174 - Error during employer creation: 500: 1062 (23000): Duplicate entry 'sample1@gmail.com' for key 'employers.email'
+2024-12-19 16:49:15 | ERROR    | routes.signup:recruter:180 - Error during recruiter signup: 500: Failed to create employer
+2024-12-19 16:49:15 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 500 - Duration: 0.53s
+2024-12-19 16:49:15 | INFO     | routes.signup:recruter:115 - Raw data received for recruiter: {'company_name': 'cyan tech', 'phone_number': '09207766194', 'state': '110000000', 'city_or_province': None, 'zip_code': '2413', 'street': '007', 'email': 'sample1@gmail.com', 'password': 'Cyantech.123', 'created_at': '2024-12-19', 'updated_at': '2024-12-19'}
+2024-12-19 16:49:15 | INFO     | routes.signup:recruter:122 - Generated UUID for employer: EMP_1734598155_0fc5be3aed7e4a0f9bf98bb4b194449c
+2024-12-19 16:49:15 | INFO     | routes.signup:recruter:127 - Password hashed successfully for recruiter
+2024-12-19 16:49:15 | ERROR    | routes.signup:recruter:168 - Error creating employer: 1062 (23000): Duplicate entry 'sample1@gmail.com' for key 'employers.email'
+2024-12-19 16:49:15 | ERROR    | routes.signup:recruter:174 - Error during employer creation: 500: 1062 (23000): Duplicate entry 'sample1@gmail.com' for key 'employers.email'
+2024-12-19 16:49:15 | ERROR    | routes.signup:recruter:180 - Error during recruiter signup: 500: Failed to create employer
+2024-12-19 16:49:15 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 500 - Duration: 0.96s
+2024-12-19 16:50:29 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.34s
+2024-12-19 16:51:03 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.80s
+2024-12-19 16:51:04 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.35s
+2024-12-19 16:51:13 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.34s
+2024-12-19 16:51:54 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/create - Status: 200 - Duration: 0.00s
+2024-12-19 16:51:55 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/create - Status: 500 - Duration: 0.35s
+2024-12-19 16:52:10 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/create - Status: 500 - Duration: 0.35s
+2024-12-19 16:52:16 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.34s
+2024-12-19 16:54:15 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 16:54:24 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 16:54:55 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 16:55:26 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 16:55:58 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 16:56:29 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 16:57:00 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 16:58:02 | DEBUG    | routes.database:create_record:121 - Creating jobs record with data: {'job_title': 'typing job', 'job_type': 'Full-time', 'location': 'mars', 'salary_range': '500', 'job_description': 'type jobs in mars', 'requirements': 'hand for typing', 'employer_id': 1, 'created_at': '2024-12-19T08:58:02.565Z'}
+2024-12-19 16:58:02 | DEBUG    | routes.database:create_record:144 - Validating employer_id: 1
+2024-12-19 16:58:03 | INFO     | routes.database:create_record:152 - Successfully created jobs record
+2024-12-19 16:58:03 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/create - Status: 200 - Duration: 0.50s
+2024-12-19 16:58:12 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 16:58:12 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.35s
+2024-12-19 16:58:35 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.34s
+2024-12-19 16:58:37 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.34s
+2024-12-19 16:58:42 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.34s
+2024-12-19 16:58:43 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 500 - Duration: 0.34s
+2024-12-19 16:59:03 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 500 - Duration: 0.35s
+2024-12-19 17:00:24 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-19 17:00:25 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.01s
+2024-12-19 17:02:38 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 17:02:38 | INFO     | __main__:<module>:56 - Starting the application
+2024-12-19 17:02:47 | INFO     | utils.database:__init__:37 - MySQL database connection pool created successfully with size 32
+2024-12-19 17:02:48 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 200 - Duration: 0.35s
+2024-12-19 17:02:48 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-19 17:02:48 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-19 17:02:48 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.01s
+2024-12-19 17:02:48 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.01s
+2024-12-19 17:02:48 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/110000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-19 17:02:48 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/110000000/provinces/ - Status: 200 - Duration: 0.00s
