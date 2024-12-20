@@ -150,7 +150,7 @@ async def create_record(request: CreateRequest, _: None = Depends(validate_input
         
         if response['success']:
             logger.info(f"Successfully created {table} record")
-            return {"message": response['message']}
+            return {"success": True, "message": "Record created successfully", "details": response['message']}
         else:
             error_msg = response['message']
             logger.error(f"Failed to create {table} record: {error_msg}")
@@ -211,17 +211,20 @@ async def update_record(request: UpdateRequest, _: None = Depends(validate_input
         raise HTTPException(status_code=400, detail=f"Invalid table name: {table}")
 
     try:
-        # Hash password if it's being updated
+        # Ensure password is hashed if it's being updated
         if table == 'users' and 'password' in data and data['password']:
             try:
-                data['password'] = password_manager.hash_password(data['password'])
+                hashed_password = password_manager.hash_password(data['password'])
+                data['password'] = hashed_password
+                logger.info("Password successfully hashed during update.")
             except Exception as e:
+                logger.error(f"Error hashing password during update: {e}")
                 raise HTTPException(status_code=500, detail=f"Error hashing password: {str(e)}")
 
         update_func = CRUD_MAP[table]['update']
         response = update_func(record_id, **data)
         if response['success']:
-            return {"message": response['message']}
+            return {"message": response['message'], "status": response['success']}
         else:
             raise HTTPException(status_code=400, detail=response['message'])
     except TypeError as te:

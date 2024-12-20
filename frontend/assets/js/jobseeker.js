@@ -119,7 +119,7 @@ document.querySelector("form").addEventListener("submit", function (event) {
   };
   console.log("Submitting form data:", data);
 
-  fetch("https://root-4ytd.onrender.com/api/signup/jobseeker", {
+  fetch("http://localhost:10000/api/signup/jobseeker", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

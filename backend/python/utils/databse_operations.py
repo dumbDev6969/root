@@ -9,21 +9,40 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Database Configuration
-DB_CONFIG = {
-    'host': os.getenv('DB_HOST'),
-    'user': os.getenv('DB_USER'),
-    'password': os.getenv('DB_PASSWORD'),
-    'database': os.getenv('DB_NAME'),
-    'port': int(os.getenv('DB_PORT', 3306)),
-    'charset': 'utf8mb4',
-    'pool_name': 'mypool',
-    'pool_size': int(os.getenv('DB_POOL_SIZE', 20)),
-    'connect_timeout': 10,
-    'read_timeout': 10,
-    'write_timeout': 10,
-    'pool_reset_session': True,
-    'autocommit': True
-}
+server = {"local": True, "online": False}
+
+if server["local"]:
+    DB_CONFIG = {
+        'host': 'localhost',
+        'user': 'root',
+        'password': '',
+        'database': os.getenv('DB_NAME'),
+        'port': 3306,
+        'charset': 'utf8mb4',
+        'pool_name': 'mypool',
+        'pool_size': int(os.getenv('DB_POOL_SIZE', 20)),
+        'connect_timeout': 10,
+        'read_timeout': 10,
+        'write_timeout': 10,
+        'pool_reset_session': True,
+        'autocommit': True
+    }
+else:
+    DB_CONFIG = {
+        'host': os.getenv('DB_HOST'),
+        'user': os.getenv('DB_USER'),
+        'password': os.getenv('DB_PASSWORD'),
+        'database': os.getenv('DB_NAME'),
+        'port': int(os.getenv('DB_PORT', 3306)),
+        'charset': 'utf8mb4',
+        'pool_name': 'mypool',
+        'pool_size': int(os.getenv('DB_POOL_SIZE', 20)),
+        'connect_timeout': 10,
+        'read_timeout': 10,
+        'write_timeout': 10,
+        'pool_reset_session': True,
+        'autocommit': True
+    }
 
 
 # Create a connection pool
@@ -735,7 +754,7 @@ def delete_user_interest(interest_id):
 # ---------------------- Users CRUD Operations ----------------------
 
 def create_user(user_uuid, first_name, last_name, phone_number, state, municipality, zip_code, email, password,
-                city_or_province=None, street=None):
+                street=None):
     """
     Creates a new user record.
     """
@@ -746,13 +765,13 @@ def create_user(user_uuid, first_name, last_name, phone_number, state, municipal
 
         cursor = connection.cursor()
         query = """
-            INSERT INTO users (user_uuid, first_name, last_name, phone_number, state, municipality, zip_code, email, password, city_or_province, street, created_at, updated_at)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            INSERT INTO users (user_uuid, first_name, last_name, phone_number, state, municipality, zip_code, email, password, street, created_at, updated_at)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         """
         current_time = datetime.now()
         cursor.execute(query, (
             user_uuid, first_name, last_name, phone_number, state, municipality, zip_code,
-            email, password, city_or_province, street, current_time, current_time
+            email, password, street, current_time, current_time
         ))
         connection.commit()
         return {'success': True, 'message': 'User created successfully.'}
@@ -862,7 +881,13 @@ def update_user(user_id, **kwargs):
         values.append(user_id)
         set_clause = ", ".join(fields)
         query = f"UPDATE users SET {set_clause} WHERE user_id = %s"
-        cursor.execute(query, tuple(values))
+        try:
+            print(f"Executing query: {query}")
+            print(f"With values: {values}")
+            cursor.execute(query, tuple(values))
+        except Error as e:
+            print(f"Database error: {e}")
+            raise
         connection.commit()
         if cursor.rowcount:
             return {'success': True, 'message': 'User updated successfully.'}

@@ -58,7 +58,6 @@ async def login(form: LoginRequest, _: None = Depends(validate_input)):
        
      
 
-        return {"message": f"llogging in"}
     except Exception as e:
         print(str(e))
         raise HTTPException(status_code=500, detail=str(e))

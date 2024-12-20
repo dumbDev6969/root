@@ -1,9 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const employerData = localStorage.getItem("employerData");
-  const parsedData = JSON.parse(employerData);
+  fetch('/root/frontend/src/auth/store_session.php', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      }
+  })
+  .then(response => response.json())
+  .then(sessionData => {
+      if (sessionData && sessionData.employerData) {
+          const parsedData = sessionData.employerData;
   const container = document.querySelector("#job-container");
 
-  fetch("https://root-4ytd.onrender.com/api/get-table%20?table=jobs")
+  fetch("http://localhost:10000/api/get-table%20?table=jobs")
     .then((response) => response.json())
     .then((data) => {
       const jobs = data.data.filter((job) => job.employer_id === parsedData.employer_id);
@@ -47,9 +55,25 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     })
     .catch((error) => console.error("Error fetching jobs:", error));
+    }
+})
+.catch((error) => {
+    console.error("Error fetching session data:", error);
 });
 
 document.getElementById("logout-button").addEventListener("click", function () {
-  localStorage.removeItem("employerData");
+  fetch('/root/frontend/src/auth/store_session.php', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      }
+  })
+  .then(() => {
+      console.log("Session data cleared");
+  })
+  .catch(error => {
+      console.error("Error clearing session data:", error);
+  });
   window.location.href = "../../../src/auth/login.php";
+});
 });

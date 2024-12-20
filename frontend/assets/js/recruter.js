@@ -1,8 +1,16 @@
 document.querySelector('form').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent default form submission
 
-    const password_element = document.getElementById('password-input'); // input element
-    const email_element = document.getElementById('email-input'); // email input element
+    // Set hidden input values with actual text from select options
+    const stateInput = document.getElementById("state-input");
+    const cityProvinceInput = document.getElementById("city-province-input");
+    
+    document.getElementById("hidden-region").value = stateInput.options[stateInput.selectedIndex].text;
+    document.getElementById("hidden-province").value = cityProvinceInput.options[cityProvinceInput.selectedIndex].text;
+
+    const password_element = document.getElementById('password-input');
+    const email_element = document.getElementById('email-input');
+    const phone_element = document.getElementById('phone-number');
     const err_message = document.getElementById('error-message');
     const password = password_element.value;
     const confirmPassword = document.getElementById('confirm-password-input').value;
@@ -11,6 +19,15 @@ document.querySelector('form').addEventListener('submit', function(event) {
     err_message.textContent = '';
     password_element.classList.remove('is-invalid');
     email_element.classList.remove('is-invalid');
+    phone_element.classList.remove('is-invalid');
+
+    // Phone number validation
+    const phoneNumber = phone_element.value;
+    if (phoneNumber.length > 12) {
+        err_message.textContent = 'Phone number must not exceed 12 digits';
+        phone_element.classList.add('is-invalid');
+        return;
+    }
 
     // Password validation functions
     function hasUppercase(password) {
@@ -29,7 +46,6 @@ document.querySelector('form').addEventListener('submit', function(event) {
 
     // Password validation checks
     if (!hasMinLength(password)) {
-        // Set error message and style
         err_message.textContent = 'Password must be at least 8 characters long.';
         password_element.classList.add('is-invalid');
         return;
@@ -53,17 +69,20 @@ document.querySelector('form').addEventListener('submit', function(event) {
         return; 
     }
 
-  // ... existing code ...
-
     // Collect form data
     const formData = new FormData(event.target);
+    
+    // Get the actual location names from hidden inputs
+    const state = document.getElementById("hidden-region").value;
+    const city_or_province = document.getElementById("hidden-province").value;
+    
     const data = {
         table: 'employers',
         data: {
             company_name: formData.get('company_name'),
             phone_number: formData.get('phone_number'),
-            state: formData.get('state'),
-            city_or_province: formData.get('city_or_province'),
+            state: state,
+            city_or_province: city_or_province,
             zip_code: formData.get('zip_code'),
             street: formData.get('street_number'),
             email: formData.get('email'),
@@ -74,25 +93,46 @@ document.querySelector('form').addEventListener('submit', function(event) {
     };
 
     // Send data to the server
-    fetch('https://root-4ytd.onrender.com/api/signup/recruter', {
+    fetch('http://localhost:10000/api/signup/recruter', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(data)  // Send only the nested data object
+        body: JSON.stringify(data)
     })
     .then(response => response.json())
     .then(data => {
         if (data.message === 'Email already exists') {
             err_message.textContent = 'Email already exists';
             email_element.classList.add('is-invalid');
+        } else if (data.message === 'Employer created successfully') {
+            alert('Account created successfully!');
+            window.location.href = '/frontend/src/auth/login.php';
         } else {
-            alert('Success: ' + data.message);
-            console.log(data.message);
+            throw new Error(data.detail || 'An error occurred during registration');
         }
     })
     .catch((error) => {
         console.error('Error:', error);
-        alert('An error occurred. Please try again.');
+        // Check if account was created despite the error
+        fetch('http://localhost:10000/api/verify-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email: formData.get('email') })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.exists) {
+                alert('Account created successfully!');
+                window.location.href = '/frontend/src/auth/login.php';
+            } else {
+                err_message.textContent = error.message || 'An error occurred. Please try again.';
+            }
+        })
+        .catch(() => {
+            err_message.textContent = error.message || 'An error occurred. Please try again.';
+        });
     });
 });

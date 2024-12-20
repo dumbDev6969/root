@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Get employer ID from localStorage or another source
   const employerId = 1; // Using the ID from your console log
-  fetch(`https://root-4ytd.onrender.com/api/reads?table=employers&id=${employerId}`, {
+  fetch(`http://localhost:10000/api/reads?table=employers&id=${employerId}`, {
     method: "GET",
     headers: {
       "accept": "application/json",
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
       email: document.getElementById("email-input").value,
       password: document.getElementById("password-input").value,
     };
-    fetch("https://root-4ytd.onrender.com/api/update", {
+    fetch("http://localhost:10000/api/update", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

@@ -10,20 +10,20 @@ def generate_user_id(prefix: str = "USR") -> str:
         prefix (str): Optional prefix for the user ID. Defaults to "USR".
     
     Returns:
-        str: A unique user ID in format: {prefix}_{timestamp}_{uuid}
+        str: A unique user ID in format: {prefix}{timestamp_short}{uuid_short}
     """
     try:
-        # Get current timestamp
-        timestamp = int(time.time())
-        # Generate UUID (without dashes)
-        unique_id = str(uuid.uuid4()).replace('-', '')
-        # Combine components
-        user_id = f"{prefix}_{timestamp}_{unique_id}"
+        # Get current timestamp and take last 6 digits
+        timestamp = str(int(time.time()))[-6:]
+        # Generate UUID and take first 8 characters
+        unique_id = str(uuid.uuid4()).replace('-', '')[:8]
+        # Combine components without underscores to save space
+        user_id = f"{prefix}{timestamp}{unique_id}"
         return user_id
     except Exception as e:
         print(f"Error generating user ID: {e}")
         # Fallback to simple UUID if timestamp fails
-        return f"{prefix}_{str(uuid.uuid4())}"
+        return f"{prefix}{str(uuid.uuid4())[:12]}"
 
 def is_valid_user_id(user_id: str) -> bool:
     """
@@ -36,8 +36,12 @@ def is_valid_user_id(user_id: str) -> bool:
         bool: True if valid, False otherwise
     """
     try:
-        # Split the user ID into components
-        prefix, timestamp, uuid_part = user_id.split('_')
+        if len(user_id) != 17:  # 3 char prefix + 6 char timestamp + 8 char uuid
+            return False
+            
+        prefix = user_id[:3]
+        timestamp = user_id[3:9]
+        uuid_part = user_id[9:]
         
         # Validate prefix
         if not prefix.isalpha():
@@ -47,8 +51,8 @@ def is_valid_user_id(user_id: str) -> bool:
         if not timestamp.isdigit():
             return False
             
-        # Validate UUID part (should be 32 characters of hex digits)
-        if len(uuid_part) != 32 or not all(c in '0123456789abcdef' for c in uuid_part.lower()):
+        # Validate UUID part (should be 8 characters of hex digits)
+        if len(uuid_part) != 8 or not all(c in '0123456789abcdef' for c in uuid_part.lower()):
             return False
             
         return True
@@ -66,5 +70,5 @@ if __name__ == "__main__":
     print(f"Is Valid: {is_valid}")
     
     # Example with custom prefix
-    custom_id = generate_user_id(prefix="ADMIN")
+    custom_id = generate_user_id(prefix="EMP")
     print(f"Custom Prefix ID: {custom_id}")

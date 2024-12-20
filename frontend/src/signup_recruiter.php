@@ -22,25 +22,26 @@
 
             <div class="col-md-12">
                 <div class="form-floating">
-                    <input type="text" name="company_name" class="form-control" id="company-name-input" placeholder="Company name" maxlength="30">
+                    <input type="hidden" class="form-control" id="hidden-region" name="selected-region">
+                    <input type="hidden" class="form-control" id="hidden-province" name="selected-province">
+                    <input type="hidden" class="form-control" id="hidden-municipality" name="selected-municipality">
+                    <input type="text" name="company_name" class="form-control" id="company-name-input" placeholder="Company name" maxlength="30" required>
                     <label for="company-name-input" class="form-label">Company Name</label>
                 </div>
             </div>
 
             <div class="col-md-12">
                 <div class="form-floating">
-                    <input type="number" name="phone_number" class="form-control" id="phone-number" placeholder="Phone #" min="0" max="999999999999">
+                    <input type="tel" name="phone_number" class="form-control" id="phone-number" placeholder="Phone #" 
+                           pattern="[0-9]{1,12}" maxlength="12" title="Please enter up to 12 digits" required>
                     <label for="phone-number" class="form-label">Phone Number</label>
                 </div>
             </div>
 
             <div class="col-md-6">
                 <div class="form-floating">
-                    <select name="state" class="form-control" id="state-input" >
+                    <select name="state" class="form-control" id="state-input" required>
                         <option value="" disabled selected>Select Region</option>
-<!--                        <option value="Luzon">Luzon</option>-->
-<!--                        <option value="Visayas">Visayas</option>-->
-<!--                        <option value="Mindanao">Mindanao</option>-->
                     </select>
                     <label for="state-input">Region</label>
                 </div>
@@ -50,15 +51,15 @@
             <!-- City/Province -->
             <div class="col-md-6">
                 <div class="form-floating">
-                    <select  name="city-or-province" class="form-control" id="city-province-input" placeholder="City or Province" disabled>
-                        <option value="" >Select City/Province</option>
+                    <select name="city-or-province" class="form-control" id="city-province-input" placeholder="City or Province" disabled>
+                        <option value="">Select City/Province</option>
                     </select>
                     <label for="city-province-input">City or Province</label>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-floating">
-                    <input type="text" name="zip_code" class="form-control" id="zip-code-input" placeholder="ZIP Code" maxlength="10">
+                    <input type="text" name="zip_code" class="form-control" id="zip-code-input" placeholder="ZIP Code" maxlength="10" required>
                     <label for="zip-code-input" class="form-label">ZIP Code</label>
                 </div>
             </div>
@@ -72,23 +73,22 @@
 
             <div class="col-md-12">
                 <div class="form-floating">
-                    <input type="email" name="email" class="form-control" id="email-input" placeholder="Email" maxlength="30">
+                    <input type="email" name="email" class="form-control" id="email-input" placeholder="Email" maxlength="30" required>
                     <label for="email-input" class="form-label">Email</label>
-                </div>
-            </div>
-
-            <div class="col-md-12">
-                <div class="form-floating">
-                    <input type="password" name="password" class="form-control" id="password-input" placeholder="Password" maxlength="255">
-                    <label for="password-input" class="form-label">Password</label>
-                    
                 </div>
                 <span id="error-message" class="text-danger"></span>
             </div>
 
             <div class="col-md-12">
                 <div class="form-floating">
-                    <input type="password" name="confirm-password" class="form-control" id="confirm-password-input" placeholder="Password" maxlength="255">
+                    <input type="password" name="password" class="form-control" id="password-input" placeholder="Password" maxlength="255" required>
+                    <label for="password-input" class="form-label">Password</label>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-floating">
+                    <input type="password" name="confirm-password" class="form-control" id="confirm-password-input" placeholder="Password" maxlength="255" required>
                     <label for="confirm-password-input" class="form-label">Confirm Password</label>
                 </div>
             </div>

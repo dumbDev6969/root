@@ -1,3 +1,20 @@
+<?php
+// Prevent any output before headers
+ini_set('display_errors', 0);
+error_reporting(0);
+
+// Start session
+session_start();
+
+// Check if user is logged in and is a tech grad user
+if (!isset($_SESSION['isLoggedIn']) || !$_SESSION['isLoggedIn'] || $_SESSION['userType'] !== 'user') {
+    header('Location: ../../auth/login.php');
+    exit;
+}
+
+// Get user data
+$userData = $_SESSION['userData'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,22 +44,22 @@
                 <h4>Employment type</h4>
                 <hr>
                 <div class="container">
-                    <form action="#">
+                    <form action="#" id="filter-form">
                         <div class="form-check mt-3">
                             <input class="form-check-input" type="checkbox" value="Full-time" id="full-time">
-                            <label class="form-check-label text-secondary" for="defaultCheck1">Full time</label>
+                            <label class="form-check-label text-secondary" for="full-time">Full time</label>
                         </div>
                         <div class="form-check mt-3">
                             <input class="form-check-input" type="checkbox" value="Part-time" id="part-time">
-                            <label class="form-check-label text-secondary" for="defaultCheck2">Part time</label>
+                            <label class="form-check-label text-secondary" for="part-time">Part time</label>
                         </div>
                         <div class="form-check mt-3">
                             <input class="form-check-input" type="checkbox" value="Freelance" id="freelance">
-                            <label class="form-check-label text-secondary" for="defaultCheck1">Freelance</label>
+                            <label class="form-check-label text-secondary" for="freelance">Freelance</label>
                         </div>
                         <div class="form-check mt-3">
                             <input class="form-check-input" type="checkbox" value="Internship" id="Intership">
-                            <label class="form-check-label text-secondary" for="defaultCheck2">Internship</label>
+                            <label class="form-check-label text-secondary" for="Intership">Internship</label>
                         </div>
 
                         <hr>
@@ -61,7 +78,7 @@
             <div class="col-md-9 " style="height: 90vh; overflow: auto">
                 <div class="row gap-2">
                     <div class="col-md-12">
-                        <form action="#">
+                        <form action="#" id="search-form">
                             <div class="row">
                                 <div class="col-md-7">
                                     <input type="search" class="form-control" name="job" id="job-search" placeholder="E.g Web developer">
@@ -85,6 +102,10 @@
         </div>
     </div>
 
+    <script>
+    // Add user data to job filter for personalized results
+    const userData = <?php echo json_encode($userData); ?>;
+    </script>
     <script src="../../../assets/js/job_filter.js"></script>
 </body>
 

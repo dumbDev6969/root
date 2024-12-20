@@ -1,3 +1,22 @@
+<?php
+// Prevent any output before headers
+ini_set('display_errors', 0);
+error_reporting(0);
+
+// Start session
+session_start();
+
+// Check if user is already logged in
+if (isset($_SESSION['isLoggedIn']) && $_SESSION['isLoggedIn'] === true) {
+    if ($_SESSION['userType'] === 'employer') {
+        header('Location: ../dashboard/recruiter/dashboard_recruiter.php');
+        exit;
+    } else if ($_SESSION['userType'] === 'user') {
+        header('Location: ../dashboard/tech_grad/dashboard_tech_grad.php');
+        exit;
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +26,7 @@
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../assets/links.css">
     <script src="../../assets/js/login.js" defer></script>
@@ -61,7 +81,7 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
                 </div>
                 <div class="col-md-12">
-                    <form class="d-flex align-items-center justify-content-center flex-column" action="process_login.php" method="POST">
+                    <form class="d-flex align-items-center justify-content-center flex-column" method="POST">
                         <div class="input-group">
                             <i class="bi bi-envelope"></i>
                             <input type="email" name="email" id="email" placeholder="Email" required>

@@ -4,7 +4,7 @@ import os
 from typing import Optional, List, Dict, Any
 from utils.logger import get_logger
 from dotenv import load_dotenv
-
+import sqlite3
 # Load environment variables
 load_dotenv()
 
@@ -15,6 +15,8 @@ class DatabaseError(Exception):
     pass
 
 class Database:
+     # Default to online database
+    
     def __init__(self, host: str, user: str, password: str, database: str, db_path: str = 'fallback_db.sqlite', pool_size: int = 20) -> None:
         """Initialize the Database class with an attempt to connect to MySQL, fallback to SQLite."""
         self.db_type = None
@@ -22,25 +24,45 @@ class Database:
         max_retries = 3
         retry_count = 0
         last_error = None
+        self.server = {"local": True, "online": False} 
 
         while retry_count < max_retries:
             try:
-                dbconfig = {
-                    "pool_name": "mypool",
-                    "pool_size": int(os.getenv('DB_POOL_SIZE', pool_size)),
-                    "host": os.getenv('DB_HOST'),
-                    "user": os.getenv('DB_USER'),
-                    "password": os.getenv('DB_PASSWORD'),
-                    "database": os.getenv('DB_NAME'),
-                    "port": int(os.getenv('DB_PORT', 3306)),
-                    "charset": "utf8mb4",
-                    "connect_timeout": 10,
-                    "pool_reset_session": True,
-                    "autocommit": True,
-                    "get_warnings": True,
-                    "raise_on_warnings": True,
-                    "consume_results": True
-                }
+                # Configure connection based on server setting
+                if self.server["local"]:
+                    dbconfig = {
+                        "pool_name": "mypool",
+                        "pool_size": int(os.getenv('DB_POOL_SIZE', pool_size)),
+                        "host": "localhost",  # Local XAMPP MySQL server
+                        "user": "root",       # Default XAMPP user
+                        "password": "",       # Default XAMPP password
+                        "database": os.getenv('DB_NAME'),
+                        "port": 3306,         # Default XAMPP port
+                        "charset": "utf8mb4",
+                        "connect_timeout": 10,
+                        "pool_reset_session": True,
+                        "autocommit": True,
+                        "get_warnings": True,
+                        "raise_on_warnings": True,
+                        "consume_results": True
+                    }
+                else:
+                    dbconfig = {
+                        "pool_name": "mypool",
+                        "pool_size": int(os.getenv('DB_POOL_SIZE', pool_size)),
+                        "host": os.getenv('DB_HOST'),
+                        "user": os.getenv('DB_USER'),
+                        "password": os.getenv('DB_PASSWORD'),
+                        "database": os.getenv('DB_NAME'),
+                        "port": int(os.getenv('DB_PORT', 3306)),
+                        "charset": "utf8mb4",
+                        "connect_timeout": 10,
+                        "pool_reset_session": True,
+                        "autocommit": True,
+                        "get_warnings": True,
+                        "raise_on_warnings": True,
+                        "consume_results": True
+                    }
                 self.pool = mysql.connector.pooling.MySQLConnectionPool(**dbconfig)
                 self.db_type = 'mysql'
                 logger.info(f"MySQL database connection pool created successfully with size {pool_size}")
@@ -146,43 +168,6 @@ class Database:
                         conn.close()  # Return connection to pool or close SQLite connection
                     except Exception as e:
                         logger.error(f"Error closing connection: {e}")
-
-    def execute_multiple_queries(self, sql: str) -> None:
-        """Execute multiple SQL queries separated by semicolons."""
-        conn = None
-        cursor = None
-        try:
-            conn = self.get_connection()
-            cursor = conn.cursor()
-            
-            # Split the SQL string into individual statements
-            statements = sql.split(';')
-            for statement in statements:
-                if statement.strip():  # Skip empty statements
-                    cursor.execute(statement)
-            conn.commit()
-        except (mysql.connector.Error, sqlite3.Error) as e:
-            logger.error(f"Database error: {e}")
-            if conn:
-                try:
-                    conn.rollback()
-                except:
-                    pass
-            raise DatabaseError(f"Failed to execute multiple queries: {e}")
-        finally:
-            if cursor:
-                cursor.close()
-            if conn:
-                conn.close()  # Return connection to pool or close SQLite connection
-
-    def import_sql_file(self, file_path: str, sql_content: str) -> None:
-        """Import an SQL file into the database."""
-        try:
-            self.execute_multiple_queries(sql_content)
-            logger.info(f"SQL file {file_path} imported successfully into database.")
-        except Exception as e:
-            logger.error(f"Failed to import SQL file {file_path}: {e}")
-            raise DatabaseError(f"Failed to import SQL file {file_path}: {e}")
 
     def close(self) -> None:
         """Close the database connection pool if using MySQL."""

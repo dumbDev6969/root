@@ -1,118 +1,100 @@
-document.addEventListener("DOMContentLoaded", () => {
-  let selected_region = null;
-  fetch("https://root-4ytd.onrender.com/api/regions/")
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok " + response.statusText);
-      }
-      return response.json();
-    })
-    .then((data) => {
-      const selectElement = document.getElementById("state-input");
+// Initialize geo dropdowns with current values
+function initializeGeoDropdowns() {
+    const stateInput = document.getElementById('state-input');
+    const cityProvinceInput = document.getElementById('city-province-input');
+    const municipalityInput = document.getElementById('municipality-input');
 
-      data.forEach((region) => {
-        const option = document.createElement("option");
-        option.value = region.code;
-        option.textContent = region.name;
-        selectElement.appendChild(option);
-      });
-
-      const hiddenRegionInput = document.createElement("input");
-      hiddenRegionInput.type = "hidden";
-      hiddenRegionInput.id = "hidden-region";
-      hiddenRegionInput.name = "selected-region";
-      document.body.appendChild(hiddenRegionInput);
-
-      selectElement.addEventListener("change", function () {
-        const selectedOption = selectElement.options[selectElement.selectedIndex];
-        hiddenRegionInput.value = selectedOption.textContent; // Store name instead of code
-        console.log("Region selected:", hiddenRegionInput.value); // Debugging log
-        selected_region = selectElement.value;
-        document.getElementById("city-province-input").disabled = false;
-        fetch(`https://root-4ytd.onrender.com/api/regions/${selected_region}/provinces/`)
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error("Network response was not ok " + response.statusText);
-            }
-            return response.json();
-          })
-          .then((provinces) => {
-            const cityProvinceSelect = document.getElementById("city-province-input");
-            cityProvinceSelect.innerHTML = "";
-            const hiddenProvinceInput = document.createElement("input");
-            hiddenProvinceInput.type = "hidden";
-            hiddenProvinceInput.id = "hidden-province";
-            hiddenProvinceInput.name = "selected-province";
-            document.body.appendChild(hiddenProvinceInput);
-
-            const defaultOption = document.createElement("option");
-            defaultOption.value = "";
-            defaultOption.disabled = true;
-            defaultOption.selected = true;
-            defaultOption.textContent = "Select City/Province";
-            cityProvinceSelect.appendChild(defaultOption);
-
-            provinces.forEach((province) => {
-              const option = document.createElement("option");
-              option.value = province.code;
-              option.textContent = province.name;
-              cityProvinceSelect.appendChild(option);
+    // Load regions and set current value
+    fetch('../../../backend/python/routes/geo/region.json')
+        .then(response => response.json())
+        .then(regions => {
+            regions.forEach(region => {
+                const option = document.createElement('option');
+                option.value = region.code;
+                option.textContent = region.name;
+                if (region.name === userData.state) {
+                    option.selected = true;
+                }
+                stateInput.appendChild(option);
             });
+            
+            // Trigger change event to load provinces if state is selected
+            if (userData.state) {
+                stateInput.dispatchEvent(new Event('change'));
+            }
+        })
+        .catch(error => {
+            console.error('Error loading regions:', error);
+            alert('Error loading regions. Please try again later.');
+        });
 
-            cityProvinceSelect.addEventListener("change", function () {
-              const selectedOption = cityProvinceSelect.options[cityProvinceSelect.selectedIndex];
-              hiddenProvinceInput.value = selectedOption.textContent; // Store name instead of code
-              console.log("Province selected:", hiddenProvinceInput.value); // Debugging log
-              const selectedProvinceValue = cityProvinceSelect.value;
-              document.getElementById("municipality-input").disabled = false;
-              fetch(`https://root-4ytd.onrender.com/api/provinces/${selectedProvinceValue}/municipalities/`)
-                .then((response) => {
-                  if (!response.ok) {
-                    throw new Error("Network response was not ok " + response.statusText);
-                  }
-                  return response.json();
-                })
-                .then((municipalities) => {
-                  const municipalitiesSelect = document.getElementById("municipality-input");
-                  municipalitiesSelect.innerHTML = "";
+    // Add event listeners for cascading dropdowns
+    stateInput.addEventListener('change', function() {
+        loadProvinces(this.value, userData.city_or_province);
+    });
 
-                  const hiddenMunicipalityInput = document.createElement("input");
-                  hiddenMunicipalityInput.type = "hidden";
-                  hiddenMunicipalityInput.id = "hidden-municipality";
-                  hiddenMunicipalityInput.name = "selected-municipality";
-                  document.body.appendChild(hiddenMunicipalityInput);
+    cityProvinceInput.addEventListener('change', function() {
+        loadMunicipalities(this.value, userData.municipality);
+    });
+}
 
-                  const defaultMunicipalityOption = document.createElement("option");
-                  defaultMunicipalityOption.value = "";
-                  defaultMunicipalityOption.disabled = true;
-                  defaultMunicipalityOption.selected = true;
-                  defaultMunicipalityOption.textContent = "Select municipality";
-                  municipalitiesSelect.appendChild(defaultMunicipalityOption);
+// Load provinces based on selected region
+function loadProvinces(regionCode, selectedProvince) {
+    const cityProvinceInput = document.getElementById('city-province-input');
+    cityProvinceInput.innerHTML = '<option value="">Select City/Province</option>';
+    cityProvinceInput.disabled = true;
 
-                  municipalities.forEach((municipality) => {
-                    const option = document.createElement("option");
+    if (regionCode) {
+        fetch('../../../backend/python/routes/geo/province.json')
+            .then(response => response.json())
+            .then(provinces => {
+                provinces.forEach(province => {
+                    const option = document.createElement('option');
+                    option.value = province.code;
+                    option.textContent = province.name;
+                    if (province.name === selectedProvince) {
+                        option.selected = true;
+                    }
+                    cityProvinceInput.appendChild(option);
+                });
+                cityProvinceInput.disabled = false;
+
+                // Trigger change event to load municipalities if province is selected
+                if (selectedProvince) {
+                    cityProvinceInput.dispatchEvent(new Event('change'));
+                }
+            })
+            .catch(error => {
+                console.error('Error loading provinces:', error);
+                alert('Error loading provinces. Please try again later.');
+            });
+    }
+}
+
+// Load municipalities based on selected province
+function loadMunicipalities(provinceCode, selectedMunicipality) {
+    const municipalityInput = document.getElementById('municipality-input');
+    municipalityInput.innerHTML = '<option value="">Select Municipality</option>';
+    municipalityInput.disabled = true;
+
+    if (provinceCode) {
+        fetch('../../../backend/python/routes/geo/municipality.json')
+            .then(response => response.json())
+            .then(municipalities => {
+                municipalities.forEach(municipality => {
+                    const option = document.createElement('option');
                     option.value = municipality.code;
                     option.textContent = municipality.name;
-                    municipalitiesSelect.appendChild(option);
-                  });
-
-                  municipalitiesSelect.addEventListener("change", function () {
-                    const selectedOption = municipalitiesSelect.options[municipalitiesSelect.selectedIndex];
-                    hiddenMunicipalityInput.value = selectedOption.textContent; // Store name instead of code
-                    console.log("Municipality selected:", hiddenMunicipalityInput.value); // Debugging log
-                  });
-                })
-                .catch((error) => {
-                  console.error("There was a problem fetching municipalities:", error);
+                    if (municipality.name === selectedMunicipality) {
+                        option.selected = true;
+                    }
+                    municipalityInput.appendChild(option);
                 });
+                municipalityInput.disabled = false;
+            })
+            .catch(error => {
+                console.error('Error loading municipalities:', error);
+                alert('Error loading municipalities. Please try again later.');
             });
-          })
-          .catch((error) => {
-            console.error("There was a problem fetching provinces:", error);
-          });
-      });
-    })
-    .catch((error) => {
-      console.error("There was a problem fetching regions:", error);
-    });
-});
+    }
+}

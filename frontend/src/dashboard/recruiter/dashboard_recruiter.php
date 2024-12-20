@@ -1,17 +1,33 @@
+<?php
+// Prevent any output before headers
+ini_set('display_errors', 0);
+error_reporting(0);
+
+// Start session
+session_start();
+
+// Check if user is logged in and is an employer
+if (!isset($_SESSION['isLoggedIn']) || !$_SESSION['isLoggedIn'] || $_SESSION['userType'] !== 'employer') {
+    header('Location: ../../auth/login.php');
+    exit;
+}
+
+// Get employer data
+$employerData = $_SESSION['employerData'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Recruiter Dashboard</title>
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link href="../../../assets/links.css" rel="stylesheet" />
     <script src="../../../assets/js/remove-tokens.js"></script>
     <script src="../../../assets/js/dashboard_recruiter.js"></script>
-
     <link rel="stylesheet" href="../../../assets/scroll-animation.css">
     <script src='../../../includes/scroll-animation.js'></script>
     <style>
@@ -23,7 +39,6 @@
 
 <body>
     <?php include '../../../includes/navigation_recruiter.php' ?>
-    
     
     <div class="container-fluid">
         <div class="container d-flex align-items-center justify-content-between scroll-hidden">
@@ -79,9 +94,7 @@
                             <div class="card" style="width: 15rem;">
                                 <div class="card-body">
                                     <div class="card-title d-flex align-items-center flex-column">
-                                        <!-- img -->
                                         <div class="profile border" style="height: 170px; width:170px; border-radius: 50%">
-
                                         </div>
                                     </div>
                                     <h5 class="mt-3">Johua Cabuang</h5>
@@ -99,9 +112,7 @@
                             <div class="card" style="width: 15rem;">
                                 <div class="card-body">
                                     <div class="card-title d-flex align-items-center flex-column">
-                                        <!-- img -->
                                         <div class="profile border" style="height: 170px; width:170px; border-radius: 50%">
-
                                         </div>
                                     </div>
                                     <h5>Johua Cabuang</h5>
@@ -124,7 +135,6 @@
                                     <div class="d-flex  justify-content-between align-items-center">
                                         <div>
                                             <h5 class="card-title fw-bold">Jr. Software Dev</h5>
-
                                         </div>
                                         <div class="company-profile border" style="height: 50px; width: 50px; border-radius: 50px">
                                             img
@@ -155,7 +165,6 @@
                                     <div class="d-flex  justify-content-between align-items-center">
                                         <div>
                                             <h5 class="card-title">Jr. Sofware dev</h5>
-
                                         </div>
                                         <div class="company-profile border" style="height: 50px; width: 50px; border-radius: 50px">
                                             img
@@ -181,21 +190,27 @@
                             </div>
                         </div>
                         <div class="col-lg-3 col-md-12">
-
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
-
     </div>
 
     <script>
-
-        function remove(){
-            localStorage.removeItem("employerData")
-            window.location.href = "../../../src/auth/login.php";
+        function remove() {
+            // First clear localStorage
+            localStorage.removeItem("employerData");
+            
+            // Then clear server session
+            fetch('../../auth/logout.php')
+                .then(() => {
+                    window.location.href = "../../auth/login.php";
+                })
+                .catch(() => {
+                    // If session clear fails, redirect anyway
+                    window.location.href = "../../auth/login.php";
+                });
         }
     </script>
 </body>

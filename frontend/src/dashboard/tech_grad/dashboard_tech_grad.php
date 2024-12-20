@@ -1,14 +1,30 @@
+<?php
+// Prevent any output before headers
+ini_set('display_errors', 0);
+error_reporting(0);
+
+// Start session
+session_start();
+
+// Check if user is logged in and is a tech grad user
+if (!isset($_SESSION['isLoggedIn']) || !$_SESSION['isLoggedIn'] || $_SESSION['userType'] !== 'user') {
+    header('Location: ../../auth/login.php');
+    exit;
+}
+
+// Get user data
+$userData = $_SESSION['userData'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tech Grad Dashboard</title>
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
     <link rel="stylesheet" href="../../../assets/scroll-animation.css">
     <script src='../../../includes/scroll-animation.js'></script>
     <style>
@@ -16,43 +32,6 @@
             width: 15rem
         }
     </style>
-    <script>
-        const employerData = localStorage.getItem("userData");
-        const parsedData = JSON.parse(employerData);
-        document.addEventListener('DOMContentLoaded', function () {
-            const userData = {
-                user_id: parsedData.user_id,
-                first_name: parsedData.first_name,
-                last_name: parsedData.last_name,
-                phone_number: parsedData.phone_number,
-                email: parsedData.email,
-                street: parsedData.street,
-                municipality: parsedData.municipality,
-                city_or_province: parsedData.city_or_province,
-                state: parsedData.state,
-                zip_code: parsedData.zip_code,
-                created_at: parsedData.created_at,
-                updated_at: parsedData.updated_at,
-            };
-
-            // Populate user information
-            document.getElementById('company-name').textContent = `${userData.first_name} ${userData.last_name}`;
-            document.getElementById('industry-description').textContent = 'Tech Industry Job Experts';
-            document.getElementById('career-building').textContent = 'Building Careers in Technology';
-            document.getElementById('date-started').textContent = new Date(userData.created_at).toLocaleDateString();
-
-            // Populate additional user details
-            document.querySelector('.bi-envelope-at + span + strong').textContent = userData.email;
-            document.querySelector('.bi-telephone + span + strong').textContent = userData.phone_number;
-            document.querySelector('.bi-geo-alt + span + strong').textContent = userData.state;
-        });
-        function remove(){
-            localStorage.removeItem("userData");
-            window.location.href = "../../../src/auth/login.php";
-        }
-
-       
-    </script>
 </head>
 
 <body>
@@ -85,8 +64,7 @@
         </div>
     </div>
 
-
-<div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="conversationCanvas" aria-labelledby="conversationCanvasLabel">
+    <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="conversationCanvas" aria-labelledby="conversationCanvasLabel">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="conversationCanvasLabel">Conversation</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -101,6 +79,7 @@
             </div>
         </div>
     </div>
+
     <div class="container-fluid">
         <div class="container d-flex align-items-center justify-content-between scroll-hidden">
             <div class="row">
@@ -109,7 +88,7 @@
                         <div class="border border-dark" style="height: 100px; width:100px; border-radius: 50%;" onclick="document.getElementById('profile-input').click()">
                             <input type="file" class="form-control border mb-4 d-none" id="profile-input">
                         </div>
-                        <h4 id="company-name" class="mt-4 mb-3 me-3 ms-4">Job seeker name</h4>
+                        <h4 id="company-name" class="mt-4 mb-3 me-3 ms-4"><?php echo htmlspecialchars($userData['first_name'] . ' ' . $userData['last_name']); ?></h4>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -123,7 +102,7 @@
                         <div>
                             <p>
                             <p class="text-secondary mb-1">Date Started</p>
-                            <h5 id="date-started" class="fw-bold">dd/mm/yy</h5>
+                            <h5 id="date-started" class="fw-bold"><?php echo date('d/m/Y', strtotime($userData['created_at'])); ?></h5>
                             </p>
                         </div>
                     </div>
@@ -142,42 +121,42 @@
                 <div class="container mt-3 p-3 ">
                     <h4 class="text-secondary">Information</h4>
                     <div class="ms-3 row" style="line-height: 40px">
-                        <div class="col-md-12  ">
+                        <div class="col-md-12">
                             <i class="bi bi-envelope-at"></i>
                             <span class="ms-3">Email</span>
-                            <strong class="ms-5">sample@gmail.xom</strong>
+                            <strong class="ms-5"><?php echo htmlspecialchars($userData['email']); ?></strong>
                         </div>
                         <div class="col-md-12">
                             <i class="bi bi-telephone"></i>
                             <span class="ms-3">Phone</span>
-                            <strong class="ms-5">6969-6969-6969</strong>
+                            <strong class="ms-5"><?php echo htmlspecialchars($userData['phone_number']); ?></strong>
                         </div>
                         <div class="col-md-12">
                             <i class="bi bi-geo-alt"></i>
                             <span class="ms-3">State</span>
-                            <strong class="ms-5">Luzon</strong>
+                            <strong class="ms-5"><?php echo htmlspecialchars($userData['state']); ?></strong>
                         </div>
                         <div class="col-md-12">
                             <hr>
-                            <h4 class="text-secondary">Qualificatoins</h4>
+                            <h4 class="text-secondary">Qualifications</h4>
                             <i class="bi bi-person-check"></i>
                             <span class="ms-3">Degree</span>
-                            <strong class="ms-5">BSIT</strong>
+                            <strong class="ms-5"><?php echo htmlspecialchars($userData['degree'] ?? 'BSIT'); ?></strong>
                         </div>
                         <div class="col-md-12">
                             <i class="bi bi-building-check"></i>
                             <span class="ms-3">Graduated at</span>
-                            <strong class="ms-5">bcc</strong>
+                            <strong class="ms-5"><?php echo htmlspecialchars($userData['graduated_at'] ?? 'Not specified'); ?></strong>
                         </div>
                         <div class="col-md-12">
                             <i class="bi bi-patch-check"></i>
                             <span class="ms-3">Certification</span>
-                            <strong class="ms-5">W3schools</strong>
+                            <strong class="ms-5"><?php echo htmlspecialchars($userData['certification'] ?? 'Not specified'); ?></strong>
                         </div>
                         <div class="col-md-12">
                             <i class="bi bi-pc-display"></i>
                             <span class="ms-3">Specialized training</span>
-                            <strong class="ms-5">Bootcamp</strong>
+                            <strong class="ms-5"><?php echo htmlspecialchars($userData['specialized_training'] ?? 'Not specified'); ?></strong>
                         </div>
                         <div class="col-md-12">
                             <hr>
@@ -186,29 +165,27 @@
                         <div class="col-md-12">
                             <i class="bi bi-person-workspace"></i>
                             <span class="ms-3">Job interest</span>
-                            <strong class="ms-5">Web dev</strong>
+                            <strong class="ms-5"><?php echo htmlspecialchars($userData['job_interest'] ?? 'Not specified'); ?></strong>
                         </div>
                         <div class="col-md-12">
                             <i class="bi bi-calendar3-week"></i>
                             <span class="ms-3">Job type</span>
-                            <strong class="ms-5">Full time</strong>
+                            <strong class="ms-5"><?php echo htmlspecialchars($userData['job_type'] ?? 'Not specified'); ?></strong>
                         </div>
                         <div class="col-md-12">
                             <i class="bi bi-pin-map"></i>
                             <span class="ms-3">Preferred location</span>
-                            <strong class="ms-5">Luzon</strong
+                            <strong class="ms-5"><?php echo htmlspecialchars($userData['preferred_location'] ?? 'Not specified'); ?></strong>
                         </div>
                         <div class="col-md-12">
                             <i class="bi bi-cash"></i>
                             <span class="ms-3">Salary range</span>
-                            <strong class="ms-5">500 - 1000</strong
+                            <strong class="ms-5"><?php echo htmlspecialchars($userData['salary_range'] ?? 'Not specified'); ?></strong>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
 </body>
-
+</html>

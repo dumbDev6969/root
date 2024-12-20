@@ -1,0 +1,689 @@
+2024-12-20 08:18:11 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-20 08:18:12 | INFO     | __main__:<module>:56 - Starting the application
+2024-12-20 08:18:13 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-20 08:18:35 | INFO     | routes.root:main:26 - Redirecting to API documentation
+2024-12-20 08:18:35 | INFO     | middleware:metrics_middleware:27 - Request: GET / - Status: 307 - Duration: 0.00s
+2024-12-20 08:18:35 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2024-12-20 08:18:37 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.01s
+2024-12-20 08:18:52 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 08:22:26 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-20 08:22:26 | INFO     | __main__:<module>:56 - Starting the application
+2024-12-20 08:22:27 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-20 08:23:13 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-20 08:23:17 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-20 08:23:18 | INFO     | __main__:<module>:56 - Starting the application
+2024-12-20 08:23:19 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-20 08:23:43 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2024-12-20 08:23:43 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.02s
+2024-12-20 08:23:53 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.01s
+2024-12-20 08:24:36 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:24:36 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 08:24:40 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/100000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-20 08:24:42 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/103500000/municipalities/ - Status: 200 - Duration: 0.01s
+2024-12-20 08:24:43 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:24:43 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.01s
+2024-12-20 08:24:48 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/090000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-20 08:24:50 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/097300000/municipalities/ - Status: 200 - Duration: 0.01s
+2024-12-20 08:25:45 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/recruter - Status: 200 - Duration: 0.00s
+2024-12-20 08:25:45 | INFO     | routes.signup:recruter:115 - Raw data received for recruiter: {'company_name': 'Jemcarlo Austria', 'phone_number': '09207766194', 'state': '090000000', 'city_or_province': None, 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 08:25:45 | INFO     | routes.signup:recruter:122 - Generated UUID for employer: EMP_1734654345_7a1e8a31784146a2945d30baae33d1c5
+2024-12-20 08:25:46 | INFO     | routes.signup:recruter:127 - Password hashed successfully for recruiter
+2024-12-20 08:25:46 | ERROR    | routes.signup:recruter:168 - Error creating employer: 1265: Data truncated for column 'employer_uuid' at row 1
+2024-12-20 08:25:46 | ERROR    | routes.signup:recruter:174 - Error during employer creation: 500: 1265: Data truncated for column 'employer_uuid' at row 1
+2024-12-20 08:25:46 | ERROR    | routes.signup:recruter:180 - Error during recruiter signup: 500: Failed to create employer
+2024-12-20 08:25:46 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 500 - Duration: 0.11s
+2024-12-20 08:25:48 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-20 08:25:58 | INFO     | routes.signup:recruter:115 - Raw data received for recruiter: {'company_name': 'Jemcarlo Austria', 'phone_number': '09207766194', 'state': '090000000', 'city_or_province': None, 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 08:25:58 | INFO     | routes.signup:recruter:122 - Generated UUID for employer: EMP_1734654358_f85c715fd7b24463875b23fae47e4f19
+2024-12-20 08:25:58 | INFO     | routes.signup:recruter:127 - Password hashed successfully for recruiter
+2024-12-20 08:25:58 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 200 - Duration: 0.10s
+2024-12-20 08:29:04 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-20 08:29:04 | INFO     | __main__:<module>:56 - Starting the application
+2024-12-20 08:29:05 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-20 08:29:08 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:29:08 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 08:29:14 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/110000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-20 08:29:16 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/112500000/municipalities/ - Status: 200 - Duration: 0.01s
+2024-12-20 08:29:27 | INFO     | routes.signup:recruter:114 - Raw data received for recruiter: {'company_name': 'Jemcarlo Austria', 'phone_number': '09207766194', 'state': '110000000', 'city_or_province': None, 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 08:29:27 | INFO     | routes.signup:recruter:121 - Generated UUID for employer: EMP_1734654567_31ca5ac306ca4f9b8f785f8018077633
+2024-12-20 08:29:28 | INFO     | routes.signup:recruter:126 - Password hashed successfully for recruiter
+2024-12-20 08:29:28 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 200 - Duration: 0.10s
+2024-12-20 08:30:29 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:30:29 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 08:30:57 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/040000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-20 08:30:59 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/043400000/municipalities/ - Status: 200 - Duration: 0.01s
+2024-12-20 08:31:08 | INFO     | routes.signup:recruter:114 - Raw data received for recruiter: {'company_name': 'Jemcarlo Austria', 'phone_number': '09207766194', 'state': '040000000', 'city_or_province': None, 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 08:31:08 | INFO     | routes.signup:recruter:121 - Generated UUID for employer: EMP_1734654668_adcc9e2502ee47fb83a17b0d4d3a51de
+2024-12-20 08:31:08 | INFO     | routes.signup:recruter:126 - Password hashed successfully for recruiter
+2024-12-20 08:31:08 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 200 - Duration: 0.09s
+2024-12-20 08:31:15 | INFO     | routes.signup:recruter:114 - Raw data received for recruiter: {'company_name': 'Jemcarlo Austria', 'phone_number': '09207766194', 'state': '040000000', 'city_or_province': None, 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo47@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 08:31:15 | INFO     | routes.signup:recruter:121 - Generated UUID for employer: EMP_1734654675_0aebdfc0ceff496cbcb37a5d0a65bda0
+2024-12-20 08:31:15 | INFO     | routes.signup:recruter:126 - Password hashed successfully for recruiter
+2024-12-20 08:31:15 | ERROR    | routes.signup:recruter:167 - Error creating employer: 1265: Data truncated for column 'employer_uuid' at row 1
+2024-12-20 08:31:15 | ERROR    | routes.signup:recruter:173 - Error during employer creation: 500: 1265: Data truncated for column 'employer_uuid' at row 1
+2024-12-20 08:31:15 | ERROR    | routes.signup:recruter:178 - Error during recruiter signup: 500: Failed to create employer
+2024-12-20 08:31:15 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 500 - Duration: 0.09s
+2024-12-20 08:32:59 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:32:59 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 08:33:27 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/070000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-20 08:33:28 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-20 08:33:29 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/072200000/municipalities/ - Status: 200 - Duration: 0.01s
+2024-12-20 08:33:54 | INFO     | routes.signup:recruter:114 - Raw data received for recruiter: {'company_name': 'Jemcarlo Austria', 'phone_number': '09207766194', 'state': '070000000', 'city_or_province': None, 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo48@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 08:33:54 | INFO     | routes.signup:recruter:121 - Generated UUID for employer: EMP654834db7e9e35
+2024-12-20 08:33:54 | INFO     | routes.signup:recruter:126 - Password hashed successfully for recruiter
+2024-12-20 08:33:54 | ERROR    | routes.signup:recruter:167 - Error creating employer: 1264: Out of range value for column 'phone_number' at row 1
+2024-12-20 08:33:54 | ERROR    | routes.signup:recruter:173 - Error during employer creation: 500: 1264: Out of range value for column 'phone_number' at row 1
+2024-12-20 08:33:54 | ERROR    | routes.signup:recruter:178 - Error during recruiter signup: 500: Failed to create employer
+2024-12-20 08:33:54 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 500 - Duration: 0.09s
+2024-12-20 08:34:06 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/recruter - Status: 200 - Duration: 0.00s
+2024-12-20 08:34:06 | INFO     | routes.signup:recruter:114 - Raw data received for recruiter: {'company_name': 'Jemcarlo Austria', 'phone_number': '09207766194', 'state': '070000000', 'city_or_province': None, 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo48@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 08:34:06 | INFO     | routes.signup:recruter:121 - Generated UUID for employer: EMP654846ad0a7060
+2024-12-20 08:34:06 | INFO     | routes.signup:recruter:126 - Password hashed successfully for recruiter
+2024-12-20 08:34:06 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 200 - Duration: 0.08s
+2024-12-20 08:35:35 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/recruter - Status: 200 - Duration: 0.00s
+2024-12-20 08:35:35 | INFO     | routes.signup:recruter:114 - Raw data received for recruiter: {'company_name': 'Jemcarlo Austria', 'phone_number': '09207766194', 'state': '070000000', 'city_or_province': None, 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo49@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 08:35:35 | INFO     | routes.signup:recruter:121 - Generated UUID for employer: EMP65493574b14c7c
+2024-12-20 08:35:35 | INFO     | routes.signup:recruter:126 - Password hashed successfully for recruiter
+2024-12-20 08:35:35 | ERROR    | routes.signup:recruter:167 - Error creating employer: 1264: Out of range value for column 'phone_number' at row 1
+2024-12-20 08:35:35 | ERROR    | routes.signup:recruter:173 - Error during employer creation: 500: 1264: Out of range value for column 'phone_number' at row 1
+2024-12-20 08:35:35 | ERROR    | routes.signup:recruter:178 - Error during recruiter signup: 500: Failed to create employer
+2024-12-20 08:35:35 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 500 - Duration: 0.09s
+2024-12-20 08:35:37 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-20 08:35:59 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/recruter - Status: 200 - Duration: 0.00s
+2024-12-20 08:35:59 | INFO     | routes.signup:recruter:114 - Raw data received for recruiter: {'company_name': 'Jemcarlo Austria', 'phone_number': '09207766194', 'state': '070000000', 'city_or_province': None, 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo49@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 08:35:59 | INFO     | routes.signup:recruter:121 - Generated UUID for employer: EMP654959f647c858
+2024-12-20 08:35:59 | INFO     | routes.signup:recruter:126 - Password hashed successfully for recruiter
+2024-12-20 08:36:00 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 200 - Duration: 0.12s
+2024-12-20 08:36:09 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/recruter - Status: 200 - Duration: 0.00s
+2024-12-20 08:36:09 | INFO     | routes.signup:recruter:114 - Raw data received for recruiter: {'company_name': 'Jemcarlo Austria', 'phone_number': '09207766194', 'state': '070000000', 'city_or_province': None, 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo50@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 08:36:09 | INFO     | routes.signup:recruter:121 - Generated UUID for employer: EMP6549692a861bbb
+2024-12-20 08:36:09 | INFO     | routes.signup:recruter:126 - Password hashed successfully for recruiter
+2024-12-20 08:36:09 | ERROR    | routes.signup:recruter:167 - Error creating employer: 1264: Out of range value for column 'phone_number' at row 1
+2024-12-20 08:36:09 | ERROR    | routes.signup:recruter:173 - Error during employer creation: 500: 1264: Out of range value for column 'phone_number' at row 1
+2024-12-20 08:36:09 | ERROR    | routes.signup:recruter:180 - Error during recruiter signup: 500: 500: 1264: Out of range value for column 'phone_number' at row 1
+2024-12-20 08:36:09 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 500 - Duration: 0.08s
+2024-12-20 08:37:04 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:37:04 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 08:37:17 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:37:17 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 08:37:25 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:37:25 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 08:37:29 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/110000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-20 08:37:32 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/112400000/municipalities/ - Status: 200 - Duration: 0.01s
+2024-12-20 08:37:42 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/recruter - Status: 200 - Duration: 0.00s
+2024-12-20 08:37:42 | INFO     | routes.signup:recruter:114 - Raw data received for recruiter: {'company_name': 'Jemcarlo Austria', 'phone_number': '09207766194', 'state': '110000000', 'city_or_province': None, 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 08:37:42 | INFO     | routes.signup:recruter:121 - Generated UUID for employer: EMP655062a634d7dd
+2024-12-20 08:37:42 | INFO     | routes.signup:recruter:126 - Password hashed successfully for recruiter
+2024-12-20 08:37:42 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 200 - Duration: 0.08s
+2024-12-20 08:37:49 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/recruter - Status: 200 - Duration: 0.00s
+2024-12-20 08:37:49 | INFO     | routes.signup:recruter:114 - Raw data received for recruiter: {'company_name': 'Jemcarlo Austria', 'phone_number': '09207766194', 'state': '110000000', 'city_or_province': None, 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo51@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 08:37:49 | INFO     | routes.signup:recruter:121 - Generated UUID for employer: EMP6550690bd5b23c
+2024-12-20 08:37:49 | INFO     | routes.signup:recruter:126 - Password hashed successfully for recruiter
+2024-12-20 08:37:50 | ERROR    | routes.signup:recruter:167 - Error creating employer: 1264: Out of range value for column 'phone_number' at row 1
+2024-12-20 08:37:50 | ERROR    | routes.signup:recruter:173 - Error during employer creation: 500: 1264: Out of range value for column 'phone_number' at row 1
+2024-12-20 08:37:50 | ERROR    | routes.signup:recruter:180 - Error during recruiter signup: 500: 500: 1264: Out of range value for column 'phone_number' at row 1
+2024-12-20 08:37:50 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 500 - Duration: 0.08s
+2024-12-20 08:38:22 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/recruter - Status: 200 - Duration: 0.00s
+2024-12-20 08:38:22 | INFO     | routes.signup:recruter:114 - Raw data received for recruiter: {'company_name': 'Jemcarlo Austria', 'phone_number': '9207766194', 'state': '110000000', 'city_or_province': None, 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo51@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 08:38:22 | INFO     | routes.signup:recruter:121 - Generated UUID for employer: EMP655102994316b4
+2024-12-20 08:38:22 | INFO     | routes.signup:recruter:126 - Password hashed successfully for recruiter
+2024-12-20 08:38:22 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 200 - Duration: 0.08s
+2024-12-20 08:38:28 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/recruter - Status: 200 - Duration: 0.00s
+2024-12-20 08:38:28 | INFO     | routes.signup:recruter:114 - Raw data received for recruiter: {'company_name': 'Jemcarlo Austria', 'phone_number': '9207766194', 'state': '110000000', 'city_or_province': None, 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo52@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 08:38:28 | INFO     | routes.signup:recruter:121 - Generated UUID for employer: EMP655108d5ff93ac
+2024-12-20 08:38:28 | INFO     | routes.signup:recruter:126 - Password hashed successfully for recruiter
+2024-12-20 08:38:28 | ERROR    | routes.signup:recruter:167 - Error creating employer: 1264: Out of range value for column 'phone_number' at row 1
+2024-12-20 08:38:28 | ERROR    | routes.signup:recruter:173 - Error during employer creation: 500: 1264: Out of range value for column 'phone_number' at row 1
+2024-12-20 08:38:28 | ERROR    | routes.signup:recruter:180 - Error during recruiter signup: 500: 500: 1264: Out of range value for column 'phone_number' at row 1
+2024-12-20 08:38:28 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 500 - Duration: 0.08s
+2024-12-20 08:39:46 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/recruter - Status: 200 - Duration: 0.00s
+2024-12-20 08:39:46 | INFO     | routes.signup:recruter:114 - Raw data received for recruiter: {'company_name': 'Jemcarlo Austria', 'phone_number': '9207766194', 'state': '110000000', 'city_or_province': None, 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo53@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 08:39:46 | INFO     | routes.signup:recruter:121 - Generated UUID for employer: EMP6551863f67d6f0
+2024-12-20 08:39:46 | INFO     | routes.signup:recruter:126 - Password hashed successfully for recruiter
+2024-12-20 08:39:46 | ERROR    | routes.signup:recruter:167 - Error creating employer: 1264: Out of range value for column 'phone_number' at row 1
+2024-12-20 08:39:46 | ERROR    | routes.signup:recruter:173 - Error during employer creation: 500: 1264: Out of range value for column 'phone_number' at row 1
+2024-12-20 08:39:46 | ERROR    | routes.signup:recruter:180 - Error during recruiter signup: 500: 500: 1264: Out of range value for column 'phone_number' at row 1
+2024-12-20 08:39:46 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 500 - Duration: 0.08s
+2024-12-20 08:39:48 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-20 08:41:01 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:41:01 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.01s
+2024-12-20 08:41:40 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:41:40 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 08:41:43 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-20 08:42:00 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:42:00 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.01s
+2024-12-20 08:42:05 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/100000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-20 08:42:08 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/101800000/municipalities/ - Status: 200 - Duration: 0.01s
+2024-12-20 08:42:26 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/recruter - Status: 200 - Duration: 0.00s
+2024-12-20 08:42:26 | INFO     | routes.signup:recruter:132 - Raw data received for recruiter: {'company_name': 'Jemcarlo Austria', 'phone_number': '09207766194', 'state': '100000000', 'city_or_province': None, 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo54@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 08:42:26 | INFO     | routes.signup:recruter:139 - Generated UUID for employer: EMP6553469bad79a2
+2024-12-20 08:42:26 | INFO     | routes.signup:recruter:144 - Password hashed successfully for recruiter
+2024-12-20 08:42:26 | ERROR    | routes.signup:recruter:185 - Error creating employer: 1264: Out of range value for column 'phone_number' at row 1
+2024-12-20 08:42:26 | INFO     | routes.signup:recruter:192 - Employer created successfully despite warning
+2024-12-20 08:42:26 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 200 - Duration: 0.09s
+2024-12-20 08:43:09 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:43:09 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 08:43:11 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:43:11 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.01s
+2024-12-20 08:43:16 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/100000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-20 08:43:18 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/104200000/municipalities/ - Status: 200 - Duration: 0.02s
+2024-12-20 08:43:27 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/recruter - Status: 200 - Duration: 0.00s
+2024-12-20 08:43:27 | INFO     | routes.signup:recruter:132 - Raw data received for recruiter: {'company_name': 'Jemcarlo Austria', 'phone_number': '09207766194', 'state': '100000000', 'city_or_province': None, 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 08:43:27 | INFO     | routes.signup:recruter:139 - Generated UUID for employer: EMP6554070ed825fc
+2024-12-20 08:43:27 | INFO     | routes.signup:recruter:144 - Password hashed successfully for recruiter
+2024-12-20 08:43:27 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 200 - Duration: 0.08s
+2024-12-20 08:43:32 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/recruter - Status: 200 - Duration: 0.00s
+2024-12-20 08:43:32 | INFO     | routes.signup:recruter:132 - Raw data received for recruiter: {'company_name': 'Jemcarlo Austria', 'phone_number': '09207766194', 'state': '100000000', 'city_or_province': None, 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo55@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 08:43:32 | INFO     | routes.signup:recruter:139 - Generated UUID for employer: EMP655412de7433a7
+2024-12-20 08:43:32 | INFO     | routes.signup:recruter:144 - Password hashed successfully for recruiter
+2024-12-20 08:43:32 | ERROR    | routes.signup:recruter:185 - Error creating employer: 1264: Out of range value for column 'phone_number' at row 1
+2024-12-20 08:43:32 | INFO     | routes.signup:recruter:192 - Employer created successfully despite warning
+2024-12-20 08:43:32 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 200 - Duration: 0.08s
+2024-12-20 08:44:25 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:44:25 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 08:44:30 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:44:30 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 08:44:35 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/110000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-20 08:44:37 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/112400000/municipalities/ - Status: 200 - Duration: 0.01s
+2024-12-20 08:44:51 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/recruter - Status: 200 - Duration: 0.00s
+2024-12-20 08:44:51 | INFO     | routes.signup:recruter:132 - Raw data received for recruiter: {'company_name': 'Jemcarlo Austria', 'phone_number': '09207766194', 'state': '110000000', 'city_or_province': None, 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo56@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 08:44:51 | INFO     | routes.signup:recruter:139 - Generated UUID for employer: EMP6554914b019a71
+2024-12-20 08:44:51 | INFO     | routes.signup:recruter:144 - Password hashed successfully for recruiter
+2024-12-20 08:44:51 | ERROR    | routes.signup:recruter:185 - Error creating employer: 1264: Out of range value for column 'phone_number' at row 1
+2024-12-20 08:44:51 | INFO     | routes.signup:recruter:192 - Employer created successfully despite warning
+2024-12-20 08:44:51 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 200 - Duration: 0.09s
+2024-12-20 08:47:14 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:47:14 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 08:47:16 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:47:16 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 08:47:16 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:47:16 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 08:47:17 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:47:17 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 08:47:17 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:47:17 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 08:47:17 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:47:17 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 08:47:17 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:47:17 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 08:47:17 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:47:18 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 08:47:22 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/110000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-20 08:47:24 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/112500000/municipalities/ - Status: 200 - Duration: 0.01s
+2024-12-20 08:47:36 | INFO     | routes.signup:recruter:132 - Raw data received for recruiter: {'company_name': 'Jemcarlo Austria', 'phone_number': '09207766194', 'state': '110000000', 'city_or_province': None, 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo56@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 08:47:36 | INFO     | routes.signup:recruter:139 - Generated UUID for employer: EMP65565689194cb9
+2024-12-20 08:47:36 | INFO     | routes.signup:recruter:144 - Password hashed successfully for recruiter
+2024-12-20 08:47:36 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 200 - Duration: 0.08s
+2024-12-20 08:47:46 | INFO     | routes.signup:recruter:132 - Raw data received for recruiter: {'company_name': 'Jemcarlo Austria', 'phone_number': '09207766194', 'state': '110000000', 'city_or_province': None, 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo57@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 08:47:46 | INFO     | routes.signup:recruter:139 - Generated UUID for employer: EMP655666415723fc
+2024-12-20 08:47:46 | INFO     | routes.signup:recruter:144 - Password hashed successfully for recruiter
+2024-12-20 08:47:46 | ERROR    | routes.signup:recruter:185 - Error creating employer: 1264: Out of range value for column 'phone_number' at row 1
+2024-12-20 08:47:46 | INFO     | routes.signup:recruter:192 - Employer created successfully despite warning
+2024-12-20 08:47:46 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 200 - Duration: 0.09s
+2024-12-20 08:49:20 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:49:20 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 08:49:24 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/120000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-20 08:49:26 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/126500000/municipalities/ - Status: 200 - Duration: 0.01s
+2024-12-20 08:49:43 | INFO     | routes.signup:recruter:132 - Raw data received for recruiter: {'company_name': 'Jemcarlo Austria', 'phone_number': '09207766194', 'state': '120000000', 'city_or_province': None, 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo58@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 08:49:43 | INFO     | routes.signup:recruter:139 - Generated UUID for employer: EMP655783b7bb94ba
+2024-12-20 08:49:43 | INFO     | routes.signup:recruter:144 - Password hashed successfully for recruiter
+2024-12-20 08:49:43 | ERROR    | routes.signup:recruter:185 - Error creating employer: 1264: Out of range value for column 'phone_number' at row 1
+2024-12-20 08:49:43 | INFO     | routes.signup:recruter:192 - Employer created successfully despite warning
+2024-12-20 08:49:43 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 200 - Duration: 0.08s
+2024-12-20 08:50:13 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:50:13 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 08:51:07 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/recruter - Status: 200 - Duration: 0.00s
+2024-12-20 08:51:07 | INFO     | routes.signup:recruter:132 - Raw data received for recruiter: {'company_name': 'Jemcarlo Austria', 'phone_number': '09207766194', 'state': '010000000', 'city_or_province': None, 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo59@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 08:51:07 | INFO     | routes.signup:recruter:139 - Generated UUID for employer: EMP655867c4496eb2
+2024-12-20 08:51:07 | INFO     | routes.signup:recruter:144 - Password hashed successfully for recruiter
+2024-12-20 08:51:07 | ERROR    | routes.signup:recruter:185 - Error creating employer: 1264: Out of range value for column 'phone_number' at row 1
+2024-12-20 08:51:07 | INFO     | routes.signup:recruter:192 - Employer created successfully despite warning
+2024-12-20 08:51:07 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 200 - Duration: 0.09s
+2024-12-20 08:53:37 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:53:37 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 08:53:51 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/recruter - Status: 200 - Duration: 0.00s
+2024-12-20 08:53:51 | INFO     | routes.signup:recruter:132 - Raw data received for recruiter: {'company_name': 'Jemcarlo Austria', 'phone_number': '09207766194', 'state': '010000000', 'city_or_province': None, 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo60@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 08:53:51 | INFO     | routes.signup:recruter:139 - Generated UUID for employer: EMP656031fcddd03f
+2024-12-20 08:53:51 | INFO     | routes.signup:recruter:144 - Password hashed successfully for recruiter
+2024-12-20 08:53:51 | ERROR    | routes.signup:recruter:185 - Error creating employer: 1264: Out of range value for column 'phone_number' at row 1
+2024-12-20 08:53:51 | INFO     | routes.signup:recruter:192 - Employer created successfully despite warning
+2024-12-20 08:53:51 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 200 - Duration: 0.09s
+2024-12-20 08:54:09 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:54:09 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 08:59:03 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:59:03 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 08:59:25 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:59:25 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 08:59:28 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:59:28 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 08:59:28 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:59:28 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 08:59:28 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 08:59:28 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 08:59:49 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/170000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-20 08:59:50 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/175100000/municipalities/ - Status: 200 - Duration: 0.01s
+2024-12-20 08:59:54 | INFO     | routes.signup:recruter:132 - Raw data received for recruiter: {'company_name': 'Jemcarlo Austria', 'phone_number': '09207766194', 'state': '', 'city_or_province': '', 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo50@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 08:59:54 | INFO     | routes.signup:recruter:139 - Generated UUID for employer: EMP656394019a2c73
+2024-12-20 08:59:54 | INFO     | routes.signup:recruter:144 - Password hashed successfully for recruiter
+2024-12-20 08:59:54 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 200 - Duration: 0.07s
+2024-12-20 09:00:08 | INFO     | routes.signup:recruter:132 - Raw data received for recruiter: {'company_name': 'Jemcarlo Austria', 'phone_number': '09207766194', 'state': '', 'city_or_province': '', 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo61@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 09:00:08 | INFO     | routes.signup:recruter:139 - Generated UUID for employer: EMP6564086ef0133d
+2024-12-20 09:00:08 | INFO     | routes.signup:recruter:144 - Password hashed successfully for recruiter
+2024-12-20 09:00:08 | ERROR    | routes.signup:recruter:185 - Error creating employer: 1264: Out of range value for column 'phone_number' at row 1
+2024-12-20 09:00:08 | INFO     | routes.signup:recruter:192 - Employer created successfully despite warning
+2024-12-20 09:00:08 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 200 - Duration: 0.10s
+2024-12-20 09:01:31 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 09:01:31 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 09:01:31 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 09:01:31 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.01s
+2024-12-20 09:01:31 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 09:01:31 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 09:01:31 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 09:01:31 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 09:01:32 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 09:01:32 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.01s
+2024-12-20 09:01:32 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 09:01:32 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 09:01:32 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 09:01:32 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 09:01:37 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/100000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-20 09:01:39 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/101800000/municipalities/ - Status: 200 - Duration: 0.01s
+2024-12-20 09:01:52 | INFO     | routes.signup:recruter:132 - Raw data received for recruiter: {'company_name': 'Jemcarlo Austria', 'phone_number': '09207766194', 'state': 'Northern Mindanao', 'city_or_province': 'Camiguin', 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo62@gmail.com', 'password': 'aBCD.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 09:01:52 | INFO     | routes.signup:recruter:139 - Generated UUID for employer: EMP6565124eb5a7e1
+2024-12-20 09:01:52 | INFO     | routes.signup:recruter:144 - Password hashed successfully for recruiter
+2024-12-20 09:01:52 | ERROR    | routes.signup:recruter:185 - Error creating employer: 1264: Out of range value for column 'phone_number' at row 1
+2024-12-20 09:01:52 | INFO     | routes.signup:recruter:192 - Employer created successfully despite warning
+2024-12-20 09:01:52 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/recruter - Status: 200 - Duration: 0.09s
+2024-12-20 09:06:54 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-20 09:06:54 | INFO     | __main__:<module>:56 - Starting the application
+2024-12-20 09:06:56 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-20 09:22:05 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.04s
+2024-12-20 09:24:01 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.02s
+2024-12-20 09:24:47 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-20 09:24:47 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.13s
+2024-12-20 09:24:49 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:25:13 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/create - Status: 200 - Duration: 0.00s
+2024-12-20 09:25:13 | DEBUG    | routes.database:create_record:121 - Creating jobs record with data: {'job_title': 'job23', 'job_type': 'Full-time', 'location': 'job2', 'salary_range': '1000', 'job_description': 'asds', 'requirements': 'adasd', 'employer_id': 1, 'created_at': '2024-12-20T01:25:12.702Z'}
+2024-12-20 09:25:13 | DEBUG    | routes.database:create_record:144 - Validating employer_id: 1
+2024-12-20 09:25:13 | INFO     | routes.database:create_record:152 - Successfully created jobs record
+2024-12-20 09:25:13 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/create - Status: 200 - Duration: 0.04s
+2024-12-20 09:25:16 | DEBUG    | routes.database:create_record:121 - Creating jobs record with data: {'job_title': 'job23', 'job_type': 'Full-time', 'location': 'job2', 'salary_range': '1000', 'job_description': 'asds', 'requirements': 'adasd', 'employer_id': 1, 'created_at': '2024-12-20T01:25:16.477Z'}
+2024-12-20 09:25:16 | DEBUG    | routes.database:create_record:144 - Validating employer_id: 1
+2024-12-20 09:25:16 | INFO     | routes.database:create_record:152 - Successfully created jobs record
+2024-12-20 09:25:16 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/create - Status: 200 - Duration: 0.02s
+2024-12-20 09:25:25 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/create - Status: 200 - Duration: 0.00s
+2024-12-20 09:25:25 | DEBUG    | routes.database:create_record:121 - Creating jobs record with data: {'job_title': 'job23', 'job_type': 'Full-time', 'location': 'job2', 'salary_range': '1000', 'job_description': 'asds', 'requirements': 'adasd', 'employer_id': 1, 'created_at': '2024-12-20T01:25:25.291Z'}
+2024-12-20 09:25:25 | DEBUG    | routes.database:create_record:144 - Validating employer_id: 1
+2024-12-20 09:25:25 | INFO     | routes.database:create_record:152 - Successfully created jobs record
+2024-12-20 09:25:25 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/create - Status: 200 - Duration: 0.03s
+2024-12-20 09:25:28 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/create - Status: 200 - Duration: 0.00s
+2024-12-20 09:25:28 | DEBUG    | routes.database:create_record:121 - Creating jobs record with data: {'job_title': 'job23', 'job_type': 'Full-time', 'location': 'job2', 'salary_range': '1000', 'job_description': 'asds', 'requirements': 'adasd', 'employer_id': 1, 'created_at': '2024-12-20T01:25:28.641Z'}
+2024-12-20 09:25:28 | DEBUG    | routes.database:create_record:144 - Validating employer_id: 1
+2024-12-20 09:25:28 | INFO     | routes.database:create_record:152 - Successfully created jobs record
+2024-12-20 09:25:28 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/create - Status: 200 - Duration: 0.02s
+2024-12-20 09:25:28 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/create - Status: 200 - Duration: 0.00s
+2024-12-20 09:25:28 | DEBUG    | routes.database:create_record:121 - Creating jobs record with data: {'job_title': 'job23', 'job_type': 'Full-time', 'location': 'job2', 'salary_range': '1000', 'job_description': 'asds', 'requirements': 'adasd', 'employer_id': 1, 'created_at': '2024-12-20T01:25:28.809Z'}
+2024-12-20 09:25:28 | DEBUG    | routes.database:create_record:144 - Validating employer_id: 1
+2024-12-20 09:25:28 | INFO     | routes.database:create_record:152 - Successfully created jobs record
+2024-12-20 09:25:28 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/create - Status: 200 - Duration: 0.03s
+2024-12-20 09:25:44 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/create - Status: 200 - Duration: 0.00s
+2024-12-20 09:25:44 | DEBUG    | routes.database:create_record:121 - Creating jobs record with data: {'job_title': 'job23', 'job_type': 'Full-time', 'location': 'job2', 'salary_range': '1000', 'job_description': 'asds', 'requirements': 'adasd', 'employer_id': 1, 'created_at': '2024-12-20T01:25:44.197Z'}
+2024-12-20 09:25:44 | DEBUG    | routes.database:create_record:144 - Validating employer_id: 1
+2024-12-20 09:25:44 | INFO     | routes.database:create_record:152 - Successfully created jobs record
+2024-12-20 09:25:44 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/create - Status: 200 - Duration: 0.03s
+2024-12-20 09:27:02 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.04s
+2024-12-20 09:27:41 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/create - Status: 200 - Duration: 0.00s
+2024-12-20 09:27:41 | DEBUG    | routes.database:create_record:121 - Creating jobs record with data: {'job_title': 'job2', 'job_type': 'Full-time', 'location': 'kkasdk', 'salary_range': '123', 'job_description': 'asdas', 'requirements': 'asdasdas', 'employer_id': 1, 'created_at': '2024-12-20T01:27:41.524Z'}
+2024-12-20 09:27:41 | DEBUG    | routes.database:create_record:144 - Validating employer_id: 1
+2024-12-20 09:27:41 | INFO     | routes.database:create_record:152 - Successfully created jobs record
+2024-12-20 09:27:41 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/create - Status: 200 - Duration: 0.03s
+2024-12-20 09:28:31 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.04s
+2024-12-20 09:28:35 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/create - Status: 200 - Duration: 0.00s
+2024-12-20 09:28:35 | DEBUG    | routes.database:create_record:121 - Creating jobs record with data: {'job_title': 'job2', 'job_type': 'Full-time', 'location': 'kkasdk', 'salary_range': '123', 'job_description': 'asdas', 'requirements': 'asdasdas', 'employer_id': 1, 'created_at': '2024-12-20T01:28:35.637Z'}
+2024-12-20 09:28:35 | DEBUG    | routes.database:create_record:144 - Validating employer_id: 1
+2024-12-20 09:28:35 | INFO     | routes.database:create_record:152 - Successfully created jobs record
+2024-12-20 09:28:35 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/create - Status: 200 - Duration: 0.03s
+2024-12-20 09:28:53 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/create - Status: 200 - Duration: 0.00s
+2024-12-20 09:28:53 | DEBUG    | routes.database:create_record:121 - Creating jobs record with data: {'job_title': 'job2', 'job_type': 'Full-time', 'location': 'asdas', 'salary_range': '9909', 'job_description': 'jdkkn', 'requirements': 'dmdms\n', 'employer_id': 1, 'created_at': '2024-12-20T01:28:52.800Z'}
+2024-12-20 09:28:53 | DEBUG    | routes.database:create_record:144 - Validating employer_id: 1
+2024-12-20 09:28:53 | INFO     | routes.database:create_record:152 - Successfully created jobs record
+2024-12-20 09:28:53 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/create - Status: 200 - Duration: 0.02s
+2024-12-20 09:29:31 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.03s
+2024-12-20 09:29:32 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/create - Status: 200 - Duration: 0.00s
+2024-12-20 09:29:32 | DEBUG    | routes.database:create_record:121 - Creating jobs record with data: {'job_title': 'job2', 'job_type': 'Full-time', 'location': 'asdas', 'salary_range': '9909', 'job_description': 'jdkkn', 'requirements': 'dmdms\n', 'employer_id': 1, 'created_at': '2024-12-20T01:29:32.141Z'}
+2024-12-20 09:29:32 | DEBUG    | routes.database:create_record:144 - Validating employer_id: 1
+2024-12-20 09:29:32 | INFO     | routes.database:create_record:152 - Successfully created jobs record
+2024-12-20 09:29:32 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/create - Status: 200 - Duration: 0.01s
+2024-12-20 09:29:47 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/create - Status: 200 - Duration: 0.00s
+2024-12-20 09:29:47 | DEBUG    | routes.database:create_record:121 - Creating jobs record with data: {'job_title': 'job23', 'job_type': 'Full-time', 'location': 'dsd', 'salary_range': '8989', 'job_description': '89898', 'requirements': '89898', 'employer_id': 1, 'created_at': '2024-12-20T01:29:47.006Z'}
+2024-12-20 09:29:47 | DEBUG    | routes.database:create_record:144 - Validating employer_id: 1
+2024-12-20 09:29:47 | INFO     | routes.database:create_record:152 - Successfully created jobs record
+2024-12-20 09:29:47 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/create - Status: 200 - Duration: 0.03s
+2024-12-20 09:29:49 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.03s
+2024-12-20 09:29:54 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.04s
+2024-12-20 09:30:02 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.02s
+2024-12-20 09:30:02 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.03s
+2024-12-20 09:30:04 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 200 - Duration: 0.04s
+2024-12-20 09:30:04 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 09:30:04 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 09:30:04 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 09:30:04 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 09:30:04 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/090000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-20 09:30:04 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/090000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-20 09:30:12 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/update - Status: 200 - Duration: 0.00s
+2024-12-20 09:30:12 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 200 - Duration: 0.04s
+2024-12-20 09:31:27 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 200 - Duration: 0.02s
+2024-12-20 09:33:09 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.03s
+2024-12-20 09:34:19 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.02s
+2024-12-20 09:34:33 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.03s
+2024-12-20 09:35:11 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.02s
+2024-12-20 09:35:13 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.02s
+2024-12-20 09:35:18 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:35:48 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:36:27 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:36:28 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.00s
+2024-12-20 09:36:29 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:36:31 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.00s
+2024-12-20 09:36:33 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:37:15 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.00s
+2024-12-20 09:37:18 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.00s
+2024-12-20 09:37:25 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.00s
+2024-12-20 09:37:47 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:37:48 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.00s
+2024-12-20 09:38:03 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.00s
+2024-12-20 09:38:41 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:38:49 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-20 09:38:49 | ERROR    | routes.login:login:54 - Error verifying employer password: Invalid hash format: 
+2024-12-20 09:38:49 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 500 - Duration: 0.01s
+2024-12-20 09:38:57 | ERROR    | routes.login:login:54 - Error verifying employer password: Invalid hash format: 
+2024-12-20 09:38:57 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 500 - Duration: 0.01s
+2024-12-20 09:41:16 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.08s
+2024-12-20 09:41:18 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-20 09:41:19 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:42:18 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.09s
+2024-12-20 09:42:19 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.00s
+2024-12-20 09:43:17 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 200 - Duration: 0.00s
+2024-12-20 09:43:19 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:43:30 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/update - Status: 200 - Duration: 0.00s
+2024-12-20 09:43:30 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 200 - Duration: 0.01s
+2024-12-20 09:44:17 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:22 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:22 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:22 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:22 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:23 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:23 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:23 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.00s
+2024-12-20 09:48:23 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:23 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.00s
+2024-12-20 09:48:24 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.02s
+2024-12-20 09:48:24 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:24 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:24 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:24 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:25 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:25 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:25 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:25 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:25 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:26 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:26 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:26 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:26 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:26 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:27 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:27 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:27 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:27 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:28 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:28 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:28 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:28 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:28 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:28 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:29 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:29 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:29 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:29 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:29 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:30 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:30 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:30 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:30 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:30 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:31 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:31 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:31 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:31 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:32 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:32 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:32 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.00s
+2024-12-20 09:48:32 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:32 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:33 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:33 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:33 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:33 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:34 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:34 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:34 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:35 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:35 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:35 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:35 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:35 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:36 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:36 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:36 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:36 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:37 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:37 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:37 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:37 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:38 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:38 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:38 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:38 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:39 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:39 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:40 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:40 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:40 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:41 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:41 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:42 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:42 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:43 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:43 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:44 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:44 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:44 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:45 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:45 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:45 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:45 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:46 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:46 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:46 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:46 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:46 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:46 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:47 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:47 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:47 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:47 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:48 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:48 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:48 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:48 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:49 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:49 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:50 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:50 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:50 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:50 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:51 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:51 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:52 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:48:53 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 09:57:32 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-20 09:57:33 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 500 - Duration: 0.11s
+2024-12-20 09:57:36 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 500 - Duration: 0.08s
+2024-12-20 09:57:46 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.09s
+2024-12-20 09:57:57 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-20 09:57:57 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.08s
+2024-12-20 09:59:20 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.08s
+2024-12-20 09:59:42 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-20 09:59:42 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.08s
+2024-12-20 10:02:42 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.11s
+2024-12-20 10:03:02 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-20 10:03:02 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.09s
+2024-12-20 10:05:33 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-20 10:05:33 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.09s
+2024-12-20 10:08:37 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 200 - Duration: 0.02s
+2024-12-20 10:08:48 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/reads - Status: 200 - Duration: 0.01s
+2024-12-20 10:09:21 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 10:09:21 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 10:09:21 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.02s
+2024-12-20 10:09:21 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 10:09:26 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/030000000/provinces/ - Status: 200 - Duration: 0.02s
+2024-12-20 10:09:26 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/030000000/provinces/ - Status: 200 - Duration: 0.00s
+2024-12-20 10:09:27 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/035400000/municipalities/ - Status: 200 - Duration: 0.02s
+2024-12-20 10:09:27 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/provinces/035400000/municipalities/ - Status: 200 - Duration: 0.01s
+2024-12-20 10:09:52 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-20 10:09:52 | INFO     | routes.signup:jobseeker:59 - Raw data received: {'first_name': 'Jemcarlo', 'last_name': 'Austria', 'phone_number': '09207766194', 'state': 'Central Luzon', 'city_or_province': 'Pampanga', 'municipality': 'Apalit', 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 10:09:52 | INFO     | routes.signup:jobseeker:66 - Generated UUID for jobseeker: USR6605921dd6eb14
+2024-12-20 10:09:52 | INFO     | routes.signup:jobseeker:71 - Password hashed successfully
+2024-12-20 10:09:52 | ERROR    | routes.signup:jobseeker:114 - Error creating user: 1054 (42S22): Unknown column 'city_or_province' in 'field list'
+2024-12-20 10:09:52 | ERROR    | routes.signup:jobseeker:120 - Error during user creation: 500: 1054 (42S22): Unknown column 'city_or_province' in 'field list'
+2024-12-20 10:09:52 | ERROR    | routes.signup:jobseeker:123 - Error during jobseeker signup: 500: Failed to create user
+2024-12-20 10:09:52 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 500 - Duration: 0.12s
+2024-12-20 10:09:55 | INFO     | routes.signup:jobseeker:59 - Raw data received: {'first_name': 'Jemcarlo', 'last_name': 'Austria', 'phone_number': '09207766194', 'state': 'Central Luzon', 'city_or_province': 'Pampanga', 'municipality': 'Apalit', 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 10:09:55 | INFO     | routes.signup:jobseeker:66 - Generated UUID for jobseeker: USR660595d8c54a79
+2024-12-20 10:09:55 | INFO     | routes.signup:jobseeker:71 - Password hashed successfully
+2024-12-20 10:09:55 | ERROR    | routes.signup:jobseeker:114 - Error creating user: 1054 (42S22): Unknown column 'city_or_province' in 'field list'
+2024-12-20 10:09:55 | ERROR    | routes.signup:jobseeker:120 - Error during user creation: 500: 1054 (42S22): Unknown column 'city_or_province' in 'field list'
+2024-12-20 10:09:55 | ERROR    | routes.signup:jobseeker:123 - Error during jobseeker signup: 500: Failed to create user
+2024-12-20 10:09:55 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 500 - Duration: 0.09s
+2024-12-20 10:10:26 | INFO     | routes.signup:jobseeker:59 - Raw data received: {'first_name': 'Jemcarlo', 'last_name': 'Austria', 'phone_number': '09207766194', 'state': 'Central Luzon', 'city_or_province': 'Pampanga', 'municipality': 'Apalit', 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 10:10:26 | INFO     | routes.signup:jobseeker:66 - Generated UUID for jobseeker: USR6606262f7f080c
+2024-12-20 10:10:26 | INFO     | routes.signup:jobseeker:71 - Password hashed successfully
+2024-12-20 10:10:26 | ERROR    | routes.signup:jobseeker:114 - Error creating user: 1054 (42S22): Unknown column 'city_or_province' in 'field list'
+2024-12-20 10:10:26 | ERROR    | routes.signup:jobseeker:120 - Error during user creation: 500: 1054 (42S22): Unknown column 'city_or_province' in 'field list'
+2024-12-20 10:10:26 | ERROR    | routes.signup:jobseeker:123 - Error during jobseeker signup: 500: Failed to create user
+2024-12-20 10:10:26 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 500 - Duration: 0.09s
+2024-12-20 10:10:28 | INFO     | routes.signup:jobseeker:59 - Raw data received: {'first_name': 'Jemcarlo', 'last_name': 'Austria', 'phone_number': '09207766194', 'state': 'Central Luzon', 'city_or_province': 'Pampanga', 'municipality': 'Apalit', 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 10:10:28 | INFO     | routes.signup:jobseeker:66 - Generated UUID for jobseeker: USR660628e649602e
+2024-12-20 10:10:28 | INFO     | routes.signup:jobseeker:71 - Password hashed successfully
+2024-12-20 10:10:28 | ERROR    | routes.signup:jobseeker:114 - Error creating user: 1054 (42S22): Unknown column 'city_or_province' in 'field list'
+2024-12-20 10:10:28 | ERROR    | routes.signup:jobseeker:120 - Error during user creation: 500: 1054 (42S22): Unknown column 'city_or_province' in 'field list'
+2024-12-20 10:10:28 | ERROR    | routes.signup:jobseeker:123 - Error during jobseeker signup: 500: Failed to create user
+2024-12-20 10:10:28 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 500 - Duration: 0.10s
+2024-12-20 10:10:40 | INFO     | routes.signup:jobseeker:59 - Raw data received: {'first_name': 'Jemcarlo', 'last_name': 'Austria', 'phone_number': '09207766194', 'state': 'Central Luzon', 'city_or_province': 'Pampanga', 'municipality': 'Apalit', 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 10:10:40 | INFO     | routes.signup:jobseeker:66 - Generated UUID for jobseeker: USR66064030d002e1
+2024-12-20 10:10:40 | INFO     | routes.signup:jobseeker:71 - Password hashed successfully
+2024-12-20 10:10:40 | ERROR    | routes.signup:jobseeker:114 - Error creating user: 1054 (42S22): Unknown column 'city_or_province' in 'field list'
+2024-12-20 10:10:40 | ERROR    | routes.signup:jobseeker:120 - Error during user creation: 500: 1054 (42S22): Unknown column 'city_or_province' in 'field list'
+2024-12-20 10:10:40 | ERROR    | routes.signup:jobseeker:123 - Error during jobseeker signup: 500: Failed to create user
+2024-12-20 10:10:40 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 500 - Duration: 0.10s
+2024-12-20 10:13:54 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-20 10:13:54 | INFO     | routes.signup:jobseeker:59 - Raw data received: {'first_name': 'Jemcarlo', 'last_name': 'Austria', 'phone_number': '09207766194', 'state': 'Central Luzon', 'city_or_province': 'Pampanga', 'municipality': 'Apalit', 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 10:13:54 | INFO     | routes.signup:jobseeker:66 - Generated UUID for jobseeker: USR66083466f0d163
+2024-12-20 10:13:54 | INFO     | routes.signup:jobseeker:71 - Password hashed successfully
+2024-12-20 10:13:54 | ERROR    | routes.signup:jobseeker:114 - Error creating user: 1054 (42S22): Unknown column 'city_or_province' in 'field list'
+2024-12-20 10:13:54 | ERROR    | routes.signup:jobseeker:120 - Error during user creation: 500: 1054 (42S22): Unknown column 'city_or_province' in 'field list'
+2024-12-20 10:13:54 | ERROR    | routes.signup:jobseeker:123 - Error during jobseeker signup: 500: Failed to create user
+2024-12-20 10:13:54 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 500 - Duration: 0.09s
+2024-12-20 10:13:57 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-20 10:13:57 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-20 10:13:57 | INFO     | routes.signup:jobseeker:59 - Raw data received: {'first_name': 'Jemcarlo', 'last_name': 'Austria', 'phone_number': '09207766194', 'state': 'Central Luzon', 'city_or_province': 'Pampanga', 'municipality': 'Apalit', 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 10:13:57 | INFO     | routes.signup:jobseeker:66 - Generated UUID for jobseeker: USR660837e0415252
+2024-12-20 10:13:57 | INFO     | routes.signup:jobseeker:71 - Password hashed successfully
+2024-12-20 10:13:57 | ERROR    | routes.signup:jobseeker:113 - Error creating user: 1264: Out of range value for column 'phone_number' at row 1
+2024-12-20 10:13:57 | ERROR    | routes.signup:jobseeker:119 - Error during user creation: 500: 1264: Out of range value for column 'phone_number' at row 1
+2024-12-20 10:13:57 | ERROR    | routes.signup:jobseeker:122 - Error during jobseeker signup: 500: Failed to create user
+2024-12-20 10:13:57 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 500 - Duration: 0.09s
+2024-12-20 10:15:06 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-20 10:15:06 | INFO     | routes.signup:jobseeker:59 - Raw data received: {'first_name': 'Jemcarlo', 'last_name': 'Austria', 'phone_number': '09207766194', 'state': 'Central Luzon', 'city_or_province': 'Pampanga', 'municipality': 'Apalit', 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo46@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 10:15:06 | INFO     | routes.signup:jobseeker:66 - Generated UUID for jobseeker: USR660906e3c0d5d3
+2024-12-20 10:15:06 | INFO     | routes.signup:jobseeker:71 - Password hashed successfully
+2024-12-20 10:15:06 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 200 - Duration: 0.08s
+2024-12-20 10:15:33 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/signup/jobseeker - Status: 200 - Duration: 0.00s
+2024-12-20 10:15:33 | INFO     | routes.signup:jobseeker:59 - Raw data received: {'first_name': 'Jemcarlo', 'last_name': 'Austria', 'phone_number': '09207766194', 'state': 'Central Luzon', 'city_or_province': 'Pampanga', 'municipality': 'Apalit', 'zip_code': '2413', 'street': '007', 'email': 'jemcarlo82828@gmail.com', 'password': 'Abcd.123', 'created_at': '2024-12-20', 'updated_at': '2024-12-20'}
+2024-12-20 10:15:33 | INFO     | routes.signup:jobseeker:66 - Generated UUID for jobseeker: USR66093366e21161
+2024-12-20 10:15:34 | INFO     | routes.signup:jobseeker:71 - Password hashed successfully
+2024-12-20 10:15:34 | INFO     | routes.signup:jobseeker:116 - User created successfully with hashed password and UUID
+2024-12-20 10:15:34 | INFO     | middleware:metrics_middleware:27 - Request: POST /api/signup/jobseeker - Status: 200 - Duration: 0.09s
+2024-12-20 10:16:00 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.00s
+2024-12-20 10:16:00 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.08s
+2024-12-20 10:21:06 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
+2024-12-20 10:21:40 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions/ - Status: 307 - Duration: 0.00s
+2024-12-20 10:21:40 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/regions - Status: 200 - Duration: 0.00s
+2024-12-20 10:21:51 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/update - Status: 200 - Duration: 0.00s
+2024-12-20 10:21:51 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 500 - Duration: 0.01s
+2024-12-20 10:22:03 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/update - Status: 200 - Duration: 0.00s
+2024-12-20 10:22:03 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 500 - Duration: 0.00s
+2024-12-20 10:38:31 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/health - Status: 404 - Duration: 0.01s
+2024-12-20 10:40:30 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/update - Status: 200 - Duration: 0.00s
+2024-12-20 10:40:30 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 400 - Duration: 0.02s
+2024-12-20 10:41:00 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/update - Status: 200 - Duration: 0.00s
+2024-12-20 10:41:00 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 400 - Duration: 0.00s
+2024-12-20 10:42:34 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/update - Status: 200 - Duration: 0.00s
+2024-12-20 10:42:34 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 400 - Duration: 0.00s
+2024-12-20 10:44:00 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-20 10:44:01 | INFO     | __main__:<module>:56 - Starting the application
+2024-12-20 10:44:02 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-20 10:44:06 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/update - Status: 200 - Duration: 0.00s
+2024-12-20 10:44:06 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 400 - Duration: 0.00s
+2024-12-20 10:44:29 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-20 10:44:29 | INFO     | __main__:<module>:56 - Starting the application
+2024-12-20 10:44:30 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-20 10:48:18 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/update - Status: 200 - Duration: 0.00s
+2024-12-20 10:48:19 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 400 - Duration: 0.17s
+2024-12-20 10:49:13 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-20 10:49:13 | INFO     | __main__:<module>:56 - Starting the application
+2024-12-20 10:49:14 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-20 10:49:28 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/update - Status: 200 - Duration: 0.00s
+2024-12-20 10:49:28 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 500 - Duration: 0.01s
+2024-12-20 10:50:55 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/update - Status: 200 - Duration: 0.00s
+2024-12-20 10:50:55 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 500 - Duration: 0.01s
+2024-12-20 10:50:57 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-20 10:53:47 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-20 10:53:47 | INFO     | __main__:<module>:56 - Starting the application
+2024-12-20 10:53:49 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-20 10:54:04 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/update - Status: 200 - Duration: 0.00s
+2024-12-20 10:54:04 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 500 - Duration: 0.01s
+2024-12-20 10:55:49 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/update - Status: 200 - Duration: 0.00s
+2024-12-20 10:55:49 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 500 - Duration: 0.04s
+2024-12-20 10:57:44 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/update - Status: 200 - Duration: 0.00s
+2024-12-20 10:57:44 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 500 - Duration: 0.01s
+2024-12-20 10:58:29 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/update - Status: 200 - Duration: 0.00s
+2024-12-20 10:58:29 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 200 - Duration: 0.02s
+2024-12-20 10:59:55 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/update - Status: 200 - Duration: 0.00s
+2024-12-20 10:59:55 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 200 - Duration: 0.01s
+2024-12-20 11:00:50 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/update - Status: 200 - Duration: 0.00s
+2024-12-20 11:00:50 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 200 - Duration: 0.01s
+2024-12-20 11:02:10 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/update - Status: 200 - Duration: 0.00s
+2024-12-20 11:02:11 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 200 - Duration: 0.01s
+2024-12-20 11:02:12 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-20 11:02:44 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-20 11:03:11 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/update - Status: 200 - Duration: 0.00s
+2024-12-20 11:03:11 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 200 - Duration: 0.01s
+2024-12-20 11:03:54 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/update - Status: 200 - Duration: 0.00s
+2024-12-20 11:03:54 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 200 - Duration: 0.01s
+2024-12-20 11:04:27 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/update - Status: 200 - Duration: 0.00s
+2024-12-20 11:04:27 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 200 - Duration: 0.01s
+2024-12-20 11:05:25 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/update - Status: 200 - Duration: 0.00s
+2024-12-20 11:05:25 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 200 - Duration: 0.01s
+2024-12-20 11:07:14 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/update - Status: 200 - Duration: 0.00s
+2024-12-20 11:07:14 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 200 - Duration: 0.00s
+2024-12-20 11:09:28 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/update - Status: 200 - Duration: 0.00s
+2024-12-20 11:09:28 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 200 - Duration: 0.01s
+2024-12-20 11:10:42 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/update - Status: 200 - Duration: 0.00s
+2024-12-20 11:10:43 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 200 - Duration: 0.01s
+2024-12-20 11:13:26 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/update - Status: 200 - Duration: 0.00s
+2024-12-20 11:13:26 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 200 - Duration: 0.01s
+2024-12-20 11:14:15 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/update - Status: 200 - Duration: 0.00s
+2024-12-20 11:14:15 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 200 - Duration: 0.01s
+2024-12-20 11:15:24 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/update - Status: 200 - Duration: 0.00s
+2024-12-20 11:15:24 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 200 - Duration: 0.01s
