@@ -1,69 +1,127 @@
 document.addEventListener("DOMContentLoaded", function () {
-  fetch('/root/frontend/src/auth/store_session.php', {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json'
-      }
-  })
-  .then(response => response.json())
-  .then(sessionData => {
-      if (sessionData && sessionData.employerData) {
-          const parsedData = sessionData.employerData;
-  const container = document.querySelector(".container .row");
+    const container = document.querySelector(".container .row");
 
-  fetch("http://localhost:10000/api/get-table%20?table=jobs")
-    .then((response) => response.json())
-    .then((data) => {
-      const jobs = data.data.filter((job) => job.employer_id === parsedData.employer_id);
-      
-      container.innerHTML = "";
-
-      if (jobs.length === 0) {
-        container.innerHTML = "<h1>no jobs found</h1>";
-        return;
-      }
-
-      jobs.forEach((job) => {
-        const jobCard = `
-          <div class="col-lg-3 col-md-6 d-flex align-items-center justify-content-center">
-            <div class="card" style="width: 18rem;">
-              <div class="card-body">
-                <div class="d-flex justify-content-between align-items-center">
-                  <div>
-                    <h4 class="card-title">${job.job_title}</h4>
-                  </div>
-                  <div class="company-profile border" style="height: 50px; width: 50px; border-radius: 50px">
-                    img
-                  </div>
-                </div>
-                <h6 class="card-subtitle mb-2 text-body-secondary">Employer ID: ${job.employer_id}</h6>
-                <p class="text-secondary">${job.location}</p>
-                <p class="card-text">
-                  <button type="button" disabled class="btn btn-outline-secondary btn-sm">${job.job_type}</button>
-                  <h6>${job.salary_range}</h6>
-                </p>
-                <form action="#">
-                  <div class="row">
-                    <div class="col-md-8 p-1">
-                      <button type="button" class="btn btn-sm btn-dark w-100">Edit</button>
-                    </div>
-                    <div class="col-md-4 p-1">
-                      <button type="button" class="btn btn-sm btn-outline-secondary w-100">Delete</button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        `;
-        container.innerHTML += jobCard;
-
-      });
+    // First get the employer_id from PHP session
+    fetch('get_employer_id.php')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Session expired or unauthorized');
+        }
+        return response.json();
     })
-    .catch((error) => console.error("Error fetching jobs:", error));
-    }
-  })
-  .catch((error) => {
-      console.error("Error fetching session data:", error);
-  });
+    .then(data => {
+        if (!data.success || !data.employer_id) {
+            throw new Error('No employer ID found');
+        }
+
+        // Then fetch jobs
+        return fetch("http://localhost:10000/api/get-table?table=jobs")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch jobs');
+                }
+                return response.json();
+            })
+            .then(jobsData => {
+                const jobs = jobsData.data.filter(job => job.employer_id === data.employer_id);
+                
+                container.innerHTML = "";
+
+                if (jobs.length === 0) {
+                    container.innerHTML = `
+                        <div class="col-12 text-center">
+                            <h3>No jobs found</h3>
+                            <p class="text-muted">You haven't posted any jobs yet.</p>
+                            <a href="post_job.php" class="btn btn-dark">Post a Job</a>
+                        </div>
+                    `;
+                    return;
+                }
+
+                jobs.forEach(job => {
+                    const jobCard = `
+                        <div class="col-lg-3 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div>
+                                            <h4 class="card-title">${job.job_title}</h4>
+                                        </div>
+                                        <div class="company-profile border d-flex align-items-center justify-content-center" style="height: 50px; width: 50px; border-radius: 50px">
+                                            <i class="fas fa-building"></i>
+                                        </div>
+                                    </div>
+                                    <p class="text-secondary mb-2"><i class="fas fa-map-marker-alt me-2"></i>${job.location}</p>
+                                    <div class="mb-3">
+                                        <span class="badge bg-light text-dark border">${job.job_type}</span>
+                                        <span class="badge bg-light text-dark border">$${job.salary_range}</span>
+                                    </div>
+                                    <div class="row g-2">
+                                        <div class="col-8">
+                                            <button type="button" class="btn btn-dark btn-sm w-100" onclick="editJob('${job.job_id}')">
+                                                <i class="fas fa-edit me-1"></i> Edit
+                                            </button>
+                                        </div>
+                                        <div class="col-4">
+                                            <button type="button" class="btn btn-outline-danger btn-sm w-100" onclick="deleteJob('${job.job_id}')">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    container.innerHTML += jobCard;
+                });
+            });
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        if (error.message.includes("Session expired") || error.message.includes("unauthorized")) {
+            alert("Session expired. Please log in again.");
+            window.location.href = "../../auth/login.php";
+        } else {
+            container.innerHTML = `
+                <div class="col-12 text-center">
+                    <h3>Error loading jobs</h3>
+                    <p class="text-danger">${error.message}</p>
+                    <button onclick="location.reload()" class="btn btn-dark">Try Again</button>
+                </div>
+            `;
+        }
+    });
 });
+
+function editJob(jobId) {
+    // TODO: Implement edit functionality
+    alert('Edit functionality coming soon!');
+}
+
+function deleteJob(jobId) {
+    if (!confirm('Are you sure you want to delete this job?')) {
+        return;
+    }
+
+    fetch(`http://localhost:10000/api/delete?table=jobs&id=${jobId}`, {
+        method: 'DELETE'
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Failed to delete job');
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data.success) {
+            alert('Job deleted successfully');
+            location.reload();
+        } else {
+            throw new Error(data.message || 'Failed to delete job');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Error deleting job: ' + error.message);
+    });
+}

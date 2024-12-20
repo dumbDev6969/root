@@ -251,7 +251,7 @@ async def delete_record(request: DeleteRequest, _: None = Depends(validate_input
         raise HTTPException(status_code=500, detail=str(e))
     
 # Get all records from a table
-@router.get("/api/get-table ")
+@router.get("/api/get-table")
 async def get_all_records_endpoint(table: str, _: None = Depends(validate_input)):
     table = table.lower()
 

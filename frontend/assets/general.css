@@ -1,33 +1,33 @@
-:root {
-    /* Base Colors */
-    --color-white: #FFFFFF;
-    --color-light-bg: #F8F9FA;
-    --color-medium-bg: #E9ECEF;
-    --color-dark-bg: #DEE2E6;
-  
-    /* Text Colors */
-    --color-primary-text: #212529;
-    --color-secondary-text: #495057;
-    --color-muted-text: #6C757D;
-    --color-placeholder-text: #ADB5BD;
-  
-    /* Button Colors */
-    --color-button-bg: #343A40;
-    --color-button-hover: #495057;
-    --color-button-disabled: #CED4DA;
-    --color-button-text: #FFFFFF;
-  
-    /* Borders */
-    --color-border-dark: #343A40;
-    --color-border-light: #E9ECEF;
-  
-    /* Links */
-    --color-link: #495057;
-    --color-link-hover: #212529;
-  
-    /* Cards */
-    --color-card-bg: #F1F3F5;
-  
+/* Sent messages */
+.sent-message {
+    background-color: #d1e7dd;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+    max-width: 60%;
+    display: inline-block;
+    align-self: flex-end;
+}
+
+/* Received messages */
+.received-message {
+    background-color: #f8d7da;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+    max-width: 60%;
+    display: inline-block;
+    align-self: flex-start;
+}
+
+/* Alignment helpers */
+.text-end {
+    text-align: right;
+}
+
+.text-start {
+    text-align: left;
+
     /* Transitions */
     --transition-smooth: all 0.3s ease-in-out;
 }
@@ -104,4 +104,36 @@
     .btn-login {
         width: 100%;
     }
+}
+
+
+/* Sent messages */
+.sent-message {
+    background-color: #d1e7dd;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+    max-width: 60%;
+    display: inline-block;
+    align-self: flex-end;
+}
+
+/* Received messages */
+.received-message {
+    background-color: #f8d7da;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+    max-width: 60%;
+    display: inline-block;
+    align-self: flex-start;
+}
+
+/* Alignment helpers */
+.text-end {
+    text-align: right;
+}
+
+.text-start {
+    text-align: left;
 }

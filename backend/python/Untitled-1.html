@@ -171,7 +171,7 @@
             }
 
             try {
-                ws = new WebSocket(`ws://localhost:11352/ws/${userId}`);
+                ws = new WebSocket(`ws://localhost:10000/ws/${userId}`);
                 console.log('Connecting to WebSocket...');
 
                 ws.onopen = function() {

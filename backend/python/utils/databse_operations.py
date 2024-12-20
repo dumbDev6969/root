@@ -22,8 +22,6 @@ if server["local"]:
         'pool_name': 'mypool',
         'pool_size': int(os.getenv('DB_POOL_SIZE', 20)),
         'connect_timeout': 10,
-        'read_timeout': 10,
-        'write_timeout': 10,
         'pool_reset_session': True,
         'autocommit': True
     }
@@ -38,8 +36,6 @@ else:
         'pool_name': 'mypool',
         'pool_size': int(os.getenv('DB_POOL_SIZE', 20)),
         'connect_timeout': 10,
-        'read_timeout': 10,
-        'write_timeout': 10,
         'pool_reset_session': True,
         'autocommit': True
     }
@@ -832,9 +828,9 @@ def read_email_user(email):
             cursor.close()
             connection.close()
 
-def read_email_emplopyers(email):
+def read_email_employers(email):
     """
-    Retrieves a user record by user_id.
+    Retrieves an employer record by email.
     """
     try:
         connection = get_connection()

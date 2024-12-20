@@ -24,7 +24,7 @@ class Database:
         max_retries = 3
         retry_count = 0
         last_error = None
-        self.server = {"local": True, "online": False} 
+        self.server = {"local": True, "online": False}
 
         while retry_count < max_retries:
             try:
@@ -91,32 +91,34 @@ class Database:
         self.close()
 
     def get_connection(self):
-        """Get a new connection depending on the DB type with retry logic."""
-        if self.db_type == 'mysql':
-            retries = 3
-            while retries > 0:
-                try:
-                    connection = self.pool.get_connection()
-                    if connection.is_connected():
-                        return connection
-                except mysql.connector.Error as e:
-                    logger.error(f"Error getting connection from pool (retries left: {retries-1}): {e}")
-                    retries -= 1
-                    if retries > 0:
-                        import time
-                        time.sleep(2)  # Wait 2 seconds before retrying
-                    else:
-                        raise DatabaseError(f"Failed to get connection after 3 attempts: {e}")
-            return None
-        elif self.db_type == 'sqlite':
-            import sqlite3
-            conn = sqlite3.connect(self.db_path)
-            conn.row_factory = sqlite3.Row
-            # Enable foreign key constraints for SQLite
-            conn.execute("PRAGMA foreign_keys = ON")
-            return conn
-        else:
-            raise DatabaseError("No database connection type is set.")
+        """Get a new connection with retry logic and connection verification."""
+        retries = 3
+        while retries > 0:
+            try:
+                connection = self.pool.get_connection()
+                # Verify connection is working with a simple query
+                cursor = connection.cursor()
+                cursor.execute("SELECT 1")
+                cursor.fetchone()
+                cursor.close()
+                return connection
+            except mysql.connector.Error as e:
+                logger.error(f"Error getting connection from pool (retries left: {retries-1}): {e}")
+                retries -= 1
+                if retries > 0:
+                    import time
+                    time.sleep(2)  # Wait 2 seconds before retrying
+                else:
+                    raise DatabaseError(f"Failed to get connection after 3 attempts: {e}")
+            except Exception as e:
+                logger.error(f"Unexpected error getting connection: {e}")
+                retries -= 1
+                if retries > 0:
+                    import time
+                    time.sleep(2)
+                else:
+                    raise DatabaseError(f"Failed to verify connection: {e}")
+        raise DatabaseError("Failed to get a valid database connection")
 
     def execute_query(self, sql: str, params: Optional[tuple] = ()) -> Optional[List[Dict[str, Any]]]:
         """Execute a SQL query with optional parameters."""
@@ -169,11 +171,29 @@ class Database:
                     except Exception as e:
                         logger.error(f"Error closing connection: {e}")
 
+    def verify_connection(self) -> bool:
+        """Verify database connection is working."""
+        try:
+            conn = self.get_connection()
+            if conn:
+                cursor = conn.cursor()
+                cursor.execute("SELECT 1")
+                cursor.fetchone()
+                cursor.close()
+                conn.close()
+                return True
+            return False
+        except Exception as e:
+            logger.error(f"Connection verification failed: {e}")
+            return False
+
     def close(self) -> None:
-        """Close the database connection pool if using MySQL."""
-        if self.db_type == 'mysql':
+        """Close the database connection pool."""
+        try:
             self.pool.close()
             logger.info("MySQL Database connection pool closed")
+        except Exception as e:
+            logger.error(f"Error closing connection pool: {e}")
 
 # Initialize the database connection
 db = Database(

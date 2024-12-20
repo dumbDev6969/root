@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Request, HTTPException, Depends
 from utils.logger import get_logger
 from utils.security import validate_input
-from utils.databse_operations import read_email_emplopyers,read_email_user
+from utils.databse_operations import read_email_employers, read_email_user
 from routes.database import serialize_data
 from utils.password_manager import PasswordManager
 import json
@@ -24,7 +24,7 @@ async def login(form: LoginRequest, _: None = Depends(validate_input)):
         password = form.password
         
         users = read_email_user(email)
-        employers = read_email_emplopyers(email)
+        employers = read_email_employers(email)
 
         if users["success"]:
             try:

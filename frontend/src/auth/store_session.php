@@ -27,16 +27,26 @@ function validatePersonalInfo($data) {
         return false;
     }
 
-    $requiredFields = ['first_name', 'last_name', 'email'];
+    // Check if it's employer data (has company_name) or user data (has first_name)
+    if (isset($data['company_name'])) {
+        // Employer validation
+        $requiredFields = ['company_name', 'email'];
+    } else {
+        // User validation
+        $requiredFields = ['first_name', 'last_name', 'email'];
+    }
+
     foreach ($requiredFields as $field) {
         if (!isset($data[$field]) || empty(trim($data[$field]))) {
             return false;
         }
     }
 
-    // Validate email format
-    if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
-        return false;
+    // Validate email format if present
+    if (isset($data['email']) && !empty($data['email'])) {
+        if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+            return false;
+        }
     }
 
     return true;

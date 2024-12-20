@@ -14,7 +14,9 @@ class CRUD:
     def __init__(self, db):
         """Initialize the CRUD class with a Database instance."""
         self.db = db
-        logger.info("CRUD operations initialized with the provided database connection")
+        if not self.db.verify_connection():
+            raise DatabaseError("Failed to verify database connection during CRUD initialization")
+        logger.info("CRUD operations initialized with verified database connection")
 
     def verify_foreign_key(self, table: str, column: str, value: Any) -> bool:
         """Verify if a foreign key reference exists."""

@@ -1,3 +1,17 @@
+<?php
+// Prevent any output before headers
+ini_set('display_errors', 0);
+error_reporting(0);
+
+// Start session
+session_start();
+
+// Check if user is logged in and is an employer
+if (!isset($_SESSION['isLoggedIn']) || !$_SESSION['isLoggedIn'] || $_SESSION['userType'] !== 'employer') {
+    header('Location: ../../auth/login.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +33,7 @@
 <body>
     <?php include '../../../includes/navigation_recruiter.php' ?>
     <div class="container p-5 mt-5 scroll-hidden">
-        <form id="postJobForm" action="submit_job.php" method="POST">
+        <form id="postJobForm">
             <div class="container">
                 <div class="row">
                     <!-- Job Title -->

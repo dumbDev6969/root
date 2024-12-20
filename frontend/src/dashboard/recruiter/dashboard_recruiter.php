@@ -39,6 +39,17 @@ $employerData = $_SESSION['employerData'];
 
 <body>
     <?php include '../../../includes/navigation_recruiter.php' ?>
+
+    <!-- Offcanvas -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="messageOffcanvas" aria-labelledby="messageOffcanvasLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="messageOffcanvasLabel">Messages</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <!-- Message content will go here -->
+        </div>
+    </div>
     
     <div class="container-fluid">
         <div class="container d-flex align-items-center justify-content-between scroll-hidden">

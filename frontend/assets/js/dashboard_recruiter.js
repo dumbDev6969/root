@@ -1,17 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
-  fetch('/root/frontend/src/auth/store_session.php', {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json'
-      }
-  })
+  // First check if session exists
+  fetch('/root/frontend/src/auth/check_session.php')
   .then(response => response.json())
+  .then(sessionData => {
+      if (!sessionData.loggedIn || sessionData.userType !== 'employer') {
+          throw new Error('Invalid session');
+      }
+      // Session is valid, get employer data
+      return fetch('/root/frontend/src/auth/check_session.php')
+          .then(response => response.json());
+  })
   .then(sessionData => {
       if (sessionData && sessionData.employerData) {
           const parsedData = sessionData.employerData;
   const container = document.querySelector("#job-container");
 
-  fetch("http://localhost:10000/api/get-table%20?table=jobs")
+  fetch("http://localhost:10000/api/get-table?table=jobs")
     .then((response) => response.json())
     .then((data) => {
       const jobs = data.data.filter((job) => job.employer_id === parsedData.employer_id);
@@ -62,18 +66,20 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.getElementById("logout-button").addEventListener("click", function () {
-  fetch('/root/frontend/src/auth/store_session.php', {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json'
+  fetch('/root/frontend/src/auth/logout.php')
+    .then(response => response.json())
+    .then(data => {
+      if (data.status === 'success') {
+        console.log("Session cleared successfully");
+        window.location.href = "../../../src/auth/login.php";
+      } else {
+        throw new Error('Logout failed');
       }
-  })
-  .then(() => {
-      console.log("Session data cleared");
-  })
-  .catch(error => {
-      console.error("Error clearing session data:", error);
-  });
-  window.location.href = "../../../src/auth/login.php";
+    })
+    .catch(error => {
+      console.error("Error during logout:", error);
+      // Force redirect even if logout fails
+      window.location.href = "../../../src/auth/login.php";
+    });
 });
 });

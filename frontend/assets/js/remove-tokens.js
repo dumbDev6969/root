@@ -2,34 +2,18 @@
 document.addEventListener("DOMContentLoaded", function () {
     // First verify the session is valid
     fetch('../../auth/check_session.php')
-        .then(async response => {
-            const text = await response.text();
-            let data;
-            try {
-                data = JSON.parse(text);
-            } catch (e) {
-                console.error('Invalid JSON response from session check:', text);
-                throw new Error('Invalid session response');
-            }
-
+        .then(response => response.json())
+        .then(data => {
             if (!data.loggedIn || data.status !== 'success' || data.userType !== 'employer') {
                 throw new Error('Invalid session state');
             }
 
-            // Session is valid, get the employer data
-            return fetch('../../auth/store_session.php');
+            // Session is valid, continue with the existing session data
+            return data;
         })
-        .then(async response => {
-            const text = await response.text();
-            let sessionData;
-            try {
-                sessionData = JSON.parse(text);
-            } catch (e) {
-                console.error('Invalid JSON response from session data:', text);
-                throw new Error('Invalid session data response');
-            }
+        .then(sessionData => {
 
-            if (!sessionData.status === 'success' || !sessionData.employerData) {
+            if (!sessionData.loggedIn || !sessionData.employerData) {
                 throw new Error('No employer data found');
             }
 

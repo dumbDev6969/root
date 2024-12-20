@@ -2,7 +2,7 @@ from fastapi import APIRouter, Request, HTTPException, Depends
 from fastapi.responses import JSONResponse
 from utils.logger import get_logger
 from utils.security import validate_input
-from utils.databse_operations import get_all_records, create_user, create_employer, read_email_emplopyers
+from utils.databse_operations import get_all_records, create_user, create_employer, read_email_employers
 from utils.password_manager import PasswordManager
 from utils.id_generator import generate_user_id
 from datetime import datetime
@@ -42,7 +42,7 @@ async def verify_email(request: Request):
             raise HTTPException(status_code=400, detail="Email is required")
 
         # Check if email exists in employers table
-        result = read_email_emplopyers(email)
+        result = read_email_employers(email)
         exists = result.get('success', False)
         
         return {"exists": exists}
@@ -186,7 +186,7 @@ async def recruter(request: Request, _: None = Depends(validate_input)):
                 error_msg = str(result['message']).lower()
                 if ('out of range value' in error_msg or 'data truncated' in error_msg):
                     # Verify the account was created
-                    verify_result = read_email_emplopyers(data['email'])
+                    verify_result = read_email_employers(data['email'])
                     if verify_result.get('success'):
                         logger.info("Employer created successfully despite warning")
                         return {"message": "Employer created successfully", "employer_uuid": employer_uuid}
@@ -199,7 +199,7 @@ async def recruter(request: Request, _: None = Depends(validate_input)):
             error_msg = str(e).lower()
             if ('out of range value' in error_msg or 'data truncated' in error_msg):
                 # Verify the account was created
-                verify_result = read_email_emplopyers(data['email'])
+                verify_result = read_email_employers(data['email'])
                 if verify_result.get('success'):
                     logger.info("Employer created successfully despite warning")
                     return {"message": "Employer created successfully", "employer_uuid": employer_uuid}
@@ -212,7 +212,7 @@ async def recruter(request: Request, _: None = Depends(validate_input)):
         error_msg = str(e).lower()
         if ('out of range value' in error_msg or 'data truncated' in error_msg):
             # Verify the account was created
-            verify_result = read_email_emplopyers(data['email'])
+            verify_result = read_email_employers(data['email'])
             if verify_result.get('success'):
                 logger.info("Employer created successfully despite warning")
                 return {"message": "Employer created successfully", "employer_uuid": employer_uuid}

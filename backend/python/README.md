@@ -41,7 +41,7 @@ pip install .
 - To start the FastAPI application, run:
 
   ```bash
-uvicorn api:app --host 127.0.0.1 --port 11352 --reload
+uvicorn api:app --host 127.0.0.1 --port 10000 --reload
 ```
 
 - To run the tests, use the following command:
