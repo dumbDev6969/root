@@ -687,3 +687,5 @@
 2024-12-20 11:14:15 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 200 - Duration: 0.01s
 2024-12-20 11:15:24 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /api/update - Status: 200 - Duration: 0.00s
 2024-12-20 11:15:24 | INFO     | middleware:metrics_middleware:27 - Request: PUT /api/update - Status: 200 - Duration: 0.01s
+2024-12-20 11:15:27 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-20 11:15:40 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table  - Status: 200 - Duration: 0.01s
