@@ -1,0 +1,138 @@
+{
+    "USR66093366e21161": [
+        {
+            "sender_uuid": "USR66093366e21161",
+            "receiver_uuid": "EMP_1734654675_0aebdfc0ceff496cbcb37",
+            "content": "hi",
+            "timestamp": "2024-12-21T01:52:59.156Z",
+            "attachments": {
+                "images": [],
+                "videos": [],
+                "voice_message": []
+            }
+        },
+        {
+            "sender_uuid": "USR66093366e21161",
+            "receiver_uuid": "EMP_1734654675_0aebdfc0ceff496cbcb37",
+            "content": "hi",
+            "timestamp": "2024-12-21T01:58:16.087Z",
+            "attachments": {
+                "images": [],
+                "videos": [],
+                "voice_message": []
+            }
+        },
+        {
+            "sender_uuid": "EMP_1734654675_0aebdfc0ceff496cbcb37",
+            "receiver_uuid": "USR66093366e21161",
+            "content": "well hello?",
+            "timestamp": "2024-12-21T02:42:02.330Z",
+            "attachments": {
+                "images": [],
+                "videos": [],
+                "voice_message": []
+            }
+        },
+        {
+            "sender_uuid": "USR66093366e21161",
+            "receiver_uuid": "EMP_1734654675_0aebdfc0ceff496cbcb37",
+            "content": "hahah yeah",
+            "timestamp": "2024-12-21T02:42:26.073Z",
+            "attachments": {
+                "images": [],
+                "videos": [],
+                "voice_message": []
+            }
+        },
+        {
+            "sender_uuid": "EMP_1734654675_0aebdfc0ceff496cbcb37",
+            "receiver_uuid": "USR66093366e21161",
+            "content": "wahts up?",
+            "timestamp": "2024-12-21T02:42:33.948Z",
+            "attachments": {
+                "images": [],
+                "videos": [],
+                "voice_message": []
+            }
+        },
+        {
+            "sender_uuid": "EMP_1734654675_0aebdfc0ceff496cbcb37",
+            "receiver_uuid": "USR66093366e21161",
+            "content": "yo",
+            "timestamp": "2024-12-21T02:44:29.734Z",
+            "attachments": {
+                "images": [],
+                "videos": [],
+                "voice_message": []
+            }
+        }
+    ],
+    "EMP_1734654675_0aebdfc0ceff496cbcb37": [
+        {
+            "sender_uuid": "USR66093366e21161",
+            "receiver_uuid": "EMP_1734654675_0aebdfc0ceff496cbcb37",
+            "content": "hi",
+            "timestamp": "2024-12-21T01:52:59.156Z",
+            "attachments": {
+                "images": [],
+                "videos": [],
+                "voice_message": []
+            }
+        },
+        {
+            "sender_uuid": "USR66093366e21161",
+            "receiver_uuid": "EMP_1734654675_0aebdfc0ceff496cbcb37",
+            "content": "hi",
+            "timestamp": "2024-12-21T01:58:16.087Z",
+            "attachments": {
+                "images": [],
+                "videos": [],
+                "voice_message": []
+            }
+        },
+        {
+            "sender_uuid": "EMP_1734654675_0aebdfc0ceff496cbcb37",
+            "receiver_uuid": "USR66093366e21161",
+            "content": "well hello?",
+            "timestamp": "2024-12-21T02:42:02.330Z",
+            "attachments": {
+                "images": [],
+                "videos": [],
+                "voice_message": []
+            }
+        },
+        {
+            "sender_uuid": "USR66093366e21161",
+            "receiver_uuid": "EMP_1734654675_0aebdfc0ceff496cbcb37",
+            "content": "hahah yeah",
+            "timestamp": "2024-12-21T02:42:26.073Z",
+            "attachments": {
+                "images": [],
+                "videos": [],
+                "voice_message": []
+            }
+        },
+        {
+            "sender_uuid": "EMP_1734654675_0aebdfc0ceff496cbcb37",
+            "receiver_uuid": "USR66093366e21161",
+            "content": "wahts up?",
+            "timestamp": "2024-12-21T02:42:33.948Z",
+            "attachments": {
+                "images": [],
+                "videos": [],
+                "voice_message": []
+            }
+        },
+        {
+            "sender_uuid": "EMP_1734654675_0aebdfc0ceff496cbcb37",
+            "receiver_uuid": "USR66093366e21161",
+            "content": "yo",
+            "timestamp": "2024-12-21T02:44:29.734Z",
+            "attachments": {
+                "images": [],
+                "videos": [],
+                "voice_message": []
+            }
+        }
+    ]
+}

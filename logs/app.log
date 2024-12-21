@@ -3031,3 +3031,934 @@
 2024-12-20 17:48:41 | INFO     | __main__:<module>:56 - Starting the application
 2024-12-20 17:48:43 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
 2024-12-20 17:50:29 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.06s
+2024-12-21 08:10:24 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-21 08:10:26 | INFO     | __main__:<module>:56 - Starting the application
+2024-12-21 08:10:31 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-21 08:13:39 | INFO     | routes.root:main:26 - Redirecting to API documentation
+2024-12-21 08:13:39 | INFO     | middleware:metrics_middleware:27 - Request: GET / - Status: 307 - Duration: 0.00s
+2024-12-21 08:13:39 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2024-12-21 08:13:39 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.02s
+2024-12-21 08:13:42 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.00s
+2024-12-21 08:13:42 | INFO     | middleware:metrics_middleware:27 - Request: GET /favicon.ico - Status: 404 - Duration: 0.00s
+2024-12-21 08:16:34 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.06s
+2024-12-21 08:16:47 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:17:52 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:18:06 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-21 08:18:07 | INFO     | __main__:<module>:56 - Starting the application
+2024-12-21 08:18:08 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-21 08:18:20 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:18:30 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-21 08:18:31 | INFO     | __main__:<module>:56 - Starting the application
+2024-12-21 08:18:33 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-21 08:19:26 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:19:49 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:20:21 | INFO     | routes.root:main:26 - Redirecting to API documentation
+2024-12-21 08:20:21 | INFO     | middleware:metrics_middleware:27 - Request: GET / - Status: 307 - Duration: 0.01s
+2024-12-21 08:20:21 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2024-12-21 08:20:21 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.01s
+2024-12-21 08:20:35 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:21:27 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:21:30 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:21:30 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:21:32 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.02s
+2024-12-21 08:21:37 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:21:38 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:22:16 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 400 - Duration: 0.00s
+2024-12-21 08:22:29 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 400 - Duration: 0.00s
+2024-12-21 08:23:07 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:24:00 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:24:03 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:24:06 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:24:06 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:24:07 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:24:07 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:25:12 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:25:12 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:25:15 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:25:15 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:26:19 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:26:19 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:26:35 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:26:35 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:26:37 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:26:37 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:26:37 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:26:37 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:27:50 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:27:50 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:28:02 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:28:02 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:28:04 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:28:04 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:28:04 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:28:04 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:28:05 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:28:05 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:29:28 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:29:28 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:29:30 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:29:30 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:31:06 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:31:06 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:31:09 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:31:09 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:32:25 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:32:25 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:33:11 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:33:11 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:34:47 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:34:47 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:35:35 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:35:35 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:40:08 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:40:08 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:40:11 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-21 08:40:12 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:40:12 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:46:01 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-21 08:46:02 | INFO     | __main__:<module>:56 - Starting the application
+2024-12-21 08:46:04 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-21 08:46:16 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:46:16 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:49:05 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:49:05 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:49:07 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:49:07 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:49:59 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:49:59 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:50:21 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:50:21 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:51:44 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:51:44 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:52:20 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:52:20 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:53:05 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:53:05 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:53:57 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:53:57 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:58:49 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:58:49 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 08:59:33 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 08:59:33 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 09:00:31 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 09:00:31 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 09:03:37 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 09:03:37 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 09:04:33 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 09:04:33 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 09:07:20 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 09:07:20 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 09:10:11 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 09:10:11 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 09:12:41 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 09:12:41 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 09:16:20 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 09:16:20 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 09:18:09 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 09:18:09 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 09:18:12 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 09:18:12 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 09:18:15 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 09:18:15 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 09:20:13 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 09:20:13 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 09:21:53 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 09:21:53 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 09:21:54 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 09:21:54 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 09:24:50 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 09:24:51 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 09:25:35 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 09:25:35 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 09:26:31 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 09:26:31 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 09:31:05 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-21 09:31:19 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 09:31:19 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 09:31:45 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 09:31:45 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 09:36:05 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-21 09:36:15 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 09:36:15 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 09:39:40 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-21 09:39:41 | INFO     | __main__:<module>:56 - Starting the application
+2024-12-21 09:39:43 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-21 09:40:12 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-21 09:40:43 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-21 09:41:14 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-21 09:41:45 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-21 09:52:41 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 09:52:41 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 09:57:57 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-21 09:58:02 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 09:58:02 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 09:58:02 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 09:58:02 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 09:58:02 | INFO     | routes.chat:load_chat_history:288 - Loaded chat history for USR66093366e21161: [{'sender_uuid': 'USR66093366e21161', 'receiver_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'content': 'hi', 'timestamp': '2024-12-21T01:52:59.156Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}]
+2024-12-21 09:58:02 | INFO     | routes.chat:websocket_endpoint:124 - Chat history sent to USR66093366e21161: [{'sender_uuid': 'USR66093366e21161', 'receiver_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'content': 'hi', 'timestamp': '2024-12-21T01:52:59.156Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}]
+2024-12-21 09:58:10 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 09:58:10 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 09:58:16 | INFO     | routes.chat:save_chat_message:323 - Saved message for USR66093366e21161 and EMP_1734654675_0aebdfc0ceff496cbcb37: {'sender_uuid': 'USR66093366e21161', 'receiver_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'content': 'hi', 'timestamp': '2024-12-21T01:58:16.087Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}
+2024-12-21 09:58:16 | INFO     | routes.chat:websocket_endpoint:157 - Received message from USR66093366e21161 to EMP_1734654675_0aebdfc0ceff496cbcb37: hi
+2024-12-21 09:58:23 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 09:58:23 | INFO     | routes.chat:websocket_endpoint:213 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 09:58:24 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 09:58:24 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 09:58:24 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 09:58:24 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 09:58:24 | INFO     | routes.chat:load_chat_history:288 - Loaded chat history for USR66093366e21161: [{'sender_uuid': 'USR66093366e21161', 'receiver_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'content': 'hi', 'timestamp': '2024-12-21T01:52:59.156Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}, {'sender_uuid': 'USR66093366e21161', 'receiver_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'content': 'hi', 'timestamp': '2024-12-21T01:58:16.087Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}]
+2024-12-21 09:58:24 | INFO     | routes.chat:websocket_endpoint:124 - Chat history sent to USR66093366e21161: [{'sender_uuid': 'USR66093366e21161', 'receiver_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'content': 'hi', 'timestamp': '2024-12-21T01:52:59.156Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}, {'sender_uuid': 'USR66093366e21161', 'receiver_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'content': 'hi', 'timestamp': '2024-12-21T01:58:16.087Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}]
+2024-12-21 09:58:31 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 09:58:31 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 10:01:07 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:01:07 | INFO     | routes.chat:websocket_endpoint:213 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:01:09 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-21 10:01:11 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:01:11 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:01:11 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:01:11 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:01:11 | INFO     | routes.chat:load_chat_history:311 - Loaded chat history for USR66093366e21161: [{'sender_uuid': 'USR66093366e21161', 'receiver_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'content': 'hi', 'timestamp': '2024-12-21T01:52:59.156Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}, {'sender_uuid': 'USR66093366e21161', 'receiver_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'content': 'hi', 'timestamp': '2024-12-21T01:58:16.087Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}]
+2024-12-21 10:01:11 | INFO     | routes.chat:websocket_endpoint:124 - Chat history sent to USR66093366e21161: [{'sender_uuid': 'USR66093366e21161', 'receiver_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'content': 'hi', 'timestamp': '2024-12-21T01:52:59.156Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}, {'sender_uuid': 'USR66093366e21161', 'receiver_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'content': 'hi', 'timestamp': '2024-12-21T01:58:16.087Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}]
+2024-12-21 10:01:39 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:01:39 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:01:42 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-21 10:01:43 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:01:43 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:01:43 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:01:43 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:01:43 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:03:10 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:03:10 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:03:11 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:03:11 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:03:11 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:03:11 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:03:11 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:03:17 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 10:03:17 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 10:03:19 | INFO     | routes.chat:load_chat_history:311 - Loaded chat history for USR66093366e21161: [{'sender_uuid': 'USR66093366e21161', 'receiver_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'content': 'hi', 'timestamp': '2024-12-21T01:52:59.156Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}, {'sender_uuid': 'USR66093366e21161', 'receiver_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'content': 'hi', 'timestamp': '2024-12-21T01:58:16.087Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}]
+2024-12-21 10:08:17 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:08:17 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:08:17 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:08:17 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:08:17 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:08:17 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:08:17 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:08:21 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:08:21 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:08:21 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:08:21 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:08:21 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:08:21 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:08:21 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:08:21 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:08:21 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:08:21 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:08:21 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:08:21 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:08:25 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:08:25 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:08:25 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:08:25 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:08:25 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:08:49 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:08:49 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:08:49 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:08:49 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:08:49 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:08:49 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:08:49 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:08:53 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:08:53 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:08:53 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:08:53 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:08:53 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:08:53 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:08:53 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:08:53 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:08:53 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:08:53 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:08:53 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:08:53 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:08:57 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:08:57 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:08:57 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:08:57 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:08:57 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:08:57 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:08:57 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:08:57 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:08:57 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:08:57 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:08:57 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:08:57 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:09:01 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:09:01 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:09:01 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:09:01 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:09:01 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:09:01 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:09:01 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:09:01 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:09:01 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:09:01 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:09:01 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:09:01 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:09:05 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:09:05 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:09:05 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:09:05 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:09:05 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:09:06 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:09:06 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:09:06 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:09:06 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:09:06 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:09:06 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:09:06 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:09:09 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:09:09 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:09:09 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:09:09 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:09:09 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:09:10 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:09:10 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:09:10 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:09:10 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:09:10 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:09:10 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:09:10 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:09:14 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:09:14 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:09:14 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:09:14 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:09:14 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:09:14 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:09:14 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:09:14 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:09:14 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:09:14 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:09:14 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:09:14 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:09:18 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:09:18 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:09:18 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:09:18 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:09:18 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:09:18 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:09:18 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:09:18 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:09:18 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:09:18 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:09:18 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:09:18 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:09:19 | INFO     | middleware:metrics_middleware:27 - Request: OPTIONS /login - Status: 200 - Duration: 0.01s
+2024-12-21 10:09:19 | INFO     | middleware:metrics_middleware:27 - Request: POST /login - Status: 200 - Duration: 0.35s
+2024-12-21 10:09:20 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.02s
+2024-12-21 10:09:22 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:09:22 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:09:22 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:09:22 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:09:22 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:09:22 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:09:22 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:09:22 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:09:22 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:09:22 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:09:22 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:09:22 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:09:26 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:09:26 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:09:26 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:09:26 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:09:26 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:09:26 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:09:26 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:09:26 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:09:26 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:09:26 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:09:26 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:09:26 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:09:30 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:09:30 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:09:30 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:09:30 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:09:30 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:09:30 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:09:30 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:09:30 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:09:30 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:09:30 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:09:30 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:09:30 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:09:34 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:09:34 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:09:34 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:09:34 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:09:34 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:09:34 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:09:34 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:09:34 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:09:34 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:09:34 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:09:34 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:09:34 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:09:38 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:09:38 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:09:38 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:09:38 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:09:38 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:09:38 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:09:38 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:09:38 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:09:38 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:09:38 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:09:38 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:09:38 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:09:41 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:09:41 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:09:41 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:09:41 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:09:41 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:09:42 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:09:42 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:09:42 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:09:42 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:09:42 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:09:42 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:09:42 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:09:46 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:09:46 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:09:46 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:09:46 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:09:46 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:09:46 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:09:46 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:09:46 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:09:46 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:09:46 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:09:46 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:09:46 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:09:50 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:09:50 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:09:50 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:09:50 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:09:50 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:09:50 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:09:50 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:09:50 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:09:50 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:09:50 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:09:50 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:09:50 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:09:54 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:09:54 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:09:54 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:09:54 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:09:54 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:09:54 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:09:54 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:09:54 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:09:54 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:09:54 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:09:54 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:09:54 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:09:58 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:09:58 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:09:58 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:09:58 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:09:58 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:10:12 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:10:12 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:10:12 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:10:12 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:10:12 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:10:12 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:10:12 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:10:15 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:10:15 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:10:15 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:10:15 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:10:15 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:10:16 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:10:16 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:10:16 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:10:16 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:10:16 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:10:16 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:10:16 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:10:20 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:10:20 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:10:20 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:10:20 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:10:20 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:10:20 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:10:20 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:10:20 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:10:20 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:10:20 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:10:20 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:10:20 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:10:24 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:10:24 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:10:24 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:10:24 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:10:24 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:10:24 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:10:24 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:10:24 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:10:24 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:10:24 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:10:24 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:10:24 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:10:28 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:10:28 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:10:28 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:10:28 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:10:28 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:10:28 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:10:28 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:10:28 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:10:28 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:10:28 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:10:28 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:10:28 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:10:32 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:10:32 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:10:32 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:10:32 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:10:32 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:10:32 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:10:32 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:10:32 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:10:32 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:10:32 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:10:32 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:10:32 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:10:36 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:10:36 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:10:36 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:10:36 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:10:36 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:10:36 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:10:36 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:10:36 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:10:36 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:10:36 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:10:36 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:10:36 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:10:40 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:10:40 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:10:40 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:10:40 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:10:40 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:10:40 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:10:40 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:10:40 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:10:40 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:10:40 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:10:40 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:10:40 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:10:44 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:10:44 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:10:44 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:10:44 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:10:44 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:10:44 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:10:44 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:10:44 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:10:44 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:10:44 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:10:44 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:10:44 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:10:48 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:10:48 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:10:48 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:10:48 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:10:48 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:10:48 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:10:48 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:10:48 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:10:48 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:10:48 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:10:48 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:10:48 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:10:52 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:10:52 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:10:52 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:10:52 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:10:52 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:10:52 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:10:52 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:10:52 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:10:52 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:10:52 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:10:52 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:10:52 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:10:56 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:10:56 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:10:56 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:10:56 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:10:56 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:10:56 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:10:56 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:10:56 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:10:56 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:10:56 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:10:56 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:10:56 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:11:00 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:11:00 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:11:00 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:11:00 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:11:00 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:11:00 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:11:00 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:11:00 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:11:00 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:11:00 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:11:00 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:11:00 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:11:04 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:11:04 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:11:04 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:11:04 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:11:04 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:11:04 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:11:04 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:11:04 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:11:04 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:11:04 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:11:04 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:11:04 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:11:08 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:11:08 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:11:08 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:11:08 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:11:08 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:11:08 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:11:08 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:11:08 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:11:08 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:11:08 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:11:08 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:11:08 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:11:12 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:11:12 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:11:12 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:11:12 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:11:12 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:11:12 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:11:12 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:11:12 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:11:12 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:11:12 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:11:12 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:11:12 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:11:16 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:11:16 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:11:16 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:11:16 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:11:16 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:11:16 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:11:16 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:11:16 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:11:16 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:11:16 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:11:16 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:11:16 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:11:20 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:11:20 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:11:20 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:11:20 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:11:20 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:11:20 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:11:20 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:11:20 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:11:20 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:11:20 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:11:20 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:11:20 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:11:24 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:11:24 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:11:24 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:11:24 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:11:24 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:11:24 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:11:24 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:11:24 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:11:24 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:11:24 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:11:24 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:11:24 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:11:28 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:11:28 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:11:28 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:11:28 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:11:28 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:11:28 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:11:28 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:11:28 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:11:28 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:11:28 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:11:28 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:11:28 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:11:32 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:11:32 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:11:32 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:11:32 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:11:32 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:11:32 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:11:32 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:11:32 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:11:32 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:11:32 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:11:32 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:11:32 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:11:36 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:11:36 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:11:36 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:11:36 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:11:36 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:11:36 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:11:36 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:11:36 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:11:36 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:11:36 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:11:36 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:11:36 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:11:40 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:11:40 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:11:40 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:11:40 | INFO     | routes.chat:websocket_endpoint:120 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:11:40 | INFO     | routes.chat:websocket_endpoint:124 - Connection setup complete for USR66093366e21161
+2024-12-21 10:11:40 | INFO     | routes.chat:connect:26 - Closed existing connection for user USR66093366e21161
+2024-12-21 10:11:40 | INFO     | routes.chat:connect:30 - User USR66093366e21161 connected successfully
+2024-12-21 10:11:40 | INFO     | routes.chat:websocket_endpoint:113 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:11:40 | INFO     | routes.chat:disconnect:44 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:11:40 | INFO     | routes.chat:websocket_endpoint:236 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:11:40 | INFO     | routes.chat:broadcast:67 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:11:40 | INFO     | routes.chat:websocket_endpoint:254 - Unexpected error for user USR66093366e21161: dictionary changed size during iteration
+2024-12-21 10:11:43 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-21 10:11:44 | INFO     | routes.chat:connect:26 - User USR66093366e21161 connected successfully
+2024-12-21 10:11:44 | INFO     | routes.chat:websocket_endpoint:109 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:11:44 | INFO     | routes.chat:broadcast:63 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:11:44 | INFO     | routes.chat:websocket_endpoint:116 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:11:44 | INFO     | routes.chat:websocket_endpoint:120 - Connection setup complete for USR66093366e21161
+2024-12-21 10:11:44 | INFO     | routes.chat:connect:21 - User USR66093366e21161 is already connected. Skipping reconnection.
+2024-12-21 10:11:44 | INFO     | routes.chat:websocket_endpoint:109 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:11:44 | INFO     | routes.chat:broadcast:63 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:11:44 | INFO     | routes.chat:websocket_endpoint:250 - Unexpected error for user USR66093366e21161: Expected ASGI message "websocket.accept", "websocket.close" or "websocket.http.response.start", but got 'websocket.send'
+2024-12-21 10:11:44 | INFO     | routes.chat:disconnect:40 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:11:48 | INFO     | routes.chat:connect:26 - User USR66093366e21161 connected successfully
+2024-12-21 10:11:48 | INFO     | routes.chat:websocket_endpoint:109 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:11:48 | INFO     | routes.chat:broadcast:63 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:11:48 | INFO     | routes.chat:websocket_endpoint:116 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:11:48 | INFO     | routes.chat:websocket_endpoint:120 - Connection setup complete for USR66093366e21161
+2024-12-21 10:22:20 | INFO     | routes.chat:disconnect:40 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:22:20 | INFO     | routes.chat:websocket_endpoint:232 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:22:20 | INFO     | routes.chat:connect:26 - User USR66093366e21161 connected successfully
+2024-12-21 10:22:20 | INFO     | routes.chat:websocket_endpoint:109 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:22:20 | INFO     | routes.chat:broadcast:63 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:22:20 | INFO     | routes.chat:websocket_endpoint:116 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:22:20 | INFO     | routes.chat:websocket_endpoint:120 - Connection setup complete for USR66093366e21161
+2024-12-21 10:22:29 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.10s
+2024-12-21 10:30:31 | INFO     | routes.chat:disconnect:40 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:30:31 | INFO     | routes.chat:websocket_endpoint:232 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:30:31 | INFO     | routes.chat:connect:26 - User USR66093366e21161 connected successfully
+2024-12-21 10:30:31 | INFO     | routes.chat:websocket_endpoint:109 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:30:31 | INFO     | routes.chat:broadcast:63 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:30:31 | INFO     | routes.chat:websocket_endpoint:116 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:30:31 | INFO     | routes.chat:websocket_endpoint:120 - Connection setup complete for USR66093366e21161
+2024-12-21 10:30:37 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: EMP_1734654675_0aebdfc0ceff496cbcb37
+2024-12-21 10:30:37 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.04s
+2024-12-21 10:30:41 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: EMP_1734654675_0aebdfc0ceff496cbcb37
+2024-12-21 10:30:44 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: EMP_1734654675_0aebdfc0ceff496cbcb37
+2024-12-21 10:30:47 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: EMP_1734654675_0aebdfc0ceff496cbcb37
+2024-12-21 10:30:51 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: EMP_1734654675_0aebdfc0ceff496cbcb37
+2024-12-21 10:30:55 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: EMP_1734654675_0aebdfc0ceff496cbcb37
+2024-12-21 10:30:59 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: EMP_1734654675_0aebdfc0ceff496cbcb37
+2024-12-21 10:31:03 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: EMP_1734654675_0aebdfc0ceff496cbcb37
+2024-12-21 10:31:07 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: EMP_1734654675_0aebdfc0ceff496cbcb37
+2024-12-21 10:31:11 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: EMP_1734654675_0aebdfc0ceff496cbcb37
+2024-12-21 10:31:15 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: EMP_1734654675_0aebdfc0ceff496cbcb37
+2024-12-21 10:31:19 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: EMP_1734654675_0aebdfc0ceff496cbcb37
+2024-12-21 10:31:23 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: EMP_1734654675_0aebdfc0ceff496cbcb37
+2024-12-21 10:31:28 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: EMP_1734654675_0aebdfc0ceff496cbcb37
+2024-12-21 10:31:32 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: EMP_1734654675_0aebdfc0ceff496cbcb37
+2024-12-21 10:31:37 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: EMP_1734654675_0aebdfc0ceff496cbcb37
+2024-12-21 10:31:44 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: EMP_1734654675_0aebdfc0ceff496cbcb37
+2024-12-21 10:31:49 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: EMP_1734654675_0aebdfc0ceff496cbcb37
+2024-12-21 10:31:57 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.02s
+2024-12-21 10:32:26 | INFO     | routes.chat:disconnect:40 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:32:26 | INFO     | routes.chat:websocket_endpoint:232 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:32:26 | INFO     | routes.chat:connect:26 - User USR66093366e21161 connected successfully
+2024-12-21 10:32:26 | INFO     | routes.chat:websocket_endpoint:109 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:32:26 | INFO     | routes.chat:broadcast:63 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:32:26 | INFO     | routes.chat:websocket_endpoint:116 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:32:26 | INFO     | routes.chat:websocket_endpoint:120 - Connection setup complete for USR66093366e21161
+2024-12-21 10:33:02 | INFO     | routes.chat:disconnect:40 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:33:02 | INFO     | routes.chat:websocket_endpoint:232 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:33:02 | INFO     | routes.chat:connect:26 - User USR66093366e21161 connected successfully
+2024-12-21 10:33:02 | INFO     | routes.chat:websocket_endpoint:109 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:33:02 | INFO     | routes.chat:broadcast:63 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:33:02 | INFO     | routes.chat:websocket_endpoint:116 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:33:02 | INFO     | routes.chat:websocket_endpoint:120 - Connection setup complete for USR66093366e21161
+2024-12-21 10:33:05 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.02s
+2024-12-21 10:33:10 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:33:13 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.02s
+2024-12-21 10:33:13 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 10:33:16 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:33:19 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:33:23 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:33:26 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:33:29 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:33:33 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:33:35 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:33:38 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:33:44 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:33:45 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:33:51 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:33:52 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:33:58 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:33:59 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:34:06 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:34:08 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:34:13 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:34:15 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:34:19 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:34:24 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:34:27 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:34:31 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:34:32 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:34:37 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:34:38 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:34:42 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:34:47 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:34:51 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:34:57 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:34:59 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:35:04 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:35:05 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:35:10 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:35:11 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:35:17 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:35:18 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:35:24 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:35:24 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:35:30 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:35:31 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:35:36 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:35:36 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:35:41 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:35:42 | INFO     | routes.chat:get_user_uuid:89 - Invalid UUID format received: unknown_sender
+2024-12-21 10:35:48 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.04s
+2024-12-21 10:36:47 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-21 10:36:48 | INFO     | __main__:<module>:56 - Starting the application
+2024-12-21 10:36:50 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-21 10:36:51 | INFO     | routes.chat:connect:26 - User USR66093366e21161 connected successfully
+2024-12-21 10:36:51 | INFO     | routes.chat:websocket_endpoint:109 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:36:51 | INFO     | routes.chat:broadcast:63 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:36:51 | INFO     | routes.chat:websocket_endpoint:116 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:36:51 | INFO     | routes.chat:websocket_endpoint:120 - Connection setup complete for USR66093366e21161
+2024-12-21 10:36:53 | INFO     | routes.chat:connect:21 - User USR66093366e21161 is already connected. Skipping reconnection.
+2024-12-21 10:36:53 | INFO     | routes.chat:websocket_endpoint:109 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:36:53 | INFO     | routes.chat:broadcast:63 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:36:53 | INFO     | routes.chat:websocket_endpoint:250 - Unexpected error for user USR66093366e21161: Expected ASGI message "websocket.accept", "websocket.close" or "websocket.http.response.start", but got 'websocket.send'
+2024-12-21 10:36:53 | INFO     | routes.chat:disconnect:40 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:36:57 | INFO     | routes.chat:connect:26 - User USR66093366e21161 connected successfully
+2024-12-21 10:36:57 | INFO     | routes.chat:websocket_endpoint:109 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:36:57 | INFO     | routes.chat:broadcast:63 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:36:57 | INFO     | routes.chat:websocket_endpoint:116 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:36:57 | INFO     | routes.chat:websocket_endpoint:120 - Connection setup complete for USR66093366e21161
+2024-12-21 10:37:01 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.00s
+2024-12-21 10:37:14 | INFO     | routes.chat:disconnect:40 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:37:14 | INFO     | routes.chat:websocket_endpoint:232 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:37:14 | INFO     | routes.chat:websocket_endpoint:232 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:40:01 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-21 10:40:02 | INFO     | __main__:<module>:56 - Starting the application
+2024-12-21 10:40:04 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2024-12-21 10:40:05 | INFO     | routes.chat:connect:26 - User USR66093366e21161 connected successfully
+2024-12-21 10:40:05 | INFO     | routes.chat:websocket_endpoint:109 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:40:05 | INFO     | routes.chat:broadcast:63 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:40:05 | INFO     | routes.chat:websocket_endpoint:116 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:40:05 | INFO     | routes.chat:websocket_endpoint:120 - Connection setup complete for USR66093366e21161
+2024-12-21 10:40:07 | INFO     | routes.chat:connect:21 - User USR66093366e21161 is already connected. Skipping reconnection.
+2024-12-21 10:40:07 | INFO     | routes.chat:websocket_endpoint:109 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:40:07 | INFO     | routes.chat:broadcast:63 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:40:07 | INFO     | routes.chat:websocket_endpoint:250 - Unexpected error for user USR66093366e21161: Expected ASGI message "websocket.accept", "websocket.close" or "websocket.http.response.start", but got 'websocket.send'
+2024-12-21 10:40:07 | INFO     | routes.chat:disconnect:40 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:40:09 | INFO     | routes.chat:websocket_endpoint:232 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:40:09 | INFO     | routes.chat:connect:26 - User USR66093366e21161 connected successfully
+2024-12-21 10:40:09 | INFO     | routes.chat:websocket_endpoint:109 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:40:09 | INFO     | routes.chat:broadcast:63 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:40:09 | INFO     | routes.chat:websocket_endpoint:116 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:40:09 | INFO     | routes.chat:websocket_endpoint:120 - Connection setup complete for USR66093366e21161
+2024-12-21 10:40:13 | INFO     | routes.chat:connect:21 - User USR66093366e21161 is already connected. Skipping reconnection.
+2024-12-21 10:40:13 | INFO     | routes.chat:websocket_endpoint:109 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:40:13 | INFO     | routes.chat:broadcast:63 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:40:13 | INFO     | routes.chat:websocket_endpoint:250 - Unexpected error for user USR66093366e21161: Expected ASGI message "websocket.accept", "websocket.close" or "websocket.http.response.start", but got 'websocket.send'
+2024-12-21 10:40:13 | INFO     | routes.chat:disconnect:40 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:40:14 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 10:40:14 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 10:40:15 | INFO     | routes.chat:load_chat_history:307 - Loaded chat history for USR66093366e21161: [{'sender_uuid': 'USR66093366e21161', 'receiver_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'content': 'hi', 'timestamp': '2024-12-21T01:52:59.156Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}, {'sender_uuid': 'USR66093366e21161', 'receiver_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'content': 'hi', 'timestamp': '2024-12-21T01:58:16.087Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}]
+2024-12-21 10:40:18 | INFO     | routes.chat:connect:26 - User USR66093366e21161 connected successfully
+2024-12-21 10:40:18 | INFO     | routes.chat:websocket_endpoint:109 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:40:18 | INFO     | routes.chat:broadcast:63 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:40:18 | INFO     | routes.chat:websocket_endpoint:116 - Online users sent to USR66093366e21161: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:40:18 | INFO     | routes.chat:websocket_endpoint:120 - Connection setup complete for USR66093366e21161
+2024-12-21 10:40:22 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.25s
+2024-12-21 10:41:45 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 10:41:47 | INFO     | routes.chat:connect:26 - User EMP_1734654675_0aebdfc0ceff496cbcb37 connected successfully
+2024-12-21 10:41:47 | INFO     | routes.chat:websocket_endpoint:109 - WebSocket connection established for user EMP_1734654675_0aebdfc0ceff496cbcb37
+2024-12-21 10:41:47 | INFO     | routes.chat:broadcast:63 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'status': 'online'}
+2024-12-21 10:41:47 | INFO     | routes.chat:broadcast:63 - Broadcasted message to EMP_1734654675_0aebdfc0ceff496cbcb37: {'type': 'status', 'user_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'status': 'online'}
+2024-12-21 10:41:47 | INFO     | routes.chat:websocket_endpoint:116 - Online users sent to EMP_1734654675_0aebdfc0ceff496cbcb37: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}, {'user_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'status': 'online'}]
+2024-12-21 10:41:47 | INFO     | routes.chat:websocket_endpoint:120 - Connection setup complete for EMP_1734654675_0aebdfc0ceff496cbcb37
+2024-12-21 10:41:53 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 10:41:53 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 10:41:54 | INFO     | routes.chat:load_chat_history:307 - Loaded chat history for EMP_1734654675_0aebdfc0ceff496cbcb37: [{'sender_uuid': 'USR66093366e21161', 'receiver_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'content': 'hi', 'timestamp': '2024-12-21T01:52:59.156Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}, {'sender_uuid': 'USR66093366e21161', 'receiver_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'content': 'hi', 'timestamp': '2024-12-21T01:58:16.087Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}]
+2024-12-21 10:42:02 | INFO     | routes.chat:save_chat_message:342 - Saved message for EMP_1734654675_0aebdfc0ceff496cbcb37 and USR66093366e21161: {'sender_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'receiver_uuid': 'USR66093366e21161', 'content': 'well hello?', 'timestamp': '2024-12-21T02:42:02.330Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}
+2024-12-21 10:42:02 | INFO     | routes.chat:websocket_endpoint:176 - Received message from EMP_1734654675_0aebdfc0ceff496cbcb37 to USR66093366e21161: well hello?
+2024-12-21 10:42:02 | INFO     | routes.chat:send_personal_message:49 - Sent message to USR66093366e21161: {'type': 'message', 'message': {'sender_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'receiver_uuid': 'USR66093366e21161', 'content': 'well hello?', 'timestamp': '2024-12-21T02:42:02.330Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}}
+2024-12-21 10:42:02 | INFO     | routes.chat:websocket_endpoint:194 - Message sent from EMP_1734654675_0aebdfc0ceff496cbcb37 to USR66093366e21161: {'sender_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'receiver_uuid': 'USR66093366e21161', 'content': 'well hello?', 'timestamp': '2024-12-21T02:42:02.330Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}
+2024-12-21 10:42:13 | INFO     | routes.chat:disconnect:40 - User USR66093366e21161 disconnected cleanly
+2024-12-21 10:42:13 | INFO     | routes.chat:websocket_endpoint:232 - User USR66093366e21161 disconnected: WebSocket connection closed
+2024-12-21 10:42:13 | INFO     | routes.chat:broadcast:63 - Broadcasted message to EMP_1734654675_0aebdfc0ceff496cbcb37: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'offline'}
+2024-12-21 10:42:13 | INFO     | routes.chat:connect:26 - User USR66093366e21161 connected successfully
+2024-12-21 10:42:13 | INFO     | routes.chat:websocket_endpoint:109 - WebSocket connection established for user USR66093366e21161
+2024-12-21 10:42:13 | INFO     | routes.chat:broadcast:63 - Broadcasted message to EMP_1734654675_0aebdfc0ceff496cbcb37: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:42:13 | INFO     | routes.chat:broadcast:63 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'USR66093366e21161', 'status': 'online'}
+2024-12-21 10:42:13 | INFO     | routes.chat:websocket_endpoint:116 - Online users sent to USR66093366e21161: [{'user_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'status': 'online'}, {'user_uuid': 'USR66093366e21161', 'status': 'online'}]
+2024-12-21 10:42:13 | INFO     | routes.chat:websocket_endpoint:120 - Connection setup complete for USR66093366e21161
+2024-12-21 10:42:17 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 10:42:17 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 10:42:19 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 10:42:19 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 10:42:20 | INFO     | routes.chat:load_chat_history:307 - Loaded chat history for USR66093366e21161: [{'sender_uuid': 'USR66093366e21161', 'receiver_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'content': 'hi', 'timestamp': '2024-12-21T01:52:59.156Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}, {'sender_uuid': 'USR66093366e21161', 'receiver_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'content': 'hi', 'timestamp': '2024-12-21T01:58:16.087Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}, {'sender_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'receiver_uuid': 'USR66093366e21161', 'content': 'well hello?', 'timestamp': '2024-12-21T02:42:02.330Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}]
+2024-12-21 10:42:26 | INFO     | routes.chat:save_chat_message:342 - Saved message for USR66093366e21161 and EMP_1734654675_0aebdfc0ceff496cbcb37: {'sender_uuid': 'USR66093366e21161', 'receiver_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'content': 'hahah yeah', 'timestamp': '2024-12-21T02:42:26.073Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}
+2024-12-21 10:42:26 | INFO     | routes.chat:websocket_endpoint:176 - Received message from USR66093366e21161 to EMP_1734654675_0aebdfc0ceff496cbcb37: hahah yeah
+2024-12-21 10:42:26 | INFO     | routes.chat:send_personal_message:49 - Sent message to EMP_1734654675_0aebdfc0ceff496cbcb37: {'type': 'message', 'message': {'sender_uuid': 'USR66093366e21161', 'receiver_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'content': 'hahah yeah', 'timestamp': '2024-12-21T02:42:26.073Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}}
+2024-12-21 10:42:26 | INFO     | routes.chat:websocket_endpoint:194 - Message sent from USR66093366e21161 to EMP_1734654675_0aebdfc0ceff496cbcb37: {'sender_uuid': 'USR66093366e21161', 'receiver_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'content': 'hahah yeah', 'timestamp': '2024-12-21T02:42:26.073Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}
+2024-12-21 10:42:33 | INFO     | routes.chat:save_chat_message:342 - Saved message for EMP_1734654675_0aebdfc0ceff496cbcb37 and USR66093366e21161: {'sender_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'receiver_uuid': 'USR66093366e21161', 'content': 'wahts up?', 'timestamp': '2024-12-21T02:42:33.948Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}
+2024-12-21 10:42:33 | INFO     | routes.chat:websocket_endpoint:176 - Received message from EMP_1734654675_0aebdfc0ceff496cbcb37 to USR66093366e21161: wahts up?
+2024-12-21 10:42:33 | INFO     | routes.chat:send_personal_message:49 - Sent message to USR66093366e21161: {'type': 'message', 'message': {'sender_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'receiver_uuid': 'USR66093366e21161', 'content': 'wahts up?', 'timestamp': '2024-12-21T02:42:33.948Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}}
+2024-12-21 10:42:33 | INFO     | routes.chat:websocket_endpoint:194 - Message sent from EMP_1734654675_0aebdfc0ceff496cbcb37 to USR66093366e21161: {'sender_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'receiver_uuid': 'USR66093366e21161', 'content': 'wahts up?', 'timestamp': '2024-12-21T02:42:33.948Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}
+2024-12-21 10:44:11 | INFO     | routes.chat:disconnect:40 - User EMP_1734654675_0aebdfc0ceff496cbcb37 disconnected cleanly
+2024-12-21 10:44:11 | INFO     | routes.chat:websocket_endpoint:232 - User EMP_1734654675_0aebdfc0ceff496cbcb37 disconnected: WebSocket connection closed
+2024-12-21 10:44:11 | INFO     | routes.chat:broadcast:63 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'status': 'offline'}
+2024-12-21 10:44:12 | INFO     | routes.chat:connect:26 - User EMP_1734654675_0aebdfc0ceff496cbcb37 connected successfully
+2024-12-21 10:44:12 | INFO     | routes.chat:websocket_endpoint:109 - WebSocket connection established for user EMP_1734654675_0aebdfc0ceff496cbcb37
+2024-12-21 10:44:12 | INFO     | routes.chat:broadcast:63 - Broadcasted message to USR66093366e21161: {'type': 'status', 'user_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'status': 'online'}
+2024-12-21 10:44:12 | INFO     | routes.chat:broadcast:63 - Broadcasted message to EMP_1734654675_0aebdfc0ceff496cbcb37: {'type': 'status', 'user_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'status': 'online'}
+2024-12-21 10:44:12 | INFO     | routes.chat:websocket_endpoint:116 - Online users sent to EMP_1734654675_0aebdfc0ceff496cbcb37: [{'user_uuid': 'USR66093366e21161', 'status': 'online'}, {'user_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'status': 'online'}]
+2024-12-21 10:44:12 | INFO     | routes.chat:websocket_endpoint:120 - Connection setup complete for EMP_1734654675_0aebdfc0ceff496cbcb37
+2024-12-21 10:44:12 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 10:44:20 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 10:44:20 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 0.01s
+2024-12-21 10:44:24 | INFO     | routes.chat:load_chat_history:307 - Loaded chat history for EMP_1734654675_0aebdfc0ceff496cbcb37: [{'sender_uuid': 'USR66093366e21161', 'receiver_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'content': 'hi', 'timestamp': '2024-12-21T01:52:59.156Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}, {'sender_uuid': 'USR66093366e21161', 'receiver_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'content': 'hi', 'timestamp': '2024-12-21T01:58:16.087Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}, {'sender_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'receiver_uuid': 'USR66093366e21161', 'content': 'well hello?', 'timestamp': '2024-12-21T02:42:02.330Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}, {'sender_uuid': 'USR66093366e21161', 'receiver_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'content': 'hahah yeah', 'timestamp': '2024-12-21T02:42:26.073Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}, {'sender_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'receiver_uuid': 'USR66093366e21161', 'content': 'wahts up?', 'timestamp': '2024-12-21T02:42:33.948Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}]
+2024-12-21 10:44:29 | INFO     | routes.chat:save_chat_message:342 - Saved message for EMP_1734654675_0aebdfc0ceff496cbcb37 and USR66093366e21161: {'sender_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'receiver_uuid': 'USR66093366e21161', 'content': 'yo', 'timestamp': '2024-12-21T02:44:29.734Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}
+2024-12-21 10:44:29 | INFO     | routes.chat:websocket_endpoint:176 - Received message from EMP_1734654675_0aebdfc0ceff496cbcb37 to USR66093366e21161: yo
+2024-12-21 10:44:29 | INFO     | routes.chat:send_personal_message:49 - Sent message to USR66093366e21161: {'type': 'message', 'message': {'sender_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'receiver_uuid': 'USR66093366e21161', 'content': 'yo', 'timestamp': '2024-12-21T02:44:29.734Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}}
+2024-12-21 10:44:29 | INFO     | routes.chat:websocket_endpoint:194 - Message sent from EMP_1734654675_0aebdfc0ceff496cbcb37 to USR66093366e21161: {'sender_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'receiver_uuid': 'USR66093366e21161', 'content': 'yo', 'timestamp': '2024-12-21T02:44:29.734Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}
+2024-12-21 10:44:49 | INFO     | routes.chat:load_chat_history:307 - Loaded chat history for USR66093366e21161: [{'sender_uuid': 'USR66093366e21161', 'receiver_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'content': 'hi', 'timestamp': '2024-12-21T01:52:59.156Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}, {'sender_uuid': 'USR66093366e21161', 'receiver_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'content': 'hi', 'timestamp': '2024-12-21T01:58:16.087Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}, {'sender_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'receiver_uuid': 'USR66093366e21161', 'content': 'well hello?', 'timestamp': '2024-12-21T02:42:02.330Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}, {'sender_uuid': 'USR66093366e21161', 'receiver_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'content': 'hahah yeah', 'timestamp': '2024-12-21T02:42:26.073Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}, {'sender_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'receiver_uuid': 'USR66093366e21161', 'content': 'wahts up?', 'timestamp': '2024-12-21T02:42:33.948Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}, {'sender_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'receiver_uuid': 'USR66093366e21161', 'content': 'yo', 'timestamp': '2024-12-21T02:44:29.734Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}]

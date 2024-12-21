@@ -1,264 +1,230 @@
-/**
- * chat.js
- * Handles real-time chat functionalities using WebSockets.
- */
+// WebSocket connection
+let ws = null;
+let currentUserUUID = null;
 
-let socket; // Declare socket in a broader scope for better management
+// Initialize chat functionality
+function initChat(userUUID) {
+    currentUserUUID = userUUID;
+    connectWebSocket();
+}
 
-document.addEventListener('DOMContentLoaded', () => {
-    if (!sessionData) {
-        console.error('Session data is not available.');
-        alert('Error: Session data not found. Please log in again.');
+// Connect to WebSocket server
+function connectWebSocket() {
+    if (!currentUserUUID) {
+        console.error('User UUID not provided');
         return;
     }
 
-    const userUuid = getUserUUIDFromSession();
-    if (!userUuid) {
-        console.error('User UUID not found in session data.');
-        alert('Error: User UUID not found. Please log in again.');
-        return;
-    }
+    const wsUrl = `ws://localhost:8000/ws/chat?uuid=${currentUserUUID}`;
+    ws = new WebSocket(wsUrl);
 
-    const webSocketURL = getWebSocketURL(); // Retrieve the WebSocket URL from PHP
-
-    connectWebSocket(userUuid, webSocketURL);
-
-    // Event listeners
-    document.getElementById('logout-button').addEventListener('click', logout);
-});
-
-/**
- * Establishes a WebSocket connection.
- * @param {string} userUuid - The UUID of the current user.
- * @param {string} url - The WebSocket URL.
- */
-function connectWebSocket(userUuid, url) {
-    socket = new WebSocket(`${url}?uuid=${userUuid}`);
-
-    const connectionStatus = document.getElementById('connectionStatus');
-    const contactList = document.getElementById('contactList');
-    const conversationBody = document.getElementById('conversationBody');
-    const searchInput = document.getElementById('searchInput');
-    const searchResults = document.getElementById('searchResults');
-
-    socket.onopen = () => {
-        console.log('WebSocket connection established.');
-        connectionStatus.innerHTML = '<span class="text-success"><i class="fas fa-circle me-1"></i>Online</span>';
+    ws.onopen = () => {
+        console.log('WebSocket connection established');
+        updateConnectionStatus('Connected');
     };
 
-    socket.onmessage = (event) => {
-        const data = JSON.parse(event.data);
-        switch (data.type) {
-            case 'status':
-                updateOnlineStatus(data.user_uuid, data.status);
-                break;
-            case 'message':
-                displayMessage(data.message);
-                break;
-            case 'history':
-                loadChatHistory(data.messages);
-                break;
-            case 'search_results':
-                displaySearchResults(data.results);
-                break;
-            case 'error':
-                console.error('Error from server:', data.message);
-                alert(`Error: ${data.message}`);
-                break;
-            default:
-                console.warn('Unknown message type:', data.type);
-        }
+    ws.onclose = () => {
+        console.log('WebSocket connection closed');
+        updateConnectionStatus('Disconnected');
+        // Attempt to reconnect after 5 seconds
+        setTimeout(connectWebSocket, 5000);
     };
 
-    socket.onclose = (event) => {
-        console.log('WebSocket connection closed:', event);
-        connectionStatus.innerHTML = '<span class="text-danger"><i class="fas fa-circle me-1"></i>Offline</span>';
-    };
-
-    socket.onerror = (error) => {
+    ws.onerror = (error) => {
         console.error('WebSocket error:', error);
+        updateConnectionStatus('Error connecting');
     };
 
-    // Handle sending messages via Enter key
-    const messageInput = document.querySelector('.input-group input');
-    messageInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            e.preventDefault();
-            const content = messageInput.value.trim();
-            if (content) {
-                const receiverUuid = getSelectedReceiverUUID(); // Implement a method to get the selected receiver's UUID
-                if (receiverUuid) {
-                    sendMessage(receiverUuid, content);
-                    messageInput.value = '';
-                } else {
-                    alert('Please select a user to send the message.');
-                }
-            }
-        }
-    });
-
-    // Handle sending messages via send button
-    document.querySelector('.input-group button').addEventListener('click', () => {
-        const content = messageInput.value.trim();
-        if (content) {
-            const receiverUuid = getSelectedReceiverUUID(); // Implement a method to get the selected receiver's UUID
-            if (receiverUuid) {
-                sendMessage(receiverUuid, content);
-                messageInput.value = '';
-            } else {
-                alert('Please select a user to send the message.');
-            }
-        }
-    });
-
-    // Handle searching users
-    searchInput.addEventListener('input', () => {
-        const query = searchInput.value.trim();
-        if (query.length > 0) {
-            const searchMessage = {
-                type: 'search',
-                query: query
-            };
-            socket.send(JSON.stringify(searchMessage));
-        } else {
-            searchResults.innerHTML = '';
-        }
-    });
+    ws.onmessage = handleWebSocketMessage;
 }
 
-/**
- * Retrieves the WebSocket URL from a PHP-generated global variable.
- * This function must be defined in your PHP navigation includes.
- * @returns {string} - The WebSocket URL.
- */
-function getWebSocketURL() {
-    // Assuming the WebSocket URL is passed from PHP as a global variable
-    // You can set it in your PHP script and retrieve it here
-    return window.webSocketURL || 'ws://localhost:8000/ws/chat'; // Fallback URL
+// Handle incoming WebSocket messages
+function handleWebSocketMessage(event) {
+    const data = JSON.parse(event.data);
+    console.log('Received message:', data);
+
+    switch (data.type) {
+        case 'message':
+            displayMessage(data.message);
+            break;
+        case 'response':
+            handleMessageResponse(data);
+            break;
+        case 'status':
+            updateUserStatus(data);
+            break;
+        case 'online_users':
+            updateOnlineUsers(data.users);
+            break;
+        case 'history':
+            loadChatHistory(data.messages);
+            break;
+        case 'error':
+            handleError(data);
+            break;
+        default:
+            console.warn('Unknown message type:', data.type);
+    }
 }
 
-/**
- * Retrieves the user's UUID from the sessionData.
- * @returns {string|null} - The user's UUID or null if not found.
- */
-function getUserUUIDFromSession() {
-    return sessionData?.userData?.user_uuid || sessionData?.employerData?.employer_uuid || null;
-}
+// Send a message
+function sendMessage(receiverUUID, content, attachments = {}) {
+    if (!ws || ws.readyState !== WebSocket.OPEN) {
+        showNotification('Connection lost. Reconnecting...', 'error');
+        return false;
+    }
 
-/**
- * Sends a message to the specified receiver via WebSocket.
- * @param {string} receiverUuid - The UUID of the message receiver.
- * @param {string} content - The message content.
- */
-function sendMessage(receiverUuid, content) {
-    const timestamp = new Date().toISOString();
     const message = {
         type: 'message',
-        receiver_uuid: receiverUuid,
-        content: content,
-        timestamp: timestamp
-    };
-    socket.send(JSON.stringify(message));
-    // Optionally, display the sent message in the UI
-    displayMessage({ ...message, sender_uuid: getUserUUIDFromSession() });
-}
-
-/**
- * Logs out the user by clearing session data and redirecting to the login page.
- */
-function logout() {
-    // Implement your logout logic here, e.g., making an AJAX call to the server to destroy the session
-    // For simplicity, we'll just redirect to the login page
-    window.location.href = '/logout.php'; // Ensure this route handles session destruction
-}
-
-/**
- * Updates the online status of a user in the contact list.
- * @param {string} userUuid - The UUID of the user.
- * @param {string} status - The status ('online' or 'offline').
- */
-function updateOnlineStatus(userUuid, status) {
-    const userElement = document.getElementById(`user-${userUuid}`);
-    if (userElement) {
-        const statusElem = userElement.querySelector('.status');
-        if (statusElem) {
-            statusElem.innerText = status === 'online' ? 'Online' : 'Offline';
-            statusElem.className = status === 'online' ? 'text-success status' : 'text-danger status';
+        sender_uuid: currentUserUUID,
+        data: {
+            receiver_uuid: receiverUUID,
+            msg: content,
+            date: new Date().toISOString(),
+            attachments: attachments
         }
+    };
+
+    ws.send(JSON.stringify(message));
+    return true;
+}
+
+// Handle message response from server
+function handleMessageResponse(response) {
+    const messageElement = document.querySelector(`[data-timestamp="${response.data.timestamp}"]`);
+    if (!messageElement) return;
+
+    const statusElement = messageElement.querySelector('.message-status');
+    if (!statusElement) return;
+
+    if (response.status === 'success') {
+        if (response.data.delivery_status === 'pending') {
+            // Message saved but recipient is offline
+            statusElement.textContent = '✓ Saved';
+            statusElement.title = 'Message will be delivered when recipient connects';
+            statusElement.classList.add('pending');
+        } else {
+            // Message delivered successfully
+            statusElement.textContent = '✓✓';
+            statusElement.title = 'Delivered';
+            statusElement.classList.add('delivered');
+        }
+    } else {
+        // Handle other error cases
+        statusElement.textContent = '!';
+        statusElement.title = 'Error: ' + response.message;
+        statusElement.classList.add('error');
     }
 }
 
-/**
- * Displays a message in the conversation body.
- * @param {Object} message - The message object containing sender_uuid, content, and timestamp.
- */
+// Display a message in the chat window
 function displayMessage(message) {
-    const isSentByUser = message.sender_uuid === getUserUUIDFromSession();
-    const messageClass = isSentByUser ? 'sent-message' : 'received-message';
-    const alignmentClass = isSentByUser ? 'text-end' : 'text-start';
-    const messageHtml = `
-        <div class="${messageClass} ${alignmentClass}">
-            <span>${escapeHTML(message.content)}</span>
-            <br/>
-            <small>${new Date(message.timestamp).toLocaleTimeString()}</small>
-        </div>
-    `;
-    const conversationBody = document.getElementById('conversationBody');
-    conversationBody.innerHTML += messageHtml;
-    conversationBody.scrollTop = conversationBody.scrollHeight;
+    const chatContainer = document.getElementById('chat-messages');
+    if (!chatContainer) return;
+
+    const messageElement = document.createElement('div');
+    messageElement.classList.add('message');
+    messageElement.classList.add(message.sender_uuid === currentUserUUID ? 'sent' : 'received');
+    messageElement.dataset.timestamp = message.timestamp;
+
+    const contentElement = document.createElement('div');
+    contentElement.classList.add('message-content');
+    contentElement.textContent = message.content;
+
+    const statusElement = document.createElement('span');
+    statusElement.classList.add('message-status');
+    statusElement.textContent = '✓'; // Initial status
+    
+    messageElement.appendChild(contentElement);
+    messageElement.appendChild(statusElement);
+    
+    chatContainer.appendChild(messageElement);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
 }
 
-/**
- * Loads chat history into the conversation body.
- * @param {Array} messages - An array of message objects.
- */
+// Update user online status
+function updateUserStatus(data) {
+    const userElement = document.querySelector(`[data-user-uuid="${data.user_uuid}"]`);
+    if (!userElement) return;
+
+    const statusIndicator = userElement.querySelector('.status-indicator');
+    if (statusIndicator) {
+        statusIndicator.classList.toggle('online', data.status === 'online');
+        statusIndicator.classList.toggle('offline', data.status === 'offline');
+    }
+}
+
+// Update list of online users
+function updateOnlineUsers(users) {
+    const usersList = document.getElementById('online-users');
+    if (!usersList) return;
+
+    usersList.innerHTML = '';
+    users.forEach(user => {
+        const userElement = document.createElement('div');
+        userElement.classList.add('user');
+        userElement.dataset.userUuid = user.user_uuid;
+
+        const statusIndicator = document.createElement('span');
+        statusIndicator.classList.add('status-indicator');
+        statusIndicator.classList.add(user.status);
+
+        const userName = document.createElement('span');
+        userName.textContent = user.user_uuid;
+
+        userElement.appendChild(statusIndicator);
+        userElement.appendChild(userName);
+        usersList.appendChild(userElement);
+    });
+}
+
+// Load chat history
 function loadChatHistory(messages) {
-    const conversationBody = document.getElementById('conversationBody');
-    conversationBody.innerHTML = ''; // Clear existing messages
+    const chatContainer = document.getElementById('chat-messages');
+    if (!chatContainer) return;
+
+    chatContainer.innerHTML = '';
     messages.forEach(message => {
         displayMessage(message);
     });
 }
 
-/**
- * Displays search results in the dropdown.
- * @param {Array} results - An array of search result objects.
- */
-function displaySearchResults(results) {
-    const searchResults = document.getElementById('searchResults');
-    searchResults.innerHTML = ''; // Clear existing results
-    results.forEach(result => {
-        const listItem = document.createElement('li');
-        listItem.classList.add('dropdown-item', 'cursor-pointer');
-        listItem.innerText = result.content; // Adjust based on your data structure
-        listItem.addEventListener('click', () => {
-            selectUser(result.user_uuid); // Implement user selection logic
-        });
-        searchResults.appendChild(listItem);
-    });
+// Update connection status
+function updateConnectionStatus(status) {
+    const statusElement = document.getElementById('connection-status');
+    if (statusElement) {
+        statusElement.textContent = status;
+        statusElement.className = `status-${status.toLowerCase()}`;
+    }
 }
 
-/**
- * Escapes HTML to prevent XSS attacks.
- * @param {string} unsafe - The unsafe string containing HTML.
- * @returns {string} - The escaped string.
- */
-function escapeHTML(unsafe) {
-    return unsafe
-         .replace(/&/g, "&amp;")
-         .replace(/</g, "&lt;")
-         .replace(/>/g, "&gt;")
-         .replace(/"/g, "&quot;")
-         .replace(/'/g, "&#039;");
+// Show notification
+function showNotification(message, type = 'info') {
+    const notificationElement = document.getElementById('notification');
+    if (!notificationElement) return;
+
+    notificationElement.textContent = message;
+    notificationElement.className = `notification ${type}`;
+    notificationElement.style.display = 'block';
+
+    setTimeout(() => {
+        notificationElement.style.display = 'none';
+    }, 3000);
 }
 
-/**
- * Selects a user to start a conversation.
- * @param {string} userUuid - The UUID of the selected user.
- */
-function selectUser(userUuid) {
-    // Implement your logic to select a user, load conversation, etc.
-    console.log(`Selected user UUID: ${userUuid}`);
-    // Load the conversation with the selected user
-    // This might involve setting a current receiver UUID and loading chat history
+// Handle errors
+function handleError(error) {
+    console.error('Error:', error);
+    showNotification(error.message, 'error');
 }
+
+// Export functions for use in other modules
+window.ChatModule = {
+    init: initChat,
+    sendMessage: sendMessage,
+    disconnect: () => {
+        if (ws) {
+            ws.close();
+        }
+    }
+};
