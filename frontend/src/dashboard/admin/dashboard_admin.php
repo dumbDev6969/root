@@ -1,3 +1,17 @@
+<?php
+// Prevent any output before headers
+ini_set('display_errors', 0);
+error_reporting(0);
+
+// Start session
+session_start();
+
+// Check if user is logged in and is an admin
+if (!isset($_SESSION['isLoggedIn']) || !$_SESSION['isLoggedIn'] || $_SESSION['userType'] !== 'admin') {
+    header('Location: ../../auth/admin_login.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,7 +43,7 @@
                                     <i class="bi bi-person-square"></i>
                                 </li>
                                 <li class="list-group-item">
-                                    <h1>1</h1>
+                                    <h1 class="tech-grad-count">0</h1>
                                 </li>
                             </ul>
                         </div>
@@ -42,7 +56,7 @@
                                     <i class="bi bi-building-down"></i>
                                 </li>
                                 <li class="list-group-item">
-                                    <h1>3</h1>
+                                    <h1 class="employer-count">0</h1>
                                 </li>
                             </ul>
                         </div>
@@ -55,7 +69,7 @@
                                     <i class="bi bi-pc-display"></i>
                                 </li>
                                 <li class="list-group-item">
-                                    <h1>1</h1>
+                                    <h1 class="job-count">0</h1>
                                 </li>
                             </ul>
                         </div>
@@ -74,25 +88,8 @@
                         <!-- row fo tech grad -->
                         <div class="row gap-2 mt-3 " style="overflow: auto">
                             <h4>Tech graduates</h4>
-                            <div class="col-md-3 " style="width: 15.5rem; ">
-                                <div class="card" style="width: 15rem;">
-                                    <div class="card-body">
-                                        <div class="card-title d-flex align-items-center flex-column">
-                                            <!-- img -->
-                                            <div class="profile border" style="height: 170px; width:170px; border-radius: 50%">
-
-                                            </div>
-                                        </div>
-                                        <h5>Johua Cabuang</h5>
-
-                                        <p class="card-text">
-                                            <span class="text-secondary">Started at</span> <br>
-                                            dd/mm/yyyy
-                                        </p>
-                                        <a href="#" class="card-link">Card link</a>
-                                        <a href="#" class="card-link">Another link</a>
-                                    </div>
-                                </div>
+                            <div class="tech-grads-list row gap-2">
+                                <!-- Tech grads will be loaded here dynamically -->
                             </div>
 
                         </div>
@@ -100,25 +97,8 @@
                     <div class="col-md-6">
                         <div class="row gap-2 mt-3 " style="overflow: auto">
                             <h4>Employers</h4>
-                            <div class="col-md-3 " style="width: 15.5rem; ">
-                                <div class="card" style="width: 15rem;">
-                                    <div class="card-body">
-                                        <div class="card-title d-flex align-items-center flex-column">
-                                            <!-- img -->
-                                            <div class="profile border" style="height: 170px; width:170px; border-radius: 50%">
-
-                                            </div>
-                                        </div>
-                                        <h5>Company name</h5>
-
-                                        <p class="card-text">
-                                            <span class="text-secondary">Started at</span> <br>
-                                            dd/mm/yyyy
-                                        </p>
-                                        <a href="#" class="card-link">Card link</a>
-                                        <a href="#" class="card-link">Another link</a>
-                                    </div>
-                                </div>
+                            <div class="employers-list row gap-2">
+                                <!-- Employers will be loaded here dynamically -->
                             </div>
                         </div>
                     </div>
@@ -131,34 +111,100 @@
     <script>
         const ctx = document.getElementById('myChart');
 
-        // Fetch dynamic data from your backend
-        fetch('http://localhost/php/root/frontend/src/dashboard/admin/get_data.php') 
-            .then(response => response.json())
-            .then(data => {
-                // Data from the server
-                const techGradCount = data.tech_grad || 0; // Replace with the correct data field
-                const employerCount = data.employers || 0; // Replace with the correct data field
-                const jobCount = data.jobs || 0;
+        // Function to update dashboard counts
+        function updateCounts(users, employers, jobs) {
+            document.querySelector('.tech-grad-count').textContent = users;
+            document.querySelector('.employer-count').textContent = employers;
+            document.querySelector('.job-count').textContent = jobs;
+        }
 
-                // Initialize the chart with dynamic data
-                new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: ['Tech Grads', 'Employers', 'Jobs'], // Dynamic labels
-                        datasets: [{
-                            label: '# of Registrations',
-                            data: [techGradCount, employerCount, jobCount], // Dynamic data
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        scales: {
-                            y: {
-                                beginAtZero: true
+        // Fetch dynamic data from API
+        Promise.all([
+            fetch('http://localhost:10000/api/get-table?table=users', { credentials: 'omit' }).then(r => r.json()),
+            fetch('http://localhost:10000/api/get-table?table=employers', { credentials: 'omit' }).then(r => r.json()),
+            fetch('http://localhost:10000/api/get-table?table=jobs', { credentials: 'omit' }).then(r => r.json())
+        ])
+        .then(([usersData, employersData, jobsData]) => {
+            const techGradCount = usersData.data.length;
+            const employerCount = employersData.data.length;
+            const jobCount = jobsData.data.length;
+
+            // Update the counts in the UI
+            updateCounts(techGradCount, employerCount, jobCount);
+
+            // Update tech grads list
+            const techGradsList = document.querySelector('.tech-grads-list');
+            techGradsList.innerHTML = usersData.data.map(user => `
+                <div class="col-md-3" style="width: 15.5rem;">
+                    <div class="card" style="width: 15rem;">
+                        <div class="card-body">
+                            <div class="card-title d-flex align-items-center flex-column">
+                                <div class="profile border" style="height: 170px; width:170px; border-radius: 50%"></div>
+                            </div>
+                            <h5>${user.first_name} ${user.last_name}</h5>
+                            <p class="card-text">
+                                <span class="text-secondary">Started at</span><br>
+                                ${new Date(user.created_at).toLocaleDateString()}
+                            </p>
+                            <a href="#" class="btn btn-outline-secondary btn-sm">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Update employers list
+            const employersList = document.querySelector('.employers-list');
+            employersList.innerHTML = employersData.data.map(employer => `
+                <div class="col-md-3" style="width: 15.5rem;">
+                    <div class="card" style="width: 15rem;">
+                        <div class="card-body">
+                            <div class="card-title d-flex align-items-center flex-column">
+                                <div class="profile border" style="height: 170px; width:170px; border-radius: 50%"></div>
+                            </div>
+                            <h5>${employer.company_name}</h5>
+                            <p class="card-text">
+                                <span class="text-secondary">Started at</span><br>
+                                ${new Date(employer.created_at).toLocaleDateString()}
+                            </p>
+                            <a href="#" class="btn btn-outline-secondary btn-sm">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Initialize the chart with dynamic data
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Tech Grads', 'Employers', 'Jobs'],
+                    datasets: [{
+                        label: '# of Registrations',
+                        data: [techGradCount, employerCount, jobCount],
+                        backgroundColor: [
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(153, 102, 255, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(153, 102, 255, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                stepSize: 1
                             }
                         }
                     }
-                });
+                }
+            });
             })
             .catch(error => {
                 console.error('Error fetching data:', error);
