@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Database Configuration
-server = {"local": True, "online": False}
+server = {"local": False, "online": True}
 
 if server["local"]:
     DB_CONFIG = {
