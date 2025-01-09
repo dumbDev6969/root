@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const password = document.getElementById('password').value;
 
         try {
-            const response = await fetch('http://localhost:10000/api/admin-login', {
+            const response = await fetch('https://root-4ytd.onrender.com/api/admin-login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

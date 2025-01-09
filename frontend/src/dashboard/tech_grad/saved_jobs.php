@@ -75,7 +75,7 @@ $userData = $_SESSION['userData'];
 
     function loadSavedJobs(searchTerm = '') {
         const userId = userData.user_id;
-        fetch(`http://localhost:10000/saved-jobs/${userId}?search=${searchTerm}`)
+        fetch(`https://root-4ytd.onrender.com/saved-jobs/${userId}?search=${searchTerm}`)
             .then(response => response.json())
             .then(jobs => {
                 const container = document.getElementById('saved-jobs-container');
@@ -141,7 +141,7 @@ $userData = $_SESSION['userData'];
         }
 
         const userId = userData.user_id;
-        fetch(`http://localhost:10000/saved-jobs/remove`, {
+        fetch(`https://root-4ytd.onrender.com/saved-jobs/remove`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const parsedData = sessionData.employerData;
   const container = document.querySelector("#job-container");
 
-  fetch("http://localhost:10000/api/get-table?table=jobs")
+  fetch("https://root-4ytd.onrender.com/api/get-table?table=jobs")
     .then((response) => response.json())
     .then((data) => {
       const jobs = data.data.filter((job) => job.employer_id === parsedData.employer_id);

@@ -4159,3 +4159,12 @@
 2025-01-09 03:18:13 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 400 - Duration: 0.00s
 2025-01-09 03:18:22 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 1.59s
 >>>>>>> 19198bf15054ee6af36d7961c8ac974874638633
+2025-01-09 15:51:14 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 15:51:16 | INFO     | __main__:<module>:58 - Cleaning up existing database connections...
+2025-01-09 15:51:18 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4791648
+2025-01-09 15:51:19 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4791643
+2025-01-09 15:51:19 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4791646
+2025-01-09 15:51:19 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4791638
+2025-01-09 15:51:19 | INFO     | utils.connection_manager:kill_all_connections:43 - Successfully cleaned up existing connections
+2025-01-09 15:51:19 | INFO     | __main__:<module>:60 - Starting the application
+2025-01-09 15:51:30 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4

@@ -7,7 +7,7 @@ function submitForm() {
     });
     console.log('JSON data:', jsonData);
 
-    fetch('http://localhost:10000/contact_sendmail', {
+    fetch('https://root-4ytd.onrender.com/contact_sendmail', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

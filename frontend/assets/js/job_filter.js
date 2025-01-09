@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function fetchJobs() {
         try {
-            const response = await fetch("http://localhost:10000/api/get-table?table=jobs");
+            const response = await fetch("https://root-4ytd.onrender.com/api/get-table?table=jobs");
             const data = await response.json();
             jobs = data.data;
             displayJobs(jobs);

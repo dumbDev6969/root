@@ -234,7 +234,7 @@ $current_page = basename(htmlspecialchars($_SERVER['PHP_SELF'])); //! Get the cu
             return;
         }
         try {
-            socket = new WebSocket(`ws://localhost:10000/ws/chat?uuid=${userUuid}`);
+            socket = new WebSocket(`wss://root-4ytd.onrender.com/ws/chat?uuid=${userUuid}`);
             
             socket.onopen = () => {
                 console.log('WebSocket connected');
@@ -447,8 +447,8 @@ $current_page = basename(htmlspecialchars($_SERVER['PHP_SELF'])); //! Get the cu
 
             if (query.length > 2) {
                 try {
-                    const userResponse = await fetch(`http://127.0.0.1:10000/api/get-table?table=users&query=${encodeURIComponent(query)}`);
-                    const employerResponse = await fetch(`http://127.0.0.1:10000/api/get-table?table=employers&query=${encodeURIComponent(query)}`);
+                    const userResponse = await fetch(`https://root-4ytd.onrender.com/api/get-table?table=users&query=${encodeURIComponent(query)}`);
+                    const employerResponse = await fetch(`https://root-4ytd.onrender.com/api/get-table?table=employers&query=${encodeURIComponent(query)}`);
                     const userData = userResponse.ok ? await userResponse.json() : { data: [] };
                     const employerData = employerResponse.ok ? await employerResponse.json() : { data: [] };
 

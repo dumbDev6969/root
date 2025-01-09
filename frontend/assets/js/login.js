@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const password = document.getElementById('password').value;
 
     // Make a POST request to the /login endpoint
-    fetch('http://localhost:10000/login', {
+    fetch('https://root-4ytd.onrender.com/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

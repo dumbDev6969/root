@@ -127,7 +127,7 @@ async function handleFormSubmission(form, type) {
         let response;
         while (retries > 0) {
             try {
-                response = await fetch('http://localhost:10000/api/update', {
+                response = await fetch('https://root-4ytd.onrender.com/api/update', {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',

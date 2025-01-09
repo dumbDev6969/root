@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Then fetch jobs
-        return fetch("http://localhost:10000/api/get-table?table=jobs")
+        return fetch("https://root-4ytd.onrender.com/api/get-table?table=jobs")
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Failed to fetch jobs');
@@ -103,7 +103,7 @@ function deleteJob(jobId) {
         return;
     }
 
-    fetch(`http://localhost:10000/api/delete?table=jobs&id=${jobId}`, {
+    fetch(`https://root-4ytd.onrender.com/api/delete?table=jobs&id=${jobId}`, {
         method: 'DELETE'
     })
     .then(response => {

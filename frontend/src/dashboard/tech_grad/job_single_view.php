@@ -111,7 +111,7 @@ if (!$jobId) {
     
     // Fetch job details when page loads
     document.addEventListener('DOMContentLoaded', function() {
-        fetch(`http://localhost:10000/jobs/${jobId}`)
+        fetch(`https://root-4ytd.onrender.com/jobs/${jobId}`)
             .then(response => response.json())
             .then(job => {
                 document.getElementById('company-name').textContent = job.company_name;
@@ -132,7 +132,7 @@ if (!$jobId) {
             event.preventDefault();
             const formData = new FormData(this);
             
-            fetch('http://localhost:10000/applications/submit', {
+            fetch('https://root-4ytd.onrender.com/applications/submit', {
                 method: 'POST',
                 body: formData
             })

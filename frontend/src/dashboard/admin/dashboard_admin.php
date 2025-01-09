@@ -120,9 +120,9 @@ if (!isset($_SESSION['isLoggedIn']) || !$_SESSION['isLoggedIn'] || $_SESSION['us
 
         // Fetch dynamic data from API
         Promise.all([
-            fetch('http://localhost:10000/api/get-table?table=users', { credentials: 'omit' }).then(r => r.json()),
-            fetch('http://localhost:10000/api/get-table?table=employers', { credentials: 'omit' }).then(r => r.json()),
-            fetch('http://localhost:10000/api/get-table?table=jobs', { credentials: 'omit' }).then(r => r.json())
+            fetch('https://root-4ytd.onrender.com/api/get-table?table=users', { credentials: 'omit' }).then(r => r.json()),
+            fetch('https://root-4ytd.onrender.com/api/get-table?table=employers', { credentials: 'omit' }).then(r => r.json()),
+            fetch('https://root-4ytd.onrender.com/api/get-table?table=jobs', { credentials: 'omit' }).then(r => r.json())
         ])
         .then(([usersData, employersData, jobsData]) => {
             const techGradCount = usersData.data.length;

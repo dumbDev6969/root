@@ -93,7 +93,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
     };
 
     // Send data to the server
-    fetch('http://localhost:10000/api/signup/recruter', {
+    fetch('https://root-4ytd.onrender.com/api/signup/recruter', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -115,7 +115,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
     .catch((error) => {
         console.error('Error:', error);
         // Check if account was created despite the error
-        fetch('http://localhost:10000/api/verify-email', {
+        fetch('https://root-4ytd.onrender.com/api/verify-email', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
