@@ -3962,6 +3962,7 @@
 2024-12-21 10:44:29 | INFO     | routes.chat:send_personal_message:49 - Sent message to USR66093366e21161: {'type': 'message', 'message': {'sender_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'receiver_uuid': 'USR66093366e21161', 'content': 'yo', 'timestamp': '2024-12-21T02:44:29.734Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}}
 2024-12-21 10:44:29 | INFO     | routes.chat:websocket_endpoint:194 - Message sent from EMP_1734654675_0aebdfc0ceff496cbcb37 to USR66093366e21161: {'sender_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'receiver_uuid': 'USR66093366e21161', 'content': 'yo', 'timestamp': '2024-12-21T02:44:29.734Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}
 2024-12-21 10:44:49 | INFO     | routes.chat:load_chat_history:307 - Loaded chat history for USR66093366e21161: [{'sender_uuid': 'USR66093366e21161', 'receiver_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'content': 'hi', 'timestamp': '2024-12-21T01:52:59.156Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}, {'sender_uuid': 'USR66093366e21161', 'receiver_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'content': 'hi', 'timestamp': '2024-12-21T01:58:16.087Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}, {'sender_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'receiver_uuid': 'USR66093366e21161', 'content': 'well hello?', 'timestamp': '2024-12-21T02:42:02.330Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}, {'sender_uuid': 'USR66093366e21161', 'receiver_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'content': 'hahah yeah', 'timestamp': '2024-12-21T02:42:26.073Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}, {'sender_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'receiver_uuid': 'USR66093366e21161', 'content': 'wahts up?', 'timestamp': '2024-12-21T02:42:33.948Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}, {'sender_uuid': 'EMP_1734654675_0aebdfc0ceff496cbcb37', 'receiver_uuid': 'USR66093366e21161', 'content': 'yo', 'timestamp': '2024-12-21T02:44:29.734Z', 'attachments': {'images': [], 'videos': [], 'voice_message': []}}]
+<<<<<<< HEAD
 2025-01-09 09:56:14 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 1/3): 2005 (HY000): Unknown MySQL server host 'mysql-24a8087-mysql-server-jobs.c.aivencloud.com' (11001)
 2025-01-09 09:56:14 | INFO     | utils.database:__init__:75 - Retrying connection in 5 seconds...
 2025-01-09 09:56:20 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 2/3): 2005 (HY000): Unknown MySQL server host 'mysql-24a8087-mysql-server-jobs.c.aivencloud.com' (11001)
@@ -3990,3 +3991,171 @@
 2025-01-09 15:49:08 | INFO     | utils.database:__init__:75 - Retrying connection in 5 seconds...
 2025-01-09 15:49:14 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 3/3): 1045 (28000): Access denied for user 'avnadmin'@'139.135.192.92' (using password: YES)
 2025-01-09 15:49:14 | INFO     | utils.database:__init__:83 - Falling back to SQLite database at fallback_db.sqlite
+=======
+2025-01-09 01:35:43 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 1/3): 2005 (HY000): Unknown MySQL server host 'mysql-24a8087-mysql-server-jobs.c.aivencloud.com' (-2)
+2025-01-09 01:35:43 | INFO     | utils.database:__init__:75 - Retrying connection in 5 seconds...
+2025-01-09 01:35:49 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 2/3): 2005 (HY000): Unknown MySQL server host 'mysql-24a8087-mysql-server-jobs.c.aivencloud.com' (-2)
+2025-01-09 01:35:49 | INFO     | utils.database:__init__:75 - Retrying connection in 5 seconds...
+2025-01-09 01:35:54 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 3/3): 2005 (HY000): Unknown MySQL server host 'mysql-24a8087-mysql-server-jobs.c.aivencloud.com' (-2)
+2025-01-09 01:35:54 | INFO     | utils.database:__init__:83 - Falling back to SQLite database at fallback_db.sqlite
+2025-01-09 01:35:54 | INFO     | __main__:<module>:56 - Starting the application
+2025-01-09 01:35:55 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 1/3): 2005 (HY000): Unknown MySQL server host 'mysql-24a8087-mysql-server-jobs.c.aivencloud.com' (-2)
+2025-01-09 01:35:55 | INFO     | utils.database:__init__:75 - Retrying connection in 5 seconds...
+2025-01-09 01:38:56 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 1/3): 2005 (HY000): Unknown MySQL server host 'jobsearach-mysql-server-jobs.h.aivencloud.com' (-2)
+2025-01-09 01:38:56 | INFO     | utils.database:__init__:75 - Retrying connection in 5 seconds...
+2025-01-09 01:39:01 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 2/3): 2005 (HY000): Unknown MySQL server host 'jobsearach-mysql-server-jobs.h.aivencloud.com' (-2)
+2025-01-09 01:39:01 | INFO     | utils.database:__init__:75 - Retrying connection in 5 seconds...
+2025-01-09 01:39:07 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 3/3): 2005 (HY000): Unknown MySQL server host 'jobsearach-mysql-server-jobs.h.aivencloud.com' (-2)
+2025-01-09 01:39:07 | INFO     | utils.database:__init__:83 - Falling back to SQLite database at fallback_db.sqlite
+2025-01-09 01:39:07 | INFO     | __main__:<module>:56 - Starting the application
+2025-01-09 01:39:08 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 1/3): 2005 (HY000): Unknown MySQL server host 'jobsearach-mysql-server-jobs.h.aivencloud.com' (-2)
+2025-01-09 01:39:08 | INFO     | utils.database:__init__:75 - Retrying connection in 5 seconds...
+2025-01-09 01:39:13 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 2/3): 2005 (HY000): Unknown MySQL server host 'jobsearach-mysql-server-jobs.h.aivencloud.com' (-2)
+2025-01-09 01:39:13 | INFO     | utils.database:__init__:75 - Retrying connection in 5 seconds...
+2025-01-09 01:39:18 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 1/3): 2005 (HY000): Unknown MySQL server host 'jobsearach-mysql-server-jobs.h.aivencloud.com' (-2)
+2025-01-09 01:39:18 | INFO     | utils.database:__init__:75 - Retrying connection in 5 seconds...
+2025-01-09 02:26:42 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2025-01-09 02:26:55 | INFO     | __main__:<module>:56 - Starting the application
+2025-01-09 02:27:00 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 1/3): 1040 (08004): Too many connections
+2025-01-09 02:27:00 | INFO     | utils.database:__init__:75 - Retrying connection in 5 seconds...
+2025-01-09 02:27:06 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 2/3): 1040 (08004): Too many connections
+2025-01-09 02:27:06 | INFO     | utils.database:__init__:75 - Retrying connection in 5 seconds...
+2025-01-09 02:27:16 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 3/3): 1040 (08004): Too many connections
+2025-01-09 02:27:16 | INFO     | utils.database:__init__:83 - Falling back to SQLite database at fallback_db.sqlite
+2025-01-09 02:47:53 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 1/3): 1040 (08004): Too many connections
+2025-01-09 02:47:53 | INFO     | utils.database:__init__:75 - Retrying connection in 5 seconds...
+2025-01-09 02:49:08 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 1/3): 2003 (HY000): Can't connect to MySQL server on 'jobsearach-mysql-server-jobs.h.aivencloud.com:16459' (110)
+2025-01-09 02:49:08 | INFO     | utils.database:__init__:75 - Retrying connection in 5 seconds...
+2025-01-09 02:49:24 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 2/3): 2003 (HY000): Can't connect to MySQL server on 'jobsearach-mysql-server-jobs.h.aivencloud.com:16459' (110)
+2025-01-09 02:49:24 | INFO     | utils.database:__init__:75 - Retrying connection in 5 seconds...
+2025-01-09 02:49:29 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 3/3): 2005 (HY000): Unknown MySQL server host 'jobsearach-mysql-server-jobs.h.aivencloud.com' (-2)
+2025-01-09 02:49:29 | INFO     | utils.database:__init__:83 - Falling back to SQLite database at fallback_db.sqlite
+2025-01-09 02:49:29 | INFO     | __main__:<module>:56 - Starting the application
+2025-01-09 02:49:30 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 1/3): 2005 (HY000): Unknown MySQL server host 'jobsearach-mysql-server-jobs.h.aivencloud.com' (-2)
+2025-01-09 02:49:30 | INFO     | utils.database:__init__:75 - Retrying connection in 5 seconds...
+2025-01-09 02:49:35 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 2/3): 2005 (HY000): Unknown MySQL server host 'jobsearach-mysql-server-jobs.h.aivencloud.com' (-2)
+2025-01-09 02:49:35 | INFO     | utils.database:__init__:75 - Retrying connection in 5 seconds...
+2025-01-09 02:49:40 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 3/3): 2005 (HY000): Unknown MySQL server host 'jobsearach-mysql-server-jobs.h.aivencloud.com' (-2)
+2025-01-09 02:49:40 | INFO     | utils.database:__init__:83 - Falling back to SQLite database at fallback_db.sqlite
+2025-01-09 02:50:38 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 1/3): 2005 (HY000): Unknown MySQL server host 'jobsearach-mysql-server-jobs.h.aivencloud.com' (-2)
+2025-01-09 02:50:38 | INFO     | utils.database:__init__:75 - Retrying connection in 5 seconds...
+2025-01-09 02:50:43 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 2/3): 2005 (HY000): Unknown MySQL server host 'jobsearach-mysql-server-jobs.h.aivencloud.com' (-2)
+2025-01-09 02:50:43 | INFO     | utils.database:__init__:75 - Retrying connection in 5 seconds...
+2025-01-09 02:53:22 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2025-01-09 02:53:35 | INFO     | __main__:<module>:56 - Starting the application
+2025-01-09 02:53:44 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 1/3): 1040 (08004): Too many connections
+2025-01-09 02:53:44 | INFO     | utils.database:__init__:75 - Retrying connection in 5 seconds...
+2025-01-09 02:53:50 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 2/3): 1040 (08004): Too many connections
+2025-01-09 02:53:50 | INFO     | utils.database:__init__:75 - Retrying connection in 5 seconds...
+2025-01-09 02:55:22 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 1/3): 1045 (28000): Access denied for user 'avnadmin'@'23.97.62.134' (using password: YES)
+2025-01-09 02:55:22 | INFO     | utils.database:__init__:75 - Retrying connection in 5 seconds...
+2025-01-09 02:55:27 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 2/3): 1045 (28000): Access denied for user 'avnadmin'@'23.97.62.134' (using password: YES)
+2025-01-09 02:55:27 | INFO     | utils.database:__init__:75 - Retrying connection in 5 seconds...
+2025-01-09 02:56:52 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 32
+2025-01-09 02:57:07 | INFO     | __main__:<module>:56 - Starting the application
+2025-01-09 02:57:13 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 1/3): 1040 (08004): Too many connections
+2025-01-09 02:57:13 | INFO     | utils.database:__init__:75 - Retrying connection in 5 seconds...
+2025-01-09 03:03:21 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 1/3): 1226 (42000): User 'jobsearch_mealunder' has exceeded the 'max_user_connections' resource (current value: 5)
+2025-01-09 03:03:21 | INFO     | utils.database:__init__:75 - Retrying connection in 5 seconds...
+2025-01-09 03:03:27 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 2/3): 1226 (42000): User 'jobsearch_mealunder' has exceeded the 'max_user_connections' resource (current value: 5)
+2025-01-09 03:03:27 | INFO     | utils.database:__init__:75 - Retrying connection in 5 seconds...
+2025-01-09 03:03:37 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 3/3): 1226 (42000): User 'jobsearch_mealunder' has exceeded the 'max_user_connections' resource (current value: 5)
+2025-01-09 03:03:37 | INFO     | utils.database:__init__:83 - Falling back to SQLite database at fallback_db.sqlite
+2025-01-09 03:03:41 | INFO     | __main__:<module>:56 - Starting the application
+2025-01-09 03:04:47 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:04:49 | INFO     | __main__:<module>:56 - Starting the application
+2025-01-09 03:04:52 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 1/3): 1226 (42000): User 'jobsearch_mealunder' has exceeded the 'max_user_connections' resource (current value: 5)
+2025-01-09 03:04:52 | INFO     | utils.database:__init__:75 - Retrying connection in 5 seconds...
+2025-01-09 03:08:11 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:08:14 | INFO     | __main__:<module>:57 - Cleaning up existing database connections...
+2025-01-09 03:08:15 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4762761
+2025-01-09 03:08:16 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4762764
+2025-01-09 03:08:16 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4762766
+2025-01-09 03:08:16 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4762759
+2025-01-09 03:08:16 | INFO     | utils.connection_manager:kill_all_connections:43 - Successfully cleaned up existing connections
+2025-01-09 03:08:16 | INFO     | __main__:<module>:59 - Starting the application
+2025-01-09 03:09:00 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:09:02 | INFO     | __main__:<module>:57 - Cleaning up existing database connections...
+2025-01-09 03:09:03 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4762848
+2025-01-09 03:09:04 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4762841
+2025-01-09 03:09:04 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4762851
+2025-01-09 03:09:04 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4762844
+2025-01-09 03:09:04 | INFO     | utils.connection_manager:kill_all_connections:43 - Successfully cleaned up existing connections
+2025-01-09 03:09:04 | INFO     | __main__:<module>:59 - Starting the application
+2025-01-09 03:09:10 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:09:21 | INFO     | middleware:metrics_middleware:27 - Request: GET / - Status: 307 - Duration: 0.00s
+2025-01-09 03:09:21 | INFO     | middleware:metrics_middleware:27 - Request: GET /favicon.ico - Status: 404 - Duration: 0.00s
+2025-01-09 03:09:26 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2025-01-09 03:09:27 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.01s
+2025-01-09 03:09:34 | INFO     | routes.jobs:get_jobs:54 - Received request to get all jobs
+2025-01-09 03:09:34 | ERROR    | routes.jobs:get_jobs:74 - Unexpected error in get_jobs: Error 111 connecting to localhost:6379. Connection refused.
+2025-01-09 03:10:07 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 1/3): 1226 (42000): User 'jobsearch_mealunder' has exceeded the 'max_user_connections' resource (current value: 5)
+2025-01-09 03:10:07 | INFO     | utils.database:__init__:75 - Retrying connection in 5 seconds...
+2025-01-09 03:10:15 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 2/3): 1226 (42000): User 'jobsearch_mealunder' has exceeded the 'max_user_connections' resource (current value: 5)
+2025-01-09 03:10:15 | INFO     | utils.database:__init__:75 - Retrying connection in 5 seconds...
+2025-01-09 03:10:34 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:10:54 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:11:21 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:11:42 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:12:04 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:12:20 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:13:04 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:13:07 | INFO     | __main__:<module>:57 - Cleaning up existing database connections...
+2025-01-09 03:13:08 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763305
+2025-01-09 03:13:09 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763306
+2025-01-09 03:13:09 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763309
+2025-01-09 03:13:09 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763303
+2025-01-09 03:13:09 | INFO     | utils.connection_manager:kill_all_connections:43 - Successfully cleaned up existing connections
+2025-01-09 03:13:09 | INFO     | __main__:<module>:59 - Starting the application
+2025-01-09 03:13:15 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:14:12 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:14:14 | INFO     | __main__:<module>:58 - Cleaning up existing database connections...
+2025-01-09 03:14:16 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763424
+2025-01-09 03:14:16 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763417
+2025-01-09 03:14:16 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763419
+2025-01-09 03:14:17 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763420
+2025-01-09 03:14:17 | INFO     | utils.connection_manager:kill_all_connections:43 - Successfully cleaned up existing connections
+2025-01-09 03:14:17 | INFO     | __main__:<module>:60 - Starting the application
+2025-01-09 03:14:41 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:14:43 | INFO     | __main__:<module>:58 - Cleaning up existing database connections...
+2025-01-09 03:14:45 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763473
+2025-01-09 03:14:45 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763482
+2025-01-09 03:14:45 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763474
+2025-01-09 03:14:45 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763477
+2025-01-09 03:14:45 | INFO     | utils.connection_manager:kill_all_connections:43 - Successfully cleaned up existing connections
+2025-01-09 03:14:45 | INFO     | __main__:<module>:60 - Starting the application
+2025-01-09 03:14:54 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:15:10 | INFO     | routes.root:main:26 - Redirecting to API documentation
+2025-01-09 03:15:10 | INFO     | middleware:metrics_middleware:27 - Request: GET / - Status: 307 - Duration: 0.00s
+2025-01-09 03:15:10 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2025-01-09 03:15:11 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.01s
+2025-01-09 03:15:19 | INFO     | routes.jobs:get_jobs:62 - Received request to get all jobs
+2025-01-09 03:15:19 | WARNING  | routes.jobs:get_jobs:72 - Redis connection failed, falling back to database
+2025-01-09 03:15:19 | INFO     | routes.jobs:get_jobs:75 - Fetching jobs data from database
+2025-01-09 03:15:19 | INFO     | routes.jobs:fetch_jobs_from_db:37 - Fetching jobs from database
+2025-01-09 03:15:20 | ERROR    | routes.jobs:get_jobs:91 - Unexpected error in get_jobs: Object of type datetime is not JSON serializable
+2025-01-09 03:16:05 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:16:32 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:17:23 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:17:26 | INFO     | __main__:<module>:58 - Cleaning up existing database connections...
+2025-01-09 03:17:27 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763793
+2025-01-09 03:17:27 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763787
+2025-01-09 03:17:28 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763788
+2025-01-09 03:17:28 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763799
+2025-01-09 03:17:28 | INFO     | utils.connection_manager:kill_all_connections:43 - Successfully cleaned up existing connections
+2025-01-09 03:17:28 | INFO     | __main__:<module>:60 - Starting the application
+2025-01-09 03:17:37 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:17:43 | INFO     | routes.root:main:26 - Redirecting to API documentation
+2025-01-09 03:17:43 | INFO     | middleware:metrics_middleware:27 - Request: GET / - Status: 307 - Duration: 0.00s
+2025-01-09 03:17:44 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2025-01-09 03:17:44 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.01s
+2025-01-09 03:17:51 | INFO     | routes.jobs:get_jobs:69 - Received request to get all jobs
+2025-01-09 03:17:51 | WARNING  | routes.jobs:get_jobs:79 - Redis connection failed, falling back to database
+2025-01-09 03:17:51 | INFO     | routes.jobs:get_jobs:82 - Fetching jobs data from database
+2025-01-09 03:17:51 | INFO     | routes.jobs:fetch_jobs_from_db:44 - Fetching jobs from database
+2025-01-09 03:17:52 | INFO     | routes.jobs:get_jobs:91 - Jobs data cached for 5 minutes
+2025-01-09 03:17:52 | INFO     | middleware:metrics_middleware:27 - Request: GET /jobs - Status: 200 - Duration: 1.44s
+2025-01-09 03:18:12 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 400 - Duration: 0.00s
+2025-01-09 03:18:13 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 400 - Duration: 0.00s
+2025-01-09 03:18:22 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 1.59s
+>>>>>>> 19198bf15054ee6af36d7961c8ac974874638633

@@ -1,0 +1,13 @@
+DROP TABLE IF EXISTS employer_reviews;
+DROP TABLE IF EXISTS employers;
+DROP TABLE IF EXISTS job_alerts;
+DROP TABLE IF EXISTS job_applications;
+DROP TABLE IF EXISTS job_categories;
+DROP TABLE IF EXISTS jobs;
+DROP TABLE IF EXISTS message;
+DROP TABLE IF EXISTS profile_image;
+DROP TABLE IF EXISTS qualifications;
+DROP TABLE IF EXISTS saved_jobs;
+DROP TABLE IF EXISTS submitted_resume;
+DROP TABLE IF EXISTS user_interest;
+DROP TABLE IF EXISTS users;

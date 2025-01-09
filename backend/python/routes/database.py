@@ -6,7 +6,7 @@ from fastapi.responses import JSONResponse
 from datetime import datetime
 from utils.security import validate_input
 from utils.password_manager import PasswordManager
-from utils.error_handler import DatabaseException, ValidationException
+from utils.error_handler import AppException as DatabaseException, ValidationException
 from utils.logger import get_logger
 
 logger = get_logger(__name__)
@@ -161,7 +161,7 @@ async def create_record(request: CreateRequest, _: None = Depends(validate_input
             elif "duplicate entry" in str(error_msg).lower():
                 raise ValidationException(f"A record with these details already exists.")
             else:
-                raise DatabaseException(error_msg)
+                raise DatabaseException(500, error_msg)
                 
     except TypeError as te:
         error_msg = f"Invalid data fields for {table}: {str(te)}"
@@ -176,7 +176,7 @@ async def create_record(request: CreateRequest, _: None = Depends(validate_input
     except Exception as e:
         error_msg = f"Unexpected error while creating {table} record: {str(e)}"
         logger.error(error_msg)
-        raise DatabaseException(error_msg)
+        raise DatabaseException(500, error_msg)
 
 @router.get("/api/reads")
 async def read_record(table: str, id: int, _: None = Depends(validate_input)):
