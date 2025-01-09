@@ -5,6 +5,7 @@ from starlette.middleware.sessions import SessionMiddleware
 from starlette.responses import RedirectResponse
 from utils.logger import get_logger
 from middleware import metrics_middleware
+from utils.connection_manager import kill_all_connections
 
 from routes.root import router as root_router
 from routes.metrics import router as metrics_router
@@ -53,10 +54,12 @@ app.include_router(database_router)
 
 if __name__ == "__main__":
     import uvicorn
+    logger.info("Cleaning up existing database connections...")
+    kill_all_connections()
     logger.info("Starting the application")
     uvicorn.run(
         "api:app",
         host="0.0.0.0",
-        port=10000 ,
+        port=10000,
         reload=True
     )
