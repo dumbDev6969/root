@@ -4044,3 +4044,87 @@
 2025-01-09 03:08:16 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4762759
 2025-01-09 03:08:16 | INFO     | utils.connection_manager:kill_all_connections:43 - Successfully cleaned up existing connections
 2025-01-09 03:08:16 | INFO     | __main__:<module>:59 - Starting the application
+2025-01-09 03:09:00 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:09:02 | INFO     | __main__:<module>:57 - Cleaning up existing database connections...
+2025-01-09 03:09:03 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4762848
+2025-01-09 03:09:04 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4762841
+2025-01-09 03:09:04 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4762851
+2025-01-09 03:09:04 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4762844
+2025-01-09 03:09:04 | INFO     | utils.connection_manager:kill_all_connections:43 - Successfully cleaned up existing connections
+2025-01-09 03:09:04 | INFO     | __main__:<module>:59 - Starting the application
+2025-01-09 03:09:10 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:09:21 | INFO     | middleware:metrics_middleware:27 - Request: GET / - Status: 307 - Duration: 0.00s
+2025-01-09 03:09:21 | INFO     | middleware:metrics_middleware:27 - Request: GET /favicon.ico - Status: 404 - Duration: 0.00s
+2025-01-09 03:09:26 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2025-01-09 03:09:27 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.01s
+2025-01-09 03:09:34 | INFO     | routes.jobs:get_jobs:54 - Received request to get all jobs
+2025-01-09 03:09:34 | ERROR    | routes.jobs:get_jobs:74 - Unexpected error in get_jobs: Error 111 connecting to localhost:6379. Connection refused.
+2025-01-09 03:10:07 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 1/3): 1226 (42000): User 'jobsearch_mealunder' has exceeded the 'max_user_connections' resource (current value: 5)
+2025-01-09 03:10:07 | INFO     | utils.database:__init__:75 - Retrying connection in 5 seconds...
+2025-01-09 03:10:15 | ERROR    | utils.database:__init__:73 - Error creating MySQL connection pool (attempt 2/3): 1226 (42000): User 'jobsearch_mealunder' has exceeded the 'max_user_connections' resource (current value: 5)
+2025-01-09 03:10:15 | INFO     | utils.database:__init__:75 - Retrying connection in 5 seconds...
+2025-01-09 03:10:34 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:10:54 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:11:21 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:11:42 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:12:04 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:12:20 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:13:04 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:13:07 | INFO     | __main__:<module>:57 - Cleaning up existing database connections...
+2025-01-09 03:13:08 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763305
+2025-01-09 03:13:09 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763306
+2025-01-09 03:13:09 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763309
+2025-01-09 03:13:09 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763303
+2025-01-09 03:13:09 | INFO     | utils.connection_manager:kill_all_connections:43 - Successfully cleaned up existing connections
+2025-01-09 03:13:09 | INFO     | __main__:<module>:59 - Starting the application
+2025-01-09 03:13:15 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:14:12 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:14:14 | INFO     | __main__:<module>:58 - Cleaning up existing database connections...
+2025-01-09 03:14:16 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763424
+2025-01-09 03:14:16 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763417
+2025-01-09 03:14:16 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763419
+2025-01-09 03:14:17 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763420
+2025-01-09 03:14:17 | INFO     | utils.connection_manager:kill_all_connections:43 - Successfully cleaned up existing connections
+2025-01-09 03:14:17 | INFO     | __main__:<module>:60 - Starting the application
+2025-01-09 03:14:41 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:14:43 | INFO     | __main__:<module>:58 - Cleaning up existing database connections...
+2025-01-09 03:14:45 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763473
+2025-01-09 03:14:45 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763482
+2025-01-09 03:14:45 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763474
+2025-01-09 03:14:45 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763477
+2025-01-09 03:14:45 | INFO     | utils.connection_manager:kill_all_connections:43 - Successfully cleaned up existing connections
+2025-01-09 03:14:45 | INFO     | __main__:<module>:60 - Starting the application
+2025-01-09 03:14:54 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:15:10 | INFO     | routes.root:main:26 - Redirecting to API documentation
+2025-01-09 03:15:10 | INFO     | middleware:metrics_middleware:27 - Request: GET / - Status: 307 - Duration: 0.00s
+2025-01-09 03:15:10 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2025-01-09 03:15:11 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.01s
+2025-01-09 03:15:19 | INFO     | routes.jobs:get_jobs:62 - Received request to get all jobs
+2025-01-09 03:15:19 | WARNING  | routes.jobs:get_jobs:72 - Redis connection failed, falling back to database
+2025-01-09 03:15:19 | INFO     | routes.jobs:get_jobs:75 - Fetching jobs data from database
+2025-01-09 03:15:19 | INFO     | routes.jobs:fetch_jobs_from_db:37 - Fetching jobs from database
+2025-01-09 03:15:20 | ERROR    | routes.jobs:get_jobs:91 - Unexpected error in get_jobs: Object of type datetime is not JSON serializable
+2025-01-09 03:16:05 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:16:32 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:17:23 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:17:26 | INFO     | __main__:<module>:58 - Cleaning up existing database connections...
+2025-01-09 03:17:27 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763793
+2025-01-09 03:17:27 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763787
+2025-01-09 03:17:28 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763788
+2025-01-09 03:17:28 | INFO     | utils.connection_manager:kill_all_connections:39 - Killed connection: 4763799
+2025-01-09 03:17:28 | INFO     | utils.connection_manager:kill_all_connections:43 - Successfully cleaned up existing connections
+2025-01-09 03:17:28 | INFO     | __main__:<module>:60 - Starting the application
+2025-01-09 03:17:37 | INFO     | utils.database:__init__:68 - MySQL database connection pool created successfully with size 4
+2025-01-09 03:17:43 | INFO     | routes.root:main:26 - Redirecting to API documentation
+2025-01-09 03:17:43 | INFO     | middleware:metrics_middleware:27 - Request: GET / - Status: 307 - Duration: 0.00s
+2025-01-09 03:17:44 | INFO     | middleware:metrics_middleware:27 - Request: GET /docs - Status: 200 - Duration: 0.00s
+2025-01-09 03:17:44 | INFO     | middleware:metrics_middleware:27 - Request: GET /openapi.json - Status: 200 - Duration: 0.01s
+2025-01-09 03:17:51 | INFO     | routes.jobs:get_jobs:69 - Received request to get all jobs
+2025-01-09 03:17:51 | WARNING  | routes.jobs:get_jobs:79 - Redis connection failed, falling back to database
+2025-01-09 03:17:51 | INFO     | routes.jobs:get_jobs:82 - Fetching jobs data from database
+2025-01-09 03:17:51 | INFO     | routes.jobs:fetch_jobs_from_db:44 - Fetching jobs from database
+2025-01-09 03:17:52 | INFO     | routes.jobs:get_jobs:91 - Jobs data cached for 5 minutes
+2025-01-09 03:17:52 | INFO     | middleware:metrics_middleware:27 - Request: GET /jobs - Status: 200 - Duration: 1.44s
+2025-01-09 03:18:12 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 400 - Duration: 0.00s
+2025-01-09 03:18:13 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 400 - Duration: 0.00s
+2025-01-09 03:18:22 | INFO     | middleware:metrics_middleware:27 - Request: GET /api/get-table - Status: 200 - Duration: 1.59s

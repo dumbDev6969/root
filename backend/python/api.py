@@ -17,6 +17,7 @@ from routes.login import router as login_router
 from routes.geo import router as router_geo
 from routes.chat import chat_router
 
+import time
 logger = get_logger(__name__)
 
 app = FastAPI(
@@ -57,6 +58,7 @@ if __name__ == "__main__":
     logger.info("Cleaning up existing database connections...")
     kill_all_connections()
     logger.info("Starting the application")
+    time.sleep(3)
     uvicorn.run(
         "api:app",
         host="0.0.0.0",
