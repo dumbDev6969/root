@@ -31,7 +31,7 @@ $current_page = basename(htmlspecialchars($_SERVER['PHP_SELF'])); //! Get the cu
                     <a href="../src/role_selection.php">
                         <button class="btn btn-signup text-light me-2">Sign up</button>
                     </a>
-                    <a href="">
+                    <a href="../src/auth/login.php">
                         <button class="btn btn-login btn-outline-dark">Login</button>
                     </a>
                 </div>
