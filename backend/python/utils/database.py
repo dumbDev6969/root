@@ -24,7 +24,7 @@ class Database:
         max_retries = 3
         retry_count = 0
         last_error = None
-        self.server = {"local": True, "online": False}
+        self.server = {"local": False, "online": True}
 
         while retry_count < max_retries:
             try:
