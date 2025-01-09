@@ -56,7 +56,7 @@ if __name__ == "__main__":
     logger.info("Starting the application")
     uvicorn.run(
         "api:app",
-        host="localhost",
+        host="0.0.0.0",
         port=10000 ,
         reload=True
     )
